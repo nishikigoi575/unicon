@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         FirebaseApp.configure()
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions as? [UIApplicationLaunchOptionsKey : Any])
         
+        
+        AppDelegate.configureInitialRootViewController(for: window)
+        
         return true
     }
     
@@ -43,15 +46,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         case let LoginResult.success(grantedPermissions, declinedPermissions, token):
             let credential = FacebookAuthProvider.credential(withAccessToken: token.authenticationToken)
             // Firebaseにcredentialを渡してlogin
-            Auth.auth().signIn(with: credential) { (fireUser, fireError) in
+            Auth.auth().signInAndRetrieveData(with: credential) { (fireUser, fireError) in
                 if let error = fireError {
                     print(error.localizedDescription)
                     return
+                } else {
+                    AppDelegate.configureInitialRootViewController(for: self.window)
                 }
-                // ログイン用のViewControllerを閉じるなど
-                if let loginVC = self.window?.rootViewController?.presentedViewController{
-                    loginVC.dismiss(animated: true, completion: nil)
-                }
+                
             }
         default:
             break
@@ -60,7 +62,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
     }
     // 6. loginButtonDidLogOutを追加
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        // いい感じの処理
+        AppDelegate.configureInitialRootViewController(for: self.window)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -83,6 +85,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    
+    
+    // Handle logged in user / new user
+    static func configureInitialRootViewController(for window: UIWindow?) {
+        
+        let initialViewController: UIViewController
+//
+//        if UserDefaults.standard.object(forKey: "welcomed") == nil {
+//
+//            print("FOR THE FIRST TIME")
+//            initialViewController = UIStoryboard.initialViewController(for: .welcome)
+//
+//        }
+        
+        if Auth.auth().currentUser != nil {
+            print("Hello")
+            initialViewController = UIStoryboard.initialViewController(for: .main)
+        } else {
+            print("新規ユーザー")
+            initialViewController = UIStoryboard.initialViewController(for: .onboard)
+        }
+        
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
     }
 
 
