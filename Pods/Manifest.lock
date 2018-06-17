@@ -1,4 +1,7 @@
 PODS:
+  - Alamofire (4.7.2)
+  - AlamofireImage (3.3.1):
+    - Alamofire (~> 4.5)
   - Bolts (1.9.0):
     - Bolts/AppLinks (= 1.9.0)
     - Bolts/Tasks (= 1.9.0)
@@ -96,6 +99,7 @@ PODS:
   - Protobuf (3.5.0)
 
 DEPENDENCIES:
+  - AlamofireImage (~> 3.3)
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -105,6 +109,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
     - Bolts
     - BoringSSL
     - FacebookCore
@@ -130,6 +136,8 @@ SPEC REPOS:
     - Protobuf
 
 SPEC CHECKSUMS:
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: c46efb47593135382bc0934196f16d2f726f5f36
   FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
@@ -154,6 +162,6 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
 
-PODFILE CHECKSUM: 7708e262483ce1186abb28386f3b380f865eb343
+PODFILE CHECKSUM: 9a944910982c357b8c4cc3c01e9711a746a3b6b7
 
 COCOAPODS: 1.5.3

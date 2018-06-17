@@ -15,6 +15,9 @@ target 'unicon' do
    pod 'FacebookCore'
    pod 'FacebookLogin'
    pod 'FacebookShare'
+   
+   # Alamofire
+   pod 'AlamofireImage', '~> 3.3'
 
   target 'uniconTests' do
     inherit! :search_paths
