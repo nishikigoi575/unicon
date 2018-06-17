@@ -12,9 +12,9 @@ target 'unicon' do
    pod 'Firebase/Firestore'
    
    # Facebook
-   pod 'FBSDKCoreKit'
-   pod 'FBSDKLoginKit'
-   pod 'FBSDKShareKit'
+   pod 'FacebookCore'
+   pod 'FacebookLogin'
+   pod 'FacebookShare'
 
   target 'uniconTests' do
     inherit! :search_paths

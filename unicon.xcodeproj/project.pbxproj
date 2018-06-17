@@ -10,6 +10,9 @@
 		17039679FCBD540BE19E0BBA /* Pods_uniconUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */; };
 		1A9D85CF537E510B5969CE22 /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; };
 		43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */; };
+		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
+		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
+		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
@@ -45,6 +48,9 @@
 		13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unicon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43222CF220D6207600B3DB50 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +80,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */,
+				43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */,
+				43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */,
 				436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */,
 				436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */,
 				436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */,
@@ -170,6 +179,9 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43222CEE20D6207600B3DB50 /* FacebookCore.framework */,
+				43222CF020D6207600B3DB50 /* FacebookLogin.framework */,
+				43222CF220D6207600B3DB50 /* FacebookShare.framework */,
 				436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */,
 				436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */,
 				436739E120D6137900ABDD32 /* FirebaseCore.framework */,
@@ -378,6 +390,9 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
@@ -395,6 +410,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
