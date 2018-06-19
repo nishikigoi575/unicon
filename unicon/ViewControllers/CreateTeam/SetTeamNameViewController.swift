@@ -10,6 +10,9 @@ import UIKit
 
 class SetTeamNameViewController: UIViewController {
 
+    
+    @IBOutlet weak var teamNameTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,5 +23,17 @@ class SetTeamNameViewController: UIViewController {
         
     }
     
-
+    @IBAction func nextBtnTapped(_ sender: Any) {
+        
+        if let teamName = teamNameTextField.text, teamNameTextField.text != "" {
+            
+            SetTeamIntroViewController.teamName = teamName
+            performSegue(withIdentifier: "ToNext", sender: nil)
+            
+        }
+        
+        
+        
+    }
+    
 }

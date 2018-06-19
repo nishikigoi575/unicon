@@ -43,7 +43,10 @@ class HomeViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            AppDelegate.configureInitialRootViewController(for: window)
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
+            self.present(newVC, animated: true, completion: nil)
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)

@@ -18,6 +18,9 @@ target 'unicon' do
    
    # Alamofire
    pod 'AlamofireImage', '~> 3.3'
+   
+   # Others
+   pod 'IQKeyboardManagerSwift'
 
   target 'uniconTests' do
     inherit! :search_paths

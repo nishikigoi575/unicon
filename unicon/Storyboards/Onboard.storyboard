@@ -79,6 +79,9 @@
                                 <state key="normal" title="チームをつくる">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="createTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="90E-TT-wMg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-i1-dSm">
                                 <rect key="frame" x="46" y="410" width="294" height="53"/>

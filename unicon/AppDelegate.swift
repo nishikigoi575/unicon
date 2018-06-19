@@ -11,6 +11,7 @@ import Firebase
 import FirebaseAuth
 import FacebookCore
 import FacebookLogin
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
@@ -21,10 +22,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         // Override point for customization after application launch.
         
         FirebaseApp.configure()
-        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions as? [UIApplicationLaunchOptionsKey : Any])
-        
+        SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         AppDelegate.configureInitialRootViewController(for: window)
+        
+        IQKeyboardManager.shared.enable = true
         
         return true
     }

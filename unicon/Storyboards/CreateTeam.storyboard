@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--New Team View Controller-->
         <scene sceneID="EDg-FZ-saY">
             <objects>
-                <viewController id="5Un-hw-TtP" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewTeamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Un-hw-TtP" customClass="NewTeamViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K60-ly-B27">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +25,9 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Lo0-67-SnA" kind="presentation" id="TLR-uA-ckX"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="説明" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSl-j7-KwF">
                                 <rect key="frame" x="165" y="322" width="44" height="22"/>
@@ -37,36 +40,19 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Non-Rb-oGq"/>
                     </view>
-                    <connections>
-                        <segue destination="Lo0-67-SnA" kind="presentation" id="1Gt-B5-fzh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TJz-jp-JXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1986" y="-36"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Gender View Controller-->
         <scene sceneID="pwc-Xo-4E4">
             <objects>
-                <viewController id="Lo0-67-SnA" sceneMemberID="viewController">
+                <viewController id="Lo0-67-SnA" customClass="SelectGenderViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="HV9-uV-v2s">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="あなたのチームのジェンダーを選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ky-a8-tAL">
-                                <rect key="frame" x="16" y="85" width="343" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="マッチングを希望するチームのジェンダーを選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM3-yY-zQi">
-                                <rect key="frame" x="16" y="331" width="343" height="71"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3S-1a-dAj">
                                 <rect key="frame" x="226" y="572" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -74,13 +60,28 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtnTapped:" destination="Lo0-67-SnA" eventType="touchUpInside" id="iFA-Dg-sV0"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="マッチングを希望するチームのジェンダーを選んでください。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM3-yY-zQi">
+                                <rect key="frame" x="16" y="213" width="343" height="71"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e8K-XM-zLC">
+                                <rect key="frame" x="0.0" y="292" width="375" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="sbR-j5-oCf"/>
                     </view>
                     <connections>
-                        <segue destination="s3j-lu-GMS" kind="presentation" id="9xp-XG-PYg"/>
+                        <outlet property="yourGenderPickerView" destination="e8K-XM-zLC" id="PYN-81-exs"/>
+                        <segue destination="s3j-lu-GMS" kind="presentation" identifier="ToNext" id="9xp-XG-PYg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJc-Us-JFe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -111,9 +112,12 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtnTapped:" destination="s3j-lu-GMS" eventType="touchUpInside" id="nCp-kg-vub"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="チーム名は相手のチームに最もみられる項目のひとつです。あなたたちのチームの特徴と魅力を存分にあしらった素敵な名前をつけてください。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4l-6Z-Une">
-                                <rect key="frame" x="30" y="132" width="315" height="152"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="チーム名は相手のチームに最もみられる項目のひとつです。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V4l-6Z-Une">
+                                <rect key="frame" x="30" y="132" width="315" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
@@ -137,17 +141,18 @@
                         <viewLayoutGuide key="safeArea" id="IF4-dI-FK0"/>
                     </view>
                     <connections>
-                        <segue destination="YRa-k0-mon" kind="presentation" id="cuR-kB-jGg"/>
+                        <outlet property="teamNameTextField" destination="RNN-PU-CTw" id="NrR-KX-TxI"/>
+                        <segue destination="YRa-k0-mon" kind="presentation" identifier="ToNext" id="cuR-kB-jGg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7XQ-7D-CUK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="-36"/>
+            <point key="canvasLocation" x="-287.19999999999999" y="-36.431784107946029"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Team Image View Controller-->
         <scene sceneID="tdy-Mu-iFg">
             <objects>
-                <viewController id="YRa-k0-mon" sceneMemberID="viewController">
+                <viewController id="YRa-k0-mon" customClass="SetTeamImageViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sew-bh-Blk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -166,34 +171,49 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtnTapped:" destination="YRa-k0-mon" eventType="touchUpInside" id="OOF-F9-Zlc"/>
+                                </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="チームのメンバーたちが写っている写真をチーム写真として設定しましょう。写真の良し悪しがチームの人気を大きく左右します。チームで撮影した写真がなければスキップしてください。あとからでも設定することができます。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-Hb-JCw">
-                                <rect key="frame" x="30" y="117" width="315" height="157"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="チームのメンバーたちが写っている写真をチーム写真として設定しましょう。チームで撮影した写真がなければスキップしてください。あとからでも設定することができます。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-Hb-JCw">
+                                <rect key="frame" x="30" y="117" width="315" height="117"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bjk-MN-FVD">
-                                <rect key="frame" x="16" y="299" width="343" height="227"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJp-If-xVv">
+                                <rect key="frame" x="30" y="242.5" width="315" height="183"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="315" id="N76-Wf-OaG"/>
+                                    <constraint firstAttribute="height" constant="183" id="Vgl-5o-1Ot"/>
+                                </constraints>
+                                <state key="normal" title="写真を設定"/>
+                                <connections>
+                                    <action selector="pickImage:" destination="YRa-k0-mon" eventType="touchUpInside" id="5O8-23-awa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.6705882353" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="rJp-If-xVv" firstAttribute="centerY" secondItem="Sew-bh-Blk" secondAttribute="centerY" id="1h1-tg-4Lr"/>
+                            <constraint firstItem="rJp-If-xVv" firstAttribute="centerX" secondItem="Sew-bh-Blk" secondAttribute="centerX" id="iM6-pS-yqn"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="bzr-Or-aFL"/>
                     </view>
                     <connections>
-                        <segue destination="cgj-oZ-DCV" kind="presentation" id="H4V-84-Xrd"/>
+                        <outlet property="imageBtn" destination="rJp-If-xVv" id="XKz-ke-yU3"/>
+                        <segue destination="cgj-oZ-DCV" kind="presentation" identifier="ToNext" id="H4V-84-Xrd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8F-wB-toL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="556" y="-36"/>
+            <point key="canvasLocation" x="574" y="-36"/>
         </scene>
-        <!--View Controller-->
+        <!--Set Team Intro View Controller-->
         <scene sceneID="s07-Gc-GqM">
             <objects>
-                <viewController id="cgj-oZ-DCV" sceneMemberID="viewController">
+                <viewController id="cgj-oZ-DCV" customClass="SetTeamIntroViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eZQ-ma-p1G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -227,23 +247,26 @@
                                 <state key="normal" title="次へ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtnTapped:" destination="cgj-oZ-DCV" eventType="touchUpInside" id="I1o-gg-n7e"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92941176470588238" green="0.67450980392156867" blue="0.99215686274509807" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="I8K-hv-hDY"/>
                     </view>
                     <connections>
-                        <segue destination="mD7-bh-lcc" kind="presentation" id="GeZ-UU-G0G"/>
+                        <segue destination="mD7-bh-lcc" kind="presentation" identifier="ToNext" id="GeZ-UU-G0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P16-3B-2qO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1309.5999999999999" y="-36.431784107946029"/>
+            <point key="canvasLocation" x="1394" y="-36"/>
         </scene>
-        <!--View Controller-->
+        <!--Invite Member View Controller-->
         <scene sceneID="sGn-KZ-3to">
             <objects>
-                <viewController id="mD7-bh-lcc" sceneMemberID="viewController">
+                <viewController id="mD7-bh-lcc" customClass="InviteMemberViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jw9-gD-8cw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
