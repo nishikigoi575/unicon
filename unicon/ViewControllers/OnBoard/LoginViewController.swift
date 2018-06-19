@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
                 GraphRequest(graphPath: "me").start { (response, result) in
                     switch result {
                     case .success(let response):
-                        print(response)
+                        print("レスポンスだよ\(response)")
                         
                         let credential = FacebookAuthProvider
                             .credential(withAccessToken: token.authenticationToken)
