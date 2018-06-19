@@ -35,6 +35,8 @@ class SetTeamIntroViewController: UIViewController {
 
     @IBAction func nextBtnTapped(_ sender: Any) {
         
+        
+        
         performSegue(withIdentifier: "ToNext", sender: nil)
         
     }
