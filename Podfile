@@ -15,6 +15,12 @@ target 'unicon' do
    pod 'FacebookCore'
    pod 'FacebookLogin'
    pod 'FacebookShare'
+   
+   # Alamofire
+   pod 'AlamofireImage', '~> 3.3'
+   
+   # Others
+   pod 'IQKeyboardManagerSwift'
 
   target 'uniconTests' do
     inherit! :search_paths

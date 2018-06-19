@@ -18,6 +18,18 @@
 		43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222CFB20D625AF00B3DB50 /* Main.storyboard */; };
 		43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFD20D625D500B3DB50 /* HomeViewController.swift */; };
 		43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */; };
+		43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0220D64F4400B3DB50 /* Alamofire.framework */; };
+		43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0420D64F4400B3DB50 /* AlamofireImage.framework */; };
+		43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0620D6518900B3DB50 /* UserExtention.swift */; };
+		43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0820D6555A00B3DB50 /* CreateOrJoinViewController.swift */; };
+		43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */; };
+		43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0E20D67D2600B3DB50 /* SetTeamNameViewController.swift */; };
+		43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1120D7684E00B3DB50 /* NewTeamViewController.swift */; };
+		43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1320D7B8E400B3DB50 /* SelectGenderViewController.swift */; };
+		43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1520D7B93300B3DB50 /* SetTeamImageViewController.swift */; };
+		43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */; };
+		4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */; };
+		4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */; };
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
@@ -59,6 +71,18 @@
 		43222CFB20D625AF00B3DB50 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		43222CFD20D625D500B3DB50 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.siwft.swift"; sourceTree = "<group>"; };
+		43222D0220D64F4400B3DB50 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43222D0420D64F4400B3DB50 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43222D0620D6518900B3DB50 /* UserExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserExtention.swift; sourceTree = "<group>"; };
+		43222D0820D6555A00B3DB50 /* CreateOrJoinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrJoinViewController.swift; sourceTree = "<group>"; };
+		43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateTeam.storyboard; sourceTree = "<group>"; };
+		43222D0E20D67D2600B3DB50 /* SetTeamNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTeamNameViewController.swift; sourceTree = "<group>"; };
+		43222D1120D7684E00B3DB50 /* NewTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamViewController.swift; sourceTree = "<group>"; };
+		43222D1320D7B8E400B3DB50 /* SelectGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderViewController.swift; sourceTree = "<group>"; };
+		43222D1520D7B93300B3DB50 /* SetTeamImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SetTeamImageViewController.swift; path = unicon/ViewControllers/CreateTeam/SetTeamImageViewController.swift; sourceTree = SOURCE_ROOT; };
+		43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTeamIntroViewController.swift; sourceTree = "<group>"; };
+		4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberViewController.swift; sourceTree = "<group>"; };
+		4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -86,6 +110,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
+				43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */,
+				43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */,
 				43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */,
 				43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */,
 				43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */,
@@ -133,6 +160,7 @@
 			children = (
 				43222CF520D622FA00B3DB50 /* Onboard.storyboard */,
 				43222CFB20D625AF00B3DB50 /* Main.storyboard */,
+				43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -142,6 +170,7 @@
 			children = (
 				43222CFA20D6245400B3DB50 /* OnBoard */,
 				43222CFD20D625D500B3DB50 /* HomeViewController.swift */,
+				43222D1020D7683400B3DB50 /* CreateTeam */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -150,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				43222CF720D623EA00B3DB50 /* LoginViewController.swift */,
+				43222D0820D6555A00B3DB50 /* CreateOrJoinViewController.swift */,
 			);
 			path = OnBoard;
 			sourceTree = "<group>";
@@ -158,8 +188,22 @@
 			isa = PBXGroup;
 			children = (
 				43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */,
+				43222D0620D6518900B3DB50 /* UserExtention.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		43222D1020D7683400B3DB50 /* CreateTeam */ = {
+			isa = PBXGroup;
+			children = (
+				43222D0E20D67D2600B3DB50 /* SetTeamNameViewController.swift */,
+				43222D1120D7684E00B3DB50 /* NewTeamViewController.swift */,
+				43222D1520D7B93300B3DB50 /* SetTeamImageViewController.swift */,
+				43222D1320D7B8E400B3DB50 /* SelectGenderViewController.swift */,
+				43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */,
+				4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */,
+			);
+			path = CreateTeam;
 			sourceTree = "<group>";
 		};
 		43A5D3F220D4EF68004612D4 = {
@@ -220,6 +264,9 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */,
+				43222D0220D64F4400B3DB50 /* Alamofire.framework */,
+				43222D0420D64F4400B3DB50 /* AlamofireImage.framework */,
 				43222CEE20D6207600B3DB50 /* FacebookCore.framework */,
 				43222CF020D6207600B3DB50 /* FacebookLogin.framework */,
 				43222CF220D6207600B3DB50 /* FacebookShare.framework */,
@@ -342,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
+				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
 				43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */,
 				43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */,
@@ -427,6 +475,8 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-unicon/Pods-unicon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
@@ -437,6 +487,7 @@
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
@@ -447,6 +498,8 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
@@ -457,6 +510,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
@@ -477,9 +531,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
+				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
+				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
+				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
+				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
+				43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */,
+				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
+				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

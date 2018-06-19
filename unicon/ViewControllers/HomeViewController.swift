@@ -9,12 +9,28 @@
 import UIKit
 import FirebaseAuth
 import FacebookLogin
+import AlamofireImage
 
 class HomeViewController: UIViewController {
     var window: UIWindow?
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if let name = Auth.auth().currentUser?.displayName {
+            nameLabel.text = name
+        }
+        
+        if let imageUrl = Auth.auth().currentUser?.urlForProfileImageFor(imageResolution: .highres) {
+            imageView.af_setImage(
+                withURL: imageUrl,
+                imageTransition: .crossDissolve(0.5)
+            )
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +43,10 @@ class HomeViewController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             try firebaseAuth.signOut()
-            AppDelegate.configureInitialRootViewController(for: window)
+            
+            let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
+            self.present(newVC, animated: true, completion: nil)
             
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
