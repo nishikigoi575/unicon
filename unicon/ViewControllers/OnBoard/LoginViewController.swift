@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         
         let loginManager = LoginManager()
         // Facebook へログイン
-        loginManager.logIn(readPermissions: [.email, .publicProfile, .userFriends], viewController: self) { result in
+        loginManager.logIn(readPermissions: [.email, .publicProfile, .userFriends, .age, .gender], viewController: self) { result in
             switch result {
             case .success(_, _, let token):
                 // Facebook からユーザー情報を取得

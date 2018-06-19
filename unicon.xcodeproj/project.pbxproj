@@ -33,6 +33,9 @@
 		432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
 		432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
+		432FA1DC20D8F7E60058A744 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1DB20D8F7E60058A744 /* Team.swift */; };
+		432FA1DF20D8FF9C0058A744 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1DE20D8FF9C0058A744 /* User.swift */; };
+		432FA1E120D906B10058A744 /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 432FA1E020D906B10058A744 /* FirebaseFirestore.framework */; };
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
@@ -89,6 +92,9 @@
 		432FA1D420D8F24A0058A744 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
+		432FA1DB20D8F7E60058A744 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		432FA1DE20D8FF9C0058A744 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		432FA1E020D906B10058A744 /* FirebaseFirestore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseFirestore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -116,6 +122,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				432FA1E120D906B10058A744 /* FirebaseFirestore.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */,
 				43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */,
@@ -222,6 +229,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		432FA1DD20D8F7EA0058A744 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				432FA1DB20D8F7E60058A744 /* Team.swift */,
+				432FA1DE20D8FF9C0058A744 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		43A5D3F220D4EF68004612D4 = {
 			isa = PBXGroup;
 			children = (
@@ -256,6 +272,7 @@
 				43A5D40A20D4EF6B004612D4 /* Info.plist */,
 				43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */,
 				432FA1D620D8F2580058A744 /* Services */,
+				432FA1DD20D8F7EA0058A744 /* Models */,
 			);
 			path = unicon;
 			sourceTree = "<group>";
@@ -281,6 +298,7 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				432FA1E020D906B10058A744 /* FirebaseFirestore.framework */,
 				4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */,
 				43222D0220D64F4400B3DB50 /* Alamofire.framework */,
 				43222D0420D64F4400B3DB50 /* AlamofireImage.framework */,
@@ -555,11 +573,13 @@
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
+				432FA1DF20D8FF9C0058A744 /* User.swift in Sources */,
 				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
 				43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */,
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
+				432FA1DC20D8F7E60058A744 /* Team.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
