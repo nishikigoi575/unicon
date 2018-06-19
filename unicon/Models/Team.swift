@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import Firestore.FIRDocumentSnapshot
+//import Firestore.FIRDocumentSnapshot
 
 class Team {
     

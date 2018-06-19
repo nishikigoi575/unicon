@@ -35,14 +35,14 @@ class LoginViewController: UIViewController {
         
         let loginManager = LoginManager()
         // Facebook へログイン
-        loginManager.logIn(readPermissions: [.email, .publicProfile, .userFriends, .age, .gender], viewController: self) { result in
+        loginManager.logIn(readPermissions: [.email, .publicProfile, .userFriends], viewController: self) { result in
             switch result {
             case .success(_, _, let token):
                 // Facebook からユーザー情報を取得
                 GraphRequest(graphPath: "me").start { (response, result) in
                     switch result {
                     case .success(let response):
-                        print(response)
+                        print("レスポンスだよ\(response)")
                         
                         let credential = FacebookAuthProvider
                             .credential(withAccessToken: token.authenticationToken)

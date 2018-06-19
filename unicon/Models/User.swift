@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Firestore.FIRDocumentSnapshot
+//import Firestore.FIRDocumentSnapshot
 
 class User: NSObject {
     
