@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import FirebaseFirestore
+import Firestore
 
 class SetTeamIntroViewController: UIViewController {
 
