@@ -15,7 +15,7 @@ extension UIStoryboard {
     enum UCType: String {
         case main
         case login
-        case post
+        case matching
         case topic
         case profile
         case welcome

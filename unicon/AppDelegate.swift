@@ -24,7 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         FirebaseApp.configure()
         SDKApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
-        AppDelegate.configureInitialRootViewController(for: window)
+        let initialViewController: UIViewController
+        initialViewController = UIStoryboard.initialViewController(for: .matching)
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+        
+        //AppDelegate.configureInitialRootViewController(for: window)
         
         IQKeyboardManager.shared.enable = true
         
