@@ -11,7 +11,6 @@
 		1A9D85CF537E510B5969CE22 /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		2037633320D8F89E00A86A75 /* Matching.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2037633220D8F89E00A86A75 /* Matching.storyboard */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
-		2037633920D9005B00A86A75 /* FirebaseFirestore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2037633820D9005B00A86A75 /* FirebaseFirestore.framework */; };
 		43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
@@ -122,7 +121,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2037633920D9005B00A86A75 /* FirebaseFirestore.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */,
 				43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */,

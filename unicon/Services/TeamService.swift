@@ -12,7 +12,7 @@ import FirebaseStorage
 import Firestore
 
 class TeamService {
-    
+    /*
     static func create(for image: UIImage, targetGender: String, teamName: String, teamIntro: String, ownerUID: String,  completion: @escaping (Bool) -> Void) {
         let imageRef = StorageReference.newPostImageReference()
         StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
@@ -30,7 +30,7 @@ class TeamService {
             }
         }
     }
-    
+    */
     
     
 }
