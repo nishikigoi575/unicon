@@ -74,4 +74,3 @@ extension MatchingViewController: KolodaViewDataSource {
         return nil
     }
 }
-
