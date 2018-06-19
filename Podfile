@@ -10,6 +10,7 @@ target 'unicon' do
    pod 'Firebase/Core'
    pod 'Firebase/Auth'
    pod 'Firebase/Firestore'
+   pod 'Firestore', :podspec => 'https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json'
    pod 'Firebase/Storage'
    
    # Facebook
@@ -22,6 +23,7 @@ target 'unicon' do
    
    # Others
    pod 'IQKeyboardManagerSwift'
+   pod 'Koloda', '~> 4.3.1'
 
   target 'uniconTests' do
     inherit! :search_paths
