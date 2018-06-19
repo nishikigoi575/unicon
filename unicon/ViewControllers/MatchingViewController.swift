@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import Koloda
-/*
+
 class MatchingViewController: UIViewController {
     
     private let cardWidth = CGFloat(250)
@@ -26,8 +26,8 @@ class MatchingViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
         
         for image in images {
-            let card = CardView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
-            card.setImage(image!)
+            let card = UIImageView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
+            card.image = image
             dataSource.append(card)
         }
         
@@ -58,16 +58,20 @@ extension MatchingViewController: KolodaViewDelegate {
 }
 
 extension MatchingViewController: KolodaViewDataSource {
-    func kolodaNumberOfCards(koloda:KolodaView) -> UInt {
-        return UInt(dataSource.count)
+    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
+        return dataSource.count
     }
     
-    func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
+    func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
+        return .fast
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         return dataSource[Int(index)]
     }
     
-    func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {
+    func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return nil
     }
 }
-*/
+
