@@ -10,10 +10,16 @@ import UIKit
 
 class InviteMemberViewController: UIViewController {
 
+    var teamID = String()
+    
+    @IBOutlet weak var teamIDTextView: UITextView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        teamIDTextView.text = teamID
+        
     }
 
     override func didReceiveMemoryWarning() {

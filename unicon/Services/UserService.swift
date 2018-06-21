@@ -37,6 +37,8 @@ struct UserService {
                     if let user = User(document: document) {
                         print("User created")
                         completion(user)
+                    } else {
+                        print("User created foojfhaodhfoai")
                     }
                 } else {
                     print("Document does not exist")
@@ -62,6 +64,7 @@ struct UserService {
         let rootRef = Firestore.firestore()
         let teamRef = rootRef.collection("teams").document(teamID).collection("members").document(createdBy)
         let userRef = rootRef.collection("users").document(createdBy)
+        let batch = Firestore.firestore().batch()
         
         // First, get the user data
         userRef.getDocument() { (doc, err) in
@@ -71,19 +74,31 @@ struct UserService {
                         "firstName": user.firstName, "userImage": user.userImage, "userUID": createdBy, "facebookID": facebookID, "age": 20, "area": "Tokyo", "gender": "male"] as [String : Any
                     ]
                     
-                    teamRef.setData(userDict, options: SetOptions.merge()) {err in
+                    batch.setData(userDict, forDocument: teamRef, options: SetOptions.merge())
+                    
+                    let teamData = ["teamID": teamID, "joined": Date()] as [String : Any]
+                    let myTeamsRef = userRef.collection("teams").document(teamID)
+                    batch.setData(teamData, forDocument: myTeamsRef, options: SetOptions.merge())
+                    
+                    batch.setData(["isBelongsTo": true], forDocument: userRef, options: SetOptions.merge())
+                    
+                    batch.commit() { err in
                         if let err = err {
-                            print("error occured: \(err.localizedDescription)")
-                            return success(false)
+                            print("Error writing batch \(err)")
+                            success(false)
                         } else {
-                            return success(true)
+                            print("Batch write succeeded.")
+                            success(true)
                         }
                     }
                     
+                } else {
+                    success(false)
                 }
+            } else {
+                success(false)
             }
         }
-        
         
     }
     

@@ -57,6 +57,10 @@ class User: NSObject {
             self.belongsToTeam = belongs
         }
         
+        if let facebookID = dict["facebookID"] as? String {
+            self.facebookID = facebookID
+        }
+        
         super.init()
     }
     

@@ -14,32 +14,32 @@ import FirebaseAuth
 
 class TeamService {
     
-    static func create(teamName: String, teamGender: String, targetGender: String, teamImage: UIImage, intro: String, completion: @escaping (Bool) -> Void) {
+    static func create(teamName: String, teamGender: String, targetGender: String, teamImage: UIImage, intro: String, completion: @escaping (Team?, Bool) -> Void) {
         let imageRef = StorageReference.newTeamImageReference(teamName: teamName)
         StorageService.uploadImage(teamImage, at: imageRef) { (downloadURL) in
             guard let url = downloadURL else {
-                return completion(false)
+                return completion(nil,false)
             }
             
             guard let userUID = Auth.auth().currentUser?.uid else {
-                return completion(false)
+                return completion(nil,false)
             }
             
             let urlStr = url.absoluteString
             
             
-            create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (successed) in
+            create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (team, successed) in
                 if successed {
-                    return completion(true)
+                    return completion(team, true)
                 } else {
-                    return completion(false)
+                    return completion(nil, false)
                 }
             }
             
         }
     }
     
-    private static func create(createdBy: String,urlStr: String, teamName: String, teamGender: String, targetGender: String, intro: String, successed: @escaping (Bool) -> Void){
+    private static func create(createdBy: String,urlStr: String, teamName: String, teamGender: String, targetGender: String, intro: String, successed: @escaping (Team?, Bool) -> Void){
         
         
         let rootRef = Firestore.firestore()
@@ -51,22 +51,32 @@ class TeamService {
         rootRef.collection("teams").document(teamID).setData(team.dictValue) { error in
             if let error = error {
                 print("Failed to create a team\(error.localizedDescription)")
-                return successed(false)
+                return successed(nil, false)
             } else {
                 
-                guard let user = Auth.auth().currentUser else {
-                    return successed(false)
+                rootRef.collection("teams").document(teamID).getDocument() { (document, err) in
+                    if let document = document {
+                        print("Document data: ここなのか \(document.data())")
+                        if let team = Team(snapshot: document) {
+                            UserService.join(teamID: teamID, createdBy: createdBy){ (success) in
+                                if success {
+                                    print("yay")
+                                    return successed(team, true)
+                                } else {
+                                    print("fuck")
+                                    return successed(nil, false)
+                                }
+                            }
+                        } else {
+                            print("are")
+                        }
+                        
+                    } else {
+                        print("Document does not exist")
+                        successed(nil, false)
+                    }
                 }
                 
-                UserService.join(teamID: teamID, createdBy: user.uid){ (success) in
-                    
-                    if success {
-                        return successed(true)
-                    } else {
-                        return successed(false)
-                    }
-                    
-                }
             }
         }
         

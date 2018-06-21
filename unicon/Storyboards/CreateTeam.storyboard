@@ -256,6 +256,7 @@
                         <viewLayoutGuide key="safeArea" id="I8K-hv-hDY"/>
                     </view>
                     <connections>
+                        <outlet property="hitokotoTextView" destination="UhT-jh-NMk" id="YDm-VE-QSq"/>
                         <segue destination="mD7-bh-lcc" kind="presentation" identifier="ToNext" id="GeZ-UU-G0G"/>
                     </connections>
                 </viewController>
@@ -320,6 +321,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MDa-AV-IUz"/>
                     </view>
+                    <connections>
+                        <outlet property="teamIDTextView" destination="wYZ-ok-az1" id="I03-uf-KsH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mr-l1-FZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
