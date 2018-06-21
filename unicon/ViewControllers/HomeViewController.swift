@@ -25,7 +25,13 @@ class HomeViewController: UIViewController {
             nameLabel.text = name
         }
         
-        if let imageUrl = Auth.auth().currentUser?.urlForProfileImageFor(imageResolution: .highres) {
+        if let facebookID = Auth.auth().currentUser?.providerData
+            .filter({ (userInfo: UserInfo) in return userInfo.providerID == FacebookAuthProviderID})
+            .map({ (userInfo: UserInfo) in return userInfo.uid})
+            .first {
+            
+            let imageUrl = UserHelper.getPicUrlFromFacebook(facebookID: facebookID, size: 800)
+            
             imageView.af_setImage(
                 withURL: imageUrl,
                 imageTransition: .crossDissolve(0.5)
