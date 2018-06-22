@@ -40,6 +40,9 @@
 		4360356C20DB52B60092361A /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356B20DB52B60092361A /* UserHelper.swift */; };
 		4360356E20DB78AD0092361A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356D20DB78AD0092361A /* UserService.swift */; };
 		4360357020DB8D700092361A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356F20DB8D700092361A /* Team.swift */; };
+		4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4360357120DC9B600092361A /* JoinTeam.storyboard */; };
+		4360357420DC9C950092361A /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360357320DC9C950092361A /* JoinTeamViewController.swift */; };
+		4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360357620DCC8A80092361A /* SingleTeamViewController.swift */; };
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
@@ -104,6 +107,9 @@
 		4360356B20DB52B60092361A /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHelper.swift; path = "unicon/Supporting Files/UserHelper.swift"; sourceTree = SOURCE_ROOT; };
 		4360356D20DB78AD0092361A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4360356F20DB8D700092361A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		4360357120DC9B600092361A /* JoinTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinTeam.storyboard; sourceTree = "<group>"; };
+		4360357320DC9C950092361A /* JoinTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamViewController.swift; sourceTree = "<group>"; };
+		4360357620DCC8A80092361A /* SingleTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTeamViewController.swift; sourceTree = "<group>"; };
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -204,6 +210,7 @@
 				43222CFB20D625AF00B3DB50 /* Main.storyboard */,
 				43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */,
 				2037633220D8F89E00A86A75 /* Matching.storyboard */,
+				4360357120DC9B600092361A /* JoinTeam.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -215,6 +222,7 @@
 				43222CFD20D625D500B3DB50 /* HomeViewController.swift */,
 				43222D1020D7683400B3DB50 /* CreateTeam */,
 				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
+				4360357520DC9C9A0092361A /* JoinTeam */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -268,6 +276,15 @@
 				4360356F20DB8D700092361A /* Team.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		4360357520DC9C9A0092361A /* JoinTeam */ = {
+			isa = PBXGroup;
+			children = (
+				4360357320DC9C950092361A /* JoinTeamViewController.swift */,
+				4360357620DCC8A80092361A /* SingleTeamViewController.swift */,
+			);
+			path = JoinTeam;
 			sourceTree = "<group>";
 		};
 		43A5D3F220D4EF68004612D4 = {
@@ -455,6 +472,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
+				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
 				43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */,
@@ -615,11 +633,13 @@
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
 				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
+				4360357420DC9C950092361A /* JoinTeamViewController.swift in Sources */,
 				43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */,
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
+				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4360356A20DB4C840092361A /* Constants.swift in Sources */,

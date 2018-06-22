@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="aR7-GK-Vx7">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--JoinTeamVC-->
+        <scene sceneID="ldZ-C8-qM6">
+            <objects>
+                <viewController storyboardIdentifier="JoinTeamVC" title="JoinTeamVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="aR7-GK-Vx7" customClass="JoinTeamViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pwy-EY-hob">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="秘密の暗号を入力してください。暗号は他のチームメンバーに尋ねましょう。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQk-yT-oxh">
+                                <rect key="frame" x="29" y="172" width="317" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="17"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HRP-xA-CRi">
+                                <rect key="frame" x="29" y="318" width="317" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERg-ft-2GJ">
+                                <rect key="frame" x="123" y="481" width="129" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="暗号を実行"/>
+                                <connections>
+                                    <action selector="joinBtnTapped:" destination="aR7-GK-Vx7" eventType="touchUpInside" id="qXr-6C-he9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MnJ-1Z-ae4"/>
+                    </view>
+                    <connections>
+                        <outlet property="teamIDTextField" destination="HRP-xA-CRi" id="02B-RJ-hnT"/>
+                        <segue destination="F9t-hI-hoH" kind="presentation" identifier="ToNext" id="uAD-tc-qoa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kln-cp-HXZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-218.40000000000001" y="156.97151424287858"/>
+        </scene>
+        <!--Single Team View Controller-->
+        <scene sceneID="hPo-eT-JND">
+            <objects>
+                <viewController id="F9t-hI-hoH" customClass="SingleTeamViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zgj-Ve-Bbk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4x5-Tt-6Cw">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="251"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="251" id="1QF-bs-uUo"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="teamName" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovU-wN-DA4">
+                                <rect key="frame" x="16" y="272" width="343" height="30"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Intro" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8Q-5d-5Vk">
+                                <rect key="frame" x="16" y="322" width="343" height="156"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="156" id="mqY-wh-qBE"/>
+                                </constraints>
+                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rpu-xy-iJX">
+                                <rect key="frame" x="142" y="586" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="チームに参加"/>
+                                <connections>
+                                    <action selector="joinBtnTapped:" destination="F9t-hI-hoH" eventType="touchUpInside" id="B0S-Af-Id5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="q8Q-5d-5Vk" firstAttribute="leading" secondItem="FXe-T8-Rp5" secondAttribute="leading" constant="16" id="3sc-ux-uw2"/>
+                            <constraint firstItem="4x5-Tt-6Cw" firstAttribute="leading" secondItem="FXe-T8-Rp5" secondAttribute="leading" id="C6a-JP-Thz"/>
+                            <constraint firstItem="4x5-Tt-6Cw" firstAttribute="top" secondItem="Zgj-Ve-Bbk" secondAttribute="top" id="Nl8-Ev-kph"/>
+                            <constraint firstItem="ovU-wN-DA4" firstAttribute="top" secondItem="4x5-Tt-6Cw" secondAttribute="bottom" constant="21" id="QG1-Ws-jyg"/>
+                            <constraint firstItem="4x5-Tt-6Cw" firstAttribute="trailing" secondItem="FXe-T8-Rp5" secondAttribute="trailing" id="dmk-1o-B3r"/>
+                            <constraint firstItem="q8Q-5d-5Vk" firstAttribute="top" secondItem="ovU-wN-DA4" secondAttribute="bottom" constant="20" id="kaJ-eg-J6r"/>
+                            <constraint firstItem="ovU-wN-DA4" firstAttribute="leading" secondItem="FXe-T8-Rp5" secondAttribute="leading" constant="16" id="qJF-eS-YHM"/>
+                            <constraint firstItem="FXe-T8-Rp5" firstAttribute="trailing" secondItem="ovU-wN-DA4" secondAttribute="trailing" constant="16" id="urT-BC-Caf"/>
+                            <constraint firstItem="FXe-T8-Rp5" firstAttribute="trailing" secondItem="q8Q-5d-5Vk" secondAttribute="trailing" constant="16" id="zQq-4v-VHz"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FXe-T8-Rp5"/>
+                    </view>
+                    <connections>
+                        <outlet property="introTextView" destination="q8Q-5d-5Vk" id="nhG-kJ-3Cg"/>
+                        <outlet property="teamImageView" destination="4x5-Tt-6Cw" id="rIx-l2-BQE"/>
+                        <outlet property="teamNameLabel" destination="ovU-wN-DA4" id="Slc-7B-fbo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nA6-Mz-Air" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="749.60000000000002" y="156.97151424287858"/>
+        </scene>
+    </scenes>
+</document>

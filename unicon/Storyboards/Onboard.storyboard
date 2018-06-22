@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="cfh-db-RUs">
             <objects>
-                <viewController id="sto-h8-vtD" customClass="LoginViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sto-h8-vtD" customClass="LoginViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hmp-Tf-N9W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                         <viewLayoutGuide key="safeArea" id="3Bl-eX-YLB"/>
                     </view>
                     <connections>
-                        <segue destination="bYl-0b-afu" kind="presentation" identifier="ToCreateOrJoinVC" id="TWe-X2-fQ2"/>
+                        <segue destination="bYl-0b-afu" kind="presentation" identifier="ToNext" id="TWe-X2-fQ2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nw4-Rv-9XP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,6 +91,9 @@
                                 <state key="normal" title="チームに参加">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="joinTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="6jk-nm-6E5"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="leB-SJ-i4e">
                                 <rect key="frame" x="20" y="60" width="335" height="200"/>

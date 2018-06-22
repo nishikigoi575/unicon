@@ -46,5 +46,12 @@ class CreateOrJoinViewController: UIViewController {
         self.present(newVC, animated: true, completion: nil)
     }
     
-
+    @IBAction func joinTeam(_ sender: Any) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "JoinTeam", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "JoinTeamVC")
+        self.present(newVC, animated: true, completion: nil)
+        
+    }
+    
 }

@@ -38,7 +38,7 @@ struct UserService {
                         print("User created")
                         completion(user)
                     } else {
-                        print("User created foojfhaodhfoai")
+                        print("User created foojfhaodhfoair")
                     }
                 } else {
                     print("Document does not exist")
@@ -60,10 +60,10 @@ struct UserService {
         }
     }
     
-    static func join(teamID: String, createdBy: String , success: @escaping (Bool) -> Void) {
+    static func joinTeam(teamID: String, userUID: String , success: @escaping (Bool) -> Void) {
         let rootRef = Firestore.firestore()
-        let teamRef = rootRef.collection("teams").document(teamID).collection("members").document(createdBy)
-        let userRef = rootRef.collection("users").document(createdBy)
+        let teamRef = rootRef.collection("teams").document(teamID).collection("members").document(userUID)
+        let userRef = rootRef.collection("users").document(userUID)
         let batch = Firestore.firestore().batch()
         
         // First, get the user data
@@ -71,7 +71,7 @@ struct UserService {
             if let doc = doc {
                 if let user = User(document: doc), let facebookID = user.facebookID {
                     let userDict = [
-                        "firstName": user.firstName, "userImage": user.userImage, "userUID": createdBy, "facebookID": facebookID, "age": 20, "area": "Tokyo", "gender": "male"] as [String : Any
+                        "firstName": user.firstName, "userImage": user.userImage, "userUID": userUID, "facebookID": facebookID, "age": 20, "area": "Tokyo", "gender": "male"] as [String : Any
                     ]
                     
                     batch.setData(userDict, forDocument: teamRef, options: SetOptions.merge())
@@ -80,7 +80,7 @@ struct UserService {
                     let myTeamsRef = userRef.collection("teams").document(teamID)
                     batch.setData(teamData, forDocument: myTeamsRef, options: SetOptions.merge())
                     
-                    batch.setData(["isBelongsTo": true], forDocument: userRef, options: SetOptions.merge())
+                    batch.setData(["belongsToTeam": true], forDocument: userRef, options: SetOptions.merge())
                     
                     batch.commit() { err in
                         if let err = err {

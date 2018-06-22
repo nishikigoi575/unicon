@@ -50,8 +50,8 @@ class HomeViewController: UIViewController {
         do {
             try firebaseAuth.signOut()
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
-            let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
+            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
             self.present(newVC, animated: true, completion: nil)
             
         } catch let signOutError as NSError {

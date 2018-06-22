@@ -53,9 +53,11 @@ class User: NSObject {
             self.pushID = pushID
         }
         
+        
         if let belongs = dict["belongsToTeam"] as? Bool {
             self.belongsToTeam = belongs
         }
+        
         
         if let facebookID = dict["facebookID"] as? String {
             self.facebookID = facebookID

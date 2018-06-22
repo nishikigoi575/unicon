@@ -14,6 +14,20 @@ import FirebaseAuth
 
 class TeamService {
     
+    
+    static func show(forTeamID teamID: String, completion: @escaping (Team?) -> Void) {
+        //print(uid)
+        let ref = Firestore.firestore().collection("teams").document(teamID)
+        ref.getDocument() { (document, err) in
+            
+            guard let document = document, let team = Team(snapshot: document) else {
+                return completion(nil)
+            }
+            
+            completion(team)
+        }
+    }
+    
     static func create(teamName: String, teamGender: String, targetGender: String, teamImage: UIImage, intro: String, completion: @escaping (Team?, Bool) -> Void) {
         let imageRef = StorageReference.newTeamImageReference(teamName: teamName)
         StorageService.uploadImage(teamImage, at: imageRef) { (downloadURL) in
@@ -58,7 +72,7 @@ class TeamService {
                     if let document = document {
                         print("Document data: ここなのか \(document.data())")
                         if let team = Team(snapshot: document) {
-                            UserService.join(teamID: teamID, createdBy: createdBy){ (success) in
+                            UserService.joinTeam(teamID: teamID, userUID: createdBy){ (success) in
                                 if success {
                                     print("yay")
                                     return successed(team, true)
@@ -80,6 +94,24 @@ class TeamService {
             }
         }
         
+    }
+    
+    
+    static func searchByTeamID(teamID: String, completion: @escaping (Team?) -> Void) {
+        Firestore.firestore().collection("teams").whereField("teamID", isEqualTo: teamID).limit(to: 1)
+            .getDocuments() { (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    completion(nil)
+                } else {
+                    guard querySnapshot?.count == 1 else { return completion(nil) }
+                    let document = querySnapshot!.documents[0]
+                    TeamService.show(forTeamID: document.documentID) { (team) in
+                        guard let team = team else { return completion(nil) }
+                        completion(team)
+                    }
+                }
+        }
     }
     
 }

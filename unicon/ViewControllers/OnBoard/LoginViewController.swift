@@ -77,6 +77,8 @@ class LoginViewController: UIViewController {
                                             return
                                         }
                                         
+                                        print("ここに注目！: \(data)")
+                                        
                                         // Success to add user info into DB
                                         if let pushID = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") {
                                             user.pushID = pushID
@@ -87,7 +89,6 @@ class LoginViewController: UIViewController {
                                             }
                                         }
                                         
-                                        print("呼ばれてますかーーー")
                                         
                                         if let belongs = user.belongsToTeam {
                                             
@@ -96,14 +97,11 @@ class LoginViewController: UIViewController {
                                                 let newVC = storyboard.instantiateViewController(withIdentifier: "HomeSB")
                                                 self.present(newVC, animated: true, completion: nil)
                                             } else {
-                                                let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
-                                                let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
-                                                self.present(newVC, animated: true, completion: nil)
+                                                self.performSegue(withIdentifier: "ToNext", sender: nil)
                                             }
+                                            
                                         } else {
-                                            let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
-                                            let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
-                                            self.present(newVC, animated: true, completion: nil)
+                                            self.performSegue(withIdentifier: "ToNext", sender: nil)
                                         }
                                         
                                         
