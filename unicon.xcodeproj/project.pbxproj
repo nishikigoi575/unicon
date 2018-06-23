@@ -46,6 +46,8 @@
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
+		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
+		436C5D5D20DCEB480002B3AA /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 436C5D5C20DCEB480002B3AA /* memo.txt */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
@@ -113,6 +115,8 @@
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		436C5D5A20DCE6B10002B3AA /* UIExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtention.swift; sourceTree = "<group>"; };
+		436C5D5C20DCEB480002B3AA /* memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
 		43A5D3FB20D4EF69004612D4 /* unicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A5D40520D4EF6B004612D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */,
 				43A5D40A20D4EF6B004612D4 /* Info.plist */,
 				4360356920DB4C840092361A /* Constants.swift */,
+				436C5D5C20DCEB480002B3AA /* memo.txt */,
 			);
 			name = "Supporting Files";
 			path = "New Group";
@@ -242,6 +247,7 @@
 				43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */,
 				43222D0620D6518900B3DB50 /* UserExtention.swift */,
 				432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */,
+				436C5D5A20DCE6B10002B3AA /* UIExtention.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -318,8 +324,8 @@
 				432FA1D620D8F2580058A744 /* Services */,
 				43222D0120D6270B00B3DB50 /* Extentions */,
 				2037633720D8FE2C00A86A75 /* Helpers */,
-				2037633620D8FDF800A86A75 /* Supporting Files */,
 				4360356820DB41DE0092361A /* Models */,
+				2037633620D8FDF800A86A75 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
 			);
 			path = unicon;
@@ -478,6 +484,7 @@
 				43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */,
 				2037633320D8F89E00A86A75 /* Matching.storyboard in Resources */,
 				43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */,
+				436C5D5D20DCEB480002B3AA /* memo.txt in Resources */,
 				43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +635,7 @@
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
 				4360356C20DB52B60092361A /* UserHelper.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,

@@ -77,6 +77,9 @@ class LoginViewController: UIViewController {
                                             return
                                         }
                                         
+                                        
+                                        User.setCurrent(user)
+                                        
                                         print("ここに注目！: \(data)")
                                         
                                         // Success to add user info into DB

@@ -16,7 +16,7 @@ struct Constants {
     
     struct UserDefaults {
         static let currentUser = "currentUser"
-        static let userUID = "uid"
+        static let userUID = "userUID"
         static let firstName = "firstName"
         static let userImage = "userImage"
         static let pushID = "pushID"

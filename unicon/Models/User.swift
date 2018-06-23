@@ -66,38 +66,47 @@ class User: NSObject {
         super.init()
     }
     
-//    required init?(coder aDecoder: NSCoder) {
-//        guard let userUID = aDecoder.decodeObject(forKey: Constants.UserDefaults.userUID) as? String,
-//            let firstName = aDecoder.decodeObject(forKey: Constants.UserDefaults.firstName) as? String,
-//            let userImage = aDecoder.decodeObject(forKey: Constants.UserDefaults.userImage) as? String
-//            else { return nil }
-//        
-//        self.userUID = userUID
-//        self.firstName = firstName
-//        self.userImage = userImage
-//        
-//        if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
-//            self.pushID = pushID
-//        }
-//        
-//        super.init()
-//    }
-//    
-//    private static var _current: User?
-//    
-//    static var current: User? {
-//        return _current
-//    }
-//    
-//    // MARK: - Class Methods
-//    
-//    class func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
-//        
-//        if writeToUserDefaults {
-//            let data = NSKeyedArchiver.archivedData(withRootObject: user)
-//            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
-//        }
-//        
-//        _current = user
-//    }
+    required init?(coder aDecoder: NSCoder) {
+        guard let userUID = aDecoder.decodeObject(forKey: Constants.UserDefaults.userUID) as? String,
+            let firstName = aDecoder.decodeObject(forKey: Constants.UserDefaults.firstName) as? String,
+            let userImage = aDecoder.decodeObject(forKey: Constants.UserDefaults.userImage) as? String
+            else { return nil }
+        
+        self.userUID = userUID
+        self.firstName = firstName
+        self.userImage = userImage
+        
+        if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
+            self.pushID = pushID
+        }
+        
+        super.init()
+    }
+    
+    private static var _current: User?
+    
+    static var current: User? {
+        return _current
+    }
+    
+    // MARK: - Class Methods
+    
+    class func setCurrent(_ user: User, writeToUserDefaults: Bool = false) {
+        
+        if writeToUserDefaults {
+            let data = NSKeyedArchiver.archivedData(withRootObject: user)
+            UserDefaults.standard.set(data, forKey: Constants.UserDefaults.currentUser)
+        }
+        
+        _current = user
+    }
+}
+
+
+extension User: NSCoding {
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(userUID, forKey: Constants.UserDefaults.userUID)
+        aCoder.encode(firstName, forKey: Constants.UserDefaults.firstName)
+        aCoder.encode(userImage, forKey: Constants.UserDefaults.userImage)
+    }
 }
