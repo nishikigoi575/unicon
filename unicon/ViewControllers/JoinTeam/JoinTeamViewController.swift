@@ -45,7 +45,7 @@ class JoinTeamViewController: UIViewController {
                 
                 self.teamID = team.teamID
                 self.teamName = team.teamName
-                self.imagePathStr = team.teamImage
+                self.imagePathStr = team.teamImageURL
                 
                 if let introduction = team.intro {
                     self.intro = introduction
