@@ -17,7 +17,10 @@ class MatchingViewController: UIViewController {
     private let cardWidth = CGFloat(350)
     private let cardHeight = CGFloat(600)
     
-    let kolodaView = KolodaView()
+    let paginationHelper = UCPaginationHelper<Team>(keyUID: nil, serviceMethod: TeamService.allTeams)
+    
+    @IBOutlet weak var kolodaView: KolodaView!
+    
     var teams = [Team]()
     
     var dataSource = [CardView]()
@@ -26,22 +29,10 @@ class MatchingViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        kolodaView.frame = CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight)
-        kolodaView.center = self.view.center
-        self.view.addSubview(kolodaView)
-        
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        TeamService.getFive() { teams in
-            if let teams = teams {
-                self.teams = teams
-                CardViewHelper.makeCardViews(teams: teams) { cards in
-                    self.dataSource = cards
-                    self.kolodaView.reloadData()
-                }
-            }
-        }
+        reloadTeams()
     }
     
     override func didReceiveMemoryWarning() {
@@ -49,11 +40,32 @@ class MatchingViewController: UIViewController {
         
     }
     
+    func reloadTeams() {
+        self.paginationHelper.reloadData(completion: { [weak self] (teams) in
+            self?.teams = teams
+            CardViewHelper.makeCardViews(teams: teams, size: self?.kolodaView.frame.size) { cards in
+                self?.dataSource = cards
+                self?.kolodaView.reloadData()
+            }
+        })
+    }
+    
+    func paginate() {
+        paginationHelper.paginate(completion: { [weak self] (teams) in
+            self?.teams.append(contentsOf: teams)
+            CardViewHelper.makeCardViews(teams: teams, size: self?.kolodaView.frame.size) { cards in
+                self?.dataSource.append(contentsOf: cards)
+                self?.kolodaView.reloadData()
+            }
+        })
+    }
+    
 }
 
 extension MatchingViewController: KolodaViewDelegate {
     func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("Out of stock!!")
+        
     }
     
     private func koloda(_ koloda: KolodaView, didSelectCardAtIndex index: UInt) {
@@ -61,6 +73,9 @@ extension MatchingViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, shouldSwipeCardAt index: Int, in direction: SwipeResultDirection) -> Bool {
+        if dataSource.count - index < 6 {
+            paginate()
+        }
         return true
     }
     

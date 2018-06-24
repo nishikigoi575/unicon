@@ -10,12 +10,13 @@ import Foundation
 import UIKit
 
 class CardViewHelper {
-    public static func makeCardViews(teams: [Team], completion: @escaping ([CardView]) -> Void) {
+    public static func makeCardViews(teams: [Team], size: CGSize?, completion: @escaping ([CardView]) -> Void) {
+        guard let size = size else { return }
         let dispatchGroup = DispatchGroup()
         var cards = [CardView]()
         for team in teams {
             dispatchGroup.enter()
-            let card = CardView(frame: CGRect(x: 0, y: 0, width: CGFloat(350), height: CGFloat(600)))
+            let card = CardView(frame: CGRect(x: 0, y: 0, width: size.width, height: size.height))
             card.teamName.text = team.teamName
             cards.append(card)
             dispatchGroup.leave()

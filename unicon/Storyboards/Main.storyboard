@@ -57,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sI3-Jx-Bno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6025" y="716"/>
+            <point key="canvasLocation" x="4999" y="526"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="RZl-ac-eKa">
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mdb-9y-izD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4162.3999999999996" y="-116.49175412293854"/>
+            <point key="canvasLocation" x="4129" y="-264"/>
         </scene>
         <!--Matching View Controller-->
         <scene sceneID="4Rc-rw-scx">
@@ -82,14 +82,39 @@
                     <view key="view" contentMode="scaleToFill" id="dVZ-Yb-YqD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-CH-f9M" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="10" y="100" width="355" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8B-Ih-ipa">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="J7q-Wq-XHi"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="V8B-Ih-ipa" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" id="8jQ-jc-PDA"/>
+                            <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="sdC-CH-f9M" secondAttribute="trailing" constant="10" id="Dix-jN-Wdv"/>
+                            <constraint firstItem="V8B-Ih-ipa" firstAttribute="top" secondItem="sdC-CH-f9M" secondAttribute="bottom" id="Eg4-f8-vsh"/>
+                            <constraint firstItem="sdC-CH-f9M" firstAttribute="top" secondItem="gfs-0w-pet" secondAttribute="top" constant="80" id="O48-ux-e49"/>
+                            <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="V8B-Ih-ipa" secondAttribute="trailing" id="Yy9-Xr-LcM"/>
+                            <constraint firstItem="sdC-CH-f9M" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" constant="10" id="fdo-hb-5EX"/>
+                            <constraint firstItem="V8B-Ih-ipa" firstAttribute="bottom" secondItem="gfs-0w-pet" secondAttribute="bottom" id="r3Q-F5-8Zl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gfs-0w-pet"/>
                     </view>
                     <navigationItem key="navigationItem" id="xnd-bf-uFm"/>
+                    <connections>
+                        <outlet property="kolodaView" destination="sdC-CH-f9M" id="nOX-AA-xbz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5i-sL-8VG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6024.8000000000002" y="-116.49175412293854"/>
+            <point key="canvasLocation" x="5866" y="-264"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="xP1-NV-eGv">
@@ -114,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUJ-ZW-x9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7783.1999999999998" y="-116.49175412293854"/>
+            <point key="canvasLocation" x="6742" y="526"/>
         </scene>
     </scenes>
 </document>
