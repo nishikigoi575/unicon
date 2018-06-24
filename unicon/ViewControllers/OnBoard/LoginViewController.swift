@@ -38,12 +38,11 @@ class LoginViewController: UIViewController {
         loginManager.logIn(readPermissions: [.email, .publicProfile, .userFriends], viewController: self) { result in
             switch result {
             case .success(_, _, let token):
+                
                 // Facebook からユーザー情報を取得
-                GraphRequest(graphPath: "me").start { (response, result) in
+                GraphRequest(graphPath: "me", parameters: ["fields":"email,first_name,last_name,gender,picture,age_range"]).start { (response, result) in
                     switch result {
                     case .success(let response):
-                        print("レスポンスだよ\(response)")
-                        
                         let credential = FacebookAuthProvider
                             .credential(withAccessToken: token.authenticationToken)
                         
@@ -52,9 +51,8 @@ class LoginViewController: UIViewController {
                             if let error = error {
                                 // error handling
                                 print(error.localizedDescription)
-//                                AppDelegate.instance().dismissActivityIndicator()
                                 
-                                let errorAlert = UIAlertController(title: "Oooops", message: "エラーが発生しました。通信状況などを確認してください。", preferredStyle: .alert)
+                                let errorAlert = UIAlertController(title: "Oooops", message: "エラーが発生しました。通信状況などを確認してください。\(error.localizedDescription)", preferredStyle: .alert)
                                 let okAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
                                 
                                 errorAlert.addAction(okAction)
@@ -64,21 +62,65 @@ class LoginViewController: UIViewController {
                                 return
                                 
                             } else {
-                                self.performSegue(withIdentifier: "ToCreateOrJoinVC", sender: nil)
+                                if let data = response.dictionaryValue, let user = user {
+                                    
+                                    let userImage = UserHelper.getPicUrlFromFacebook(facebookID: data["id"] as! String, size: 800)
+                                    
+                                    UserService.signIn(user, firstName: data["first_name"] as! String, userImage: userImage, facebookID: data["id"] as! String){ (user) in
+                                        guard let user = user else {
+                                            let alertViewController = UIAlertController(title: "いとあやし", message: "なにかがおかしいようです。", preferredStyle: .alert)
+                                            let okAction = UIAlertAction(title: "閉じる", style: .default, handler: nil)
+                                            
+                                            alertViewController.addAction(okAction)
+                                            self.present(alertViewController, animated: true, completion: nil)
+                                            return
+                                        }
+                                        
+                                        
+                                        User.setCurrent(user)
+                                        
+                                        print("ここに注目！: \(data)")
+                                        
+                                        // Success to add user info into DB
+                                        if let pushID = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") {
+                                            user.pushID = pushID
+                                            UserService.addPushID(userUID: user.userUID, pushID: pushID) { success in
+                                                if success {
+                                                    print("add push ID success")
+                                                }
+                                            }
+                                        }
+                                        
+                                        
+                                        if let belongs = user.belongsToTeam {
+                                            
+                                            if belongs {
+                                                let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                                                let newVC = storyboard.instantiateViewController(withIdentifier: "HomeSB")
+                                                self.present(newVC, animated: true, completion: nil)
+                                            } else {
+                                                self.performSegue(withIdentifier: "ToNext", sender: nil)
+                                            }
+                                            
+                                        } else {
+                                            self.performSegue(withIdentifier: "ToNext", sender: nil)
+                                        }
+                                        
+                                        
+                                        
+                                    }
+                                }
                             }
                         }
                     case .failed:
                         // error handling
-                        print("ERROR OMG")
-//                        AppDelegate.instance().dismissActivityIndicator()
+                        print("ERROR OMG\(result)")
                         break
                     }
                 }
             case .cancelled: // Facebook へのログインがキャンセルされた
-//                AppDelegate.instance().dismissActivityIndicator()
                 break
             case .failed: // Facebook へのログインが失敗した
-//                AppDelegate.instance().dismissActivityIndicator()
                 break
             }
         }

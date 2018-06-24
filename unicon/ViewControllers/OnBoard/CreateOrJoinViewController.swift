@@ -22,7 +22,7 @@ class CreateOrJoinViewController: UIViewController {
         myProfileImageView.layer.masksToBounds = true
         
         let me = Auth.auth().currentUser
-        if let name = me?.displayName {
+        if let name = User.current?.firstName {
             welcomeYouLable.text = "\(name)."
         }
         if let imageUrl = me?.photoURL {
@@ -46,5 +46,12 @@ class CreateOrJoinViewController: UIViewController {
         self.present(newVC, animated: true, completion: nil)
     }
     
-
+    @IBAction func joinTeam(_ sender: Any) {
+        
+        let storyboard: UIStoryboard = UIStoryboard(name: "JoinTeam", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "JoinTeamVC")
+        self.present(newVC, animated: true, completion: nil)
+        
+    }
+    
 }

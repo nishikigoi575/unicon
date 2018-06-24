@@ -18,12 +18,12 @@ class SelectGenderViewController: UIViewController, UIPickerViewDelegate, UIPick
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        selectedGender = "男性"
+        selectedGender = "male"
 
         genders = [
-            "男性",
-            "女性",
-            "その他"
+            "male",
+            "female",
+            "other"
         ]
         
         yourGenderPickerView.delegate = self

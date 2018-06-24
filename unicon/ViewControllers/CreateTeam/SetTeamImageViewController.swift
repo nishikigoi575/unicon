@@ -29,7 +29,7 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func nextBtnTapped(_ sender: Any) {
         
-        SetTeamIntroViewController.teamPhoto = teamImage
+        SetTeamIntroViewController.teamImage = teamImage
         
         performSegue(withIdentifier: "ToNext", sender: nil)
         

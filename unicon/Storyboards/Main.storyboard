@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="y8S-qq-2Bt">
             <objects>
-                <viewController id="OHy-Qk-px9" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHy-Qk-px9" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcr-Bq-U1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,22 +26,22 @@
                                     <action selector="logOut:" destination="OHy-Qk-px9" eventType="touchUpInside" id="5W4-Wu-jbb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
                                 <rect key="frame" x="67" y="168" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Uj2-2V-a5C"/>
                                     <constraint firstAttribute="width" constant="240" id="fwJ-Gp-UXn"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-8D-uk0">
-                                <rect key="frame" x="0.0" y="464" width="375" height="57"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9SK-8D-uk0">
+                                <rect key="frame" x="16" y="428" width="343" height="136"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="0.89019607840000003" green="0.16862745100000001" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.85098039219999999" green="0.20000000000000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="4zM-t8-kzn" firstAttribute="trailing" secondItem="SbG-Fx-jyL" secondAttribute="trailing" constant="68" id="gWA-e4-pLo"/>
                             <constraint firstItem="SbG-Fx-jyL" firstAttribute="leading" secondItem="4zM-t8-kzn" secondAttribute="leading" constant="67" id="pBb-cT-RAr"/>

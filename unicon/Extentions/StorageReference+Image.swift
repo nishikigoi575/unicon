@@ -36,4 +36,9 @@ extension StorageReference {
     static func newTopicImageReference(date: String) -> StorageReference {
         return Storage.storage().reference().child("images/topics/\(date).jpg")
     }
+    
+    static func newTeamImageReference(teamName: String) -> StorageReference {
+        let dateStr = dateFormatter.string(from: Date())
+        return Storage.storage().reference().child("images/teams/\(teamName)-\(dateStr).jpg")
+    }
 }

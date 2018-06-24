@@ -25,7 +25,13 @@ class HomeViewController: UIViewController {
             nameLabel.text = name
         }
         
-        if let imageUrl = Auth.auth().currentUser?.urlForProfileImageFor(imageResolution: .highres) {
+        if let facebookID = Auth.auth().currentUser?.providerData
+            .filter({ (userInfo: UserInfo) in return userInfo.providerID == FacebookAuthProviderID})
+            .map({ (userInfo: UserInfo) in return userInfo.uid})
+            .first {
+            
+            let imageUrl = UserHelper.getPicUrlFromFacebook(facebookID: facebookID, size: 800)
+            
             imageView.af_setImage(
                 withURL: imageUrl,
                 imageTransition: .crossDissolve(0.5)
@@ -44,8 +50,8 @@ class HomeViewController: UIViewController {
         do {
             try firebaseAuth.signOut()
             
-            let storyboard: UIStoryboard = UIStoryboard(name: "CreateTeam", bundle: nil)
-            let newVC = storyboard.instantiateViewController(withIdentifier: "NewTeamVC")
+            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
             self.present(newVC, animated: true, completion: nil)
             
         } catch let signOutError as NSError {
