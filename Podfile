@@ -23,7 +23,8 @@ target 'unicon' do
    # Others
    pod 'IQKeyboardManagerSwift'
    pod 'Koloda', '~> 4.3.1'
-
+   pod 'EZSwipeController'
+   
   target 'uniconTests' do
     inherit! :search_paths
     # Pods for testing

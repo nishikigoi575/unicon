@@ -96,7 +96,7 @@ class LoginViewController: UIViewController {
                                             
                                             if belongs {
                                                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                                let newVC = storyboard.instantiateViewController(withIdentifier: "HomeSB")
+                                                let newVC = storyboard.instantiateViewController(withIdentifier: "HomeVC")
                                                 self.present(newVC, animated: true, completion: nil)
                                             } else {
                                                 self.performSegue(withIdentifier: "ToNext", sender: nil)
