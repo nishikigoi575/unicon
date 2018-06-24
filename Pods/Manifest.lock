@@ -39,6 +39,9 @@ PODS:
   - Firebase/Core (4.13.0):
     - FirebaseAnalytics (= 4.2.0)
     - FirebaseCore (= 4.0.20)
+  - Firebase/Firestore (4.13.0):
+    - Firebase/Core
+    - FirebaseFirestore (= 0.11.0)
   - Firebase/Storage (4.13.0):
     - Firebase/Core
     - FirebaseStorage (= 2.2.0)
@@ -53,6 +56,12 @@ PODS:
     - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (4.0.20):
     - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseFirestore (0.11.0):
+    - FirebaseAnalytics (~> 4.1)
+    - FirebaseCore (~> 4.0)
+    - gRPC-ProtoRPC (~> 1.0)
+    - leveldb-library (~> 1.18)
+    - Protobuf (~> 3.5)
   - FirebaseInstanceID (2.0.10):
     - FirebaseCore (~> 4.0)
   - FirebaseStorage (2.2.0):
@@ -115,6 +124,7 @@ DEPENDENCIES:
   - FacebookShare
   - Firebase/Auth
   - Firebase/Core
+  - Firebase/Firestore
   - Firebase/Storage
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
   - IQKeyboardManagerSwift
@@ -136,6 +146,7 @@ SPEC REPOS:
     - FirebaseAnalytics
     - FirebaseAuth
     - FirebaseCore
+    - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
     - GoogleToolboxForMac
@@ -170,6 +181,7 @@ SPEC CHECKSUMS:
   FirebaseAnalytics: 7ef69e76a5142f643aeb47c780e1cdce4e23632e
   FirebaseAuth: bf22cacf22c60ab454bf2636f556d8892b10b53f
   FirebaseCore: 90cb1c53d69b556f112a1bf72b5fcfaad7650790
+  FirebaseFirestore: e92a096ce80c7b4b905d4e9d41dbd944adc9d2a5
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
   Firestore: 5a33dcb27d8d33d4e82e032ee31ecd2904a72167
@@ -186,6 +198,6 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
 
-PODFILE CHECKSUM: 0edd8fa3c98e6733bb392118d7d669f51e1e0fcb
+PODFILE CHECKSUM: ce78dd37dbe7de28ff87887d1b2fb61386983d62
 
 COCOAPODS: 1.5.3

@@ -48,11 +48,9 @@ class User: NSObject {
         self.firstName = firstName
         self.userImage = userImage
         
-        
         if let pushID = dict["pushID"] as? String {
             self.pushID = pushID
         }
-        
         
         if let belongs = dict["belongsToTeam"] as? Bool {
             self.belongsToTeam = belongs
@@ -79,7 +77,7 @@ class User: NSObject {
         if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
             self.pushID = pushID
         }
-        
+ 
         super.init()
     }
     
@@ -101,7 +99,6 @@ class User: NSObject {
         _current = user
     }
 }
-
 
 extension User: NSCoding {
     func encode(with aCoder: NSCoder) {
