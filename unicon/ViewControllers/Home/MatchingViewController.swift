@@ -24,8 +24,8 @@ class MatchingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.white
         
+        kolodaView.layer.cornerRadius = 20.0
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
@@ -68,6 +68,14 @@ class MatchingViewController: UIViewController {
                 self?.kolodaView.reloadData()
             }
         })
+    }
+    
+    @IBAction func likeButttonTapped(_ sender: UIButton) {
+        kolodaView.swipe(.right, force: true)
+    }
+    
+    @IBAction func unlikeButtonTapped(_ sender: UIButton) {
+        kolodaView.swipe(.left, force: true)
     }
     
 }
