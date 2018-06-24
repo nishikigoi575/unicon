@@ -38,6 +38,18 @@ class MatchingViewController: UIViewController {
         
     }
     
+    @IBAction func goProfile(_ sender: Any) {
+        let transition = CATransition()
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        let HowToLeftPush = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        
+        self.navigationController?.pushViewController(HowToLeftPush, animated: true )
+    }
+    
+    
     func reloadTeams() {
         self.paginationHelper.reloadData(completion: { [weak self] (teams) in
             self?.teams = teams

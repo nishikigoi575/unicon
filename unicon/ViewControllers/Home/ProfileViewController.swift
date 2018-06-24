@@ -21,6 +21,8 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.hidesBackButton = true
+        
         if let name = Auth.auth().currentUser?.displayName {
             nameLabel.text = name
         }
@@ -45,6 +47,13 @@ class ProfileViewController: UIViewController {
     }
     
     
+    @IBAction func goMatch(_ sender: Any) {
+        
+        goBack()
+        
+    }
+    
+    
     @IBAction func logOut(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -59,5 +68,27 @@ class ProfileViewController: UIViewController {
         }
         
     }
-    
+
+    func goBack() {
+        let transition = CATransition()
+        //CATransitionというメソッドを使う
+        
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        
+        //なんか色々書いてあるけどよくわからない
+        
+        transition.type = kCATransitionPush
+        
+        //push遷移するよという定義
+        
+        transition.subtype = kCATransitionFromRight
+        
+        //kCATransitionFromLeftのLeftをRightにすれば右遷移に変わる
+        
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        
+        //遷移先のViewControllerインスタンス化
+        
+        navigationController?.popViewController(animated: true)
+    }
 }
