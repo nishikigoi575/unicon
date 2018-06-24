@@ -38,6 +38,8 @@ class MatchingViewController: UIViewController {
         kolodaView.dataSource = self // dataSource設定
         kolodaView.delegate = self // delegate設定
         
+        
+        
     }
     
     override func didReceiveMemoryWarning() {

@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         
         IQKeyboardManager.shared.enable = true
         
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
         return true
     }
     

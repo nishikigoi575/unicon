@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S9v-M8-Sqa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S9v-M8-Sqa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -26,7 +26,7 @@
                                     <action selector="logOut:" destination="OHy-Qk-px9" eventType="touchUpInside" id="5W4-Wu-jbb"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
                                 <rect key="frame" x="67" y="168" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Uj2-2V-a5C"/>
@@ -42,11 +42,6 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="4zM-t8-kzn" firstAttribute="trailing" secondItem="SbG-Fx-jyL" secondAttribute="trailing" constant="68" id="gWA-e4-pLo"/>
-                            <constraint firstItem="SbG-Fx-jyL" firstAttribute="leading" secondItem="4zM-t8-kzn" secondAttribute="leading" constant="67" id="pBb-cT-RAr"/>
-                            <constraint firstItem="SbG-Fx-jyL" firstAttribute="top" secondItem="4zM-t8-kzn" secondAttribute="top" constant="148" id="tS2-8Z-0aX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4zM-t8-kzn"/>
                     </view>
                     <navigationItem key="navigationItem" id="Jke-jf-7bZ"/>
