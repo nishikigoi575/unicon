@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		17039679FCBD540BE19E0BBA /* Pods_uniconUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */; };
 		1A9D85CF537E510B5969CE22 /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
-		202F29ED20DF53CF001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29EC20DF53CF001C8210 /* ChatViewController.swift */; };
+		202F29F720DF7F9A001C8210 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29F620DF7F9A001C8210 /* CardView.swift */; };
+		202F29F920DF82E7001C8210 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
+		202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
+		202F29FF20DFC3B5001C8210 /* CardViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */; };
+		202F2A0120DFC3CC001C8210 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0020DFC3CC001C8210 /* UserHelper.swift */; };
+		202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */; };
+		202F2A0520DFC3EF001C8210 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0420DFC3EF001C8210 /* Info.plist */; };
+		202F2A0720DFC41D001C8210 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0620DFC41D001C8210 /* memo.txt */; };
+		202F2A0920DFC502001C8210 /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */; };
 		203315AC20DF52C5005E7B17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203315AB20DF52C5005E7B17 /* HomeViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
-		43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
 		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
@@ -38,7 +45,6 @@
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
 		4360356720DB41D80092361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356620DB41D80092361A /* User.swift */; };
 		4360356A20DB4C840092361A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356920DB4C840092361A /* Constants.swift */; };
-		4360356C20DB52B60092361A /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356B20DB52B60092361A /* UserHelper.swift */; };
 		4360356E20DB78AD0092361A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356D20DB78AD0092361A /* UserService.swift */; };
 		4360357020DB8D700092361A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356F20DB8D700092361A /* Team.swift */; };
 		4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4360357120DC9B600092361A /* JoinTeam.storyboard */; };
@@ -48,7 +54,6 @@
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
 		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
-		436C5D5D20DCEB480002B3AA /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 436C5D5C20DCEB480002B3AA /* memo.txt */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
@@ -77,11 +82,18 @@
 /* Begin PBXFileReference section */
 		0BC9CBD621C5F9265C50ECA4 /* Pods-uniconTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uniconTests/Pods-uniconTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unicon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		202F29EC20DF53CF001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		202F29F620DF7F9A001C8210 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		202F29F820DF82E7001C8210 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
+		202F29FA20DF8522001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewHelper.swift; path = unicon/Helpers/CardViewHelper.swift; sourceTree = SOURCE_ROOT; };
+		202F2A0020DFC3CC001C8210 /* UserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHelper.swift; path = unicon/Helpers/UserHelper.swift; sourceTree = SOURCE_ROOT; };
+		202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "unicon/Supporting Files/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		202F2A0420DFC3EF001C8210 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "unicon/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
+		202F2A0620DFC41D001C8210 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = memo.txt; path = "unicon/Supporting Files/memo.txt"; sourceTree = SOURCE_ROOT; };
+		202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UCPaginationHelper.swift; path = ../../../UCPaginationHelper.swift; sourceTree = "<group>"; };
 		203315AB20DF52C5005E7B17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
-		43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF220D6207600B3DB50 /* FacebookShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +119,6 @@
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
 		4360356620DB41D80092361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4360356920DB4C840092361A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "unicon/Supporting Files/Constants.swift"; sourceTree = SOURCE_ROOT; };
-		4360356B20DB52B60092361A /* UserHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserHelper.swift; path = "unicon/Supporting Files/UserHelper.swift"; sourceTree = SOURCE_ROOT; };
 		4360356D20DB78AD0092361A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4360356F20DB8D700092361A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		4360357120DC9B600092361A /* JoinTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinTeam.storyboard; sourceTree = "<group>"; };
@@ -117,12 +128,10 @@
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436C5D5A20DCE6B10002B3AA /* UIExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtention.swift; sourceTree = "<group>"; };
-		436C5D5C20DCEB480002B3AA /* memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
 		43A5D3FB20D4EF69004612D4 /* unicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A5D40520D4EF6B004612D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43A5D40820D4EF6B004612D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		43A5D40A20D4EF6B004612D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43A5D40F20D4EF6B004612D4 /* uniconTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uniconTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D41320D4EF6B004612D4 /* uniconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uniconTests.swift; sourceTree = "<group>"; };
 		43A5D41520D4EF6B004612D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -180,18 +189,34 @@
 				203315AB20DF52C5005E7B17 /* HomeViewController.swift */,
 				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
 				43222CFD20D625D500B3DB50 /* ProfileViewController.swift */,
-				202F29EC20DF53CF001C8210 /* ChatViewController.swift */,
+				202F29FA20DF8522001C8210 /* ChatViewController.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		202F29EE20DF7DA5001C8210 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				202F29F620DF7F9A001C8210 /* CardView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		202F29F520DF7F54001C8210 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				202F29F820DF82E7001C8210 /* CardView.xib */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		2037633620D8FDF800A86A75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */,
-				43A5D40A20D4EF6B004612D4 /* Info.plist */,
+				202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */,
+				202F2A0420DFC3EF001C8210 /* Info.plist */,
 				4360356920DB4C840092361A /* Constants.swift */,
-				436C5D5C20DCEB480002B3AA /* memo.txt */,
+				202F2A0620DFC41D001C8210 /* memo.txt */,
 			);
 			name = "Supporting Files";
 			path = "New Group";
@@ -200,7 +225,9 @@
 		2037633720D8FE2C00A86A75 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				4360356B20DB52B60092361A /* UserHelper.swift */,
+				202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */,
+				202F2A0020DFC3CC001C8210 /* UserHelper.swift */,
+				202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */,
 			);
 			name = Helpers;
 			path = "New Group1";
@@ -330,11 +357,13 @@
 			children = (
 				43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */,
 				43222CF920D6243E00B3DB50 /* ViewControllers */,
-				43222CF420D622D900B3DB50 /* Storyboards */,
-				432FA1D620D8F2580058A744 /* Services */,
-				43222D0120D6270B00B3DB50 /* Extentions */,
-				2037633720D8FE2C00A86A75 /* Helpers */,
+				202F29EE20DF7DA5001C8210 /* Views */,
 				4360356820DB41DE0092361A /* Models */,
+				432FA1D620D8F2580058A744 /* Services */,
+				43222CF420D622D900B3DB50 /* Storyboards */,
+				202F29F520DF7F54001C8210 /* CustomViews */,
+				2037633720D8FE2C00A86A75 /* Helpers */,
+				43222D0120D6270B00B3DB50 /* Extentions */,
 				2037633620D8FDF800A86A75 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
 			);
@@ -487,12 +516,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
+				202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */,
+				202F2A0520DFC3EF001C8210 /* Info.plist in Resources */,
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
+				202F2A0720DFC41D001C8210 /* memo.txt in Resources */,
+				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
-				43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */,
 				43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */,
-				436C5D5D20DCEB480002B3AA /* memo.txt in Resources */,
 				43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -639,6 +670,7 @@
 			files = (
 				203315AC20DF52C5005E7B17 /* HomeViewController.swift in Sources */,
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
+				202F2A0120DFC3CC001C8210 /* UserHelper.swift in Sources */,
 				2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
@@ -646,10 +678,12 @@
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
+				202F2A0920DFC502001C8210 /* UCPaginationHelper.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
-				4360356C20DB52B60092361A /* UserHelper.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
+				202F29F720DF7F9A001C8210 /* CardView.swift in Sources */,
 				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
 				4360357420DC9C950092361A /* JoinTeamViewController.swift in Sources */,
@@ -657,9 +691,9 @@
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
+				202F29FF20DFC3B5001C8210 /* CardViewHelper.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
-				202F29ED20DF53CF001C8210 /* ChatViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4360356A20DB4C840092361A /* Constants.swift in Sources */,
@@ -830,7 +864,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z8242LF74;
-				INFOPLIST_FILE = "$(SRCROOT)/unicon/New Group/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -850,7 +884,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z8242LF74;
-				INFOPLIST_FILE = "$(SRCROOT)/unicon/New Group/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

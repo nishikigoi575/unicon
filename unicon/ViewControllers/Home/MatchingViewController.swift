@@ -9,64 +9,75 @@
 import Foundation
 import UIKit
 import Koloda
+import Alamofire
+import AlamofireImage
 
 class MatchingViewController: UIViewController {
     
-    private let cardWidth = CGFloat(250)
-    private let cardHeight = CGFloat(300)
+    let paginationHelper = UCPaginationHelper<Team>(keyUID: nil, serviceMethod: TeamService.allTeams)
     
-    let kolodaView = KolodaView()
+    @IBOutlet weak var kolodaView: KolodaView!
     
-    let images = [UIImage(named: "test1"), UIImage(named: "test2"), UIImage(named: "test3"), UIImage(named: "test4")]
+    var teams = [Team]()
     
-    var dataSource = [UIView]()
+    var dataSource = [CardView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
-        for image in images {
-            let card = UIImageView(frame: CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight))
-            card.image = image
-            dataSource.append(card)
-        }
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
         
-        kolodaView.frame = CGRect(x: 0, y: 0, width: cardWidth, height: cardHeight)
-        kolodaView.center = self.view.center
-        self.view.addSubview(kolodaView)
-        
-        kolodaView.dataSource = self // dataSource設定
-        kolodaView.delegate = self // delegate設定
-        
-        
-        
+        reloadTeams()
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
-    @IBAction func profileBarButttonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "toProfileVC", sender: nil)
+    
+    func reloadTeams() {
+        self.paginationHelper.reloadData(completion: { [weak self] (teams) in
+            self?.teams = teams
+            CardViewHelper.makeCardViews(teams: teams, size: self?.kolodaView.frame.size) { cards in
+                self?.dataSource = cards
+                self?.kolodaView.reloadData()
+            }
+        })
     }
     
-    @IBAction func chatBarButtonTapped(_ sender: UIBarButtonItem) {
-        self.performSegue(withIdentifier: "toChatVC", sender: nil)
+    func paginate() {
+        paginationHelper.paginate(completion: { [weak self] (teams) in
+            self?.teams.append(contentsOf: teams)
+            CardViewHelper.makeCardViews(teams: teams, size: self?.kolodaView.frame.size) { cards in
+                self?.dataSource.append(contentsOf: cards)
+                self?.kolodaView.reloadData()
+            }
+        })
     }
     
 }
 
 extension MatchingViewController: KolodaViewDelegate {
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
         print("Out of stock!!")
+        
     }
     
-    func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
+    private func koloda(_ koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         print("index \(index) has tapped!!")
     }
     
-    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+    func koloda(_ koloda: KolodaView, shouldSwipeCardAt index: Int, in direction: SwipeResultDirection) -> Bool {
+        if dataSource.count - index < 6 {
+            paginate()
+        }
+        return true
+    }
+    
+    func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
         switch direction {
         case .right:
             print("Swiped to right!")
@@ -88,7 +99,18 @@ extension MatchingViewController: KolodaViewDataSource {
     }
     
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        return dataSource[Int(index)]
+        let card = dataSource[index]
+        let team = teams[index]
+        if let image = team.teamImage {
+            card.imageView.image = image
+        } else {
+            Alamofire.request(team.teamImageURL).responseImage { response in
+                if let image = response.result.value {
+                    card.imageView.image = image
+                }
+            }
+        }
+        return card
     }
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {

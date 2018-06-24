@@ -1,110 +1,9 @@
-////
-////  TeamService.swift
-////  unicon
-////
-////  Created by Imajin Kawabe on 2018/06/19.
-////  Copyright © 2018年 Imajin Kawabe. All rights reserved.
-////
 //
-//import Foundation
-//import UIKit
-//import FirebaseStorage
+//  TeamService.swift
+//  unicon
 //
-//class TeamService {
-//    
-//    static func create(for image: UIImage, targetGender: String, teamName: String, teamIntro: String, ownerUID: String,  completion: @escaping (Bool) -> Void) {
-//        let imageRef = StorageReference.newPostImageReference()
-//        StorageService.uploadImage(image, at: imageRef) { (downloadURL) in
-//            guard let downloadURL = downloadURL else {
-//                return completion(false)
-//            }
-//            
-//            let urlString = downloadURL.absoluteString
-//            create(forURLString: urlString, ku1: ku1, ku2: ku2, ku3: ku3, ku123: ku123, kanaKu1: kanaKu1, kanaKu2: kanaKu2, kanaKu3: kanaKu3, kanaKu123: kanaKu123, uid: uid, userID: userID, userImage: userImage, username: username, topic: topic, likeCount: likeCount, topicId: topicId, topicTitle: topicTitle) { success in
-//                if success {
-//                    completion(true)
-//                } else {
-//                    completion(false)
-//                }
-//            }
-//        }
-//    }
-//    
-//    
-//    private static func create(forURLString urlString: String, targetGeneder: String, teamName: String, teamIntro: String, ownerUID: String, success: @escaping (Bool) -> Void) {
-//        guard let currentUser = User.current else { return success(false) }
-//        let post = Post(ku1: ku1, ku2: ku2, ku3: ku3, ku123: ku123, kanaKu1: kanaKu1, kanaKu2: kanaKu2, kanaKu3: kanaKu3, kanaKu123: kanaKu123, haiku: urlString, uid: uid,  userID: userID, userImage: userImage, username: username, topic: topic, topicTitle: topicTitle, topicId: topicId, likeCount: likeCount)
-//        
-//        print(topicId)
-//        
-//        let rootRef = Firestore.firestore()
-//        let newPostRef = rootRef.collection("posts").document()
-//        post.postID = newPostRef.documentID
-//        // Upload posts
-//        rootRef.collection("posts").document(post.postID!).setData(post.dictValue) { error in
-//            if let error = error {
-//                print("posting error: \(error)")
-//                return success(false)
-//            } else {
-//                let postRefData = ["date": post.date]
-//                // Upload myPosts
-//                let myPostRef = rootRef.collection("users").document(uid).collection("myPosts").document(post.postID!)
-//                myPostRef.setData(postRefData, completion: { err in
-//                    if let err = err {
-//                        print("fail to upload my posts: \(err)")
-//                        return success(false)
-//                    } else {
-//                        let dispatchGroup = DispatchGroup()
-//                        // Upload followingPosts
-//                        UserService.followers(for: currentUser.uid) { (followerUIDs) in
-//                            for uid in followerUIDs {
-//                                let followPostRef = rootRef.collection("users").document(uid).collection("followingPosts").document(post.postID!)
-//                                dispatchGroup.enter()
-//                                followPostRef.setData(postRefData, completion: { err in
-//                                    if let err = err {
-//                                        print("fail to upload following posts: \(err)")
-//                                        return success(false)
-//                                    } else {
-//                                        dispatchGroup.leave()
-//                                    }
-//                                })
-//                            }
-//                            dispatchGroup.notify(queue: .main, execute: {
-//                                if topic {
-//                                    let topicPostRef = Firestore.firestore().collection("topics").document(topicId).collection("posts").document(post.postID!)
-//                                    
-//                                    addPostsNum(topicId: topicId)
-//                                    
-//                                    topicPostRef.setData(postRefData, completion: { err in
-//                                        if let err = err {
-//                                            print("ERROR TOPIC POST: \(err)")
-//                                            return success(false)
-//                                        } else {
-//                                            let postRef = rootRef.collection("posts").document(post.postID!)
-//                                            postRef.setData(["topicId": topicId], options: SetOptions.merge()) { error in
-//                                                if let error = error {
-//                                                    assertionFailure(error.localizedDescription)
-//                                                    return success(false)
-//                                                } else {
-//                                                    success(true)
-//                                                }
-//                                            }
-//                                        }
-//                                    })
-//                                    
-//                                } else {
-//                                    success(true)
-//                                }
-//                            })
-//                        }
-//                    }
-//                })
-//            }
-//        }
-//    }
-//    
-//    
-//}
+//  Created by Imajin Kawabe on 2018/06/19.
+//  Copyright © 2018年 Imajin Kawabe. All rights reserved.
 //
 
 import Foundation
@@ -115,7 +14,6 @@ import FirebaseAuth
 
 class TeamService {
     
-    
     static func show(forTeamID teamID: String, completion: @escaping (Team?) -> Void) {
         //print(uid)
         let ref = Firestore.firestore().collection("teams").document(teamID)
@@ -124,7 +22,6 @@ class TeamService {
             guard let document = document, let team = Team(snapshot: document) else {
                 return completion(nil)
             }
-            
             completion(team)
         }
     }
@@ -161,7 +58,7 @@ class TeamService {
         let newTeamRef = rootRef.collection("teams").document()
         let teamID = newTeamRef.documentID
         
-        let team = Team(teamName: teamName, teamGender: teamGender, targetGender: targetGender, numOfMembers: 1, teamImage: urlStr, intro: intro, teamID: teamID, createdBy: createdBy)
+        let team = Team(teamName: teamName, teamGender: teamGender, targetGender: targetGender, numOfMembers: 1, teamImageURL: urlStr, intro: intro, teamID: teamID, createdBy: createdBy)
         
         rootRef.collection("teams").document(teamID).setData(team.dictValue) { error in
             if let error = error {
@@ -213,6 +110,42 @@ class TeamService {
                     }
                 }
         }
+    }
+    
+    static func allTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]) -> Void) {
+        let teamRef = Firestore.firestore().collection("teams")
+        UCPaginationTeamHelper.paginationTeam(pageSize: pageSize, numOfObjects: numOfObjects, ref: teamRef) { (teams) in
+            completion(teams)
+        }
+    }
+    
+    static func getFive(completion: @escaping ([Team]?) -> Void) {
+        let ref = Firestore.firestore().collection("teams").limit(to: 5)
+        ref.getDocuments{ (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error retreving posts: \(error.debugDescription)")
+                return completion([])
+            }
+            let dispatchGroup = DispatchGroup()
+            
+            var teams = [Team]()
+            for teamSnap in snapshot.documents {
+                guard let teamDict = teamSnap.data() as? [String: Any]
+                    else { continue }
+                
+                dispatchGroup.enter()
+                TeamService.show(forTeamID: teamSnap.documentID) { (team) in
+                    if let team = team {
+                        teams.append(team)
+                        dispatchGroup.leave()
+                    }
+                }
+            }
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(teams)
+            })
+        }
+        
     }
     
 }
