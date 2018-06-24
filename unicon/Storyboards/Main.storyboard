@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ysq-cr-Rur">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ysq-cr-Rur">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,23 +69,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-CH-f9M" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="10" y="144" width="355" height="323"/>
+                                <rect key="frame" x="10" y="124" width="355" height="393"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8B-Ih-ipa">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="kNT-4R-rYk">
+                                        <rect key="frame" x="62" y="25" width="250" height="100"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-nI-jDx">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2hY-8w-YQJ"/>
+                                                    <constraint firstAttribute="height" constant="100" id="bce-y4-J84"/>
+                                                </constraints>
+                                                <state key="normal" image="crossIcon"/>
+                                                <connections>
+                                                    <action selector="unlikeButtonTapped:" destination="HcR-hg-Ncv" eventType="touchUpInside" id="vh0-8q-x0K"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFq-42-eaA">
+                                                <rect key="frame" x="150" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2IJ-e4-FdV"/>
+                                                    <constraint firstAttribute="height" constant="100" id="vvJ-tS-HJg"/>
+                                                </constraints>
+                                                <state key="normal" image="heartIcon"/>
+                                                <connections>
+                                                    <action selector="likeButttonTapped:" destination="HcR-hg-Ncv" eventType="touchUpInside" id="0Lm-RF-OfJ"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="J7q-Wq-XHi"/>
+                                    <constraint firstItem="kNT-4R-rYk" firstAttribute="centerX" secondItem="V8B-Ih-ipa" secondAttribute="centerX" id="Iwl-H4-cvf"/>
+                                    <constraint firstAttribute="height" constant="150" id="J7q-Wq-XHi"/>
+                                    <constraint firstItem="kNT-4R-rYk" firstAttribute="centerY" secondItem="V8B-Ih-ipa" secondAttribute="centerY" id="eEj-Gm-vvl"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" id="8jQ-jc-PDA"/>
                             <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="sdC-CH-f9M" secondAttribute="trailing" constant="10" id="Dix-jN-Wdv"/>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="top" secondItem="sdC-CH-f9M" secondAttribute="bottom" id="Eg4-f8-vsh"/>
-                            <constraint firstItem="sdC-CH-f9M" firstAttribute="top" secondItem="gfs-0w-pet" secondAttribute="top" constant="80" id="O48-ux-e49"/>
+                            <constraint firstItem="sdC-CH-f9M" firstAttribute="top" secondItem="gfs-0w-pet" secondAttribute="top" constant="60" id="O48-ux-e49"/>
                             <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="V8B-Ih-ipa" secondAttribute="trailing" id="Yy9-Xr-LcM"/>
                             <constraint firstItem="sdC-CH-f9M" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" constant="10" id="fdo-hb-5EX"/>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="bottom" secondItem="gfs-0w-pet" secondAttribute="bottom" id="r3Q-F5-8Zl"/>
@@ -160,6 +191,8 @@
     </scenes>
     <resources>
         <image name="chat" width="32" height="32"/>
+        <image name="crossIcon" width="64" height="64"/>
+        <image name="heartIcon" width="64" height="64"/>
         <image name="unicorn" width="64" height="64"/>
     </resources>
 </document>

@@ -31,7 +31,6 @@ class CardView: UIView {
     func afterInit() {
         self.layer.cornerRadius = 20.0
         self.layer.masksToBounds = true
-        self.backgroundColor = .blue
     }
     
     // xibからカスタムViewを読み込んで準備する
