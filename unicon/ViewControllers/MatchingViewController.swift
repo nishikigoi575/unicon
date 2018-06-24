@@ -45,6 +45,14 @@ class MatchingViewController: UIViewController {
         
     }
 
+    @IBAction func profileBarButttonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "toProfileVC", sender: nil)
+    }
+    
+    @IBAction func chatBarButtonTapped(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "toChatVC", sender: nil)
+    }
+    
 }
 
 extension MatchingViewController: KolodaViewDelegate {
@@ -54,6 +62,17 @@ extension MatchingViewController: KolodaViewDelegate {
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         print("index \(index) has tapped!!")
+    }
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        switch direction {
+        case .right:
+            print("Swiped to right!")
+        case .left:
+            print("Swiped to left!")
+        default:
+            return
+        }
     }
 }
 

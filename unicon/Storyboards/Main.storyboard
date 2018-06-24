@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OHy-Qk-px9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPO-PA-pe7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="y8S-qq-2Bt">
             <objects>
-                <viewController storyboardIdentifier="HomeSB" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHy-Qk-px9" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHy-Qk-px9" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcr-Bq-U1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
-                                <rect key="frame" x="67" y="168" width="240" height="240"/>
+                                <rect key="frame" x="67" y="212" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Uj2-2V-a5C"/>
                                     <constraint firstAttribute="width" constant="240" id="fwJ-Gp-UXn"/>
@@ -56,7 +56,80 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sI3-Jx-Bno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="54.422788605697157"/>
+            <point key="canvasLocation" x="1734" y="771"/>
+        </scene>
+        <!--Matching View Controller-->
+        <scene sceneID="4Rc-rw-scx">
+            <objects>
+                <viewController id="HcR-hg-Ncv" customClass="MatchingViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dVZ-Yb-YqD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="gfs-0w-pet"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1bA-dU-6bh">
+                        <barButtonItem key="leftBarButtonItem" title="Prof" id="SOV-Ms-JAs">
+                            <connections>
+                                <action selector="profileBarButttonTapped:" destination="HcR-hg-Ncv" id="OWf-iM-vvU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Chat" id="AQ2-Mt-Y2t">
+                            <connections>
+                                <action selector="chatBarButtonTapped:" destination="HcR-hg-Ncv" id="Rx6-Zl-p7U"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="OHy-Qk-px9" kind="show" identifier="toProfileVC" id="57v-oS-l0g"/>
+                        <segue destination="VoB-CG-rLw" kind="show" identifier="toChatVC" id="nWo-ic-f88"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C5i-sL-8VG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1735" y="-116"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="xP1-NV-eGv">
+            <objects>
+                <viewController storyboardIdentifier="ChatVC" id="VoB-CG-rLw" customClass="ChatViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EIU-oF-jLg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ped-1Z-jBa">
+                                <rect key="frame" x="124" y="303" width="127" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="UIQ-gs-NAj"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NUJ-ZW-x9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3087.1999999999998" y="-116.49175412293854"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7LX-m8-naH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPO-PA-pe7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m4i-tW-KqV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="HcR-hg-Ncv" kind="relationship" relationship="rootViewController" id="Fgc-Yf-ZKC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-kf-Vpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="909.60000000000002" y="-116.49175412293854"/>
         </scene>
     </scenes>
 </document>
