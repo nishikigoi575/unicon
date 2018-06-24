@@ -22,7 +22,7 @@ class CreateOrJoinViewController: UIViewController {
         myProfileImageView.layer.masksToBounds = true
         
         let me = Auth.auth().currentUser
-        if let name = me?.displayName {
+        if let name = User.current?.firstName {
             welcomeYouLable.text = "\(name)."
         }
         if let imageUrl = me?.photoURL {
