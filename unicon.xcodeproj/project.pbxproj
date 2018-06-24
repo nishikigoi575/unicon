@@ -327,6 +327,7 @@
 				4360356820DB41DE0092361A /* Models */,
 				2037633620D8FDF800A86A75 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
+				432FA1DD20D8F7EA0058A744 /* Models */,
 			);
 			path = unicon;
 			sourceTree = "<group>";
@@ -352,7 +353,7 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2037633820D9005B00A86A75 /* FirebaseFirestore.framework */,
+				432FA1E020D906B10058A744 /* FirebaseFirestore.framework */,
 				4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */,
 				43222D0220D64F4400B3DB50 /* Alamofire.framework */,
 				43222D0420D64F4400B3DB50 /* AlamofireImage.framework */,
@@ -639,12 +640,14 @@
 				4360356C20DB52B60092361A /* UserHelper.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
+				432FA1DF20D8FF9C0058A744 /* User.swift in Sources */,
 				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
 				4360357420DC9C950092361A /* JoinTeamViewController.swift in Sources */,
 				43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */,
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
+				432FA1DC20D8F7E60058A744 /* Team.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,

@@ -19,6 +19,7 @@ extension StorageReference {
         
         return Storage.storage().reference().child("images/users/\(uid)/\(timestamp).jpg")
     }
+
     /*
     static func newPostImageReference() -> StorageReference {
         let timestamp = dateFormatter.string(from: Date())
@@ -31,6 +32,7 @@ extension StorageReference {
         }
     }
     */
+
     static func newTopicImageReference(date: String) -> StorageReference {
         return Storage.storage().reference().child("images/topics/\(date).jpg")
     }

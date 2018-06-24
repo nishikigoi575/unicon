@@ -43,7 +43,6 @@ class LoginViewController: UIViewController {
                 GraphRequest(graphPath: "me", parameters: ["fields":"email,first_name,last_name,gender,picture,age_range"]).start { (response, result) in
                     switch result {
                     case .success(let response):
-                        
                         let credential = FacebookAuthProvider
                             .credential(withAccessToken: token.authenticationToken)
                         
