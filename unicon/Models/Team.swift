@@ -9,25 +9,27 @@
 import Foundation
 import UIKit
 import Firestore.FIRDocumentSnapshot
+import Alamofire
+import AlamofireImage
 
-class Team{
+class Team {
     var teamName: String
     var teamGender: String
     var targetGender: String
     var numOfMembers: Int
-    var teamImage: String
+    var teamImageURL: String
     var intro: String?
     var teamID: String
     var createdBy: String
+    var teamImage: UIImage?
     
-    
-    init(teamName: String, teamGender: String, targetGender: String, numOfMembers: Int, teamImage: String, intro: String, teamID: String, createdBy: String) {
+    init(teamName: String, teamGender: String, targetGender: String, numOfMembers: Int, teamImageURL: String, intro: String, teamID: String, createdBy: String) {
         
         self.teamName = teamName
         self.teamGender = teamGender
         self.targetGender = targetGender
         self.numOfMembers = numOfMembers
-        self.teamImage = teamImage
+        self.teamImageURL = teamImageURL
         self.intro = intro
         self.teamID = teamID
         self.createdBy = createdBy
@@ -40,7 +42,7 @@ class Team{
             let teamGender = dictionary["teamGender"] as? String,
             let targetGender = dictionary["targetGender"] as? String,
             let numOfMembers = dictionary["numOfMembers"] as? Int,
-            let teamImage = dictionary["teamImage"] as? String,
+            let teamImageURL = dictionary["teamImage"] as? String,
             let teamID = dictionary["teamID"] as? String,
             let createdBy = dictionary["createdBy"] as? String
         else {return nil}
@@ -49,7 +51,7 @@ class Team{
         self.teamGender = teamGender
         self.targetGender = targetGender
         self.numOfMembers = numOfMembers
-        self.teamImage = teamImage
+        self.teamImageURL = teamImageURL
         self.teamID = teamID
         self.createdBy = createdBy
         
@@ -57,6 +59,11 @@ class Team{
             self.intro = intro
         }
         
+        Alamofire.request(teamImageURL).responseImage { response in
+            if let image = response.result.value {
+                self.teamImage = image
+            }
+        }
         
     }
     
@@ -66,7 +73,7 @@ class Team{
             "teamGender":teamGender,
             "targetGender":targetGender,
             "numOfMembers":numOfMembers,
-            "teamImage":teamImage,
+            "teamImage":teamImageURL,
             "teamID":teamID,
             "intro":intro,
             "createdBy":createdBy
