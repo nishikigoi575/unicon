@@ -14,9 +14,6 @@ import AlamofireImage
 
 class MatchingViewController: UIViewController {
     
-    private let cardWidth = CGFloat(350)
-    private let cardHeight = CGFloat(600)
-    
     let paginationHelper = UCPaginationHelper<Team>(keyUID: nil, serviceMethod: TeamService.allTeams)
     
     @IBOutlet weak var kolodaView: KolodaView!
@@ -33,12 +30,25 @@ class MatchingViewController: UIViewController {
         kolodaView.delegate = self
         
         reloadTeams()
+
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
+    
+    @IBAction func goProfile(_ sender: Any) {
+        let transition = CATransition()
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionPush
+        transition.subtype = kCATransitionFromLeft
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        let HowToLeftPush = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        
+        self.navigationController?.pushViewController(HowToLeftPush, animated: true )
+    }
+    
     
     func reloadTeams() {
         self.paginationHelper.reloadData(completion: { [weak self] (teams) in

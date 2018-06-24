@@ -49,7 +49,7 @@ open class EZSwipeController: UIViewController {
                 return UIScreen.main.bounds.width - StatusBarHeight
             }
         }
-        public static let navigationBarHeight: CGFloat = 44
+        public static let navigationBarHeight: CGFloat = 80
         public static let lightGrayColor = UIColor(red: 248, green: 248, blue: 248, alpha: 1)
     }
 
