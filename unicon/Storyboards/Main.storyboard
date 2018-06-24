@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cPO-PA-pe7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S9v-M8-Sqa">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="y8S-qq-2Bt">
             <objects>
-                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHy-Qk-px9" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OHy-Qk-px9" customClass="ProfileViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jcr-Bq-U1Q">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SbG-Fx-jyL">
-                                <rect key="frame" x="67" y="212" width="240" height="240"/>
+                                <rect key="frame" x="67" y="168" width="240" height="240"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="Uj2-2V-a5C"/>
                                     <constraint firstAttribute="width" constant="240" id="fwJ-Gp-UXn"/>
@@ -49,6 +49,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4zM-t8-kzn"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jke-jf-7bZ"/>
                     <connections>
                         <outlet property="imageView" destination="SbG-Fx-jyL" id="nrg-24-LbO"/>
                         <outlet property="nameLabel" destination="9SK-8D-uk0" id="Fv0-zh-ewU"/>
@@ -56,38 +57,39 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sI3-Jx-Bno" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="771"/>
+            <point key="canvasLocation" x="6025" y="716"/>
+        </scene>
+        <!--Home View Controller-->
+        <scene sceneID="RZl-ac-eKa">
+            <objects>
+                <viewController id="S9v-M8-Sqa" customClass="HomeViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3T6-bL-sWk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="vc4-aw-3hA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xT3-Eb-EX7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdb-9y-izD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4162.3999999999996" y="-116.49175412293854"/>
         </scene>
         <!--Matching View Controller-->
         <scene sceneID="4Rc-rw-scx">
             <objects>
-                <viewController id="HcR-hg-Ncv" customClass="MatchingViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MatchingVC" id="HcR-hg-Ncv" customClass="MatchingViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVZ-Yb-YqD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gfs-0w-pet"/>
                     </view>
-                    <navigationItem key="navigationItem" id="1bA-dU-6bh">
-                        <barButtonItem key="leftBarButtonItem" title="Prof" id="SOV-Ms-JAs">
-                            <connections>
-                                <action selector="profileBarButttonTapped:" destination="HcR-hg-Ncv" id="OWf-iM-vvU"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Chat" id="AQ2-Mt-Y2t">
-                            <connections>
-                                <action selector="chatBarButtonTapped:" destination="HcR-hg-Ncv" id="Rx6-Zl-p7U"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <segue destination="OHy-Qk-px9" kind="show" identifier="toProfileVC" id="57v-oS-l0g"/>
-                        <segue destination="VoB-CG-rLw" kind="show" identifier="toChatVC" id="nWo-ic-f88"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="xnd-bf-uFm"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5i-sL-8VG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="-116"/>
+            <point key="canvasLocation" x="6024.8000000000002" y="-116.49175412293854"/>
         </scene>
         <!--Chat View Controller-->
         <scene sceneID="xP1-NV-eGv">
@@ -108,28 +110,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UIQ-gs-NAj"/>
                     </view>
+                    <navigationItem key="navigationItem" id="4Ca-VM-HGy"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NUJ-ZW-x9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3087.1999999999998" y="-116.49175412293854"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="7LX-m8-naH">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPO-PA-pe7" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="m4i-tW-KqV">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="HcR-hg-Ncv" kind="relationship" relationship="rootViewController" id="Fgc-Yf-ZKC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qge-kf-Vpz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="909.60000000000002" y="-116.49175412293854"/>
+            <point key="canvasLocation" x="7783.1999999999998" y="-116.49175412293854"/>
         </scene>
     </scenes>
 </document>

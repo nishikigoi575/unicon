@@ -14,6 +14,7 @@ PODS:
   - BoringSSL/Implementation (10.0.5):
     - BoringSSL/Interface (= 10.0.5)
   - BoringSSL/Interface (10.0.5)
+  - EZSwipeController (0.6.1)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
     - FBSDKCoreKit (~> 4.33)
@@ -110,6 +111,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
+  - EZSwipeController
   - FacebookCore
   - FacebookLogin
   - FacebookShare
@@ -126,6 +128,7 @@ SPEC REPOS:
     - AlamofireImage
     - Bolts
     - BoringSSL
+    - EZSwipeController
     - FacebookCore
     - FacebookLogin
     - FacebookShare
@@ -160,6 +163,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
+  EZSwipeController: 255b0f8aed31963b0236802c926e27dd006a2532
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
   FacebookShare: c9ee8e5399d961fda00ded9befccacfe04fccf93
@@ -186,6 +190,6 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
 
-PODFILE CHECKSUM: 0edd8fa3c98e6733bb392118d7d669f51e1e0fcb
+PODFILE CHECKSUM: 5e2d8c054b8fb2371a370a33b08c73d48d093e75
 
 COCOAPODS: 1.5.3

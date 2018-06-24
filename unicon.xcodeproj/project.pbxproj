@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		17039679FCBD540BE19E0BBA /* Pods_uniconUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */; };
 		1A9D85CF537E510B5969CE22 /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		202F29ED20DF53CF001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29EC20DF53CF001C8210 /* ChatViewController.swift */; };
+		203315AC20DF52C5005E7B17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203315AB20DF52C5005E7B17 /* HomeViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
 		43222CED20D61A2000B3DB50 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
@@ -17,7 +19,7 @@
 		43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222CF520D622FA00B3DB50 /* Onboard.storyboard */; };
 		43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CF720D623EA00B3DB50 /* LoginViewController.swift */; };
 		43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222CFB20D625AF00B3DB50 /* Main.storyboard */; };
-		43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFD20D625D500B3DB50 /* HomeViewController.swift */; };
+		43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFD20D625D500B3DB50 /* ProfileViewController.swift */; };
 		43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */; };
 		43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0220D64F4400B3DB50 /* Alamofire.framework */; };
 		43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0420D64F4400B3DB50 /* AlamofireImage.framework */; };
@@ -75,6 +77,8 @@
 /* Begin PBXFileReference section */
 		0BC9CBD621C5F9265C50ECA4 /* Pods-uniconTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uniconTests/Pods-uniconTests.debug.xcconfig"; sourceTree = "<group>"; };
 		13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_unicon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		202F29EC20DF53CF001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		203315AB20DF52C5005E7B17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEC20D61A2000B3DB50 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -84,7 +88,7 @@
 		43222CF520D622FA00B3DB50 /* Onboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboard.storyboard; sourceTree = "<group>"; };
 		43222CF720D623EA00B3DB50 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		43222CFB20D625AF00B3DB50 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		43222CFD20D625D500B3DB50 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		43222CFD20D625D500B3DB50 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Storyboard+Utility.siwft.swift"; sourceTree = "<group>"; };
 		43222D0220D64F4400B3DB50 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222D0420D64F4400B3DB50 /* AlamofireImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AlamofireImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +174,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202F29EB20DF5399001C8210 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				203315AB20DF52C5005E7B17 /* HomeViewController.swift */,
+				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
+				43222CFD20D625D500B3DB50 /* ProfileViewController.swift */,
+				202F29EC20DF53CF001C8210 /* ChatViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		2037633620D8FDF800A86A75 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,10 +234,9 @@
 		43222CF920D6243E00B3DB50 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				202F29EB20DF5399001C8210 /* Home */,
 				43222CFA20D6245400B3DB50 /* OnBoard */,
-				43222CFD20D625D500B3DB50 /* HomeViewController.swift */,
 				43222D1020D7683400B3DB50 /* CreateTeam */,
-				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
 				4360357520DC9C9A0092361A /* JoinTeam */,
 			);
 			path = ViewControllers;
@@ -565,6 +579,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwipeController/EZSwipeController.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -590,6 +605,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwipeController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -621,6 +637,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203315AC20DF52C5005E7B17 /* HomeViewController.swift in Sources */,
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
 				2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
@@ -642,7 +659,8 @@
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
-				43222CFE20D625D500B3DB50 /* HomeViewController.swift in Sources */,
+				202F29ED20DF53CF001C8210 /* ChatViewController.swift in Sources */,
+				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4360356A20DB4C840092361A /* Constants.swift in Sources */,
 			);

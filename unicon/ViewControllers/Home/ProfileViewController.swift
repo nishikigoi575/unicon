@@ -11,7 +11,7 @@ import FirebaseAuth
 import FacebookLogin
 import AlamofireImage
 
-class HomeViewController: UIViewController {
+class ProfileViewController: UIViewController {
     var window: UIWindow?
     
     @IBOutlet weak var imageView: UIImageView!
