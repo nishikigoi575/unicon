@@ -59,12 +59,6 @@ class Team {
             self.intro = intro
         }
         
-        Alamofire.request(teamImageURL).responseImage { response in
-            if let image = response.result.value {
-                self.teamImage = image
-            }
-        }
-        
     }
     
     var dictValue: [String : Any] {
