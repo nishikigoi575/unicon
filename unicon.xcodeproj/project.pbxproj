@@ -17,7 +17,7 @@
 		202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */; };
 		202F2A0520DFC3EF001C8210 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0420DFC3EF001C8210 /* Info.plist */; };
 		202F2A0720DFC41D001C8210 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0620DFC41D001C8210 /* memo.txt */; };
-		202F2A0920DFC502001C8210 /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */; };
+		202F2A0B20DFE198001C8210 /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */; };
 		203315AC20DF52C5005E7B17 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203315AB20DF52C5005E7B17 /* HomeViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
@@ -90,7 +90,7 @@
 		202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "unicon/Supporting Files/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		202F2A0420DFC3EF001C8210 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "unicon/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
 		202F2A0620DFC41D001C8210 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = memo.txt; path = "unicon/Supporting Files/memo.txt"; sourceTree = SOURCE_ROOT; };
-		202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UCPaginationHelper.swift; path = ../../../UCPaginationHelper.swift; sourceTree = "<group>"; };
+		202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCPaginationHelper.swift; path = unicon/Helpers/UCPaginationHelper.swift; sourceTree = SOURCE_ROOT; };
 		203315AB20DF52C5005E7B17 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +227,7 @@
 			children = (
 				202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */,
 				202F2A0020DFC3CC001C8210 /* UserHelper.swift */,
-				202F2A0820DFC502001C8210 /* UCPaginationHelper.swift */,
+				202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */,
 			);
 			name = Helpers;
 			path = "New Group1";
@@ -679,7 +679,7 @@
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
-				202F2A0920DFC502001C8210 /* UCPaginationHelper.swift in Sources */,
+				202F2A0B20DFE198001C8210 /* UCPaginationHelper.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
