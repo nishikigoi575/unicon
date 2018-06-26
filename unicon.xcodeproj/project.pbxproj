@@ -42,6 +42,7 @@
 		432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
 		432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
+		434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434BE14920E1CB620015A828 /* Profile.storyboard */; };
 		4360356720DB41D80092361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356620DB41D80092361A /* User.swift */; };
 		4360356A20DB4C840092361A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356920DB4C840092361A /* Constants.swift */; };
 		4360356E20DB78AD0092361A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356D20DB78AD0092361A /* UserService.swift */; };
@@ -115,6 +116,7 @@
 		432FA1D420D8F24A0058A744 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
+		434BE14920E1CB620015A828 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		4360356620DB41D80092361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4360356920DB4C840092361A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "unicon/Supporting Files/Constants.swift"; sourceTree = SOURCE_ROOT; };
 		4360356D20DB78AD0092361A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				43222CFB20D625AF00B3DB50 /* Main.storyboard */,
 				43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */,
 				4360357120DC9B600092361A /* JoinTeam.storyboard */,
+				434BE14920E1CB620015A828 /* Profile.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
+				434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */,
 				202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */,
 				202F2A0520DFC3EF001C8210 /* Info.plist in Resources */,
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
