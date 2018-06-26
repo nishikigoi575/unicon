@@ -71,24 +71,11 @@ class ProfileViewController: UIViewController {
 
     func goBack() {
         let transition = CATransition()
-        //CATransitionというメソッドを使う
-        
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-        
-        //なんか色々書いてあるけどよくわからない
-        
         transition.type = kCATransitionPush
-        
-        //push遷移するよという定義
-        
         transition.subtype = kCATransitionFromRight
-        
-        //kCATransitionFromLeftのLeftをRightにすれば右遷移に変わる
-        
+        transition.duration = 0.5
         self.navigationController!.view.layer.add(transition, forKey: nil)
-        
-        //遷移先のViewControllerインスタンス化
-        
         navigationController?.popViewController(animated: true)
     }
 }

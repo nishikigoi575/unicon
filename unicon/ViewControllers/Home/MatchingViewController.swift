@@ -43,10 +43,25 @@ class MatchingViewController: UIViewController {
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
         transition.type = kCATransitionPush
         transition.subtype = kCATransitionFromLeft
-        self.navigationController!.view.layer.add(transition, forKey: nil)
-        let HowToLeftPush = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        transition.duration = 0.5
         
-        self.navigationController?.pushViewController(HowToLeftPush, animated: true )
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        let leftPush = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        leftPush.modalPresentationStyle = .overCurrentContext
+        self.navigationController?.pushViewController(leftPush, animated: false )
+    }
+    
+    
+    @IBAction func goChat(_ sender: Any) {
+        let transition = CATransition()
+        transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        transition.type = kCATransitionPush
+        transition.duration = 0.5
+        transition.subtype = kCATransitionFromRight
+        self.navigationController!.view.layer.add(transition, forKey: nil)
+        let rightPush = self.storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatViewController
+        rightPush.providesPresentationContextTransitionStyle = true
+        self.navigationController?.pushViewController(rightPush, animated: false)
     }
     
     
