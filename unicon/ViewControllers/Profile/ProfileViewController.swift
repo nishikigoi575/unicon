@@ -37,7 +37,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
     }
     
-    
     @IBAction func goMatch(_ sender: Any) {
         
         goBack()
@@ -76,13 +75,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         TeamService.myTeams(pageSize: 10, keyUID: Auth.auth().currentUser?.uid) { (teams) in
             
-            print(teams)
-            
             guard let teams = teams else {
                 return;
             }
             
             self.teams = teams
+            
             self.collectionView.reloadData()
             
         }
@@ -94,6 +92,18 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath as IndexPath) as! TeamCollectionViewCell
+        let team = teams[indexPath.row]
+        if let imageUrl = URL(string: team.teamImageURL) {
+            cell.memberImageView.af_setImage(
+                withURL: imageUrl,
+                imageTransition: .crossDissolve(0.5)
+            )
+        }
+        
+        cell.memberImageView.layer.cornerRadius = 50
+        cell.memberImageView.layer.masksToBounds = true
+        cell.memberNameLabel.text = team.teamName
+        
         return cell
     }
     

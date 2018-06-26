@@ -389,17 +389,17 @@
 			children = (
 				43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */,
 				43222CF920D6243E00B3DB50 /* ViewControllers */,
+				438045F920E1FCB200FF6BF4 /* CellControllers */,
 				202F29EE20DF7DA5001C8210 /* Views */,
 				4360356820DB41DE0092361A /* Models */,
 				432FA1D620D8F2580058A744 /* Services */,
 				43222CF420D622D900B3DB50 /* Storyboards */,
+				438045FA20E1FCC600FF6BF4 /* CellXibs */,
 				202F29F520DF7F54001C8210 /* CustomViews */,
 				2037633720D8FE2C00A86A75 /* Helpers */,
 				43222D0120D6270B00B3DB50 /* Extentions */,
 				2037633620D8FDF800A86A75 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
-				438045F920E1FCB200FF6BF4 /* CellControllers */,
-				438045FA20E1FCC600FF6BF4 /* CellXibs */,
 			);
 			path = unicon;
 			sourceTree = "<group>";
