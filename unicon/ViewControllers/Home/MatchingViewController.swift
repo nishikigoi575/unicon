@@ -46,7 +46,8 @@ class MatchingViewController: UIViewController {
         transition.duration = 0.5
         
         self.navigationController!.view.layer.add(transition, forKey: nil)
-        let leftPush = self.storyboard?.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
+        let storyboard: UIStoryboard = UIStoryboard(name: "Profile", bundle: nil)
+        let leftPush = storyboard.instantiateViewController(withIdentifier: "ProfileVC") as! ProfileViewController
         leftPush.modalPresentationStyle = .overCurrentContext
         self.navigationController?.pushViewController(leftPush, animated: false )
     }

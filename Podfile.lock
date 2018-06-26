@@ -108,6 +108,7 @@ PODS:
   - nanopb/encode (0.3.8)
   - pop (1.0.10)
   - Protobuf (3.6.0)
+  - UPCarouselFlowLayout (1.1.1)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
@@ -121,6 +122,7 @@ DEPENDENCIES:
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
   - IQKeyboardManagerSwift
   - Koloda (~> 4.3.1)
+  - UPCarouselFlowLayout
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -153,6 +155,7 @@ SPEC REPOS:
     - nanopb
     - pop
     - Protobuf
+    - UPCarouselFlowLayout
 
 EXTERNAL SOURCES:
   Firestore:
@@ -189,7 +192,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  UPCarouselFlowLayout: 02045c1505d63057fba3d9975be880a8d16bf17d
 
-PODFILE CHECKSUM: 5e2d8c054b8fb2371a370a33b08c73d48d093e75
+PODFILE CHECKSUM: bbff47272c7e62455d5673d400cce88cd8d6cee4
 
 COCOAPODS: 1.5.3

@@ -112,6 +112,13 @@ class TeamService {
         }
     }
     
+    static func myTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]) -> Void) {
+        let teamRef = Firestore.firestore().collection("teams")
+        UCPaginationTeamHelper.paginationTeam(pageSize: pageSize, numOfObjects: numOfObjects, ref: teamRef) { (teams) in
+            completion(teams)
+        }
+    }
+    
     static func allTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]) -> Void) {
         let teamRef = Firestore.firestore().collection("teams")
         UCPaginationTeamHelper.paginationTeam(pageSize: pageSize, numOfObjects: numOfObjects, ref: teamRef) { (teams) in

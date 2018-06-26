@@ -54,6 +54,9 @@
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
 		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
+		438045F220E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */; };
+		438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */; };
+		438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
@@ -116,6 +119,7 @@
 		432FA1D420D8F24A0058A744 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
+		433863F620E1D932007F3D37 /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434BE14920E1CB620015A828 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		4360356620DB41D80092361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4360356920DB4C840092361A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "unicon/Supporting Files/Constants.swift"; sourceTree = SOURCE_ROOT; };
@@ -128,6 +132,9 @@
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436C5D5A20DCE6B10002B3AA /* UIExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtention.swift; sourceTree = "<group>"; };
+		438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPCarouselFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
+		438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCollectionViewCell.xib; sourceTree = "<group>"; };
 		43A5D3FB20D4EF69004612D4 /* unicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A5D40520D4EF6B004612D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +158,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438045F220E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */,
 				43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */,
@@ -187,7 +195,6 @@
 			isa = PBXGroup;
 			children = (
 				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
-				43222CFD20D625D500B3DB50 /* ProfileViewController.swift */,
 				202F29FA20DF8522001C8210 /* ChatViewController.swift */,
 			);
 			path = Home;
@@ -261,6 +268,7 @@
 		43222CF920D6243E00B3DB50 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				438045F420E1F3EF00FF6BF4 /* Profile */,
 				202F29EB20DF5399001C8210 /* Home */,
 				43222CFA20D6245400B3DB50 /* OnBoard */,
 				43222D1020D7683400B3DB50 /* CreateTeam */,
@@ -330,6 +338,30 @@
 			path = JoinTeam;
 			sourceTree = "<group>";
 		};
+		438045F420E1F3EF00FF6BF4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				43222CFD20D625D500B3DB50 /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		438045F920E1FCB200FF6BF4 /* CellControllers */ = {
+			isa = PBXGroup;
+			children = (
+				438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */,
+			);
+			path = CellControllers;
+			sourceTree = "<group>";
+		};
+		438045FA20E1FCC600FF6BF4 /* CellXibs */ = {
+			isa = PBXGroup;
+			children = (
+				438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */,
+			);
+			path = CellXibs;
+			sourceTree = "<group>";
+		};
 		43A5D3F220D4EF68004612D4 = {
 			isa = PBXGroup;
 			children = (
@@ -366,6 +398,8 @@
 				43222D0120D6270B00B3DB50 /* Extentions */,
 				2037633620D8FDF800A86A75 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
+				438045F920E1FCB200FF6BF4 /* CellControllers */,
+				438045FA20E1FCC600FF6BF4 /* CellXibs */,
 			);
 			path = unicon;
 			sourceTree = "<group>";
@@ -391,6 +425,8 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */,
+				433863F620E1D932007F3D37 /* FSPagerView.framework */,
 				4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */,
 				43222D0220D64F4400B3DB50 /* Alamofire.framework */,
 				43222D0420D64F4400B3DB50 /* AlamofireImage.framework */,
@@ -524,6 +560,7 @@
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
+				438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */,
 				43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */,
 				43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */,
 			);
@@ -623,6 +660,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/UPCarouselFlowLayout/UPCarouselFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -649,6 +687,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UPCarouselFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -678,6 +717,7 @@
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
 				202F2A0B20DFE198001C8210 /* UCPaginationHelper.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,

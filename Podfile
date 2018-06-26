@@ -24,6 +24,7 @@ target 'unicon' do
    pod 'IQKeyboardManagerSwift'
    pod 'Koloda', '~> 4.3.1'
    pod 'EZSwipeController'
+   pod 'UPCarouselFlowLayout'
    
   target 'uniconTests' do
     inherit! :search_paths
