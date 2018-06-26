@@ -28,6 +28,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.register(nib, forCellWithReuseIdentifier: "TeamCell")
         collectionView.reloadData()
         
+        getMyTeam()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,20 +45,20 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     
-//    @IBAction func logOut(_ sender: Any) {
-//        let firebaseAuth = Auth.auth()
-//        do {
-//            try firebaseAuth.signOut()
-//
-//            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
-//            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-//            self.present(newVC, animated: true, completion: nil)
-//
-//        } catch let signOutError as NSError {
-//            print ("Error signing out: %@", signOutError)
-//        }
-//
-//    }
+    @IBAction func logOut(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+            try firebaseAuth.signOut()
+
+            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+            self.present(newVC, animated: true, completion: nil)
+
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+
+    }
 
     func goBack() {
         let transition = CATransition()
@@ -68,21 +70,39 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         navigationController?.popViewController(animated: true)
     }
     
+    func getMyTeam() {
+        
+        print("ゆけ")
+        
+        TeamService.myTeams(pageSize: 10, keyUID: Auth.auth().currentUser?.uid) { (teams) in
+            
+            print(teams)
+            
+            guard let teams = teams else {
+                return;
+            }
+            
+            self.teams = teams
+            self.collectionView.reloadData()
+            
+        }
+        
+    }
     
-    // セルが表示されるときに呼ばれる処理（1個のセルを描画する毎に呼び出されます
+    
+    // FOR COLLECTION VIEW
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath as IndexPath) as! TeamCollectionViewCell
         return cell
     }
     
-    // セクションの数（今回は1つだけです）
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    // 表示するセルの数
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return teams.count
     }
     
 }

@@ -112,11 +112,43 @@ class TeamService {
         }
     }
     
-    static func myTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]) -> Void) {
-        let teamRef = Firestore.firestore().collection("teams")
-        UCPaginationTeamHelper.paginationTeam(pageSize: pageSize, numOfObjects: numOfObjects, ref: teamRef) { (teams) in
-            completion(teams)
+    static func myTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]?) -> Void) {
+        
+        guard let userUID = keyUID  else {
+            print("あれれ")
+            return completion([])
         }
+        
+        let teamRef = Firestore.firestore().collection("users").document(userUID).collection("teams")
+        
+        teamRef.getDocuments{ (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("ERROR RECEIVING MY TEAMS")
+                return completion([])
+            }
+            
+            let dispatchGroup = DispatchGroup()
+            
+            var teams = [Team]()
+            for teamSnap in snapshot.documents {
+                
+                guard let teamDict = teamSnap.data() as? [String: Any]
+                    else { continue }
+                dispatchGroup.enter()
+                
+                TeamService.show(forTeamID: teamSnap.documentID) { (team) in
+                    if let team = team {
+                        teams.append(team)
+                        dispatchGroup.leave()
+                    }
+                }
+            }
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(teams)
+            })
+            
+        }
+        
     }
     
     static func allTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]) -> Void) {
