@@ -105,6 +105,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
 //
 //        }
         
+        let defaults = UserDefaults.standard
+        
         if Auth.auth().currentUser != nil, let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
             print("既存ユーザー")
             // set current user

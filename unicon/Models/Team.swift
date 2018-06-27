@@ -65,7 +65,7 @@ class Team {
         guard let teamName = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamName) as? String,
             let teamGender = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamGender) as? String,
             let targetGender = aDecoder.decodeObject(forKey: Constants.UserDefaults.targetGender) as? String,
-            let numOfMembers = aDecoder.decodeObject(forKey: Constants.UserDefaults.numOfMembers) as? String,
+            let numOfMembers = aDecoder.decodeObject(forKey: Constants.UserDefaults.numOfMembers) as? Int,
             let teamImageURL = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamImageURL) as? String,
             let teamID = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamID) as? String,
             let createdBy = aDecoder.decodeObject(forKey: Constants.UserDefaults.createdBy) as? String
@@ -83,7 +83,7 @@ class Team {
             self.intro = intro
         }
         
-        super.init()
+//        super.init()
     }
     
     private static var _current: Team?

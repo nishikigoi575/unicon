@@ -13,51 +13,29 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TeamCell" id="gTV-IL-0wX" customClass="TeamCollectionViewCell" customModule="unicon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="200" height="251"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="200" height="251"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-rp-lgo">
-                        <rect key="frame" x="0.0" y="0.0" width="200" height="201"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                     </imageView>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y05-ta-EX4">
-                        <rect key="frame" x="0.0" y="201" width="200" height="50"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgP-I5-BJh">
-                                <rect key="frame" x="83" y="16.5" width="34" height="17"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="50" id="PQJ-tZ-bSe"/>
-                            <constraint firstItem="ZgP-I5-BJh" firstAttribute="centerY" secondItem="y05-ta-EX4" secondAttribute="centerY" id="Xsj-35-dlO"/>
-                            <constraint firstItem="ZgP-I5-BJh" firstAttribute="centerX" secondItem="y05-ta-EX4" secondAttribute="centerX" id="x41-ZG-Ur6"/>
-                        </constraints>
-                    </view>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JQt-rp-lgo" secondAttribute="trailing" id="20Y-on-SF4"/>
-                <constraint firstItem="y05-ta-EX4" firstAttribute="top" secondItem="JQt-rp-lgo" secondAttribute="bottom" id="MyA-bP-xZl"/>
-                <constraint firstAttribute="trailing" secondItem="y05-ta-EX4" secondAttribute="trailing" id="NkV-dM-rUA"/>
                 <constraint firstItem="JQt-rp-lgo" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="P1y-Ed-Hsn"/>
                 <constraint firstItem="JQt-rp-lgo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Vz4-Pc-3FZ"/>
-                <constraint firstAttribute="bottom" secondItem="y05-ta-EX4" secondAttribute="bottom" id="asO-4N-xyF"/>
-                <constraint firstItem="y05-ta-EX4" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="iUr-il-tG0"/>
-                <constraint firstAttribute="bottom" secondItem="JQt-rp-lgo" secondAttribute="bottom" constant="50" id="tLL-5t-qcc"/>
+                <constraint firstAttribute="bottom" secondItem="JQt-rp-lgo" secondAttribute="bottom" id="tLL-5t-qcc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="219" height="217"/>
+            <size key="customSize" width="219" height="166"/>
             <connections>
                 <outlet property="memberImageView" destination="JQt-rp-lgo" id="k2i-Wq-ZA6"/>
-                <outlet property="memberNameLabel" destination="ZgP-I5-BJh" id="HCu-Ct-X4O"/>
             </connections>
-            <point key="canvasLocation" x="205" y="137.5"/>
+            <point key="canvasLocation" x="205" y="112"/>
         </collectionViewCell>
     </objects>
 </document>

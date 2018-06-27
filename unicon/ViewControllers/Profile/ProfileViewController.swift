@@ -15,6 +15,9 @@ import UPCarouselFlowLayout
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     var window: UIWindow?
     
+    
+    
+    @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var teams = [Team]()
@@ -23,6 +26,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.viewDidLoad()
         
         self.navigationItem.hidesBackButton = true
+        teamImageView.layer.cornerRadius = 80
+        teamImageView.layer.masksToBounds = true
         
         let nib: UINib = UINib(nibName: "TeamCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "TeamCell")
@@ -43,22 +48,27 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
 
     }
     
+    //    @IBAction func logOut(_ sender: Any) {
+    //        let firebaseAuth = Auth.auth()
+    //        do {
+    //            try firebaseAuth.signOut()
+    //
+    //            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+    //            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
+    //            self.present(newVC, animated: true, completion: nil)
+    //
+    //        } catch let signOutError as NSError {
+    //            print ("Error signing out: %@", signOutError)
+    //        }
+    //
+    //    }
     
-    @IBAction func logOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-
-            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
-            let newVC = storyboard.instantiateViewController(withIdentifier: "LoginVC")
-            self.present(newVC, animated: true, completion: nil)
-
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-
+    
+    @IBAction func goMyProfile(_ sender: Any) {
+        
     }
-
+    
+    
     func goBack() {
         let transition = CATransition()
         transition.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
@@ -102,7 +112,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         cell.memberImageView.layer.cornerRadius = 50
         cell.memberImageView.layer.masksToBounds = true
-        cell.memberNameLabel.text = team.teamName
         
         return cell
     }

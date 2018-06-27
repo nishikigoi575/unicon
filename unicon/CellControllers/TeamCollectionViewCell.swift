@@ -11,7 +11,6 @@ import UIKit
 class TeamCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var memberImageView: UIImageView!
-    @IBOutlet weak var memberNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
