@@ -11,16 +11,19 @@ import FirebaseAuth
 import FacebookLogin
 import AlamofireImage
 import UPCarouselFlowLayout
+import BubbleTransition
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate {
     var window: UIWindow?
-    
-    
     
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var btnForMyProfile: UIButton!
+    @IBOutlet weak var btnForMyProfileView: UIView!
+    
     
     var teams = [Team]()
+    let transition = BubbleTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,11 +65,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     //        }
     //
     //    }
-    
-    
-    @IBAction func goMyProfile(_ sender: Any) {
-        
-    }
     
     
     func goBack() {
@@ -123,6 +121,31 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return teams.count
     }
+    
+    public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .present
+        transition.startingPoint = btnForMyProfileView.center
+        transition.bubbleColor = btnForMyProfileView.backgroundColor!
+        return transition
+    }
+    
+    public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.transitionMode = .dismiss
+        transition.startingPoint = btnForMyProfileView.center
+        transition.bubbleColor = btnForMyProfileView.backgroundColor!
+        return transition
+    }
+    
+    public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let controller = segue.destination
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .custom
+    }
+    
+    @IBAction func goMyProfile(_ sender: Any) {
+        performSegue(withIdentifier: "ToMyProfile", sender: nil)
+    }
+    
     
 }
 

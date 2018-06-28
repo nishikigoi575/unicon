@@ -16,11 +16,11 @@
             <objects>
                 <viewController storyboardIdentifier="ProfileVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eZP-S1-wp1" customClass="ProfileViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="s8m-XD-ycv">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YF9-Xa-Zg7">
-                                <rect key="frame" x="0.0" y="88" width="375" height="596"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="1352"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prp-IH-Ch1">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
@@ -137,10 +137,10 @@
                                         </connections>
                                     </collectionView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fm9-VR-4Yi">
-                                        <rect key="frame" x="0.0" y="499" width="375" height="220"/>
+                                        <rect key="frame" x="0.0" y="499" width="375" height="62"/>
                                         <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="こんちは" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvw-ej-ot3">
-                                                <rect key="frame" x="8" y="8" width="359" height="204"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="こんちは" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vvw-ej-ot3">
+                                                <rect key="frame" x="8" y="8" width="359" height="46"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
@@ -153,7 +153,6 @@
                                             <constraint firstItem="vvw-ej-ot3" firstAttribute="leading" secondItem="Fm9-VR-4Yi" secondAttribute="leading" constant="8" id="ARZ-zd-KJK"/>
                                             <constraint firstAttribute="trailing" secondItem="vvw-ej-ot3" secondAttribute="trailing" constant="8" id="LQM-nV-vk2"/>
                                             <constraint firstItem="vvw-ej-ot3" firstAttribute="top" secondItem="Fm9-VR-4Yi" secondAttribute="top" constant="8" id="a5I-O9-BxG"/>
-                                            <constraint firstAttribute="height" constant="220" id="moQ-QO-Ky1"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -172,7 +171,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7pn-xa-AvR">
-                                <rect key="frame" x="0.0" y="752" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="1440" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nxp-7O-d2c">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
@@ -181,8 +180,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="goMyProfile:" destination="eZP-S1-wp1" eventType="touchUpInside" id="S3a-Lx-Gon"/>
-                                            <segue destination="QFQ-Py-QrM" kind="presentation" id="QyB-56-AZT"/>
+                                            <action selector="goMyProfile:" destination="eZP-S1-wp1" eventType="touchUpInside" id="xt8-vy-Zfe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -198,12 +196,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7pn-xa-AvR" firstAttribute="leading" secondItem="CTn-4H-baR" secondAttribute="leading" id="1kC-JO-iqp"/>
                             <constraint firstItem="YF9-Xa-Zg7" firstAttribute="trailing" secondItem="CTn-4H-baR" secondAttribute="trailing" id="2CC-bT-uvo"/>
-                            <constraint firstItem="7pn-xa-AvR" firstAttribute="bottom" secondItem="CTn-4H-baR" secondAttribute="bottom" constant="34" id="Grz-uw-dOL"/>
+                            <constraint firstItem="7pn-xa-AvR" firstAttribute="trailing" secondItem="CTn-4H-baR" secondAttribute="trailing" id="I4D-Gy-G3F"/>
                             <constraint firstItem="YF9-Xa-Zg7" firstAttribute="leading" secondItem="CTn-4H-baR" secondAttribute="leading" id="MsG-uN-VUg"/>
                             <constraint firstItem="7pn-xa-AvR" firstAttribute="leading" secondItem="CTn-4H-baR" secondAttribute="leading" id="WNe-mY-kXT"/>
                             <constraint firstItem="7pn-xa-AvR" firstAttribute="trailing" secondItem="CTn-4H-baR" secondAttribute="trailing" id="XoZ-Eh-deX"/>
-                            <constraint firstItem="7pn-xa-AvR" firstAttribute="top" secondItem="YF9-Xa-Zg7" secondAttribute="bottom" constant="68" id="gwz-qO-i11"/>
+                            <constraint firstItem="7pn-xa-AvR" firstAttribute="top" secondItem="YF9-Xa-Zg7" secondAttribute="bottom" id="gwz-qO-i11"/>
+                            <constraint firstAttribute="bottom" secondItem="7pn-xa-AvR" secondAttribute="bottom" id="m3H-gQ-19s"/>
                             <constraint firstItem="YF9-Xa-Zg7" firstAttribute="top" secondItem="CTn-4H-baR" secondAttribute="top" id="s5z-vJ-2sv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="CTn-4H-baR"/>
@@ -216,9 +216,13 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <size key="freeformSize" width="375" height="1500"/>
                     <connections>
+                        <outlet property="btnForMyProfile" destination="nxp-7O-d2c" id="ghZ-I9-KF0"/>
+                        <outlet property="btnForMyProfileView" destination="7pn-xa-AvR" id="4BQ-HF-GiL"/>
                         <outlet property="collectionView" destination="USf-f4-YFm" id="L3h-Vy-EHM"/>
                         <outlet property="teamImageView" destination="5cH-c3-V4l" id="Ylc-Ge-91N"/>
+                        <segue destination="QFQ-Py-QrM" kind="presentation" identifier="ToMyProfile" id="3Z1-GP-bTQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L91-Ep-0Qp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -352,6 +356,7 @@
                     </view>
                     <connections>
                         <outlet property="belongingLabel" destination="BwH-Ol-rgr" id="qF8-xe-RYj"/>
+                        <outlet property="closeBtn" destination="IMA-MT-78h" id="p8g-JF-Fld"/>
                         <outlet property="introTextView" destination="ot2-1Y-gxA" id="2mT-ic-VV8"/>
                         <outlet property="nameLabel" destination="FD8-fb-ITi" id="faV-Nc-gEy"/>
                         <outlet property="profImageView" destination="v8H-0g-mjj" id="FiE-H8-7Bf"/>

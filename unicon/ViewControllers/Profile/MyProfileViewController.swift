@@ -8,6 +8,7 @@
 
 import UIKit
 import AlamofireImage
+import BubbleTransition
 
 class MyProfileViewController: UIViewController {
 
@@ -15,6 +16,9 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var belongingLabel: UILabel!
     @IBOutlet weak var introTextView: UITextView!
+    @IBOutlet weak var closeBtn: UIButton!
+    
+    let transition = BubbleTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +50,9 @@ class MyProfileViewController: UIViewController {
     @IBAction func close(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+
     
 
 }
