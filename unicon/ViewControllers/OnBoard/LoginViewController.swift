@@ -94,7 +94,7 @@ class LoginViewController: UIViewController {
                                             
                                             if belongs {
                                                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                                let newVC = storyboard.instantiateViewController(withIdentifier: "MatchingVC")
+                                                let newVC = storyboard.instantiateViewController(withIdentifier: "NaviVC")
                                                 self.present(newVC, animated: true, completion: nil)
                                             } else {
                                                 self.performSegue(withIdentifier: "ToNext", sender: nil)

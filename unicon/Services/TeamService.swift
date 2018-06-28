@@ -42,7 +42,12 @@ class TeamService {
             
             create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (team, successed) in
                 if successed {
-                    return completion(team, true)
+                    if let team = team {
+                        Team.setCurrent(team, writeToUserDefaults: true)
+                        return completion(team, true)
+                    } else {
+                        return completion(nil, false)
+                    }
                 } else {
                     return completion(nil, false)
                 }

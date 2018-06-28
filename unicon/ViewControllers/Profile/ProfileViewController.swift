@@ -37,6 +37,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.reloadData()
         
         getMyTeam()
+        getCurrentTeam()
         
     }
 
@@ -77,9 +78,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         navigationController?.popViewController(animated: true)
     }
     
-    func getMyTeam() {
+    func getCurrentTeam() {
         
-        print("ゆけ")
+        print(Team.current?.dictValue)
+        
+    }
+    
+    func getMyTeam() {
         
         TeamService.myTeams(pageSize: 10, keyUID: Auth.auth().currentUser?.uid) { (teams) in
             
