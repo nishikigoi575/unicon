@@ -12,7 +12,7 @@ import Firestore.FIRDocumentSnapshot
 import Alamofire
 import AlamofireImage
 
-class Team {
+class Team: NSObject {
     var teamName: String
     var teamGender: String
     var targetGender: String
@@ -34,6 +34,7 @@ class Team {
         self.teamID = teamID
         self.createdBy = createdBy
         
+        super.init()
     }
     
     init?(snapshot: DocumentSnapshot) {
@@ -59,6 +60,8 @@ class Team {
             self.intro = intro
         }
         
+        super.init()
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,7 +86,7 @@ class Team {
             self.intro = intro
         }
         
-//        super.init()
+        super.init()
     }
     
     private static var _current: Team?
