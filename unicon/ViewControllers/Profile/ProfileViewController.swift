@@ -28,6 +28,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let storyboard: UIStoryboard = UIStoryboard(name: "ImagePicker", bundle: nil)
+//        let newVC = storyboard.instantiateViewController(withIdentifier: "ImagePickerVC")
+//        self.present(newVC, animated: true, completion: nil)
+        
         self.navigationItem.hidesBackButton = true
         teamImageView.layer.cornerRadius = 80
         teamImageView.layer.masksToBounds = true
@@ -149,6 +153,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     @IBAction func goMyProfile(_ sender: Any) {
         performSegue(withIdentifier: "ToMyProfile", sender: nil)
+    }
+    
+    
+    @IBAction func addTeam(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "CreateOrJoinVC")
+        self.present(newVC, animated: true, completion: nil)
+
     }
     
     

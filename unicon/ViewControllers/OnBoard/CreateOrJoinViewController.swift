@@ -54,4 +54,9 @@ class CreateOrJoinViewController: UIViewController {
         
     }
     
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
 }

@@ -42,6 +42,11 @@
 		432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
 		432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
+		4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4338826E20E754AC0057B55E /* ImagePicker.storyboard */; };
+		4338827120E755570057B55E /* CamerarollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827020E755570057B55E /* CamerarollViewController.swift */; };
+		4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */; };
+		4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */; };
+		4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827920E7777E0057B55E /* CropImageViewController.swift */; };
 		434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434BE14920E1CB620015A828 /* Profile.storyboard */; };
 		435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435727D620E47C9700720C41 /* MyProfileViewController.swift */; };
 		435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435727D820E48A4900720C41 /* BubbleTransition.framework */; };
@@ -64,6 +69,7 @@
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
 		43A5D41420D4EF6B004612D4 /* uniconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D41320D4EF6B004612D4 /* uniconTests.swift */; };
 		43A5D41F20D4EF6B004612D4 /* uniconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D41E20D4EF6B004612D4 /* uniconUITests.swift */; };
+		43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5C02820E7BEB900948D1A /* CropViewController.framework */; };
 		8B224869A6AF6C464EB2EAA0 /* Pods_uniconTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +128,12 @@
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
 		433863F620E1D932007F3D37 /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4338826C20E7440A0057B55E /* ALCameraViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ALCameraViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4338826E20E754AC0057B55E /* ImagePicker.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ImagePicker.storyboard; sourceTree = "<group>"; };
+		4338827020E755570057B55E /* CamerarollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerarollViewController.swift; sourceTree = "<group>"; };
+		4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollCollectionViewCell.swift; sourceTree = "<group>"; };
+		4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraRollCollectionViewCell.xib; sourceTree = "<group>"; };
+		4338827920E7777E0057B55E /* CropImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropImageViewController.swift; sourceTree = "<group>"; };
 		434BE14920E1CB620015A828 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		435727D620E47C9700720C41 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		435727D820E48A4900720C41 /* BubbleTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BubbleTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,6 +161,7 @@
 		43A5D41A20D4EF6B004612D4 /* uniconUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uniconUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D41E20D4EF6B004612D4 /* uniconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uniconUITests.swift; sourceTree = "<group>"; };
 		43A5D42020D4EF6B004612D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43E5C02820E7BEB900948D1A /* CropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6DCD3199F2051B3F94E199 /* Pods-uniconUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +175,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */,
 				435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */,
 				438045F220E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
@@ -266,6 +280,7 @@
 				43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */,
 				4360357120DC9B600092361A /* JoinTeam.storyboard */,
 				434BE14920E1CB620015A828 /* Profile.storyboard */,
+				4338826E20E754AC0057B55E /* ImagePicker.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -278,6 +293,7 @@
 				43222CFA20D6245400B3DB50 /* OnBoard */,
 				43222D1020D7683400B3DB50 /* CreateTeam */,
 				4360357520DC9C9A0092361A /* JoinTeam */,
+				4338827220E755600057B55E /* ImagePicker */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -325,6 +341,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		4338827220E755600057B55E /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				4338827020E755570057B55E /* CamerarollViewController.swift */,
+				4338827920E7777E0057B55E /* CropImageViewController.swift */,
+			);
+			path = ImagePicker;
+			sourceTree = "<group>";
+		};
 		4360356820DB41DE0092361A /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -356,6 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */,
+				4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */,
 			);
 			path = CellControllers;
 			sourceTree = "<group>";
@@ -363,6 +389,7 @@
 		438045FA20E1FCC600FF6BF4 /* CellXibs */ = {
 			isa = PBXGroup;
 			children = (
+				4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */,
 				438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */,
 			);
 			path = CellXibs;
@@ -431,6 +458,8 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43E5C02820E7BEB900948D1A /* CropViewController.framework */,
+				4338826C20E7440A0057B55E /* ALCameraViewController.framework */,
 				435727D820E48A4900720C41 /* BubbleTransition.framework */,
 				438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */,
 				433863F620E1D932007F3D37 /* FSPagerView.framework */,
@@ -565,6 +594,8 @@
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
 				202F2A0720DFC41D001C8210 /* memo.txt in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
+				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
+				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
 				438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */,
@@ -656,6 +687,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/EZSwipeController/EZSwipeController.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
@@ -684,6 +716,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwipeController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
@@ -721,6 +754,7 @@
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
 				202F2A0120DFC3CC001C8210 /* UserHelper.swift in Sources */,
 				2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */,
+				4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
@@ -744,8 +778,10 @@
 				202F29FF20DFC3B5001C8210 /* CardViewHelper.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
+				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
+				4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */,
 				4360356A20DB4C840092361A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

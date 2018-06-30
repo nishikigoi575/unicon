@@ -66,7 +66,7 @@
         <!--Create Or Join View Controller-->
         <scene sceneID="TVo-gY-Mt5">
             <objects>
-                <viewController id="bYl-0b-afu" customClass="CreateOrJoinViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateOrJoinVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bYl-0b-afu" customClass="CreateOrJoinViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0n-df-MRU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -130,12 +130,21 @@
                                     <constraint firstAttribute="height" constant="200" id="R4p-Ae-a24"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-wa-gz9">
+                                <rect key="frame" x="20" y="617" width="31" height="30"/>
+                                <state key="normal" title="戻る"/>
+                                <connections>
+                                    <action selector="dismiss:" destination="bYl-0b-afu" eventType="touchUpInside" id="mNF-Y5-FRS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="leB-SJ-i4e" firstAttribute="top" secondItem="AwT-Yk-m0k" secondAttribute="top" constant="40" id="9gh-ED-XF8"/>
                             <constraint firstItem="AwT-Yk-m0k" firstAttribute="trailing" secondItem="leB-SJ-i4e" secondAttribute="trailing" constant="20" id="MWz-Fu-9rH"/>
+                            <constraint firstItem="AwT-Yk-m0k" firstAttribute="bottom" secondItem="r3o-wa-gz9" secondAttribute="bottom" constant="20" id="enW-Am-sMr"/>
                             <constraint firstItem="leB-SJ-i4e" firstAttribute="leading" secondItem="AwT-Yk-m0k" secondAttribute="leading" constant="20" id="gEy-Wd-pox"/>
+                            <constraint firstItem="r3o-wa-gz9" firstAttribute="leading" secondItem="AwT-Yk-m0k" secondAttribute="leading" constant="20" id="zg7-wC-3aM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AwT-Yk-m0k"/>
                     </view>

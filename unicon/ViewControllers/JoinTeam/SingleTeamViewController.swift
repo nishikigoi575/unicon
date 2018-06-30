@@ -52,7 +52,7 @@ class SingleTeamViewController: UIViewController {
                     print("Joined the team successfuly!")
                     
                     let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                    let newVC = storyboard.instantiateViewController(withIdentifier: "HomeSB")
+                    let newVC = storyboard.instantiateViewController(withIdentifier: "NaviVC")
                     self.present(newVC, animated: true, completion: nil)
                     
                 } else {
