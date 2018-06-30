@@ -16,7 +16,7 @@ class User: NSObject {
     
     let userUID: String
     let firstName: String
-    var userImage:  String
+    var userImage: String
     var belongsToTeam: Bool?
     var pushID: String?
     var facebookID: String?
@@ -80,6 +80,7 @@ class User: NSObject {
         self.firstName = firstName
         self.userImage = userImage
         
+        /*
         if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
             self.pushID = pushID
         }
@@ -87,7 +88,8 @@ class User: NSObject {
         if let belonging = aDecoder.decodeObject(forKey: "belonging") as? String {
             self.belonging = belonging
         }
- 
+        */
+        
         super.init()
     }
     
@@ -108,6 +110,14 @@ class User: NSObject {
         
         _current = user
     }
+    
+    var dictValue: [String : Any] {
+        return [
+            "userUID":userUID,
+            "firstName":firstName,
+            "userImage":userImage
+        ]
+    }
 }
 
 extension User: NSCoding {
@@ -115,6 +125,6 @@ extension User: NSCoding {
         aCoder.encode(userUID, forKey: Constants.UserDefaults.userUID)
         aCoder.encode(firstName, forKey: Constants.UserDefaults.firstName)
         aCoder.encode(userImage, forKey: Constants.UserDefaults.userImage)
-        aCoder.encode(userImage, forKey: "belonging")
+        //aCoder.encode(userImage, forKey: Constants.UserDefaults.belonging)
     }
 }

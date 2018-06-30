@@ -26,38 +26,26 @@ class TeamService {
         }
     }
     
-    static func create(teamName: String, teamGender: String, targetGender: String, teamImage: UIImage, intro: String, completion: @escaping (Team?, Bool) -> Void) {
+    static func create(teamName: String, teamGender: String, targetGender: String, teamImage: UIImage, intro: String, completion: @escaping (Team?) -> Void) {
         let imageRef = StorageReference.newTeamImageReference(teamName: teamName)
         StorageService.uploadImage(teamImage, at: imageRef) { (downloadURL) in
-            guard let url = downloadURL else {
-                return completion(nil,false)
-            }
-            
-            guard let userUID = Auth.auth().currentUser?.uid else {
-                return completion(nil,false)
-            }
+            guard let url = downloadURL else { return completion(nil) }
+            guard let userUID = Auth.auth().currentUser?.uid else { return completion(nil) }
             
             let urlStr = url.absoluteString
             
-            
-            create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (team, successed) in
-                if successed {
-                    if let team = team {
-                        Team.setCurrent(team, writeToUserDefaults: true)
-                        return completion(team, true)
-                    } else {
-                        return completion(nil, false)
-                    }
+            create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (team) in
+                if let team = team {
+                    Team.setCurrent(team, writeToUserDefaults: true)
+                    return completion(team)
                 } else {
-                    return completion(nil, false)
+                    return completion(nil)
                 }
             }
-            
         }
     }
     
-    private static func create(createdBy: String,urlStr: String, teamName: String, teamGender: String, targetGender: String, intro: String, successed: @escaping (Team?, Bool) -> Void){
-        
+    private static func create(createdBy: String,urlStr: String, teamName: String, teamGender: String, targetGender: String, intro: String, completion: @escaping (Team?) -> Void){
         
         let rootRef = Firestore.firestore()
         let newTeamRef = rootRef.collection("teams").document()
@@ -68,35 +56,17 @@ class TeamService {
         rootRef.collection("teams").document(teamID).setData(team.dictValue) { error in
             if let error = error {
                 print("Failed to create a team\(error.localizedDescription)")
-                return successed(nil, false)
+                return completion(nil)
             } else {
-                
-                rootRef.collection("teams").document(teamID).getDocument() { (document, err) in
-                    if let document = document {
-                        print("Document data: ここなのか \(document.data())")
-                        if let team = Team(snapshot: document) {
-                            UserService.joinTeam(teamID: teamID, userUID: createdBy){ (success) in
-                                if success {
-                                    print("yay")
-                                    return successed(team, true)
-                                } else {
-                                    print("fuck")
-                                    return successed(nil, false)
-                                }
-                            }
-                        } else {
-                            print("are")
-                        }
-                        
+                UserService.joinTeam(teamID: team.teamID, userUID: team.createdBy){ (success) in
+                    if success {
+                        return completion(team)
                     } else {
-                        print("Document does not exist")
-                        successed(nil, false)
+                        return completion(nil)
                     }
                 }
-                
             }
         }
-        
     }
     
     

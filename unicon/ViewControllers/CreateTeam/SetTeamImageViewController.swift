@@ -10,7 +10,7 @@ import UIKit
 
 class SetTeamImageViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var teamImage = UIImage()
+    var teamImage: UIImage?
     
     @IBOutlet weak var imageBtn: UIButton!
     
@@ -29,8 +29,8 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
     
     @IBAction func nextBtnTapped(_ sender: Any) {
         
+        guard let teamImage = teamImage else { print("please set team image"); return }
         SetTeamIntroViewController.teamImage = teamImage
-        
         performSegue(withIdentifier: "ToNext", sender: nil)
         
     }

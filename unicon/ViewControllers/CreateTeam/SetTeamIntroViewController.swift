@@ -24,8 +24,6 @@ class SetTeamIntroViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        
         print(SetTeamIntroViewController.targetGender)
         print(SetTeamIntroViewController.teamName)
         
@@ -39,9 +37,10 @@ class SetTeamIntroViewController: UIViewController {
 
     @IBAction func nextBtnTapped(_ sender: Any) {
         
-        TeamService.create(teamName: SetTeamIntroViewController.teamName, teamGender: "male", targetGender: SetTeamIntroViewController.targetGender, teamImage: SetTeamIntroViewController.teamImage, intro: hitokotoTextView.text) { (team, completion) in
-            
-            if let team = team, completion {
+        guard let intro = hitokotoTextView.text, hitokotoTextView.text != "" else { print("please set intro"); return }
+        
+        TeamService.create(teamName: SetTeamIntroViewController.teamName, teamGender: "male", targetGender: SetTeamIntroViewController.targetGender, teamImage: SetTeamIntroViewController.teamImage, intro: intro) { team in
+            if let team = team {
                 self.teamID = team.teamID
                 self.performSegue(withIdentifier: "ToNext", sender: team)
             } else {

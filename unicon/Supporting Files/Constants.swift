@@ -20,6 +20,7 @@ struct Constants {
         static let firstName = "firstName"
         static let userImage = "userImage"
         static let pushID = "pushID"
+        static let belonging = "belonging"
         static let currentTeam = "currentTeam"
         static let teamID = "teamID"
         static let teamName = "teamName"
