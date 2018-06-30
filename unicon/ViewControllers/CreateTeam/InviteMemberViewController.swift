@@ -37,5 +37,12 @@ class InviteMemberViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    @IBAction func finish(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "NaviVC")
+        self.present(newVC, animated: true, completion: nil)
+    }
+    
 }

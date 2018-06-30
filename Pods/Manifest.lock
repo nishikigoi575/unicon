@@ -15,6 +15,7 @@ PODS:
     - BoringSSL/Interface (= 10.0.5)
   - BoringSSL/Interface (10.0.5)
   - BubbleTransition (3.0.1)
+  - CropViewController (2.3.6)
   - EZSwipeController (0.6.1)
   - FacebookCore (0.3.1):
     - Bolts (~> 1.8)
@@ -114,6 +115,7 @@ PODS:
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
   - BubbleTransition
+  - CropViewController
   - EZSwipeController
   - FacebookCore
   - FacebookLogin
@@ -133,6 +135,7 @@ SPEC REPOS:
     - Bolts
     - BoringSSL
     - BubbleTransition
+    - CropViewController
     - EZSwipeController
     - FacebookCore
     - FacebookLogin
@@ -170,6 +173,7 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: cf3f1793eb6e3c445c4d150456341f149c268a35
   BubbleTransition: 5038c843e449052f1bbbe0451605c45ec5b3ca0a
+  CropViewController: e6d4bd512d15a1709e9ddf71fe7d98ffd05dda0f
   EZSwipeController: 255b0f8aed31963b0236802c926e27dd006a2532
   FacebookCore: 33078ef1d7d76b73f7e8c990dca7d3ea6db8d22f
   FacebookLogin: 6f15bf4fefd7a8865abbfa8fcd7f3dfd87aa275f
@@ -198,6 +202,6 @@ SPEC CHECKSUMS:
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   UPCarouselFlowLayout: 02045c1505d63057fba3d9975be880a8d16bf17d
 
-PODFILE CHECKSUM: 55dce5dae60ea77092326d2573789d4ecd99bed6
+PODFILE CHECKSUM: d347471d22b8c890b1cc71d6f44d5b8fa8a4a095
 
 COCOAPODS: 1.5.3

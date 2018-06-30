@@ -318,6 +318,9 @@
                                 <state key="normal" title="完了">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="finish:" destination="mD7-bh-lcc" eventType="touchUpInside" id="iy3-R6-jRb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

@@ -24,6 +24,7 @@ target 'unicon' do
    pod 'IQKeyboardManagerSwift'
    pod 'Koloda', '~> 4.3.1'
    pod 'EZSwipeController'
+   pod 'CropViewController'
    
    # UIDesigns
    pod 'BubbleTransition'

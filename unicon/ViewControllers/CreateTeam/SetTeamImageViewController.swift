@@ -18,7 +18,6 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
         super.viewDidLoad()
         
         
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +38,7 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
         
         // The title and the message of the action sheet
         let actionSheet = UIAlertController(title: "チーム写真を選択", message: "選択方法を選択してください。", preferredStyle: .actionSheet)
-        
+
         let openCamera = UIAlertAction(title: "カメラを起動", style: .default, handler: {
             (action: UIAlertAction) -> Void in
             self.openCamera()
@@ -54,25 +53,11 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
         // アクションシートに、定義した選択肢を追加する
         actionSheet.addAction(openCamera)
         actionSheet.addAction(openAlbum)
-        actionSheet.addAction(cancel)
-        
+        actionSheet.addAction(cancel) 
+
         // アクションシートを表示する
         present(actionSheet, animated: true, completion: nil)
         
-    }
-    
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let pickedImage = info[UIImagePickerControllerOriginalImage
-            ] as? UIImage {
-            
-            teamImage = pickedImage
-            imageBtn.setImage(pickedImage, for: UIControlState())
-            
-        }
-        
-        // カメラ画面(アルバム画面)を閉じる処理
-        picker.dismiss(animated: true, completion: nil)
     }
     
     func openPhoto() {
@@ -82,11 +67,11 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
             // インスタンスの作成
             let cameraPicker = UIImagePickerController()
             cameraPicker.sourceType = sourceType
-            cameraPicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
             self.present(cameraPicker, animated: true, completion: nil)
         }
     }
-    
     
     func openCamera() {
         let sourceType:UIImagePickerControllerSourceType = UIImagePickerControllerSourceType.camera
@@ -95,9 +80,18 @@ class SetTeamImageViewController: UIViewController, UIImagePickerControllerDeleg
             // インスタンスの作成
             let cameraPicker = UIImagePickerController()
             cameraPicker.sourceType = sourceType
-            cameraPicker.delegate = self as? UIImagePickerControllerDelegate & UINavigationControllerDelegate
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
             self.present(cameraPicker, animated: true, completion: nil)
         }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+            imageBtn.setImage(pickedImage, for: UIControlState())
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
     }
 
 }
