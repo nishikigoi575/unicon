@@ -18,7 +18,7 @@ class Team: NSObject {
     var targetGender: String
     var numOfMembers: Int
     var teamImageURL: String
-    var intro: String?
+    var intro: String
     var teamID: String
     var createdBy: String
     var teamImage: UIImage?
@@ -45,8 +45,9 @@ class Team: NSObject {
             let numOfMembers = dictionary["numOfMembers"] as? Int,
             let teamImageURL = dictionary["teamImage"] as? String,
             let teamID = dictionary["teamID"] as? String,
-            let createdBy = dictionary["createdBy"] as? String
-        else {return nil}
+            let createdBy = dictionary["createdBy"] as? String,
+            let intro = dictionary["intro"] as? String
+            else {return nil}
         
         self.teamName = teamName
         self.teamGender = teamGender
@@ -55,10 +56,7 @@ class Team: NSObject {
         self.teamImageURL = teamImageURL
         self.teamID = teamID
         self.createdBy = createdBy
-        
-        if let intro = dictionary["intro"] as? String {
-            self.intro = intro
-        }
+        self.intro = intro
         
         super.init()
         
@@ -68,9 +66,10 @@ class Team: NSObject {
         guard let teamName = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamName) as? String,
             let teamGender = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamGender) as? String,
             let targetGender = aDecoder.decodeObject(forKey: Constants.UserDefaults.targetGender) as? String,
-            let numOfMembers = aDecoder.decodeObject(forKey: Constants.UserDefaults.numOfMembers) as? Int,
+            let numOfMembers = aDecoder.decodeInteger(forKey: Constants.UserDefaults.numOfMembers) as? Int,
             let teamImageURL = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamImageURL) as? String,
             let teamID = aDecoder.decodeObject(forKey: Constants.UserDefaults.teamID) as? String,
+            let intro = aDecoder.decodeObject(forKey: Constants.UserDefaults.intro) as? String,
             let createdBy = aDecoder.decodeObject(forKey: Constants.UserDefaults.createdBy) as? String
             else { return nil }
         
@@ -81,10 +80,7 @@ class Team: NSObject {
         self.teamImageURL = teamImageURL
         self.teamID = teamID
         self.createdBy = createdBy
-        
-        if let intro = aDecoder.decodeObject(forKey: Constants.UserDefaults.intro) as? String {
-            self.intro = intro
-        }
+        self.intro = intro
         
         super.init()
     }
