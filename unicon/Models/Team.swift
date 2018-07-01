@@ -116,7 +116,8 @@ class Team: NSObject {
             "teamImage":teamImageURL,
             "teamID":teamID,
             "intro":intro,
-            "createdBy":createdBy
+            "createdBy":createdBy,
+            "date":Date()
         ]
     }
 }
