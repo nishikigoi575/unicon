@@ -19,6 +19,8 @@ class CamerarollViewController: UIViewController, UICollectionViewDelegate, Crop
     
     var fetchResults = PHFetchResult<PHAsset>()
     
+    var from = UIViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +36,11 @@ class CamerarollViewController: UIViewController, UICollectionViewDelegate, Crop
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     
     fileprivate func setup() {
         collectionView.dataSource = self
@@ -153,7 +160,23 @@ class CamerarollViewController: UIViewController, UICollectionViewDelegate, Crop
     }
     
     func cropViewController(_ cropViewController: CropViewController, didCropToImage image: UIImage, withRect cropRect: CGRect, angle: Int) {
-        cropViewController.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        self.selectedImage = image
+        self.dismisCameraroll()
+    }
+    
+    func dismisCameraroll() {
+        
+        switch from {
+        case is SetTeamImageViewController:
+            let parentVC = presentingViewController as! SetTeamImageViewController
+            parentVC.updateImage(image: selectedImage)
+            parentVC.teamImage = selectedImage
+        default:
+            print("nil")
+        }
+        
+        dismiss(animated: true, completion: nil)
     }
 }
 
@@ -179,14 +202,6 @@ extension CamerarollViewController : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
         grabOnePhoto(selectedRow: indexPath.row)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "ToNext") {
-            let cropVC: CropImageViewController = (segue.destination as? CropImageViewController)!
-            cropVC.selectedImage = selectedImage
-        }
     }
 }

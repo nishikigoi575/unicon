@@ -84,7 +84,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func getCurrentTeam() {
         
-        print(Team.current?.dictValue)
+        print(Team.current?.dictValue ?? "からっぽ")
         
     }
     
