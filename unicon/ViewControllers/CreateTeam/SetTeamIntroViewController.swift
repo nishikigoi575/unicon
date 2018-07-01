@@ -42,6 +42,7 @@ class SetTeamIntroViewController: UIViewController {
         TeamService.create(teamName: SetTeamIntroViewController.teamName, teamGender: "male", targetGender: SetTeamIntroViewController.targetGender, teamImage: SetTeamIntroViewController.teamImage, intro: intro) { team in
             if let team = team {
                 self.teamID = team.teamID
+                Team.setCurrent(team, writeToUserDefaults: true)
                 self.performSegue(withIdentifier: "ToNext", sender: team)
             } else {
                 print("失敗でごじゃる")

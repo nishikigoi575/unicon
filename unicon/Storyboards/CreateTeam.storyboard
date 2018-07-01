@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -154,18 +155,11 @@
         <!--Set Team Image View Controller-->
         <scene sceneID="tdy-Mu-iFg">
             <objects>
-                <viewController id="YRa-k0-mon" customClass="SetTeamImageViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SetTeamImageVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YRa-k0-mon" customClass="SetTeamImageViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Sew-bh-Blk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="チーム写真を設定しよう" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crB-N7-qZt">
-                                <rect key="frame" x="30" y="87" width="242" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q37-dD-8Ul">
                                 <rect key="frame" x="226" y="550" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -177,18 +171,10 @@
                                     <action selector="nextBtnTapped:" destination="YRa-k0-mon" eventType="touchUpInside" id="OOF-F9-Zlc"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="チームのメンバーたちが写っている写真をチーム写真として設定しましょう。チームで撮影した写真がなければスキップしてください。あとからでも設定することができます。" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dmF-Hb-JCw">
-                                <rect key="frame" x="30" y="117" width="315" height="117"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJp-If-xVv">
-                                <rect key="frame" x="30" y="242.5" width="315" height="183"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="473.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="315" id="N76-Wf-OaG"/>
-                                    <constraint firstAttribute="height" constant="183" id="Vgl-5o-1Ot"/>
+                                    <constraint firstAttribute="width" secondItem="rJp-If-xVv" secondAttribute="height" multiplier="19:24" id="1m7-24-wXT"/>
                                 </constraints>
                                 <state key="normal" title="写真を設定"/>
                                 <connections>
@@ -198,8 +184,9 @@
                         </subviews>
                         <color key="backgroundColor" red="0.99215686270000003" green="0.6705882353" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="rJp-If-xVv" firstAttribute="centerY" secondItem="Sew-bh-Blk" secondAttribute="centerY" id="1h1-tg-4Lr"/>
-                            <constraint firstItem="rJp-If-xVv" firstAttribute="centerX" secondItem="Sew-bh-Blk" secondAttribute="centerX" id="iM6-pS-yqn"/>
+                            <constraint firstItem="rJp-If-xVv" firstAttribute="leading" secondItem="bzr-Or-aFL" secondAttribute="leading" id="FmT-Cg-K17"/>
+                            <constraint firstItem="rJp-If-xVv" firstAttribute="top" secondItem="Sew-bh-Blk" secondAttribute="top" id="NpQ-IS-BYD"/>
+                            <constraint firstItem="rJp-If-xVv" firstAttribute="trailing" secondItem="bzr-Or-aFL" secondAttribute="trailing" id="nqo-Fx-4ZH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bzr-Or-aFL"/>
                     </view>
