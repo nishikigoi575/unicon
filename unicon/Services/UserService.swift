@@ -15,6 +15,18 @@ typealias FIRUser = FirebaseAuth.User
 
 struct UserService {
     
+    static func show(forUserUID userUID: String, completion: @escaping (User?) -> Void) {
+        //print(uid)
+        let ref = Firestore.firestore().collection("users").document(userUID)
+        ref.getDocument() { (document, err) in
+            
+            guard let document = document, let user = User(document: document) else {
+                return completion(nil)
+            }
+            completion(user)
+        }
+    }
+    
     static func signIn(_ firUser: FIRUser, firstName: String, userImage: URL, facebookID: String,  completion: @escaping (User?) -> Void) {
         
         let userImage = userImage.absoluteString

@@ -16,21 +16,21 @@ import BubbleTransition
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate {
     var window: UIWindow?
     
+    @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var teamImageView: UIImageView!
+    @IBOutlet weak var teamIntroTextView: UITextView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var btnForMyProfile: UIButton!
     @IBOutlet weak var btnForMyProfileView: UIView!
     
     
     var teams = [Team]()
+    var members = [User]()
     let transition = BubbleTransition()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        let storyboard: UIStoryboard = UIStoryboard(name: "ImagePicker", bundle: nil)
-//        let newVC = storyboard.instantiateViewController(withIdentifier: "ImagePickerVC")
-//        self.present(newVC, animated: true, completion: nil)
+
         
         self.navigationItem.hidesBackButton = true
         teamImageView.layer.cornerRadius = 80
@@ -40,14 +40,16 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.register(nib, forCellWithReuseIdentifier: "TeamCell")
         collectionView.reloadData()
         
-        getMyTeam()
-        getCurrentTeam()
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getCurrentTeam()
     }
     
     @IBAction func goMatch(_ sender: Any) {
@@ -84,24 +86,31 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func getCurrentTeam() {
         
-        print(Team.current?.dictValue ?? "からっぽ")
-        
-    }
-    
-    func getMyTeam() {
-        
-        TeamService.myTeams(pageSize: 10, keyUID: Auth.auth().currentUser?.uid) { (teams) in
+        if let team = Team.current {
             
-            guard let teams = teams else {
-                return;
+            if let url = URL(string: team.teamImageURL) {
+                teamImageView.af_setImage(
+                    withURL: url,
+                    imageTransition: .crossDissolve(0.5)
+                )
             }
             
-            self.teams = teams
+            teamNameLabel.text = team.teamName
+            teamIntroTextView.text = team.intro
             
-            self.collectionView.reloadData()
+            getTeamMembers(teamUID: team.teamID)
             
         }
         
+    }
+    
+    func getTeamMembers(teamUID: String) {
+        TeamService.getTeamMembers(teamUID: teamUID, completion: { members in
+            if let members = members {
+                self.members = members
+                self.collectionView.reloadData()
+            }
+        })
     }
     
     
@@ -109,8 +118,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath as IndexPath) as! TeamCollectionViewCell
-        let team = teams[indexPath.row]
-        if let imageUrl = URL(string: team.teamImageURL) {
+        let member = members[indexPath.row]
+        if let imageUrl = URL(string: member.userImage) {
             cell.memberImageView.af_setImage(
                 withURL: imageUrl,
                 imageTransition: .crossDissolve(0.5)
@@ -128,7 +137,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return teams.count
+        return members.count
     }
     
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {

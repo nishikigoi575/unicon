@@ -87,7 +87,7 @@ class TeamService {
         }
     }
     
-    static func myTeams(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([Team]?) -> Void) {
+    static func myTeams(keyUID: String?, completion: @escaping ([Team]?) -> Void) {
         
         guard let userUID = keyUID  else {
             print("あれれ")
@@ -157,6 +157,34 @@ class TeamService {
             }
             dispatchGroup.notify(queue: .main, execute: {
                 completion(teams)
+            })
+        }
+        
+    }
+    
+    static func getTeamMembers(teamUID: String, completion: @escaping ([User]?) -> Void) {
+        let ref = Firestore.firestore().collection("teams").document(teamUID).collection("members")
+        ref.getDocuments{ (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error retreving posts: \(error.debugDescription)")
+                return completion([])
+            }
+            let dispatchGroup = DispatchGroup()
+            
+            var members = [User]()
+            for memberSnap in snapshot.documents {
+                guard let memberDict = memberSnap.data() as? [String: Any]
+                    else { continue }
+                dispatchGroup.enter()
+                UserService.show(forUserUID: memberSnap.documentID, completion: { user in
+                    if let user = user {
+                        members.append(user)
+                        dispatchGroup.leave()
+                    }
+                })
+            }
+            dispatchGroup.notify(queue: .main, execute: {
+                completion(members)
             })
         }
         

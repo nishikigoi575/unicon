@@ -86,6 +86,9 @@
                                                                             <constraint firstAttribute="height" constant="80" id="oBq-F1-zRo"/>
                                                                         </constraints>
                                                                         <state key="normal" image="change"/>
+                                                                        <connections>
+                                                                            <segue destination="XhS-Pw-mO9" kind="presentation" id="v6i-yr-kfo"/>
+                                                                        </connections>
                                                                     </button>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="切り替え" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c6T-QH-2fM">
                                                                         <rect key="frame" x="0.0" y="80" width="80" height="17"/>
@@ -227,12 +230,78 @@
                         <outlet property="btnForMyProfileView" destination="7pn-xa-AvR" id="4BQ-HF-GiL"/>
                         <outlet property="collectionView" destination="USf-f4-YFm" id="L3h-Vy-EHM"/>
                         <outlet property="teamImageView" destination="5cH-c3-V4l" id="Ylc-Ge-91N"/>
+                        <outlet property="teamIntroTextView" destination="vvw-ej-ot3" id="gUU-n7-byl"/>
+                        <outlet property="teamNameLabel" destination="15i-Z6-vIa" id="xvU-2K-Pnc"/>
                         <segue destination="QFQ-Py-QrM" kind="presentation" identifier="ToMyProfile" id="3Z1-GP-bTQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L91-Ep-0Qp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="369" y="257"/>
+        </scene>
+        <!--Select Team View Controller-->
+        <scene sceneID="6pW-48-qgc">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IXO-sI-jtK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="XhS-Pw-mO9" customClass="SelectTeamViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jB7-5s-Bsm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yep-L6-NKr">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="チームを選択" id="FhM-5u-VLJ">
+                                        <barButtonItem key="rightBarButtonItem" title="追加" id="p7e-GR-JKo"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cda-k2-saU">
+                                <rect key="frame" x="0.0" y="737" width="375" height="75"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Vb-Tg-w78">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
+                                        <state key="normal" title="〇〇に切り替え">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88235294119999996" green="0.086274509799999996" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Vb-Tg-w78" secondAttribute="trailing" id="6iu-5h-9bE"/>
+                                    <constraint firstAttribute="bottom" secondItem="9Vb-Tg-w78" secondAttribute="bottom" id="Y72-5E-DTE"/>
+                                    <constraint firstAttribute="height" constant="75" id="abL-7v-Srv"/>
+                                    <constraint firstItem="9Vb-Tg-w78" firstAttribute="leading" secondItem="cda-k2-saU" secondAttribute="leading" id="dkL-kz-hWM"/>
+                                    <constraint firstItem="9Vb-Tg-w78" firstAttribute="top" secondItem="cda-k2-saU" secondAttribute="top" id="vUl-lf-S8U"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-54-r35">
+                                <rect key="frame" x="0.0" y="88" width="375" height="649"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cda-k2-saU" firstAttribute="top" secondItem="T3g-54-r35" secondAttribute="bottom" id="5dx-Vc-zGU"/>
+                            <constraint firstItem="cda-k2-saU" firstAttribute="leading" secondItem="ayj-Of-qnq" secondAttribute="leading" id="970-gC-idl"/>
+                            <constraint firstItem="T3g-54-r35" firstAttribute="trailing" secondItem="ayj-Of-qnq" secondAttribute="trailing" id="G7F-aQ-ZJq"/>
+                            <constraint firstItem="yep-L6-NKr" firstAttribute="top" secondItem="ayj-Of-qnq" secondAttribute="top" id="IYV-gY-UIx"/>
+                            <constraint firstItem="T3g-54-r35" firstAttribute="leading" secondItem="ayj-Of-qnq" secondAttribute="leading" id="PSr-Sb-57K"/>
+                            <constraint firstItem="cda-k2-saU" firstAttribute="trailing" secondItem="ayj-Of-qnq" secondAttribute="trailing" id="ZAA-js-Ez5"/>
+                            <constraint firstItem="yep-L6-NKr" firstAttribute="trailing" secondItem="ayj-Of-qnq" secondAttribute="trailing" id="aQ8-KK-LyU"/>
+                            <constraint firstAttribute="bottom" secondItem="cda-k2-saU" secondAttribute="bottom" id="c0x-sq-TVr"/>
+                            <constraint firstItem="T3g-54-r35" firstAttribute="top" secondItem="yep-L6-NKr" secondAttribute="bottom" id="q24-Zd-4Ye"/>
+                            <constraint firstItem="yep-L6-NKr" firstAttribute="leading" secondItem="ayj-Of-qnq" secondAttribute="leading" id="zYJ-EU-woJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ayj-Of-qnq"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="T3g-54-r35" id="DNB-h2-Adn"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="359.19999999999999" y="1001.9704433497537"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="2JK-m3-cid">
