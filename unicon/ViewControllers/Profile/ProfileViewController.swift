@@ -155,9 +155,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let controller = segue.destination
-        controller.transitioningDelegate = self
-        controller.modalPresentationStyle = .custom
+        
+        switch segue.identifier {
+        case "ToMyProfile":
+            let controller = segue.destination
+            controller.transitioningDelegate = self
+            controller.modalPresentationStyle = .custom
+        default:
+            return
+        }
     }
     
     @IBAction func goMyProfile(_ sender: Any) {

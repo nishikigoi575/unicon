@@ -252,6 +252,11 @@
                                 <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                                 <items>
                                     <navigationItem title="チームを選択" id="FhM-5u-VLJ">
+                                        <barButtonItem key="leftBarButtonItem" title="キャンセル" id="nF1-eb-UfE">
+                                            <connections>
+                                                <action selector="cancel:" destination="XhS-Pw-mO9" id="yLU-zC-48A"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="追加" id="p7e-GR-JKo"/>
                                     </navigationItem>
                                 </items>
@@ -265,6 +270,9 @@
                                         <state key="normal" title="〇〇に切り替え">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="switchCurrentTeam:" destination="XhS-Pw-mO9" eventType="touchUpInside" id="b6g-V8-1ri"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.88235294119999996" green="0.086274509799999996" blue="0.76078431369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -276,7 +284,7 @@
                                     <constraint firstItem="9Vb-Tg-w78" firstAttribute="top" secondItem="cda-k2-saU" secondAttribute="top" id="vUl-lf-S8U"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-54-r35">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3g-54-r35">
                                 <rect key="frame" x="0.0" y="88" width="375" height="649"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
@@ -297,6 +305,7 @@
                         <viewLayoutGuide key="safeArea" id="ayj-Of-qnq"/>
                     </view>
                     <connections>
+                        <outlet property="doneBtn" destination="9Vb-Tg-w78" id="mkO-IN-ZPG"/>
                         <outlet property="tableView" destination="T3g-54-r35" id="DNB-h2-Adn"/>
                     </connections>
                 </viewController>

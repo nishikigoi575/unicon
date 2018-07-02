@@ -12,9 +12,10 @@ import AlamofireImage
 class SelectTeamViewController: UIViewController, UITableViewDelegate {
 
     var teams = [Team]()
-    var selectedTeam = [Team]()
+    var selectedTeamIndex = Int()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var doneBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +27,7 @@ class SelectTeamViewController: UIViewController, UITableViewDelegate {
         tableView.register(nib, forCellReuseIdentifier: "TeamListCell")
         
         getMyTeams()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,14 +40,40 @@ class SelectTeamViewController: UIViewController, UITableViewDelegate {
             TeamService.myTeams(keyUID: userUID) { (teams) in
                 if let teams = teams {
                     self.teams = teams
-                    self.tableView.reloadData()
+                    let group = DispatchGroup()
+                    for (i, team) in teams.enumerated() {
+                        group.enter()
+                        if Team.current?.teamID == team.teamID {
+                            self.selectedTeamIndex = i
+                            self.doneBtn.setTitle(team.teamName + "に切り替え", for: UIControlState())
+                        }
+                        group.leave()
+                    }
+                    group.notify(queue: .main, execute: {
+                        self.tableView.reloadData()
+                    })
                 }
             }
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
+        selectedTeamIndex = indexPath.row
+        let selectedTeam = teams[selectedTeamIndex]
+        doneBtn.setTitle(selectedTeam.teamName + "に切り替え", for: UIControlState())
+    }
+    
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func switchCurrentTeam(_ sender: Any) {
+        let selectedTeam = teams[selectedTeamIndex]
+        Team.setCurrent(selectedTeam, writeToUserDefaults: true)
+        if let parentVC = presentingViewController as? ProfileViewController {
+            parentVC.getCurrentTeam()
+        }
+        dismiss(animated: true, completion: nil)
     }
     
 }
@@ -70,6 +98,11 @@ extension SelectTeamViewController: UITableViewDataSource {
                 imageTransition: .crossDissolve(0.5)
             )
         }
+        
+        if indexPath.row == selectedTeamIndex {
+            self.tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
+        
         cell.teamNameLabel.text = team.teamName
         cell.teamIntroTextView.text = team.intro
         
