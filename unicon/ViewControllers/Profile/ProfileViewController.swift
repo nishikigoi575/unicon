@@ -10,7 +10,6 @@ import UIKit
 import FirebaseAuth
 import FacebookLogin
 import AlamofireImage
-import UPCarouselFlowLayout
 import BubbleTransition
 
 class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate {
@@ -40,6 +39,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.register(nib, forCellWithReuseIdentifier: "TeamCell")
         collectionView.reloadData()
         
+        btnForMyProfileView.orangeCoral()
         
     }
 
@@ -49,6 +49,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print("呼ばれてる")
         getCurrentTeam()
     }
     
@@ -85,7 +86,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     func getCurrentTeam() {
-        
         if let team = Team.current {
             
             if let url = URL(string: team.teamImageURL) {
@@ -126,9 +126,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             )
         }
         
-        cell.memberImageView.layer.cornerRadius = 50
-        cell.memberImageView.layer.masksToBounds = true
-        
         return cell
     }
     
@@ -143,14 +140,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = btnForMyProfileView.center
-        transition.bubbleColor = btnForMyProfileView.backgroundColor!
+        transition.bubbleColor = UIColor.hex(hex: "ff5e62", alpha: 1.0)
         return transition
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = btnForMyProfileView.center
-        transition.bubbleColor = btnForMyProfileView.backgroundColor!
+        transition.bubbleColor = UIColor.hex(hex: "ff9966", alpha: 1.0)
         return transition
     }
     

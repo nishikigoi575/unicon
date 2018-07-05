@@ -16,9 +16,12 @@ class SelectTeamViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var doneBtn: UIButton!
+    @IBOutlet weak var switchBtnView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        switchBtnView.orangeCoral()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self

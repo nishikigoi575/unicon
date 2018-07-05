@@ -28,7 +28,6 @@ target 'unicon' do
    
    # UIDesigns
    pod 'BubbleTransition'
-   pod 'UPCarouselFlowLayout'
    
   target 'uniconTests' do
     inherit! :search_paths

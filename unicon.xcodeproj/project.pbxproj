@@ -61,7 +61,6 @@
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
 		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
-		438045F220E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */; };
 		438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */; };
 		438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
@@ -73,6 +72,7 @@
 		43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */; };
 		43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
 		43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */; };
+		43E5C03120ECB34200948D1A /* EditMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */; };
 		8B224869A6AF6C464EB2EAA0 /* Pods_uniconTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +168,8 @@
 		43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
 		43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListTableViewCell.xib; sourceTree = "<group>"; };
 		43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewController.swift; sourceTree = "<group>"; };
+		43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyProfileViewController.swift; sourceTree = "<group>"; };
+		43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPCarouselFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C6DCD3199F2051B3F94E199 /* Pods-uniconUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,7 +185,6 @@
 			files = (
 				43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */,
 				435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */,
-				438045F220E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
 				43222D0320D64F4400B3DB50 /* Alamofire.framework in Frameworks */,
 				43222D0520D64F4400B3DB50 /* AlamofireImage.framework in Frameworks */,
@@ -380,6 +381,7 @@
 				43222CFD20D625D500B3DB50 /* ProfileViewController.swift */,
 				435727D620E47C9700720C41 /* MyProfileViewController.swift */,
 				43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */,
+				43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -467,6 +469,7 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */,
 				43E5C02820E7BEB900948D1A /* CropViewController.framework */,
 				4338826C20E7440A0057B55E /* ALCameraViewController.framework */,
 				435727D820E48A4900720C41 /* BubbleTransition.framework */,
@@ -710,7 +713,6 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/UPCarouselFlowLayout/UPCarouselFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -739,7 +741,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UPCarouselFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -760,6 +761,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43E5C03120ECB34200948D1A /* EditMyProfileViewController.swift in Sources */,
 				43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */,
 				435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */,
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,

@@ -25,12 +25,19 @@ class MatchingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if Team.current == nil {
+            let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
+            let newVC = storyboard.instantiateViewController(withIdentifier: "CreateOrJoinVC")
+            self.present(newVC, animated: true, completion: nil)
+        }
+        
+        
         kolodaView.layer.cornerRadius = 20.0
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
         reloadTeams()
-
+        
     }
     
     override func didReceiveMemoryWarning() {

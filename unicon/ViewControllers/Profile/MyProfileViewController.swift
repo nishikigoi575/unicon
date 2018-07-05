@@ -12,6 +12,8 @@ import BubbleTransition
 
 class MyProfileViewController: UIViewController {
 
+    
+    @IBOutlet weak var viewForBtn: UIView!
     @IBOutlet weak var profImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var belongingLabel: UILabel!
@@ -23,6 +25,21 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewForBtn.orangeCoral()
+        
+        reloadProfile()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func close(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func reloadProfile() {
         if let imageUrl = URL(string: (User.current?.userImage)!) {
             profImageView.af_setImage(
                 withURL: imageUrl,
@@ -40,19 +57,12 @@ class MyProfileViewController: UIViewController {
             }
         }
         
+        if let belonging = User.current?.belonging {
+            belongingLabel.text = belonging
+        } else {
+            belongingLabel.text = ""
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func close(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
-
     
 
 }

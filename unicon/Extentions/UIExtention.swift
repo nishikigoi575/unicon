@@ -46,6 +46,7 @@ extension UIColor {
     }
     
     static func hex(hex: String, alpha: CGFloat?) -> UIColor {
+        
         let alpha = alpha ?? 1.0
         if hex.count == 6 {
             let rawValue: Int = Int(hex, radix: 16) ?? 0
@@ -58,6 +59,7 @@ extension UIColor {
                                 blue: CGFloat(B255) / 255,
                                 alpha: alpha)
             return color
+            
         } else {
             let color = UIColor(red: 0, green: 0, blue: 0, alpha: alpha)
             return color
@@ -65,3 +67,32 @@ extension UIColor {
     }
     
 }
+
+extension UIView {
+    func orangeCoral() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+        // https://uigradients.com/#IbizaSunset
+        let color1 = UIColor.hex(hex: "ff5e62", alpha: 1.0).cgColor
+        let color2 = UIColor.hex(hex: "ff9966", alpha: 1.0).cgColor
+        gradientLayer.colors = [color1, color2]
+        gradientLayer.startPoint = CGPoint.init(x: 0, y: 0)
+        gradientLayer.endPoint = CGPoint.init(x: 1, y:1)
+        self.layer.insertSublayer(gradientLayer,at:0)
+    }
+}
+
+class MyTextField: UITextField {
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 30.0, dy: 20.0)
+    }
+    
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 30.0, dy: 20.0)
+    }
+    
+    override func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.insetBy(dx: 50.0, dy: 0.0)
+    }
+}
+
