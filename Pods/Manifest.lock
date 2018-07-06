@@ -110,6 +110,9 @@ PODS:
   - nanopb/encode (0.3.8)
   - pop (1.0.10)
   - Protobuf (3.6.0)
+  - Realm (3.7.4):
+    - Realm/Headers (= 3.7.4)
+  - Realm/Headers (3.7.4)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
@@ -125,6 +128,7 @@ DEPENDENCIES:
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
   - IQKeyboardManagerSwift
   - Koloda (~> 4.3.1)
+  - Realm
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -159,6 +163,7 @@ SPEC REPOS:
     - nanopb
     - pop
     - Protobuf
+    - Realm
 
 EXTERNAL SOURCES:
   Firestore:
@@ -197,7 +202,8 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  Realm: a469bb59e33f9926102ccaea4349822c53b9117e
 
-PODFILE CHECKSUM: c345627e7ee98801f454837441f446164b4b37b8
+PODFILE CHECKSUM: c97c9f681a63f1449761fcdfc532d4a6adaaece8
 
 COCOAPODS: 1.5.3
