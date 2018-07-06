@@ -25,7 +25,7 @@ class MyProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewForBtn.orangeCoral()
+        viewForBtn.learningAndLeading()
         
         reloadProfile()
     }

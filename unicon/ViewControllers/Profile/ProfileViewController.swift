@@ -39,7 +39,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.register(nib, forCellWithReuseIdentifier: "TeamCell")
         collectionView.reloadData()
         
-        btnForMyProfileView.orangeCoral()
+        btnForMyProfileView.learningAndLeading()
         
     }
 
@@ -140,14 +140,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     public func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .present
         transition.startingPoint = btnForMyProfileView.center
-        transition.bubbleColor = UIColor.hex(hex: "ff5e62", alpha: 1.0)
+        transition.bubbleColor = UIColor.hex(hex: "ffcc33", alpha: 1.0)
         return transition
     }
     
     public func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .dismiss
         transition.startingPoint = btnForMyProfileView.center
-        transition.bubbleColor = UIColor.hex(hex: "ff9966", alpha: 1.0)
+        transition.bubbleColor = UIColor.hex(hex: "ffcc33", alpha: 1.0)
         return transition
     }
     
@@ -172,7 +172,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
         let newVC = storyboard.instantiateViewController(withIdentifier: "CreateOrJoinVC")
         self.present(newVC, animated: true, completion: nil)
-
     }
     
     

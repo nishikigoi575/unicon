@@ -23,7 +23,7 @@ class EditMyProfileViewController: UIViewController, UITextViewDelegate, UITextF
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        saveBtnView.orangeCoral()
+        saveBtnView.learningAndLeading()
         
         guard let user = User.current else {
             dismiss(animated: true, completion: nil)
