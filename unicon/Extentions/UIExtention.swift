@@ -69,12 +69,12 @@ extension UIColor {
 }
 
 extension UIView {
-    func orangeCoral() {
+    func learningAndLeading() {
         let gradientLayer = CAGradientLayer()
         gradientLayer.frame = self.bounds
         // https://uigradients.com/#IbizaSunset
-        let color1 = UIColor.hex(hex: "ff5e62", alpha: 1.0).cgColor
-        let color2 = UIColor.hex(hex: "ff9966", alpha: 1.0).cgColor
+        let color1 = UIColor.hex(hex: "ffcc33", alpha: 1.0).cgColor
+        let color2 = UIColor.hex(hex: "ffb347", alpha: 1.0).cgColor
         gradientLayer.colors = [color1, color2]
         gradientLayer.startPoint = CGPoint.init(x: 0, y: 0)
         gradientLayer.endPoint = CGPoint.init(x: 1, y:1)
