@@ -36,8 +36,7 @@ class MatchingViewController: UIViewController {
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        reloadTeams()
-        
+        reloadTeams()   
     }
     
     override func didReceiveMemoryWarning() {

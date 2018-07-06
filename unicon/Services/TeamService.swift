@@ -133,33 +133,24 @@ class TeamService {
         }
     }
     
-    static func getFive(completion: @escaping ([Team]?) -> Void) {
-        let ref = Firestore.firestore().collection("teams").limit(to: 5)
+    static func getTeamList(size: Int, completion: @escaping ([String]) -> Void) {
+        let ref = Firestore.firestore().collection("teamList").order(by: "lastLoginDate", descending: true).limit(to: size)
         ref.getDocuments{ (snapshot, error) in
             guard let snapshot = snapshot else {
                 print("Error retreving posts: \(error.debugDescription)")
                 return completion([])
             }
             let dispatchGroup = DispatchGroup()
-            
-            var teams = [Team]()
-            for teamSnap in snapshot.documents {
-                guard let teamDict = teamSnap.data() as? [String: Any]
-                    else { continue }
-                
+            var teamList = [String]()
+            for document in snapshot.documents {
                 dispatchGroup.enter()
-                TeamService.show(forTeamID: teamSnap.documentID) { (team) in
-                    if let team = team {
-                        teams.append(team)
-                        dispatchGroup.leave()
-                    }
-                }
+                teamList.append(document.documentID)
+                dispatchGroup.leave()
             }
             dispatchGroup.notify(queue: .main, execute: {
-                completion(teams)
+                completion(teamList)
             })
         }
-        
     }
     
     static func getTeamMembers(teamUID: String, completion: @escaping ([User]?) -> Void) {

@@ -13,6 +13,7 @@
 		202F29F920DF82E7001C8210 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
 		202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
+		20522E7320EF5D100072CF1D /* RefactorDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7220EF5D100072CF1D /* RefactorDB.swift */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
 		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
@@ -101,6 +102,7 @@
 		202F29F820DF82E7001C8210 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		202F29FA20DF8522001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
+		20522E7220EF5D100072CF1D /* RefactorDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorDB.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -463,6 +465,7 @@
 				43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */,
 				43C6C70D20EF5C4A0053FCD2 /* Info.plist */,
 				43C6C70E20EF5C4A0053FCD2 /* memo.txt */,
+				20522E7220EF5D100072CF1D /* RefactorDB.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -765,6 +768,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E5C03120ECB34200948D1A /* EditMyProfileViewController.swift in Sources */,
+				20522E7320EF5D100072CF1D /* RefactorDB.swift in Sources */,
 				43C6C70F20EF5C4A0053FCD2 /* Constants.swift in Sources */,
 				43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */,
 				435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */,
