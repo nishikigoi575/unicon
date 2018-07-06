@@ -12,12 +12,6 @@
 		202F29F720DF7F9A001C8210 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29F620DF7F9A001C8210 /* CardView.swift */; };
 		202F29F920DF82E7001C8210 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
 		202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
-		202F29FF20DFC3B5001C8210 /* CardViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */; };
-		202F2A0120DFC3CC001C8210 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0020DFC3CC001C8210 /* UserHelper.swift */; };
-		202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */; };
-		202F2A0520DFC3EF001C8210 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0420DFC3EF001C8210 /* Info.plist */; };
-		202F2A0720DFC41D001C8210 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 202F2A0620DFC41D001C8210 /* memo.txt */; };
-		202F2A0B20DFE198001C8210 /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
@@ -51,7 +45,6 @@
 		435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435727D620E47C9700720C41 /* MyProfileViewController.swift */; };
 		435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435727D820E48A4900720C41 /* BubbleTransition.framework */; };
 		4360356720DB41D80092361A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356620DB41D80092361A /* User.swift */; };
-		4360356A20DB4C840092361A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356920DB4C840092361A /* Constants.swift */; };
 		4360356E20DB78AD0092361A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356D20DB78AD0092361A /* UserService.swift */; };
 		4360357020DB8D700092361A /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356F20DB8D700092361A /* Team.swift */; };
 		4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4360357120DC9B600092361A /* JoinTeam.storyboard */; };
@@ -69,6 +62,13 @@
 		43A5D41420D4EF6B004612D4 /* uniconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D41320D4EF6B004612D4 /* uniconTests.swift */; };
 		43A5D41F20D4EF6B004612D4 /* uniconUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D41E20D4EF6B004612D4 /* uniconUITests.swift */; };
 		43C6C70220EF4DBA0053FCD2 /* EditTeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70120EF4DBA0053FCD2 /* EditTeamProfileViewController.swift */; };
+		43C6C70720EF5B9D0053FCD2 /* CardViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70420EF5B9D0053FCD2 /* CardViewHelper.swift */; };
+		43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */; };
+		43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */; };
+		43C6C70F20EF5C4A0053FCD2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70B20EF5C4A0053FCD2 /* Constants.swift */; };
+		43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */; };
+		43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70D20EF5C4A0053FCD2 /* Info.plist */; };
+		43C6C71220EF5C4A0053FCD2 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70E20EF5C4A0053FCD2 /* memo.txt */; };
 		43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5C02820E7BEB900948D1A /* CropViewController.framework */; };
 		43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */; };
 		43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
@@ -100,12 +100,6 @@
 		202F29F620DF7F9A001C8210 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		202F29F820DF82E7001C8210 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		202F29FA20DF8522001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CardViewHelper.swift; path = unicon/Helpers/CardViewHelper.swift; sourceTree = SOURCE_ROOT; };
-		202F2A0020DFC3CC001C8210 /* UserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserHelper.swift; path = unicon/Helpers/UserHelper.swift; sourceTree = SOURCE_ROOT; };
-		202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "unicon/Supporting Files/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
-		202F2A0420DFC3EF001C8210 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "unicon/Supporting Files/Info.plist"; sourceTree = SOURCE_ROOT; };
-		202F2A0620DFC41D001C8210 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = memo.txt; path = "unicon/Supporting Files/memo.txt"; sourceTree = SOURCE_ROOT; };
-		202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCPaginationHelper.swift; path = unicon/Helpers/UCPaginationHelper.swift; sourceTree = SOURCE_ROOT; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,7 +136,6 @@
 		435727D620E47C9700720C41 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		435727D820E48A4900720C41 /* BubbleTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BubbleTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4360356620DB41D80092361A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		4360356920DB4C840092361A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "unicon/Supporting Files/Constants.swift"; sourceTree = SOURCE_ROOT; };
 		4360356D20DB78AD0092361A /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		4360356F20DB8D700092361A /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		4360357120DC9B600092361A /* JoinTeam.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = JoinTeam.storyboard; sourceTree = "<group>"; };
@@ -166,6 +159,13 @@
 		43A5D41E20D4EF6B004612D4 /* uniconUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uniconUITests.swift; sourceTree = "<group>"; };
 		43A5D42020D4EF6B004612D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C6C70120EF4DBA0053FCD2 /* EditTeamProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTeamProfileViewController.swift; sourceTree = "<group>"; };
+		43C6C70420EF5B9D0053FCD2 /* CardViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewHelper.swift; sourceTree = "<group>"; };
+		43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHelper.swift; sourceTree = "<group>"; };
+		43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPaginationHelper.swift; sourceTree = "<group>"; };
+		43C6C70B20EF5C4A0053FCD2 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		43C6C70D20EF5C4A0053FCD2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43C6C70E20EF5C4A0053FCD2 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
 		43E5C02820E7BEB900948D1A /* CropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
 		43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListTableViewCell.xib; sourceTree = "<group>"; };
@@ -242,29 +242,6 @@
 				202F29F820DF82E7001C8210 /* CardView.xib */,
 			);
 			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		2037633620D8FDF800A86A75 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				202F2A0220DFC3E4001C8210 /* GoogleService-Info.plist */,
-				202F2A0420DFC3EF001C8210 /* Info.plist */,
-				4360356920DB4C840092361A /* Constants.swift */,
-				202F2A0620DFC41D001C8210 /* memo.txt */,
-			);
-			name = "Supporting Files";
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		2037633720D8FE2C00A86A75 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				202F29FE20DFC3B5001C8210 /* CardViewHelper.swift */,
-				202F2A0020DFC3CC001C8210 /* UserHelper.swift */,
-				202F2A0A20DFE197001C8210 /* UCPaginationHelper.swift */,
-			);
-			name = Helpers;
-			path = "New Group1";
 			sourceTree = "<group>";
 		};
 		37863B0E1E63370845261E2C /* Pods */ = {
@@ -443,9 +420,9 @@
 				43222CF420D622D900B3DB50 /* Storyboards */,
 				438045FA20E1FCC600FF6BF4 /* CellXibs */,
 				202F29F520DF7F54001C8210 /* CustomViews */,
-				2037633720D8FE2C00A86A75 /* Helpers */,
+				43C6C70320EF5B330053FCD2 /* Helpers */,
 				43222D0120D6270B00B3DB50 /* Extentions */,
-				2037633620D8FDF800A86A75 /* Supporting Files */,
+				43C6C70A20EF5BB30053FCD2 /* Supporting Files */,
 				43A5D40520D4EF6B004612D4 /* Assets.xcassets */,
 			);
 			path = unicon;
@@ -467,6 +444,27 @@
 				43A5D42020D4EF6B004612D4 /* Info.plist */,
 			);
 			path = uniconUITests;
+			sourceTree = "<group>";
+		};
+		43C6C70320EF5B330053FCD2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				43C6C70420EF5B9D0053FCD2 /* CardViewHelper.swift */,
+				43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */,
+				43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		43C6C70A20EF5BB30053FCD2 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				43C6C70B20EF5C4A0053FCD2 /* Constants.swift */,
+				43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */,
+				43C6C70D20EF5C4A0053FCD2 /* Info.plist */,
+				43C6C70E20EF5C4A0053FCD2 /* memo.txt */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
@@ -604,18 +602,18 @@
 			files = (
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
 				434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */,
-				202F2A0320DFC3E4001C8210 /* GoogleService-Info.plist in Resources */,
-				202F2A0520DFC3EF001C8210 /* Info.plist in Resources */,
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
-				202F2A0720DFC41D001C8210 /* memo.txt in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
+				43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */,
+				43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
 				438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */,
 				43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */,
 				43222CF620D622FA00B3DB50 /* Onboard.storyboard in Resources */,
+				43C6C71220EF5C4A0053FCD2 /* memo.txt in Resources */,
 				43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,11 +763,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				43E5C03120ECB34200948D1A /* EditMyProfileViewController.swift in Sources */,
+				43C6C70F20EF5C4A0053FCD2 /* Constants.swift in Sources */,
 				43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */,
 				435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */,
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
 				43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */,
-				202F2A0120DFC3CC001C8210 /* UserHelper.swift in Sources */,
 				2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */,
 				4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
@@ -777,12 +775,14 @@
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
+				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				43C6C70720EF5B9D0053FCD2 /* CardViewHelper.swift in Sources */,
 				438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
-				202F2A0B20DFE198001C8210 /* UCPaginationHelper.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
+				43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
 				202F29F720DF7F9A001C8210 /* CardView.swift in Sources */,
 				43C6C70220EF4DBA0053FCD2 /* EditTeamProfileViewController.swift in Sources */,
@@ -793,14 +793,12 @@
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
-				202F29FF20DFC3B5001C8210 /* CardViewHelper.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
 				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */,
-				4360356A20DB4C840092361A /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
