@@ -31,6 +31,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
         UINavigationBar.appearance().shadowImage = UIImage()
         
+        UCUserDefaultsHelper.getSwipedTeams()
+        UCUserDefaultsHelper.getMatchedTeams()
+        
         return true
     }
     

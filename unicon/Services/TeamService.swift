@@ -133,26 +133,6 @@ class TeamService {
         }
     }
     
-    static func getTeamList(size: Int, completion: @escaping ([String]) -> Void) {
-        let ref = Firestore.firestore().collection("teamList").order(by: "lastLoginDate", descending: true).limit(to: size)
-        ref.getDocuments{ (snapshot, error) in
-            guard let snapshot = snapshot else {
-                print("Error retreving posts: \(error.debugDescription)")
-                return completion([])
-            }
-            let dispatchGroup = DispatchGroup()
-            var teamList = [String]()
-            for document in snapshot.documents {
-                dispatchGroup.enter()
-                teamList.append(document.documentID)
-                dispatchGroup.leave()
-            }
-            dispatchGroup.notify(queue: .main, execute: {
-                completion(teamList)
-            })
-        }
-    }
-    
     static func getTeamMembers(teamUID: String, completion: @escaping ([User]?) -> Void) {
         let ref = Firestore.firestore().collection("teams").document(teamUID).collection("members")
         ref.getDocuments{ (snapshot, error) in
@@ -181,4 +161,126 @@ class TeamService {
         
     }
     
+    static func getTeamList(index: Int, size: Int, completion: @escaping ([String]) -> Void) {
+        let ref = Firestore.firestore().collection("teamList")
+        if index <= 0 {
+            ref.order(by: "lastLoginDate", descending: true).limit(to: size).getDocuments{ (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving posts: \(error.debugDescription)")
+                    return completion([])
+                }
+                let dispatchGroup = DispatchGroup()
+                
+                var teamList = [String]()
+                for document in snapshot.documents {
+                    dispatchGroup.enter()
+                    teamList.append(document.documentID)
+                    dispatchGroup.leave()
+                }
+                dispatchGroup.notify(queue: .main, execute: {
+                    completion(teamList)
+                })
+            }
+        } else {
+            let first = ref.order(by: "lastLoginDate", descending: false).limit(to: index)
+            first.getDocuments {(snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving price: \(error.debugDescription)")
+                    return completion([])
+                }
+                
+                guard let lastSnapshot = snapshot.documents.last else {
+                    return completion([])
+                }
+                
+                let next = ref.order(by: "lastLoginDate", descending: false).start(afterDocument: lastSnapshot).limit(to: size)
+                next.getDocuments { (nextSnapshot, error) in
+                    guard let nextSnapshot = nextSnapshot else {
+                        print("Error : \(error.debugDescription)")
+                        return completion([])
+                    }
+                    let dispatchGroup = DispatchGroup()
+                    
+                    var teamList = [String]()
+                    for document in nextSnapshot.documents {
+                        dispatchGroup.enter()
+                        teamList.append(document.documentID)
+                        dispatchGroup.leave()
+                    }
+                    dispatchGroup.notify(queue: .main, execute: {
+                        completion(teamList)
+                    })
+                }
+            }
+        }
+    }
+    
+    static func getTeams(index: Int, num: Int, completion: @escaping ([Team]) -> Void) {
+        let ref = Firestore.firestore().collection("teams")
+        if index <= 0 {
+            ref.order(by: "date", descending: false).limit(to: num).getDocuments{ (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving posts: \(error.debugDescription)")
+                    return completion([])
+                }
+                let dispatchGroup = DispatchGroup()
+                
+                var teams = [Team]()
+                for teamSnap in snapshot.documents {
+                    guard let teamDict = teamSnap.data() as? [String: Any]
+                        else { continue }
+                    
+                    dispatchGroup.enter()
+                    TeamService.show(forTeamID: teamSnap.documentID) { (team) in
+                        if let team = team {
+                            teams.append(team)
+                            dispatchGroup.leave()
+                        }
+                    }
+                }
+                dispatchGroup.notify(queue: .main, execute: {
+                    completion(teams)
+                })
+            }
+        } else {
+            let first = ref.order(by: "date", descending: false).limit(to: index)
+            first.getDocuments {(snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving price: \(error.debugDescription)")
+                    return completion([])
+                }
+                
+                guard let lastSnapshot = snapshot.documents.last else {
+                    return completion([])
+                }
+                
+                let next = ref.order(by: "date", descending: false).start(afterDocument: lastSnapshot).limit(to: Int(num))
+                next.getDocuments { (nextSnapshot, error) in
+                    guard let nextSnapshot = nextSnapshot else {
+                        print("Error : \(error.debugDescription)")
+                        return completion([])
+                    }
+                    let dispatchGroup = DispatchGroup()
+                    
+                    var teams = [Team]()
+                    for teamSnap in nextSnapshot.documents {
+                        guard let teamDict = teamSnap.data() as? [String: Any]
+                            else { continue }
+                        
+                        dispatchGroup.enter()
+                        
+                        TeamService.show(forTeamID: teamSnap.documentID) { (team) in
+                            if let team = team {
+                                teams.append(team)
+                                dispatchGroup.leave()
+                            }
+                        }
+                    }
+                    dispatchGroup.notify(queue: .main, execute: {
+                        completion(teams)
+                    })
+                }
+            }
+        }
+    }
 }

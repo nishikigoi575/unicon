@@ -18,6 +18,9 @@ class MatchingViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     
+    static var swipedTeamList = [String]()
+    static var matchedteamList = [String]()
+    var teamList = [String]()
     var teams = [Team]()
     
     var dataSource = [CardView]()
@@ -30,6 +33,7 @@ class MatchingViewController: UIViewController {
             let newVC = storyboard.instantiateViewController(withIdentifier: "CreateOrJoinVC")
             self.present(newVC, animated: true, completion: nil)
         }
+        
         
         
         kolodaView.layer.cornerRadius = 20.0
