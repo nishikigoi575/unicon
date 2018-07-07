@@ -15,6 +15,74 @@
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
 		20522E7320EF5D100072CF1D /* RefactorDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7220EF5D100072CF1D /* RefactorDB.swift */; };
 		20522E7520EF6A610072CF1D /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7420EF6A610072CF1D /* UCUserDefaultsHelper.swift */; };
+		20522E7720EF71250072CF1D /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7620EF71250072CF1D /* UCTeamHandler.swift */; };
+		20522E7B20F085450072CF1D /* EditMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */; };
+		20522E7C20F085450072CF1D /* RefactorDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7220EF5D100072CF1D /* RefactorDB.swift */; };
+		20522E7D20F085450072CF1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70B20EF5C4A0053FCD2 /* Constants.swift */; };
+		20522E7E20F085450072CF1D /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */; };
+		20522E7F20F085450072CF1D /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435727D620E47C9700720C41 /* MyProfileViewController.swift */; };
+		20522E8020F085450072CF1D /* SetTeamNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0E20D67D2600B3DB50 /* SetTeamNameViewController.swift */; };
+		20522E8120F085450072CF1D /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */; };
+		20522E8220F085450072CF1D /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
+		20522E8320F085450072CF1D /* CropImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827920E7777E0057B55E /* CropImageViewController.swift */; };
+		20522E8420F085450072CF1D /* Storyboard+Utility.siwft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */; };
+		20522E8520F085450072CF1D /* SetTeamIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */; };
+		20522E8620F085450072CF1D /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7620EF71250072CF1D /* UCTeamHandler.swift */; };
+		20522E8720F085450072CF1D /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
+		20522E8820F085450072CF1D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CF720D623EA00B3DB50 /* LoginViewController.swift */; };
+		20522E8920F085450072CF1D /* SelectGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1320D7B8E400B3DB50 /* SelectGenderViewController.swift */; };
+		20522E8A20F085450072CF1D /* UCPaginationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */; };
+		20522E8B20F085450072CF1D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356620DB41D80092361A /* User.swift */; };
+		20522E8C20F085450072CF1D /* CardViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70420EF5B9D0053FCD2 /* CardViewHelper.swift */; };
+		20522E8D20F085450072CF1D /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */; };
+		20522E8E20F085450072CF1D /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
+		20522E8F20F085450072CF1D /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
+		20522E9020F085450072CF1D /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356F20DB8D700092361A /* Team.swift */; };
+		20522E9120F085450072CF1D /* UserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */; };
+		20522E9220F085450072CF1D /* SetTeamImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1520D7B93300B3DB50 /* SetTeamImageViewController.swift */; };
+		20522E9320F085450072CF1D /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29F620DF7F9A001C8210 /* CardView.swift */; };
+		20522E9420F085450072CF1D /* EditTeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70120EF4DBA0053FCD2 /* EditTeamProfileViewController.swift */; };
+		20522E9520F085450072CF1D /* CreateOrJoinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0820D6555A00B3DB50 /* CreateOrJoinViewController.swift */; };
+		20522E9620F085450072CF1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
+		20522E9720F085450072CF1D /* JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360357320DC9C950092361A /* JoinTeamViewController.swift */; };
+		20522E9820F085450072CF1D /* UserExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D0620D6518900B3DB50 /* UserExtention.swift */; };
+		20522E9920F085450072CF1D /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
+		20522E9A20F085450072CF1D /* NewTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1120D7684E00B3DB50 /* NewTeamViewController.swift */; };
+		20522E9B20F085450072CF1D /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20522E7420EF6A610072CF1D /* UCUserDefaultsHelper.swift */; };
+		20522E9C20F085450072CF1D /* InviteMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */; };
+		20522E9D20F085450072CF1D /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360356D20DB78AD0092361A /* UserService.swift */; };
+		20522E9E20F085450072CF1D /* SingleTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4360357620DCC8A80092361A /* SingleTeamViewController.swift */; };
+		20522E9F20F085450072CF1D /* CamerarollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827020E755570057B55E /* CamerarollViewController.swift */; };
+		20522EA020F085450072CF1D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222CFD20D625D500B3DB50 /* ProfileViewController.swift */; };
+		20522EA120F085450072CF1D /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
+		20522EA220F085450072CF1D /* CameraRollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */; };
+		20522EA420F085450072CF1D /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5C02820E7BEB900948D1A /* CropViewController.framework */; };
+		20522EA520F085450072CF1D /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435727D820E48A4900720C41 /* BubbleTransition.framework */; };
+		20522EA620F085450072CF1D /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */; };
+		20522EA720F085450072CF1D /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0220D64F4400B3DB50 /* Alamofire.framework */; };
+		20522EA820F085450072CF1D /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222D0420D64F4400B3DB50 /* AlamofireImage.framework */; };
+		20522EA920F085450072CF1D /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
+		20522EAA20F085450072CF1D /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
+		20522EAB20F085450072CF1D /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
+		20522EAC20F085450072CF1D /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
+		20522EAD20F085450072CF1D /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
+		20522EAE20F085450072CF1D /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
+		20522EAF20F085450072CF1D /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		20522EB120F085450072CF1D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
+		20522EB220F085450072CF1D /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434BE14920E1CB620015A828 /* Profile.storyboard */; };
+		20522EB320F085450072CF1D /* JoinTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4360357120DC9B600092361A /* JoinTeam.storyboard */; };
+		20522EB420F085450072CF1D /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
+		20522EB520F085450072CF1D /* ImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4338826E20E754AC0057B55E /* ImagePicker.storyboard */; };
+		20522EB620F085450072CF1D /* CameraRollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */; };
+		20522EB920F085450072CF1D /* CreateTeam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222D0C20D67C7800B3DB50 /* CreateTeam.storyboard */; };
+		20522EBA20F085450072CF1D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222CFB20D625AF00B3DB50 /* Main.storyboard */; };
+		20522EBB20F085450072CF1D /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */; };
+		20522EBC20F085450072CF1D /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
+		20522EBD20F085450072CF1D /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43222CF520D622FA00B3DB50 /* Onboard.storyboard */; };
+		20522EBE20F085450072CF1D /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70E20EF5C4A0053FCD2 /* memo.txt */; };
+		20522EBF20F085450072CF1D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
+		20522EC920F092B50072CF1D /* GoogleService-dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20522EC820F092B50072CF1D /* GoogleService-dev-Info.plist */; };
+		20522ECA20F0948D0072CF1D /* unicon-dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20522EC520F085460072CF1D /* unicon-dev-Info.plist */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
 		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
@@ -105,6 +173,10 @@
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		20522E7220EF5D100072CF1D /* RefactorDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorDB.swift; sourceTree = "<group>"; };
 		20522E7420EF6A610072CF1D /* UCUserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUserDefaultsHelper.swift; sourceTree = "<group>"; };
+		20522E7620EF71250072CF1D /* UCTeamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCTeamHandler.swift; sourceTree = "<group>"; };
+		20522EC420F085450072CF1D /* unicon-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unicon-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		20522EC520F085460072CF1D /* unicon-dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "unicon-dev-Info.plist"; path = "/Users/yohanashima/Documents/unicon/unicon-dev-Info.plist"; sourceTree = "<absolute>"; };
+		20522EC820F092B50072CF1D /* GoogleService-dev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-dev-Info.plist"; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,6 +257,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		20522EA320F085450072CF1D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20522EA420F085450072CF1D /* CropViewController.framework in Frameworks */,
+				20522EA520F085450072CF1D /* BubbleTransition.framework in Frameworks */,
+				20522EA620F085450072CF1D /* IQKeyboardManagerSwift.framework in Frameworks */,
+				20522EA720F085450072CF1D /* Alamofire.framework in Frameworks */,
+				20522EA820F085450072CF1D /* AlamofireImage.framework in Frameworks */,
+				20522EA920F085450072CF1D /* FacebookCore.framework in Frameworks */,
+				20522EAA20F085450072CF1D /* FacebookLogin.framework in Frameworks */,
+				20522EAB20F085450072CF1D /* FacebookShare.framework in Frameworks */,
+				20522EAC20F085450072CF1D /* FBSDKCoreKit.framework in Frameworks */,
+				20522EAD20F085450072CF1D /* FBSDKLoginKit.framework in Frameworks */,
+				20522EAE20F085450072CF1D /* FirebaseCore.framework in Frameworks */,
+				20522EAF20F085450072CF1D /* Pods_unicon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43A5D3F820D4EF68004612D4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -246,6 +337,24 @@
 				202F29F820DF82E7001C8210 /* CardView.xib */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		20522EC620F085B10072CF1D /* unicon */ = {
+			isa = PBXGroup;
+			children = (
+				43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */,
+				43C6C70D20EF5C4A0053FCD2 /* Info.plist */,
+			);
+			path = unicon;
+			sourceTree = "<group>";
+		};
+		20522EC720F085C80072CF1D /* unicon-dev */ = {
+			isa = PBXGroup;
+			children = (
+				20522EC520F085460072CF1D /* unicon-dev-Info.plist */,
+				20522EC820F092B50072CF1D /* GoogleService-dev-Info.plist */,
+			);
+			path = "unicon-dev";
 			sourceTree = "<group>";
 		};
 		37863B0E1E63370845261E2C /* Pods */ = {
@@ -408,6 +517,7 @@
 				43A5D3FB20D4EF69004612D4 /* unicon.app */,
 				43A5D40F20D4EF6B004612D4 /* uniconTests.xctest */,
 				43A5D41A20D4EF6B004612D4 /* uniconUITests.xctest */,
+				20522EC420F085450072CF1D /* unicon-dev.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -457,6 +567,7 @@
 				43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */,
 				43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */,
 				20522E7420EF6A610072CF1D /* UCUserDefaultsHelper.swift */,
+				20522E7620EF71250072CF1D /* UCTeamHandler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -464,9 +575,9 @@
 		43C6C70A20EF5BB30053FCD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				20522EC620F085B10072CF1D /* unicon */,
+				20522EC720F085C80072CF1D /* unicon-dev */,
 				43C6C70B20EF5C4A0053FCD2 /* Constants.swift */,
-				43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */,
-				43C6C70D20EF5C4A0053FCD2 /* Info.plist */,
 				43C6C70E20EF5C4A0053FCD2 /* memo.txt */,
 				20522E7220EF5D100072CF1D /* RefactorDB.swift */,
 			);
@@ -501,6 +612,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		20522E7820F085450072CF1D /* unicon-dev */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20522EC120F085450072CF1D /* Build configuration list for PBXNativeTarget "unicon-dev" */;
+			buildPhases = (
+				20522E7920F085450072CF1D /* [CP] Check Pods Manifest.lock */,
+				20522E7A20F085450072CF1D /* Sources */,
+				20522EA320F085450072CF1D /* Frameworks */,
+				20522EB020F085450072CF1D /* Resources */,
+				20522EC020F085450072CF1D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "unicon-dev";
+			productName = unicon;
+			productReference = 20522EC420F085450072CF1D /* unicon-dev.app */;
+			productType = "com.apple.product-type.application";
+		};
 		43A5D3FA20D4EF68004612D4 /* unicon */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 43A5D42320D4EF6B004612D4 /* Build configuration list for PBXNativeTarget "unicon" */;
@@ -595,6 +725,7 @@
 			projectRoot = "";
 			targets = (
 				43A5D3FA20D4EF68004612D4 /* unicon */,
+				20522E7820F085450072CF1D /* unicon-dev */,
 				43A5D40E20D4EF6B004612D4 /* uniconTests */,
 				43A5D41920D4EF6B004612D4 /* uniconUITests */,
 			);
@@ -602,6 +733,28 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		20522EB020F085450072CF1D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20522ECA20F0948D0072CF1D /* unicon-dev-Info.plist in Resources */,
+				20522EB120F085450072CF1D /* LaunchScreen.storyboard in Resources */,
+				20522EB220F085450072CF1D /* Profile.storyboard in Resources */,
+				20522EB320F085450072CF1D /* JoinTeam.storyboard in Resources */,
+				20522EB420F085450072CF1D /* CardView.xib in Resources */,
+				20522EB520F085450072CF1D /* ImagePicker.storyboard in Resources */,
+				20522EB620F085450072CF1D /* CameraRollCollectionViewCell.xib in Resources */,
+				20522EB920F085450072CF1D /* CreateTeam.storyboard in Resources */,
+				20522EC920F092B50072CF1D /* GoogleService-dev-Info.plist in Resources */,
+				20522EBA20F085450072CF1D /* Main.storyboard in Resources */,
+				20522EBB20F085450072CF1D /* TeamCollectionViewCell.xib in Resources */,
+				20522EBC20F085450072CF1D /* TeamListTableViewCell.xib in Resources */,
+				20522EBD20F085450072CF1D /* Onboard.storyboard in Resources */,
+				20522EBE20F085450072CF1D /* memo.txt in Resources */,
+				20522EBF20F085450072CF1D /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43A5D3F920D4EF68004612D4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -641,6 +794,92 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		20522E7920F085450072CF1D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-unicon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		20522EC020F085450072CF1D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-unicon/Pods-unicon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/BubbleTransition/BubbleTransition.framework",
+				"${BUILT_PRODUCTS_DIR}/CropViewController/CropViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/EZSwipeController/EZSwipeController.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
+				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Koloda/Koloda.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BubbleTransition.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CropViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EZSwipeController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Koloda.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-unicon/Pods-unicon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		4BB81DC2281CCD3146B2144F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -766,6 +1005,53 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		20522E7A20F085450072CF1D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20522E7B20F085450072CF1D /* EditMyProfileViewController.swift in Sources */,
+				20522E7C20F085450072CF1D /* RefactorDB.swift in Sources */,
+				20522E7D20F085450072CF1D /* Constants.swift in Sources */,
+				20522E7E20F085450072CF1D /* SelectTeamViewController.swift in Sources */,
+				20522E7F20F085450072CF1D /* MyProfileViewController.swift in Sources */,
+				20522E8020F085450072CF1D /* SetTeamNameViewController.swift in Sources */,
+				20522E8120F085450072CF1D /* TeamListTableViewCell.swift in Sources */,
+				20522E8220F085450072CF1D /* MatchingViewController.swift in Sources */,
+				20522E8320F085450072CF1D /* CropImageViewController.swift in Sources */,
+				20522E8420F085450072CF1D /* Storyboard+Utility.siwft.swift in Sources */,
+				20522E8520F085450072CF1D /* SetTeamIntroViewController.swift in Sources */,
+				20522E8620F085450072CF1D /* UCTeamHandler.swift in Sources */,
+				20522E8720F085450072CF1D /* TeamService.swift in Sources */,
+				20522E8820F085450072CF1D /* LoginViewController.swift in Sources */,
+				20522E8920F085450072CF1D /* SelectGenderViewController.swift in Sources */,
+				20522E8A20F085450072CF1D /* UCPaginationHelper.swift in Sources */,
+				20522E8B20F085450072CF1D /* User.swift in Sources */,
+				20522E8C20F085450072CF1D /* CardViewHelper.swift in Sources */,
+				20522E8D20F085450072CF1D /* TeamCollectionViewCell.swift in Sources */,
+				20522E8E20F085450072CF1D /* ChatViewController.swift in Sources */,
+				20522E8F20F085450072CF1D /* UIExtention.swift in Sources */,
+				20522E9020F085450072CF1D /* Team.swift in Sources */,
+				20522E9120F085450072CF1D /* UserHelper.swift in Sources */,
+				20522E9220F085450072CF1D /* SetTeamImageViewController.swift in Sources */,
+				20522E9320F085450072CF1D /* CardView.swift in Sources */,
+				20522E9420F085450072CF1D /* EditTeamProfileViewController.swift in Sources */,
+				20522E9520F085450072CF1D /* CreateOrJoinViewController.swift in Sources */,
+				20522E9620F085450072CF1D /* AppDelegate.swift in Sources */,
+				20522E9720F085450072CF1D /* JoinTeamViewController.swift in Sources */,
+				20522E9820F085450072CF1D /* UserExtention.swift in Sources */,
+				20522E9920F085450072CF1D /* StorageReference+Image.swift in Sources */,
+				20522E9A20F085450072CF1D /* NewTeamViewController.swift in Sources */,
+				20522E9B20F085450072CF1D /* UCUserDefaultsHelper.swift in Sources */,
+				20522E9C20F085450072CF1D /* InviteMemberViewController.swift in Sources */,
+				20522E9D20F085450072CF1D /* UserService.swift in Sources */,
+				20522E9E20F085450072CF1D /* SingleTeamViewController.swift in Sources */,
+				20522E9F20F085450072CF1D /* CamerarollViewController.swift in Sources */,
+				20522EA020F085450072CF1D /* ProfileViewController.swift in Sources */,
+				20522EA120F085450072CF1D /* StorageService.swift in Sources */,
+				20522EA220F085450072CF1D /* CameraRollCollectionViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		43A5D3F720D4EF68004612D4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -781,6 +1067,7 @@
 				4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
+				20522E7720EF71250072CF1D /* UCTeamHandler.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
@@ -855,6 +1142,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		20522EC220F085450072CF1D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84A5617C2CE6E6160290AEF3 /* Pods-unicon.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Z8242LF74;
+				INFOPLIST_FILE = "$(SRCROOT)/unicon-dev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tokyo.imagine.unicon-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		20522EC320F085450072CF1D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63369796B9A5ACDEA448F1A6 /* Pods-unicon.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6Z8242LF74;
+				INFOPLIST_FILE = "$(SRCROOT)/unicon-dev-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "tokyo.imagine.unicon-dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		43A5D42120D4EF6B004612D4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -976,7 +1303,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z8242LF74;
-				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/unicon/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -996,7 +1323,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6Z8242LF74;
-				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/unicon/Supporting Files/unicon/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1098,6 +1425,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		20522EC120F085450072CF1D /* Build configuration list for PBXNativeTarget "unicon-dev" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20522EC220F085450072CF1D /* Debug */,
+				20522EC320F085450072CF1D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		43A5D3F620D4EF68004612D4 /* Build configuration list for PBXProject "unicon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

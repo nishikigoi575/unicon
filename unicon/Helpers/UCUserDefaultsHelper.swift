@@ -12,18 +12,30 @@ class UCUserDefaultsHelper {
     static let ud = UserDefaults.standard
     
     public static func getSwipedTeams() {
-        MatchingViewController.swipedTeamList = ud.array(forKey: "swipedTeams")  as? [String] ?? []
+        if let teamID = Team.current?.teamID {
+            let key = teamID + "swipedTeams"
+            MatchingViewController.swipedTeamList = ud.array(forKey: key)  as? [String] ?? []
+        }
     }
     
     public static func setSwipedTeams() {
-        ud.set(MatchingViewController.swipedTeamList, forKey: "swipedTeams")
+        if let teamID = Team.current?.teamID {
+            let key = teamID + "swipedTeams"
+            ud.set(MatchingViewController.swipedTeamList, forKey: key)
+        }
     }
     
     public static func getMatchedTeams() {
-        MatchingViewController.matchedTeamList = ud.array(forKey: "matchedTeams")  as? [String] ?? []
+        if let teamID = Team.current?.teamID {
+            let key = teamID + "matchedTeams"
+            MatchingViewController.matchedTeamList = ud.array(forKey: key)  as? [String] ?? []
+        }
     }
     
     public static func setMatchedTeams() {
-        ud.set(MatchingViewController.matchedTeamList, forKey: "matchedTeams")
+        if let teamID = Team.current?.teamID {
+            let key = teamID + "matchedTeams"
+            ud.set(MatchingViewController.matchedTeamList, forKey: key)
+        }
     }
 }
