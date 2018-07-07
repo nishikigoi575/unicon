@@ -48,7 +48,14 @@ class EditTeamProfileViewController: UIViewController, UITextViewDelegate, UITab
     
     
     @IBAction func saveChanges(_ sender: Any) {
-        
+        if let teamID = Team.current?.teamID {
+            TeamService.update(teamID: teamID, teamImage: changedTeamImage, intro: changedTeamIntro, targetGender: changedMatchingGender, teamName: changedTeamName) { (team) in
+                if let team = team {
+                    print("UPDATED \(team.teamName)")
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }
     }
     
     @IBAction func cancel(_ sender: Any) {

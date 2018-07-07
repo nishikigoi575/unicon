@@ -115,9 +115,9 @@ struct UserService {
         
     }
     
-    static func update(teamUID: String, teamImage: UIImage?, intro: String?, teamName: String?, targetGender: String, suc: @escaping (Team?) -> Void) {
-        if let image = teamImage {
-            let imageRef = StorageReference.newTeamImageReference(uid: userUID)
+    static func update(userUID: String, userImage: UIImage?, intro: String?, belonging: String?, suc: @escaping (User?) -> Void) {
+        if let image = userImage {
+            let imageRef = StorageReference.newUserImageReference(uid: userUID)
             StorageService.uploadImage(image, at: imageRef) { (url) in
                 guard let url = url?.description else {
                     return suc(nil)

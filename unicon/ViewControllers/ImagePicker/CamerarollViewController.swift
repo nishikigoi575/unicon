@@ -176,6 +176,10 @@ class CamerarollViewController: UIViewController, UICollectionViewDelegate, Crop
             let parentVC = presentingViewController as! EditMyProfileViewController
             parentVC.updateImage(image: selectedImage)
             parentVC.changedImage = selectedImage
+        case is EditTeamProfileViewController:
+            let parentVC = presentingViewController as! EditTeamProfileViewController
+            parentVC.updateImage(image: selectedImage)
+            parentVC.changedTeamImage = selectedImage
         default:
             print("nil")
         }

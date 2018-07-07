@@ -54,7 +54,7 @@ class EditMyProfileViewController: UIViewController, UITextViewDelegate, UITextF
     @IBAction func finishEditing(_ sender: Any) {
         let userUID = User.current?.userUID
 
-        UserService.update(userUID: userUID!, profileImage: changedImage, intro: changedIntro, belonging: changedBelonging) { (user) in
+        UserService.update(userUID: userUID!, userImage: changedImage, intro: changedIntro, belonging: changedBelonging) { (user) in
             if let user = user {
                 User.setCurrent(user, writeToUserDefaults: true)
                 self.dismiss(animated: true, completion: nil)
