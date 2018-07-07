@@ -254,7 +254,7 @@
         <!--Invite Member View Controller-->
         <scene sceneID="sGn-KZ-3to">
             <objects>
-                <viewController id="mD7-bh-lcc" customClass="InviteMemberViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InviteVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="mD7-bh-lcc" customClass="InviteMemberViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jw9-gD-8cw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,18 +263,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="541"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="4BI-m2-9kT">
-                                        <rect key="frame" x="50" y="164" width="275.33333333333331" height="213"/>
+                                        <rect key="frame" x="62.333333333333343" y="164" width="251.00000000000003" height="213"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="チームが設立されました！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HV-Gt-xDL">
-                                                <rect key="frame" x="0.0" y="0.0" width="275.33333333333331" height="23"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="メンバーを招待しよう！" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HV-Gt-xDL">
+                                                <rect key="frame" x="0.0" y="0.0" width="251" height="23"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="23"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2OQ-sy-DDu">
-                                                <rect key="frame" x="57.666666666666686" y="53" width="160" height="160"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2OQ-sy-DDu">
+                                                <rect key="frame" x="45.666666666666657" y="53" width="160" height="160"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="2OQ-sy-DDu" secondAttribute="height" multiplier="1:1" id="MB2-J7-7T9"/>
+                                                    <constraint firstAttribute="height" constant="160" id="oJU-Wg-hCi"/>
+                                                    <constraint firstAttribute="width" constant="160" id="yBP-1X-KMZ"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -289,22 +291,26 @@
                                 <rect key="frame" x="0.0" y="541" width="375" height="237"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AMz-jY-RRg">
-                                        <rect key="frame" x="27.666666666666657" y="0.0" width="320" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   チームID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4vH-Qm-aqK">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="22"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="22"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="22"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-ok-az1">
-                                                <rect key="frame" x="0.0" y="32" width="320" height="50"/>
+                                                <rect key="frame" x="0.0" y="32" width="375" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wYZ-ok-az1" secondAttribute="trailing" id="KbC-7v-KDj"/>
+                                            <constraint firstItem="wYZ-ok-az1" firstAttribute="leading" secondItem="AMz-jY-RRg" secondAttribute="leading" id="Yvj-Db-MXH"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kLY-R1-uYv">
                                         <rect key="frame" x="22.666666666666657" y="117" width="330" height="120"/>
@@ -317,7 +323,7 @@
                                                     <constraint firstAttribute="width" constant="330" id="psT-OT-65t"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                                                <state key="normal" title="メンバーを招待">
+                                                <state key="normal" title="IDを送信">
                                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -332,7 +338,7 @@
                                                     <constraint firstAttribute="width" constant="133" id="nVh-Bt-4Rm"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                                                <state key="normal" title="次へ">
+                                                <state key="normal" title="閉じる">
                                                     <color key="titleColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
@@ -348,6 +354,8 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="237" id="MmT-nu-KlX"/>
+                                    <constraint firstAttribute="trailing" secondItem="AMz-jY-RRg" secondAttribute="trailing" id="Nno-BS-TvY"/>
+                                    <constraint firstItem="AMz-jY-RRg" firstAttribute="leading" secondItem="Ddw-4V-u0y" secondAttribute="leading" id="uIE-oI-w4A"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -365,6 +373,7 @@
                     </view>
                     <connections>
                         <outlet property="teamIDTextView" destination="wYZ-ok-az1" id="I03-uf-KsH"/>
+                        <outlet property="teamImageView" destination="2OQ-sy-DDu" id="kPJ-vq-Ib0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mr-l1-FZZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

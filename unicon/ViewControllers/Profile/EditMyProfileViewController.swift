@@ -20,7 +20,6 @@ class EditMyProfileViewController: UIViewController, UITextViewDelegate, UITextF
     @IBOutlet weak var introTextView: UITextView!
     @IBOutlet weak var belongingTextfield: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         saveBtnView.learningAndLeading()
@@ -68,6 +67,9 @@ class EditMyProfileViewController: UIViewController, UITextViewDelegate, UITextF
     }
 
     
+    @IBAction func cancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func belongingChanged(_ sender: Any) {
         changedBelonging = belongingTextfield.text

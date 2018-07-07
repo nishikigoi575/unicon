@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import AlamofireImage
+import Social
 
-class InviteMemberViewController: UIViewController {
+class InviteMemberViewController: UIViewController, UITextViewDelegate {
 
     var teamID = String()
+    var imageUrlStr = String()
     
     @IBOutlet weak var teamIDTextView: UITextView!
+    @IBOutlet weak var teamImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        teamIDTextView.text = teamID
         
+        teamIDTextView.delegate = self
+        teamIDTextView.textContainerInset = UIEdgeInsetsMake(20, 30, 20, 30)
+        teamIDTextView.sizeToFit()
+        teamImageView.layer.cornerRadius = 80
+        teamImageView.layer.masksToBounds = true
+        
+        teamIDTextView.text = teamID
+        if let url = URL(string: imageUrlStr) {
+            teamImageView.af_setImage(withURL: url)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,8 +41,8 @@ class InviteMemberViewController: UIViewController {
     
     
     @IBAction func shareTeamID(_ sender: Any) {
-        let text = "\(teamID)"
-        let items = [text]
+        let text = "https://we-we.herokuapp.com/?team_id=\(teamID)"
+        let items = [text] as [Any]
         let activityVc = UIActivityViewController(activityItems: items, applicationActivities: nil)
         // UIAcitivityViewControllerを表示
         self.present(activityVc, animated: true, completion: nil)

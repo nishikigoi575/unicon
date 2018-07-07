@@ -69,6 +69,9 @@
 		43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */; };
 		43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70D20EF5C4A0053FCD2 /* Info.plist */; };
 		43C6C71220EF5C4A0053FCD2 /* memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C70E20EF5C4A0053FCD2 /* memo.txt */; };
+		43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */; };
+		43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */; };
+		43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */; };
 		43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5C02820E7BEB900948D1A /* CropViewController.framework */; };
 		43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */; };
 		43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
@@ -166,6 +169,9 @@
 		43C6C70C20EF5C4A0053FCD2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		43C6C70D20EF5C4A0053FCD2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43C6C70E20EF5C4A0053FCD2 /* memo.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = memo.txt; sourceTree = "<group>"; };
+		43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
+		43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
+		43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderModalViewController.swift; sourceTree = "<group>"; };
 		43E5C02820E7BEB900948D1A /* CropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
 		43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListTableViewCell.xib; sourceTree = "<group>"; };
@@ -362,6 +368,7 @@
 				43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */,
 				43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */,
 				43C6C70120EF4DBA0053FCD2 /* EditTeamProfileViewController.swift */,
+				43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -369,6 +376,7 @@
 		438045F920E1FCB200FF6BF4 /* CellControllers */ = {
 			isa = PBXGroup;
 			children = (
+				43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */,
 				43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */,
 				438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */,
 				4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */,
@@ -382,6 +390,7 @@
 				4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */,
 				438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */,
 				43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */,
+				43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */,
 			);
 			path = CellXibs;
 			sourceTree = "<group>";
@@ -603,6 +612,7 @@
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
 				434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */,
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
+				43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
@@ -779,6 +789,7 @@
 				4360356720DB41D80092361A /* User.swift in Sources */,
 				43C6C70720EF5B9D0053FCD2 /* CardViewHelper.swift in Sources */,
 				438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */,
+				43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
@@ -795,6 +806,7 @@
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
+				43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */,
 				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,

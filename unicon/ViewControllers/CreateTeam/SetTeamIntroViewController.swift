@@ -18,6 +18,7 @@ class SetTeamIntroViewController: UIViewController {
     static var teamImage = UIImage()
     
     var teamID = String()
+    var imageUrlStr = String()
     
     @IBOutlet weak var hitokotoTextView: UITextView!
     
@@ -42,6 +43,7 @@ class SetTeamIntroViewController: UIViewController {
         TeamService.create(teamName: SetTeamIntroViewController.teamName, teamGender: "male", targetGender: SetTeamIntroViewController.targetGender, teamImage: SetTeamIntroViewController.teamImage, intro: intro) { team in
             if let team = team {
                 self.teamID = team.teamID
+                self.imageUrlStr = team.teamImageURL
                 Team.setCurrent(team, writeToUserDefaults: true)
                 self.performSegue(withIdentifier: "ToNext", sender: team)
             } else {
@@ -56,6 +58,7 @@ class SetTeamIntroViewController: UIViewController {
         if (segue.identifier == "ToNext") {
             if let subVC: InviteMemberViewController = segue.destination as? InviteMemberViewController {
                 subVC.teamID = self.teamID
+                subVC.imageUrlStr = self.imageUrlStr
             }
         }
     }
