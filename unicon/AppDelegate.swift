@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         
         IQKeyboardManager.shared.enable = true
         
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().shadowImage = UIImage()
+        
         return true
     }
     
@@ -102,8 +105,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
 //
 //        }
         
-        if Auth.auth().currentUser != nil {
-            print("Hello")
+        let defaults = UserDefaults.standard
+        
+        if Auth.auth().currentUser != nil, let userData = defaults.object(forKey: Constants.UserDefaults.currentUser) as? Data, let user = NSKeyedUnarchiver.unarchiveObject(with: userData) as? User {
+            print("既存ユーザー")
+            // set current user
+            User.setCurrent(user)
+            // set current team if any
+            if let teamData = defaults.object(forKey: Constants.UserDefaults.currentTeam) as? Data, let team = NSKeyedUnarchiver.unarchiveObject(with: teamData) as? Team {
+                Team.setCurrent(team)
+            }
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
             print("新規ユーザー")

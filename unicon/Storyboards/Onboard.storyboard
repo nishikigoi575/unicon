@@ -18,22 +18,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange-coral" translatesAutoresizingMaskIntoConstraints="NO" id="j7c-LO-u57">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMu-13-OjK">
-                                <rect key="frame" x="16" y="68" width="343" height="67"/>
+                                <rect key="frame" x="32" y="68" width="343" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
                                 <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHG-pK-PTQ">
-                                <rect key="frame" x="16" y="143" width="343" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
-                                <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UniCon" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgM-js-ohF">
-                                <rect key="frame" x="16" y="218" width="343" height="67"/>
+                                <rect key="frame" x="32" y="143" width="343" height="67"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
                                 <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -51,8 +47,20 @@
                                     <action selector="loginBtnTapped:" destination="sto-h8-vtD" eventType="touchUpInside" id="HqB-Dz-meC"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="wewe" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AgM-js-ohF">
+                                <rect key="frame" x="32" y="218" width="343" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="40"/>
+                                <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.88235294117647056" green="0.086274509803921567" blue="0.76078431372549016" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="j7c-LO-u57" firstAttribute="trailing" secondItem="3Bl-eX-YLB" secondAttribute="trailing" id="be9-9j-Gan"/>
+                            <constraint firstItem="j7c-LO-u57" firstAttribute="top" secondItem="hmp-Tf-N9W" secondAttribute="top" id="iUn-zh-Uga"/>
+                            <constraint firstItem="j7c-LO-u57" firstAttribute="bottom" secondItem="3Bl-eX-YLB" secondAttribute="bottom" id="ow1-yK-S5v"/>
+                            <constraint firstItem="j7c-LO-u57" firstAttribute="leading" secondItem="3Bl-eX-YLB" secondAttribute="leading" id="pFv-7B-cgd"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3Bl-eX-YLB"/>
                     </view>
                     <connections>
@@ -66,87 +74,76 @@
         <!--Create Or Join View Controller-->
         <scene sceneID="TVo-gY-Mt5">
             <objects>
-                <viewController id="bYl-0b-afu" customClass="CreateOrJoinViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateOrJoinVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bYl-0b-afu" customClass="CreateOrJoinViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="X0n-df-MRU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPr-E5-HaJ">
-                                <rect key="frame" x="46" y="293" width="294" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.3921568627" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                                <state key="normal" title="チームをつくる">
-                                    <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="createTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="90E-TT-wMg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-i1-dSm">
-                                <rect key="frame" x="46" y="410" width="294" height="53"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.3921568627" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                                <state key="normal" title="チームに参加">
-                                    <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="joinTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="6jk-nm-6E5"/>
-                                </connections>
-                            </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="leB-SJ-i4e">
-                                <rect key="frame" x="20" y="60" width="335" height="200"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="qEl-vO-2WN">
+                                <rect key="frame" x="37.5" y="250.5" width="300" height="186"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Euf-OO-wsO">
-                                        <rect key="frame" x="0.0" y="0.0" width="275" height="80"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-F2-mCH">
-                                                <rect key="frame" x="0.0" y="0.0" width="88.5" height="30"/>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.16862745100000001" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imagine" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aCU-8n-m5S">
-                                                <rect key="frame" x="0.0" y="45" width="126.5" height="35"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="35" id="Npp-rd-cx0"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="30"/>
-                                                <color key="textColor" red="0.89019607840000003" green="0.16862745100000001" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                    </stackView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dom-uF-8r7">
-                                        <rect key="frame" x="295" y="0.0" width="40" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPr-E5-HaJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="53"/>
+                                        <color key="backgroundColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="40" id="6TX-h8-tGz"/>
-                                            <constraint firstAttribute="height" constant="40" id="UkU-Sl-qQj"/>
+                                            <constraint firstAttribute="width" constant="300" id="PaE-0d-RxF"/>
+                                            <constraint firstAttribute="height" constant="53" id="aaj-Ai-fwJ"/>
                                         </constraints>
-                                    </imageView>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                        <state key="normal" title="チームをつくる">
+                                            <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="90E-TT-wMg"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0L-i1-dSm">
+                                        <rect key="frame" x="0.0" y="133" width="300" height="53"/>
+                                        <color key="backgroundColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="53" id="TRX-LT-XCe"/>
+                                            <constraint firstAttribute="width" constant="300" id="W4g-iZ-OUi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                        <state key="normal" title="チームに参加">
+                                            <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="joinTeam:" destination="bYl-0b-afu" eventType="touchUpInside" id="6jk-nm-6E5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="R4p-Ae-a24"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r3o-wa-gz9">
+                                <rect key="frame" x="20" y="618" width="72" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="tU8-Wf-GVh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                <state key="normal" title="戻る">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="bYl-0b-afu" eventType="touchUpInside" id="mNF-Y5-FRS"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="leB-SJ-i4e" firstAttribute="top" secondItem="AwT-Yk-m0k" secondAttribute="top" constant="40" id="9gh-ED-XF8"/>
-                            <constraint firstItem="AwT-Yk-m0k" firstAttribute="trailing" secondItem="leB-SJ-i4e" secondAttribute="trailing" constant="20" id="MWz-Fu-9rH"/>
-                            <constraint firstItem="leB-SJ-i4e" firstAttribute="leading" secondItem="AwT-Yk-m0k" secondAttribute="leading" constant="20" id="gEy-Wd-pox"/>
+                            <constraint firstItem="qEl-vO-2WN" firstAttribute="centerY" secondItem="AwT-Yk-m0k" secondAttribute="centerY" id="5DJ-lZ-FZ4"/>
+                            <constraint firstItem="qEl-vO-2WN" firstAttribute="centerX" secondItem="AwT-Yk-m0k" secondAttribute="centerX" id="UbR-Bh-7fR"/>
+                            <constraint firstItem="AwT-Yk-m0k" firstAttribute="bottom" secondItem="r3o-wa-gz9" secondAttribute="bottom" constant="20" id="enW-Am-sMr"/>
+                            <constraint firstItem="r3o-wa-gz9" firstAttribute="leading" secondItem="AwT-Yk-m0k" secondAttribute="leading" constant="20" id="zg7-wC-3aM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="AwT-Yk-m0k"/>
                     </view>
-                    <connections>
-                        <outlet property="myProfileImageView" destination="dom-uF-8r7" id="CfG-17-4mZ"/>
-                        <outlet property="welcomeYouLable" destination="aCU-8n-m5S" id="Ilj-Tn-xLh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBt-Ob-8tv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672.79999999999995" y="-70.614692653673174"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="orange-coral" width="800" height="1280"/>
+    </resources>
 </document>

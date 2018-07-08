@@ -41,20 +41,11 @@ class JoinTeamViewController: UIViewController {
                     return
                 }
                 
-                print(text)
-                
                 self.teamID = team.teamID
                 self.teamName = team.teamName
-                self.imagePathStr = team.teamImage
-                
-                if let introduction = team.intro {
-                    self.intro = introduction
-                } else {
-                    self.intro = "こんにちは。「\(self.teamName)」です。よろしく！"
-                }
-                
+                self.imagePathStr = team.teamImageURL
+                self.intro = team.intro
                 self.performSegue(withIdentifier: "ToNext", sender: nil)
-                
             }
         }
     }

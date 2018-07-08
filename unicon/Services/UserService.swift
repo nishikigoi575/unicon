@@ -10,10 +10,23 @@ import Foundation
 import FirebaseAuth.FIRUser
 import Firestore
 import Firestore.FIRDocumentSnapshot
+import FirebaseStorage
 
 typealias FIRUser = FirebaseAuth.User
 
 struct UserService {
+    
+    static func show(forUserUID userUID: String, completion: @escaping (User?) -> Void) {
+        //print(uid)
+        let ref = Firestore.firestore().collection("users").document(userUID)
+        ref.getDocument() { (document, err) in
+            
+            guard let document = document, let user = User(document: document) else {
+                return completion(nil)
+            }
+            completion(user)
+        }
+    }
     
     static func signIn(_ firUser: FIRUser, firstName: String, userImage: URL, facebookID: String,  completion: @escaping (User?) -> Void) {
         
@@ -102,8 +115,103 @@ struct UserService {
         
     }
     
+    static func update(userUID: String, userImage: UIImage?, intro: String?, belonging: String?, suc: @escaping (User?) -> Void) {
+        if let image = userImage {
+            let imageRef = StorageReference.newUserImageReference(uid: userUID)
+            StorageService.uploadImage(image, at: imageRef) { (url) in
+                guard let url = url?.description else {
+                    return suc(nil)
+                }
+                update(userUID: userUID, profileImagePath: url, intro: intro, belonging: belonging, success: { (user) in
+                    if let user = user {
+                        return suc(user)
+                    }
+                    else {
+                        return suc(nil)
+                    }
+                })
+            }
+        } else {
+            update(userUID: userUID, profileImagePath: nil, intro: intro, belonging: belonging) { (user) in
+                if let user = user {
+                    return suc(user)
+                } else {
+                    return suc(nil)
+                }
+            }
+        }
+    }
     
-    
+    private static func update(userUID: String, profileImagePath: String?, intro: String?, belonging: String?, success: @escaping (User?) -> Void) {
+        
+        let fr = Firestore.firestore()
+        let batch = Firestore.firestore().batch()
+        var data:[String : Any] = [:]
+        
+        if let intro = intro {
+            data["intro"] = intro
+        }
+        
+        if let belonging = belonging {
+            data["belonging"] = belonging
+        }
+        
+        if let profileImagePath = profileImagePath {
+            data["userImage"] = profileImagePath
+        }
+        
+        guard !data.isEmpty else {
+            print("NOTHING TO UPDATE")
+            return success(nil)
+        }
+        
+        let myRef = fr.collection("users").document(userUID)
+        batch.setData(data, forDocument: myRef, options: SetOptions.merge())
+        
+        // GETTING MY TEAMS
+        let group = DispatchGroup()
+        group.enter()
+        let myTeamsRef = fr.collection("users").document(userUID).collection("myTeams")
+        myTeamsRef.getDocuments(completion: { (snapshot, error) in
+            
+            if let error = error {
+                print(error.localizedDescription)
+                group.leave()
+                return success(nil)
+            }
+            else {
+                guard let docs = snapshot?.documents else {
+                    group.leave()
+                    return success(nil)
+                }
+
+                for doc in docs {
+                    let docRef = fr.collection("teams").document(doc.documentID).collection("members").document(userUID)
+                    batch.setData(data, forDocument: docRef, options: SetOptions.merge())
+                }
+                group.leave()
+            }
+        })
+        
+        group.notify(queue: .main, execute: {
+            // NOW UPDATING TEAMS
+            batch.commit(completion: { (err) in
+                if let err = err {
+                    print("ERROR WRITING BATCH:  \(err)")
+                    success(nil)
+                } else {
+                    print("UPDATED SUCCESSFULLY")
+                    UserService.show(forUserUID: userUID, completion: { (user) in
+                        if let user = user {
+                            success(user)
+                        } else {
+                            success(nil)
+                        }
+                    })
+                }
+            })
+        })
+    }
     
     
 }

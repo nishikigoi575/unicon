@@ -16,10 +16,11 @@ class User: NSObject {
     
     let userUID: String
     let firstName: String
-    var userImage:  String
+    var userImage: String
     var belongsToTeam: Bool?
     var pushID: String?
     var facebookID: String?
+    var belonging: String?
     
     // Need App Review from facebook to get these data
     var age: Int?
@@ -28,12 +29,13 @@ class User: NSObject {
     
     
     // To write
-    init(userUID: String, firstName: String, userImage: String, pushID: String?, belongsToTeam: Bool?) {
+    init(userUID: String, firstName: String, userImage: String, pushID: String?, belongsToTeam: Bool?, belonging: String?) {
         self.userUID = userUID
         self.firstName = firstName
         self.userImage = userImage
         self.pushID = pushID
         self.belongsToTeam = belongsToTeam
+        self.belonging = belonging
         
         super.init()
     }
@@ -52,8 +54,12 @@ class User: NSObject {
             self.pushID = pushID
         }
         
-        if let belongs = dict["belongsToTeam"] as? Bool {
-            self.belongsToTeam = belongs
+        if let belongsToTeam = dict["belongsToTeam"] as? Bool {
+            self.belongsToTeam = belongsToTeam
+        }
+        
+        if let belonging = dict["belonging"] as? String {
+            self.belonging = belonging
         }
         
         
@@ -74,10 +80,16 @@ class User: NSObject {
         self.firstName = firstName
         self.userImage = userImage
         
+        /*
         if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
             self.pushID = pushID
         }
- 
+        
+        if let belonging = aDecoder.decodeObject(forKey: "belonging") as? String {
+            self.belonging = belonging
+        }
+        */
+        
         super.init()
     }
     
@@ -98,6 +110,14 @@ class User: NSObject {
         
         _current = user
     }
+    
+    var dictValue: [String : Any] {
+        return [
+            "userUID":userUID,
+            "firstName":firstName,
+            "userImage":userImage
+        ]
+    }
 }
 
 extension User: NSCoding {
@@ -105,5 +125,6 @@ extension User: NSCoding {
         aCoder.encode(userUID, forKey: Constants.UserDefaults.userUID)
         aCoder.encode(firstName, forKey: Constants.UserDefaults.firstName)
         aCoder.encode(userImage, forKey: Constants.UserDefaults.userImage)
+        //aCoder.encode(userImage, forKey: Constants.UserDefaults.belonging)
     }
 }

@@ -77,9 +77,7 @@ class LoginViewController: UIViewController {
                                         }
                                         
                                         
-                                        User.setCurrent(user)
-                                        
-                                        print("ここに注目！: \(data)")
+                                        User.setCurrent(user, writeToUserDefaults: true)
                                         
                                         // Success to add user info into DB
                                         if let pushID = UserDefaults.standard.string(forKey: "GT_PLAYER_ID") {
@@ -96,7 +94,7 @@ class LoginViewController: UIViewController {
                                             
                                             if belongs {
                                                 let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                                                let newVC = storyboard.instantiateViewController(withIdentifier: "HomeSB")
+                                                let newVC = storyboard.instantiateViewController(withIdentifier: "NaviVC")
                                                 self.present(newVC, animated: true, completion: nil)
                                             } else {
                                                 self.performSegue(withIdentifier: "ToNext", sender: nil)

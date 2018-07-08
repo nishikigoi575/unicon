@@ -7,19 +7,31 @@
 //
 
 import UIKit
+import AlamofireImage
+import Social
 
-class InviteMemberViewController: UIViewController {
+class InviteMemberViewController: UIViewController, UITextViewDelegate {
 
     var teamID = String()
+    var imageUrlStr = String()
     
     @IBOutlet weak var teamIDTextView: UITextView!
+    @IBOutlet weak var teamImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        teamIDTextView.text = teamID
         
+        teamIDTextView.delegate = self
+        teamIDTextView.textContainerInset = UIEdgeInsetsMake(20, 30, 20, 30)
+        teamIDTextView.sizeToFit()
+        teamImageView.layer.cornerRadius = 80
+        teamImageView.layer.masksToBounds = true
+        
+        teamIDTextView.text = teamID
+        if let url = URL(string: imageUrlStr) {
+            teamImageView.af_setImage(withURL: url)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +39,20 @@ class InviteMemberViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func shareTeamID(_ sender: Any) {
+        let text = "https://we-we.herokuapp.com/?team_id=\(teamID)"
+        let items = [text] as [Any]
+        let activityVc = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        // UIAcitivityViewControllerを表示
+        self.present(activityVc, animated: true, completion: nil)
     }
-    */
-
+    
+    
+    @IBAction func finish(_ sender: Any) {
+        let storyboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newVC = storyboard.instantiateViewController(withIdentifier: "NaviVC")
+        self.present(newVC, animated: true, completion: nil)
+    }
+    
 }

@@ -18,17 +18,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UniCon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdi-jm-WUV">
-                                <rect key="frame" x="119" y="315.5" width="137" height="35.5"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="orange-coral" translatesAutoresizingMaskIntoConstraints="NO" id="mdf-Gg-04c">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wewe" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sdi-jm-WUV">
+                                <rect key="frame" x="135.5" y="315.5" width="104.5" height="36"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="35"/>
-                                <color key="textColor" red="0.89019607840000003" green="0.16862745100000001" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="sdi-jm-WUV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1zA-fk-1at"/>
+                            <constraint firstItem="mdf-Gg-04c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NmK-br-mNV"/>
                             <constraint firstItem="sdi-jm-WUV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XwM-xH-Y4C"/>
+                            <constraint firstItem="mdf-Gg-04c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eHA-Cr-jWG"/>
+                            <constraint firstItem="mdf-Gg-04c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jOo-zc-aFj"/>
+                            <constraint firstItem="mdf-Gg-04c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nmP-xs-4he"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -38,4 +45,7 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="orange-coral" width="800" height="1280"/>
+    </resources>
 </document>

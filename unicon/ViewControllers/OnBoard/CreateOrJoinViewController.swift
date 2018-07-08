@@ -11,26 +11,10 @@ import FirebaseAuth
 import AlamofireImage
 
 class CreateOrJoinViewController: UIViewController {
-
-    @IBOutlet weak var myProfileImageView: UIImageView!
-    @IBOutlet weak var welcomeYouLable: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        myProfileImageView.layer.cornerRadius = 20
-        myProfileImageView.layer.masksToBounds = true
-        
-        let me = Auth.auth().currentUser
-        if let name = User.current?.firstName {
-            welcomeYouLable.text = "\(name)."
-        }
-        if let imageUrl = me?.photoURL {
-            myProfileImageView.af_setImage(
-                withURL: imageUrl,
-                imageTransition: .crossDissolve(0.5)
-            )
-        }
         
     }
 
@@ -53,5 +37,10 @@ class CreateOrJoinViewController: UIViewController {
         self.present(newVC, animated: true, completion: nil)
         
     }
+    
+    @IBAction func dismiss(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }
