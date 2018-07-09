@@ -39,6 +39,10 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         self.navigationController!.view.layer.add(transition, forKey: nil)
         navigationController?.popViewController(animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToSingleChat", sender: nil)
+    }
 }
 
 extension ChatViewController: UITableViewDataSource {

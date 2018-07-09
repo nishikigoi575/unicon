@@ -123,6 +123,11 @@
 		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
 		438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */; };
 		438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */; };
+		439A164320F340330028490A /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164220F340330028490A /* SingleChatViewController.swift */; };
+		439A164420F340330028490A /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164220F340330028490A /* SingleChatViewController.swift */; };
+		439A164720F340B00028490A /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439A164620F340B00028490A /* MessageKit.framework */; };
+		439A164C20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
+		439A164D20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
@@ -227,6 +232,9 @@
 		438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPCarouselFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
 		438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCollectionViewCell.xib; sourceTree = "<group>"; };
+		439A164220F340330028490A /* SingleChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatViewController.swift; sourceTree = "<group>"; };
+		439A164620F340B00028490A /* MessageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MessageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		439A164B20F344E80028490A /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
 		43A5D3FB20D4EF69004612D4 /* unicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A5D40520D4EF6B004612D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -287,6 +295,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439A164720F340B00028490A /* MessageKit.framework in Frameworks */,
 				43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */,
 				435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */,
 				4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */,
@@ -326,7 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
-				202F29FA20DF8522001C8210 /* ChatViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 				43222D1020D7683400B3DB50 /* CreateTeam */,
 				4360357520DC9C9A0092361A /* JoinTeam */,
 				4338827220E755600057B55E /* ImagePicker */,
+				439A164520F3403F0028490A /* Chat */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -463,6 +472,7 @@
 			children = (
 				4360356620DB41D80092361A /* User.swift */,
 				4360356F20DB8D700092361A /* Team.swift */,
+				439A164B20F344E80028490A /* MockMessage.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -511,6 +521,15 @@
 				43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */,
 			);
 			path = CellXibs;
+			sourceTree = "<group>";
+		};
+		439A164520F3403F0028490A /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				202F29FA20DF8522001C8210 /* ChatViewController.swift */,
+				439A164220F340330028490A /* SingleChatViewController.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		43A5D3F220D4EF68004612D4 = {
@@ -598,6 +617,7 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				439A164620F340B00028490A /* MessageKit.framework */,
 				43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */,
 				43E5C02820E7BEB900948D1A /* CropViewController.framework */,
 				4338826C20E7440A0057B55E /* ALCameraViewController.framework */,
@@ -950,6 +970,7 @@
 				20522ED620F1E8F20072CF1D /* Storyboard+Utility.siwft.swift in Sources */,
 				20522ED720F1E8F20072CF1D /* SetTeamIntroViewController.swift in Sources */,
 				20522ED820F1E8F20072CF1D /* TeamService.swift in Sources */,
+				439A164420F340330028490A /* SingleChatViewController.swift in Sources */,
 				20522ED920F1E8F20072CF1D /* LoginViewController.swift in Sources */,
 				20522EDA20F1E8F20072CF1D /* SelectGenderViewController.swift in Sources */,
 				20522EDB20F1E8F20072CF1D /* UCPaginationHelper.swift in Sources */,
@@ -959,6 +980,7 @@
 				20522EDF20F1E8F20072CF1D /* SelectGenderModalViewController.swift in Sources */,
 				20522EE020F1E8F20072CF1D /* ChatViewController.swift in Sources */,
 				20522EE120F1E8F20072CF1D /* UIExtention.swift in Sources */,
+				439A164D20F344E80028490A /* MockMessage.swift in Sources */,
 				20522EE220F1E8F20072CF1D /* Team.swift in Sources */,
 				43E3552920F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				20522EE320F1E8F20072CF1D /* UserHelper.swift in Sources */,
@@ -997,6 +1019,7 @@
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
+				439A164320F340330028490A /* SingleChatViewController.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,
@@ -1006,6 +1029,7 @@
 				43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
+				439A164C20F344E80028490A /* MockMessage.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43E3552820F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */,
