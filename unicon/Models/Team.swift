@@ -22,6 +22,7 @@ class Team: NSObject {
     var teamID: String
     var createdBy: String
     var teamImage: UIImage?
+    var isLiking: Bool?
     
     init(teamName: String, teamGender: String, targetGender: String, numOfMembers: Int, teamImageURL: String, intro: String, teamID: String, createdBy: String) {
         

@@ -13,6 +13,18 @@
 		202F29F920DF82E7001C8210 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
 		202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
+		204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
+		204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
+		204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */; };
+		204FA13B20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */; };
+		204FA13D20F3AF24004C49B5 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13C20F3AF23004C49B5 /* LikeService.swift */; };
+		204FA13E20F3AF24004C49B5 /* LikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13C20F3AF23004C49B5 /* LikeService.swift */; };
+		204FA14020F3B4AE004C49B5 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13F20F3B4AE004C49B5 /* MatchService.swift */; };
+		204FA14120F3B4AE004C49B5 /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13F20F3B4AE004C49B5 /* MatchService.swift */; };
+		204FA14320F3BD74004C49B5 /* ChatRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA14220F3BD74004C49B5 /* ChatRoomService.swift */; };
+		204FA14420F3BD74004C49B5 /* ChatRoomService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA14220F3BD74004C49B5 /* ChatRoomService.swift */; };
+		204FA14620F3CAED004C49B5 /* RefactorDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA14520F3CAED004C49B5 /* RefactorDB.swift */; };
+		204FA14720F3CAED004C49B5 /* RefactorDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA14520F3CAED004C49B5 /* RefactorDB.swift */; };
 		20522ECE20F1E8F20072CF1D /* EditMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */; };
 		20522ECF20F1E8F20072CF1D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C70B20EF5C4A0053FCD2 /* Constants.swift */; };
 		20522ED020F1E8F20072CF1D /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */; };
@@ -182,6 +194,12 @@
 		202F29F820DF82E7001C8210 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		202F29FA20DF8522001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
+		204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCTeamHandler.swift; sourceTree = "<group>"; };
+		204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUserDefaultsHelper.swift; sourceTree = "<group>"; };
+		204FA13C20F3AF23004C49B5 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
+		204FA13F20F3B4AE004C49B5 /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
+		204FA14220F3BD74004C49B5 /* ChatRoomService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomService.swift; sourceTree = "<group>"; };
+		204FA14520F3CAED004C49B5 /* RefactorDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefactorDB.swift; sourceTree = "<group>"; };
 		20522F1720F1E8F20072CF1D /* unicon-dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "unicon-dev.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		20522F1820F1E8F40072CF1D /* unicon-dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "unicon-dev-Info.plist"; path = "/Users/yohanashima/Documents/unicon/unicon-dev-Info.plist"; sourceTree = "<absolute>"; };
 		20522F1C20F1E98D0072CF1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -455,6 +473,9 @@
 				432FA1D420D8F24A0058A744 /* TeamService.swift */,
 				432FA1D720D8F43D0058A744 /* StorageService.swift */,
 				4360356D20DB78AD0092361A /* UserService.swift */,
+				204FA13C20F3AF23004C49B5 /* LikeService.swift */,
+				204FA13F20F3B4AE004C49B5 /* MatchService.swift */,
+				204FA14220F3BD74004C49B5 /* ChatRoomService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -600,6 +621,8 @@
 				43C6C70420EF5B9D0053FCD2 /* CardViewHelper.swift */,
 				43C6C70620EF5B9D0053FCD2 /* UCPaginationHelper.swift */,
 				43C6C70520EF5B9D0053FCD2 /* UserHelper.swift */,
+				204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */,
+				204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -611,6 +634,7 @@
 				20522F1A20F1E9450072CF1D /* unicon-dev */,
 				43C6C70B20EF5C4A0053FCD2 /* Constants.swift */,
 				43C6C70E20EF5C4A0053FCD2 /* memo.txt */,
+				204FA14520F3CAED004C49B5 /* RefactorDB.swift */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -972,11 +996,15 @@
 				20522ED620F1E8F20072CF1D /* Storyboard+Utility.siwft.swift in Sources */,
 				20522ED720F1E8F20072CF1D /* SetTeamIntroViewController.swift in Sources */,
 				20522ED820F1E8F20072CF1D /* TeamService.swift in Sources */,
+				204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
+				204FA13B20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164420F340330028490A /* SingleChatViewController.swift in Sources */,
 				20522ED920F1E8F20072CF1D /* LoginViewController.swift in Sources */,
 				20522EDA20F1E8F20072CF1D /* SelectGenderViewController.swift in Sources */,
 				20522EDB20F1E8F20072CF1D /* UCPaginationHelper.swift in Sources */,
+				204FA13E20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				20522EDC20F1E8F20072CF1D /* User.swift in Sources */,
+				204FA14420F3BD74004C49B5 /* ChatRoomService.swift in Sources */,
 				20522EDD20F1E8F20072CF1D /* CardViewHelper.swift in Sources */,
 				20522EDE20F1E8F20072CF1D /* TeamCollectionViewCell.swift in Sources */,
 				20522EDF20F1E8F20072CF1D /* SelectGenderModalViewController.swift in Sources */,
@@ -986,6 +1014,7 @@
 				20522EE220F1E8F20072CF1D /* Team.swift in Sources */,
 				43E3552920F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				20522EE320F1E8F20072CF1D /* UserHelper.swift in Sources */,
+				204FA14720F3CAED004C49B5 /* RefactorDB.swift in Sources */,
 				20522EE420F1E8F20072CF1D /* SetTeamImageViewController.swift in Sources */,
 				20522EE520F1E8F20072CF1D /* CardView.swift in Sources */,
 				20522EE620F1E8F20072CF1D /* EditTeamProfileViewController.swift in Sources */,
@@ -1001,6 +1030,7 @@
 				20522EF020F1E8F20072CF1D /* MemberTableViewCell.swift in Sources */,
 				20522EF120F1E8F20072CF1D /* CamerarollViewController.swift in Sources */,
 				20522EF220F1E8F20072CF1D /* ProfileViewController.swift in Sources */,
+				204FA14120F3B4AE004C49B5 /* MatchService.swift in Sources */,
 				20522EF320F1E8F20072CF1D /* StorageService.swift in Sources */,
 				20522EF420F1E8F20072CF1D /* CameraRollCollectionViewCell.swift in Sources */,
 			);
@@ -1021,11 +1051,15 @@
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
+				204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
+				204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164320F340330028490A /* SingleChatViewController.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,
+				204FA13D20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				204FA14320F3BD74004C49B5 /* ChatRoomService.swift in Sources */,
 				43C6C70720EF5B9D0053FCD2 /* CardViewHelper.swift in Sources */,
 				438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */,
 				43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */,
@@ -1035,6 +1069,7 @@
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43E3552820F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */,
+				204FA14620F3CAED004C49B5 /* RefactorDB.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
 				202F29F720DF7F9A001C8210 /* CardView.swift in Sources */,
 				43C6C70220EF4DBA0053FCD2 /* EditTeamProfileViewController.swift in Sources */,
@@ -1050,6 +1085,7 @@
 				43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */,
 				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
+				204FA14020F3B4AE004C49B5 /* MatchService.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */,
 			);

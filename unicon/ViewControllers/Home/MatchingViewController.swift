@@ -18,25 +18,44 @@ class MatchingViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     
+    static var swipedTeamList = [String]()
+    static var matchedTeamList = [String]()
+    static var myTeamList = [String]()
+    static var numOfStoreSwipedTeams: Int = 10
+    
+    var teamList = [String]()
+    var indexOfTeamList: Int = 0
+    var sizeOfTeamList: Int = 10
     var teams = [Team]()
+    var indexOfTeams: Int = 0
+    var sizeOfTeams: Int = 5
     
     var dataSource = [CardView]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Team.current == nil {
+        //RefactorDB.setUDMyTeam()
+        
+        guard let currentTeam = Team.current else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
             let newVC = storyboard.instantiateViewController(withIdentifier: "CreateOrJoinVC")
             self.present(newVC, animated: true, completion: nil)
+            return
         }
         
+        print(currentTeam.teamID)
         
         kolodaView.layer.cornerRadius = 20.0
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
-        reloadTeams()
+        UCUserDefaultsHelper.getSwipedTeams()
+        UCUserDefaultsHelper.getMatchedTeams()
+        UCUserDefaultsHelper.getMyTeams()
+        
+        //print(MatchingViewController.myTeamList)
+        initialLoad()
         
     }
     
@@ -73,6 +92,59 @@ class MatchingViewController: UIViewController {
         self.navigationController?.pushViewController(rightPush, animated: false)
     }
     
+    func initialLoad() {
+        loadTeamList() { [weak self] (success) in
+            if success {
+                //print(self?.teamList)
+                self?.loadTeams()
+            } else {
+                self?.loadTeamList() { [weak self] (_) in
+                    self?.loadTeams()
+                }
+            }
+        }
+    }
+    
+    func loadTeamList(success: @escaping (Bool) -> Void) {
+        TeamService.getTeamList(index: indexOfTeamList, size: sizeOfTeamList) { [weak self] (teamList) in
+            //print(teamList)
+            if let size = self?.sizeOfTeamList {
+                if teamList.count < size {
+                    self?.indexOfTeamList = 0
+                } else {
+                    self?.indexOfTeamList += teamList.count
+                }
+            }
+            
+            if teamList.count > 0 {
+                UCTeamHandler.excludeTeams(teamList: teamList) { [weak self] (excludedTL) in
+                    //print(excludedTL)
+                    self?.teamList.append(contentsOf: excludedTL)
+                    return success(true)
+                }
+            } else {
+                return success(false)
+            }
+        }
+    }
+    
+    func loadTeams() {
+        UCTeamHandler.sliceTeamList(teamList: self.teamList, startIndex: indexOfTeams, size: sizeOfTeams) { [weak self] (forLoadTeamList) in
+            //print(forLoadTeamList)
+            if forLoadTeamList.count > 0 {
+                TeamService.getTeams(teamList: forLoadTeamList) { [weak self] (teams) in
+                    self?.indexOfTeams += teams.count
+                    self?.teams.append(contentsOf: teams)
+                    CardViewHelper.makeCardViews(teams: teams, size: self?.kolodaView.frame.size) { cards in
+                        self?.dataSource.append(contentsOf: cards)
+                        self?.kolodaView.reloadData()
+                    }
+                }
+            } else {
+                self?.initialLoad()
+            }
+        }
+    }
     
     func reloadTeams() {
         self.paginationHelper.reloadData(completion: { [weak self] (teams) in
@@ -115,16 +187,43 @@ extension MatchingViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, shouldSwipeCardAt index: Int, in direction: SwipeResultDirection) -> Bool {
+        if teamList.count - teams.count < 10 {
+            loadTeamList() { _ in }
+        }
+        
         if dataSource.count - index < 6 {
-            paginate()
+            loadTeams()
         }
         return true
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+        let team = teams[index]
+        UCTeamHandler.updateSwipedTeamList(uid: team.teamID)
+        
         switch direction {
         case .right:
             print("Swiped to right!")
+            if let isLiking = team.isLiking {
+                if isLiking {
+                    print("MATCHMATCHMATCHMATCHMATCHMATCH!!!")
+                    MatchService.create(for: team) { success in
+                        if success {
+                            LikeService.delete(for: team) { success in
+                                if success {
+                                    ChatRoomService.create(for: team)
+                                }
+                            }
+                        }
+                    }
+                } else {
+                    LikeService.create(for: team) { success in
+                        if !success {
+                            print("Like error")
+                        }
+                    }
+                }
+            }
         case .left:
             print("Swiped to left!")
         default:
@@ -145,6 +244,12 @@ extension MatchingViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let card = dataSource[index]
         let team = teams[index]
+        
+        LikeService.isTeamLiking(team){ isLiking in
+            team.isLiking = isLiking
+            print(isLiking)
+        }
+        
         if let image = team.teamImage {
             card.imageView.image = image
         } else {
