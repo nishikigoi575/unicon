@@ -128,6 +128,7 @@
 		439A164720F340B00028490A /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439A164620F340B00028490A /* MessageKit.framework */; };
 		439A164C20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
 		439A164D20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
+		439A164E20F350760028490A /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4328832020F2FEFB009DE24D /* Chat.storyboard */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
 		43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40720D4EF6B004612D4 /* LaunchScreen.storyboard */; };
@@ -766,6 +767,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				439A164E20F350760028490A /* Chat.storyboard in Resources */,
 				20522F1B20F1E9730072CF1D /* unicon-dev-Info.plist in Resources */,
 				20522F0320F1E8F20072CF1D /* LaunchScreen.storyboard in Resources */,
 				20522F0420F1E8F20072CF1D /* Profile.storyboard in Resources */,

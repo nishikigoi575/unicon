@@ -56,16 +56,17 @@
             </objects>
             <point key="canvasLocation" x="-1383.2" y="1797.7511244377813"/>
         </scene>
-        <!--Single Chat View Controller-->
+        <!--相手チーム名-->
         <scene sceneID="S3C-pr-Ncz">
             <objects>
                 <viewController id="tzK-f6-E7V" customClass="SingleChatViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5i1-0X-8C0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qTt-qV-N8w"/>
                     </view>
+                    <navigationItem key="navigationItem" title="相手チーム名" id="Efi-49-DEa"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cts-IH-ykB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -93,4 +94,5 @@
     <resources>
         <image name="unicorn" width="64" height="64"/>
     </resources>
+    <color key="tintColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
