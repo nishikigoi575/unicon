@@ -13,10 +13,13 @@ class ChatListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var teamImageView: UIImageView!
     
+    @IBOutlet weak var teamNameLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        teamImageView.layer.cornerRadius = 30
+        teamImageView.layer.cornerRadius = 45
         teamImageView.layer.masksToBounds = true
         
     }
