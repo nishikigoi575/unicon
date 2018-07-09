@@ -152,7 +152,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     }
     
     public override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         switch segue.identifier {
         case "ToMyProfile":
             let controller = segue.destination

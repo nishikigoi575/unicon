@@ -100,6 +100,7 @@
 		43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */; };
 		4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */; };
 		4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */; };
+		4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4328832020F2FEFB009DE24D /* Chat.storyboard */; };
 		432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
 		432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
@@ -139,6 +140,10 @@
 		43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */; };
 		43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */; };
 		43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */; };
+		43E3552820F33B1C00722369 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3552620F33B1C00722369 /* ChatListTableViewCell.swift */; };
+		43E3552920F33B1C00722369 /* ChatListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3552620F33B1C00722369 /* ChatListTableViewCell.swift */; };
+		43E3552A20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */; };
+		43E3552B20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */; };
 		43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43E5C02820E7BEB900948D1A /* CropViewController.framework */; };
 		43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */; };
 		43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
@@ -195,6 +200,7 @@
 		43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTeamIntroViewController.swift; sourceTree = "<group>"; };
 		4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberViewController.swift; sourceTree = "<group>"; };
 		4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4328832020F2FEFB009DE24D /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		432FA1D420D8F24A0058A744 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
@@ -242,6 +248,8 @@
 		43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberTableViewCell.swift; sourceTree = "<group>"; };
 		43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberTableViewCell.xib; sourceTree = "<group>"; };
 		43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGenderModalViewController.swift; sourceTree = "<group>"; };
+		43E3552620F33B1C00722369 /* ChatListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListTableViewCell.swift; sourceTree = "<group>"; };
+		43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatListTableViewCell.xib; sourceTree = "<group>"; };
 		43E5C02820E7BEB900948D1A /* CropViewController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CropViewController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamListTableViewCell.swift; sourceTree = "<group>"; };
 		43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamListTableViewCell.xib; sourceTree = "<group>"; };
@@ -380,6 +388,7 @@
 				4360357120DC9B600092361A /* JoinTeam.storyboard */,
 				434BE14920E1CB620015A828 /* Profile.storyboard */,
 				4338826E20E754AC0057B55E /* ImagePicker.storyboard */,
+				4328832020F2FEFB009DE24D /* Chat.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -483,6 +492,7 @@
 		438045F920E1FCB200FF6BF4 /* CellControllers */ = {
 			isa = PBXGroup;
 			children = (
+				43E3552620F33B1C00722369 /* ChatListTableViewCell.swift */,
 				43C6C71320EF5E830053FCD2 /* MemberTableViewCell.swift */,
 				43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */,
 				438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */,
@@ -498,6 +508,7 @@
 				438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */,
 				43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */,
 				43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */,
+				43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */,
 			);
 			path = CellXibs;
 			sourceTree = "<group>";
@@ -740,6 +751,7 @@
 				20522F1B20F1E9730072CF1D /* unicon-dev-Info.plist in Resources */,
 				20522F0320F1E8F20072CF1D /* LaunchScreen.storyboard in Resources */,
 				20522F0420F1E8F20072CF1D /* Profile.storyboard in Resources */,
+				43E3552B20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */,
 				20522F0520F1E8F20072CF1D /* JoinTeam.storyboard in Resources */,
 				20522F0620F1E8F20072CF1D /* MemberTableViewCell.xib in Resources */,
 				20522F0720F1E8F20072CF1D /* CardView.xib in Resources */,
@@ -765,7 +777,9 @@
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
 				43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
+				43E3552A20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */,
 				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
+				4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
 				43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */,
 				43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */,
@@ -1032,6 +1046,7 @@
 				20522EE020F1E8F20072CF1D /* ChatViewController.swift in Sources */,
 				20522EE120F1E8F20072CF1D /* UIExtention.swift in Sources */,
 				20522EE220F1E8F20072CF1D /* Team.swift in Sources */,
+				43E3552920F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				20522EE320F1E8F20072CF1D /* UserHelper.swift in Sources */,
 				20522EE420F1E8F20072CF1D /* SetTeamImageViewController.swift in Sources */,
 				20522EE520F1E8F20072CF1D /* CardView.swift in Sources */,
@@ -1078,6 +1093,7 @@
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
+				43E3552820F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */,
 				43222D1620D7B93400B3DB50 /* SetTeamImageViewController.swift in Sources */,
 				202F29F720DF7F9A001C8210 /* CardView.swift in Sources */,

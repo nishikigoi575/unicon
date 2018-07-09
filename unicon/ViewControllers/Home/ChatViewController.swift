@@ -9,13 +9,23 @@
 import Foundation
 import UIKit
 
-class ChatViewController: UIViewController {
+class ChatViewController: UIViewController, UITableViewDelegate {
+    
+    var groupChats = [Team]()
+    
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.navigationController!.interactivePopGestureRecognizer!.isEnabled = false
         
         self.navigationItem.hidesBackButton = true
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let nib = UINib(nibName: "ChatListTableViewCell", bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: "ChatListCell")
         
     }
     
@@ -29,5 +39,22 @@ class ChatViewController: UIViewController {
         self.navigationController!.view.layer.add(transition, forKey: nil)
         navigationController?.popViewController(animated: true)
     }
+}
+
+extension ChatViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
 }
 

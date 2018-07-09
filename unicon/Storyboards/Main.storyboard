@@ -95,37 +95,6 @@
             </objects>
             <point key="canvasLocation" x="5873" y="246"/>
         </scene>
-        <!--Title-->
-        <scene sceneID="xP1-NV-eGv">
-            <objects>
-                <viewController storyboardIdentifier="ChatVC" id="VoB-CG-rLw" customClass="ChatViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="EIU-oF-jLg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CHAT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ped-1Z-jBa">
-                                <rect key="frame" x="124" y="303" width="127" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="UIQ-gs-NAj"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Title" id="WPZ-UX-NtU">
-                        <barButtonItem key="leftBarButtonItem" image="unicorn" id="qmW-E8-Roz">
-                            <connections>
-                                <action selector="goBack:" destination="VoB-CG-rLw" id="TaZ-oa-xKB"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NUJ-ZW-x9R" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6740" y="261"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="peH-98-hKe">
             <objects>
