@@ -256,8 +256,7 @@ class TeamService {
                     guard let team = team else {
                         return success(nil)
                     }
-                    
-                    Team.setCurrent(team)
+                    Team.setCurrent(team, writeToUserDefaults: true)
                     return success(team)
                 })
             }
