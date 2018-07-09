@@ -15,12 +15,16 @@ class SingleChatViewController: MessagesViewController {
     
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = .full
         return formatter
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.navigationBar.barTintColor = UIColor.black
+        
+        self.navigationController?.navigationBar.tintColor = UIColor.hex(hex: "FF5E62", alpha: 1.0)
         
         DispatchQueue.main.async {
             // messageListにメッセージの配列をいれて
@@ -41,6 +45,8 @@ class SingleChatViewController: MessagesViewController {
         
         scrollsToBottomOnKeybordBeginsEditing = true // default false
         maintainPositionOnKeyboardFrameChanged = true // default false
+        
+        messagesCollectionView.backgroundColor = UIColor.hex(hex: "FFFCF2", alpha: 1.0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +68,7 @@ class SingleChatViewController: MessagesViewController {
             createMessage(text: "こ"),
             createMessage(text: "さ"),
             createMessage(text: "し"),
-            createMessage(text: "すせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわをん"),
+            createMessage(text: "すせそたちつてとなにぬね\nのはひふへほまみむめもやゆよらりるれろわをん"),
         ]
     }
     
@@ -84,7 +90,7 @@ extension SingleChatViewController: MessagesDataSource {
     }
     
     func otherSender() -> Sender {
-        return Sender(id: "456", displayName: "知らない人")
+        return Sender(id: "456", displayName: "サンプル")
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -128,10 +134,10 @@ extension SingleChatViewController: MessagesDisplayDelegate {
         return isFromCurrentSender(message: message) ? .white : .darkText
     }
     
-    // メッセージの背景色を変更している（デフォルトは自分：緑、相手：グレー）
+    // メッセージの背景色を変更している（デフォルトは自分：赤、相手：グレー）
     func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
         return isFromCurrentSender(message: message) ?
-            UIColor(red: 69/255, green: 193/255, blue: 89/255, alpha: 1) :
+            UIColor.hex(hex: "FF5E62", alpha: 1.0) :
             UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
     }
     
