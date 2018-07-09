@@ -17,10 +17,39 @@
                     <view key="view" contentMode="scaleToFill" id="7Ou-B4-P4H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Chats" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="meI-x9-ENr">
+                                <rect key="frame" x="16" y="85" width="136" height="20"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
+                                <color key="textColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cp1-zZ-Wiv">
+                                <rect key="frame" x="0.0" y="113" width="375" height="554"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="cp1-zZ-Wiv" firstAttribute="top" secondItem="meI-x9-ENr" secondAttribute="bottom" constant="8" id="2wb-Et-CPx"/>
+                            <constraint firstItem="meI-x9-ENr" firstAttribute="top" secondItem="Ic4-cy-VRE" secondAttribute="top" constant="21" id="HiL-Pp-AGR"/>
+                            <constraint firstItem="cp1-zZ-Wiv" firstAttribute="trailing" secondItem="Ic4-cy-VRE" secondAttribute="trailing" id="Vc7-eL-L9T"/>
+                            <constraint firstItem="cp1-zZ-Wiv" firstAttribute="bottom" secondItem="Ic4-cy-VRE" secondAttribute="bottom" id="arL-Fg-5m5"/>
+                            <constraint firstItem="cp1-zZ-Wiv" firstAttribute="leading" secondItem="Ic4-cy-VRE" secondAttribute="leading" id="eea-CI-C38"/>
+                            <constraint firstItem="meI-x9-ENr" firstAttribute="leading" secondItem="Ic4-cy-VRE" secondAttribute="leading" constant="16" id="vYt-RG-16h"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Ic4-cy-VRE"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Lfn-0d-Gl4"/>
+                    <navigationItem key="navigationItem" id="Lfn-0d-Gl4">
+                        <barButtonItem key="leftBarButtonItem" image="unicorn" id="60K-NJ-mhk">
+                            <connections>
+                                <action selector="goBack:" destination="zln-33-eE5" id="vgQ-rU-SnI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="cp1-zZ-Wiv" id="S7Z-S1-Rk1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fca-xb-u7b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,4 +74,7 @@
             <point key="canvasLocation" x="-2322.4000000000001" y="1797.7511244377813"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="unicorn" width="64" height="64"/>
+    </resources>
 </document>
