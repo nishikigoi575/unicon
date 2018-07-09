@@ -103,6 +103,7 @@ PODS:
   - Koloda (4.3.1):
     - pop (~> 1.0)
   - leveldb-library (1.20)
+  - MessageKit (0.13.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -126,6 +127,7 @@ DEPENDENCIES:
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
   - IQKeyboardManagerSwift
   - Koloda (~> 4.3.1)
+  - MessageKit
   - SwiftGifOrigin (~> 1.6.1)
 
 SPEC REPOS:
@@ -158,6 +160,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - Koloda
     - leveldb-library
+    - MessageKit
     - nanopb
     - pop
     - Protobuf
@@ -197,11 +200,12 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 36dbe324b4f9793f5f41ba5227f3e7c76dfefd50
   Koloda: 0d39b2aa188ccd1fac48d752acaf9802e683c625
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MessageKit: c4bd50e285a0f0761bc23a2e982aa7840873c4f5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
-PODFILE CHECKSUM: f5d845389e608fe16fbcb4b1e6d4c02db3e1c2b3
+PODFILE CHECKSUM: ad3a021788c5d87d9d46bd949eae30394b110234
 
 COCOAPODS: 1.5.3
