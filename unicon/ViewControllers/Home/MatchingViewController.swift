@@ -67,7 +67,8 @@ class MatchingViewController: UIViewController {
         transition.duration = 0.5
         transition.subtype = kCATransitionFromRight
         self.navigationController!.view.layer.add(transition, forKey: nil)
-        let rightPush = self.storyboard?.instantiateViewController(withIdentifier: "ChatVC") as! ChatViewController
+        let sv = UIStoryboard(name: "Chat", bundle: nil)
+        let rightPush = sv.instantiateViewController(withIdentifier: "ChatVC") as! ChatViewController
         rightPush.providesPresentationContextTransitionStyle = true
         self.navigationController?.pushViewController(rightPush, animated: false)
     }

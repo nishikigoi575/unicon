@@ -100,6 +100,7 @@
 		43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */; };
 		4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */; };
 		4325E51720D7CC36001C7289 /* IQKeyboardManagerSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */; };
+		4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4328832020F2FEFB009DE24D /* Chat.storyboard */; };
 		432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D420D8F24A0058A744 /* TeamService.swift */; };
 		432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D720D8F43D0058A744 /* StorageService.swift */; };
 		432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */; };
@@ -195,6 +196,7 @@
 		43222D1720D7B9C700B3DB50 /* SetTeamIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetTeamIntroViewController.swift; sourceTree = "<group>"; };
 		4325E51420D7BBF6001C7289 /* InviteMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteMemberViewController.swift; sourceTree = "<group>"; };
 		4325E51620D7CC36001C7289 /* IQKeyboardManagerSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = IQKeyboardManagerSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4328832020F2FEFB009DE24D /* Chat.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		432FA1D420D8F24A0058A744 /* TeamService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamService.swift; sourceTree = "<group>"; };
 		432FA1D720D8F43D0058A744 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StorageReference+Image.swift"; sourceTree = "<group>"; };
@@ -380,6 +382,7 @@
 				4360357120DC9B600092361A /* JoinTeam.storyboard */,
 				434BE14920E1CB620015A828 /* Profile.storyboard */,
 				4338826E20E754AC0057B55E /* ImagePicker.storyboard */,
+				4328832020F2FEFB009DE24D /* Chat.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -766,6 +769,7 @@
 				43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
+				4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
 				43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */,
 				43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */,
