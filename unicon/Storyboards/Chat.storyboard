@@ -66,7 +66,9 @@
                         <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="qTt-qV-N8w"/>
                     </view>
-                    <navigationItem key="navigationItem" title="相手チーム名" id="Efi-49-DEa"/>
+                    <navigationItem key="navigationItem" title="相手チーム名" id="Efi-49-DEa">
+                        <barButtonItem key="backBarButtonItem" title="戻る" id="1I8-bw-ZSW"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cts-IH-ykB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
