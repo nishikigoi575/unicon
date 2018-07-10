@@ -36,6 +36,7 @@ class MatchingViewController: UIViewController {
         super.viewDidLoad()
         
         //RefactorDB.setUDMyTeam()
+        //RefactorDB.setTeamList()
         
         guard let currentTeam = Team.current else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
@@ -54,7 +55,10 @@ class MatchingViewController: UIViewController {
         UCUserDefaultsHelper.getMatchedTeams()
         UCUserDefaultsHelper.getMyTeams()
         
-        //print(MatchingViewController.myTeamList)
+//        print("myTeamList: \(MatchingViewController.myTeamList)")
+//        print("swipedTeamList: \(MatchingViewController.swipedTeamList)")
+//        print("matchedTeamList: \(MatchingViewController.matchedTeamList)")
+        
         initialLoad()
         
     }
@@ -95,7 +99,7 @@ class MatchingViewController: UIViewController {
     func initialLoad() {
         loadTeamList() { [weak self] (success) in
             if success {
-                //print(self?.teamList)
+                //print("initialLoad: \(self?.teamList)")
                 self?.loadTeams()
             } else {
                 self?.loadTeamList() { [weak self] (_) in
@@ -107,7 +111,7 @@ class MatchingViewController: UIViewController {
     
     func loadTeamList(success: @escaping (Bool) -> Void) {
         TeamService.getTeamList(index: indexOfTeamList, size: sizeOfTeamList) { [weak self] (teamList) in
-            //print(teamList)
+            //print("loadTeamList: \(teamList)")
             if let size = self?.sizeOfTeamList {
                 if teamList.count < size {
                     self?.indexOfTeamList = 0
@@ -118,7 +122,7 @@ class MatchingViewController: UIViewController {
             
             if teamList.count > 0 {
                 UCTeamHandler.excludeTeams(teamList: teamList) { [weak self] (excludedTL) in
-                    //print(excludedTL)
+                    //print("excludedTL: \(excludedTL)")
                     self?.teamList.append(contentsOf: excludedTL)
                     return success(true)
                 }
@@ -130,7 +134,7 @@ class MatchingViewController: UIViewController {
     
     func loadTeams() {
         UCTeamHandler.sliceTeamList(teamList: self.teamList, startIndex: indexOfTeams, size: sizeOfTeams) { [weak self] (forLoadTeamList) in
-            //print(forLoadTeamList)
+            //print("forLoadTeamList: \(forLoadTeamList)")
             if forLoadTeamList.count > 0 {
                 TeamService.getTeams(teamList: forLoadTeamList) { [weak self] (teams) in
                     self?.indexOfTeams += teams.count
@@ -198,6 +202,17 @@ extension MatchingViewController: KolodaViewDelegate {
     }
     
     func koloda(_ koloda: KolodaView, didSwipeCardAt index: Int, in direction: SwipeResultDirection) {
+//        print("teamList: \(self.teamList)")
+//        print("swipedTeamList: \(MatchingViewController.swipedTeamList)")
+//        for team in self.teams {
+//            print("\(team.teamID): \(team.teamName)")
+//        }
+//        print("teams: \(self.teams)")
+//        print("dataSource: \(self.dataSource)")
+//        print("indexOfTeamList: \(self.indexOfTeamList)")
+//        print("indexOfTeams: \(self.indexOfTeams)")
+//        print("index: \(index)")
+        
         let team = teams[index]
         UCTeamHandler.updateSwipedTeamList(uid: team.teamID)
         

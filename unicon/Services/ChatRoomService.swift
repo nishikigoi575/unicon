@@ -39,7 +39,7 @@ struct ChatRoomService {
                     }
                 }
                 dispatchGroup.notify(queue: .main, execute: {
-                    chatRef.setData(["myMember": userUIDs], options: SetOptions.merge()) { err in
+                    chatRef.setData(["TeamA": currentTeamUID, "MembersA": userUIDs], options: SetOptions.merge()) { err in
                         if let err = err {
                             print(err.localizedDescription)
                             return
@@ -67,7 +67,7 @@ struct ChatRoomService {
                     }
                 }
                 dispatchGroup.notify(queue: .main, execute: {
-                    chatRef.setData(["opponentMember": userUIDs], options: SetOptions.merge()) { err in
+                    chatRef.setData(["TeamB": team.teamID, "MembersB": userUIDs], options: SetOptions.merge()) { err in
                         if let err = err {
                             print(err.localizedDescription)
                             return

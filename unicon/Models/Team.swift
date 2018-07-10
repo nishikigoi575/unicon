@@ -61,6 +61,13 @@ class Team: NSObject {
         
         super.init()
         
+        Alamofire.request(teamImageURL).responseImage { [weak self] (response) in
+            if let image = response.result.value {
+                //print("GOT IMAGE")
+                self?.teamImage = image
+            }
+        }
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
