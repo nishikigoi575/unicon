@@ -44,7 +44,8 @@ class UCTeamHandler {
     public static func updateSwipedTeamList(uid: String) {
         MatchingViewController.swipedTeamList.append(uid)
         if MatchingViewController.swipedTeamList.count > MatchingViewController.numOfStoreSwipedTeams {
-            MatchingViewController.swipedTeamList.removeLast()
+            MatchingViewController.swipedTeamList.removeFirst()
         }
+        //print("swipedTeamList, Update: \(MatchingViewController.swipedTeamList)")
     }
 }

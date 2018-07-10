@@ -27,4 +27,32 @@ class RefactorDB {
         }
     }
     
+    static func setTeamList() {
+        let ref = Firestore.firestore().collection("teams")
+        let listRef = Firestore.firestore().collection("teamList")
+        
+        ref.getDocuments() { (snapshot, err) in
+            guard let snapshot = snapshot else { return }
+            let dispatchGroup = DispatchGroup()
+            for dc in snapshot.documents {
+                dispatchGroup.enter()
+                let r = listRef.document(dc.documentID)
+                r.getDocument() { (document, err) in
+                    if document?.exists ?? false {
+                        dispatchGroup.leave()
+                    } else {
+                        if let date = dc["date"] {
+                            r.setData(["lastLoginDate": date]) { err in
+                                dispatchGroup.leave()
+                            }
+                        } else {
+                            print(dc.documentID)
+                            dispatchGroup.leave()
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
 }
