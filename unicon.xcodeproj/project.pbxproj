@@ -93,6 +93,8 @@
 		20522F1D20F1E98D0072CF1D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20522F1C20F1E98D0072CF1D /* GoogleService-Info.plist */; };
 		206D37B420F4C70600DFE1EE /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B320F4C70600DFE1EE /* ChatRoom.swift */; };
 		206D37B520F4C70600DFE1EE /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B320F4C70600DFE1EE /* ChatRoom.swift */; };
+		206D37B720F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */; };
+		206D37B820F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
 		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
@@ -206,6 +208,7 @@
 		20522F1820F1E8F40072CF1D /* unicon-dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "unicon-dev-Info.plist"; path = "/Users/yohanashima/Documents/unicon/unicon-dev-Info.plist"; sourceTree = "<absolute>"; };
 		20522F1C20F1E98D0072CF1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		206D37B320F4C70600DFE1EE /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCellView.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -365,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				202F29F620DF7F9A001C8210 /* CardView.swift */,
+				206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1036,6 +1040,7 @@
 				20522EF120F1E8F20072CF1D /* CamerarollViewController.swift in Sources */,
 				20522EF220F1E8F20072CF1D /* ProfileViewController.swift in Sources */,
 				204FA14120F3B4AE004C49B5 /* MatchService.swift in Sources */,
+				206D37B820F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */,
 				20522EF320F1E8F20072CF1D /* StorageService.swift in Sources */,
 				20522EF420F1E8F20072CF1D /* CameraRollCollectionViewCell.swift in Sources */,
 			);
@@ -1092,6 +1097,7 @@
 				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				204FA14020F3B4AE004C49B5 /* MatchService.swift in Sources */,
+				206D37B720F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */,
 			);

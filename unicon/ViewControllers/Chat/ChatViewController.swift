@@ -12,6 +12,7 @@ import UIKit
 class ChatViewController: UIViewController, UITableViewDelegate {
     
     var chatRooms = [ChatRoom]()
+    let paginationHelper = UCPaginationHelper<ChatRoom>(keyUID: nil, serviceMethod: ChatRoomService.getChatRooms)
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -27,6 +28,7 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         let nib = UINib(nibName: "ChatListTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ChatListCell")
         
+        reload()
     }
     
     
@@ -40,24 +42,57 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ToSingleChat", sender: nil)
+    @objc func reload() {
+        self.paginationHelper.reloadData(completion: { [weak self] (rooms) in
+            self?.chatRooms = rooms
+            self?.tableView.reloadData()
+        })
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffsetY = scrollView.contentOffset.y
+        let maximumOffset = scrollView.contentSize.height - scrollView.frame.height
+        let distanceToBottom = maximumOffset - currentOffsetY
+        //print("currentOffsetY: \(currentOffsetY)")
+        //print("scrollView.contentSize.height: \(scrollView.contentSize.height)")
+        //print("scrollView.frame.height: \(scrollView.frame.height)")
+        //print("distanceToBottom: \(distanceToBottom)")
+        
+        if distanceToBottom < 1500 && distanceToBottom > 0 {
+            
+            paginationHelper.paginate(completion: { [weak self] (rooms) in
+                self?.chatRooms.append(contentsOf: rooms)
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            })
+        }
+    }
+    
 }
 
 extension ChatViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
-        return cell
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return chatRooms.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
+        let room = chatRooms[indexPath.row]
+        
+        ChatRoomCellView.configureCell(cell, with: room)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "ToSingleChat", sender: nil)
     }
     
 }
