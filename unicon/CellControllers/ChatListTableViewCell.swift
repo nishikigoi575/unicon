@@ -10,11 +10,8 @@ import UIKit
 
 class ChatListTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var teamImageView: UIImageView!
-    
     @IBOutlet weak var teamNameLabel: UILabel!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -21,7 +21,7 @@ struct ChatRoomService {
         let chatRoomUID = chatRoomRef.documentID
         let chatRef = Firestore.firestore().collection("chat").document(chatRoomUID)
         
-        // Current team
+        // Current team (MembersA)
         TeamService.getTeamMembers(teamUID: currentTeamUID) { members in
             if let members = members {
                 var userUIDs = [String]()
@@ -49,7 +49,7 @@ struct ChatRoomService {
             }
         }
         
-        // Opponent team
+        // Opponent team (MembersB)
         TeamService.getTeamMembers(teamUID: team.teamID) { members in
             if let members = members {
                 var userUIDs = [String]()
@@ -76,6 +76,31 @@ struct ChatRoomService {
                 })
             }
         }
-        
+    }
+    
+    static func addNumOfMembers(chatRoomUID: String, num: Int) {
+        let ref = Firestore.firestore().collection("chat").document(chatRoomUID)
+        ref.setData(["numOfMembers": num], options: SetOptions.merge()) { err in
+            if let err = err {
+                print(err.localizedDescription)
+                return
+            }
+        }
+    }
+    
+    static func getLastMessage(chatRoomUID: String, completion: @escaping (String?) -> Void) {
+        let ref = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages")
+        ref.order(by: "date", descending: true).limit(to: 1).getDocuments() { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print("Error retreving posts: \(error.debugDescription)")
+                return completion(nil)
+            }
+            let dict = snapshot.documents[0].data()
+            if let msg = dict["message"] as? String {
+                return completion(msg)
+            } else {
+                return completion(nil)
+            }
+        }
     }
 }

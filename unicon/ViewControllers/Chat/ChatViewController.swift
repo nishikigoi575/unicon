@@ -11,7 +11,7 @@ import UIKit
 
 class ChatViewController: UIViewController, UITableViewDelegate {
     
-    var groupChats = [Team]()
+    var chatRooms = [ChatRoom]()
     
     @IBOutlet weak var tableView: UITableView!
     
