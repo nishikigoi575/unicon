@@ -9,6 +9,8 @@
 import Foundation
 import Firestore.FIRDocumentSnapshot
 import FirebaseAuth
+import Alamofire
+import AlamofireImage
 
 class User: NSObject {
     
@@ -16,7 +18,8 @@ class User: NSObject {
     
     let userUID: String
     let firstName: String
-    var userImage: String
+    var userImageURL: String
+    var userImage: UIImage?
     var belongsToTeam: Bool?
     var pushID: String?
     var facebookID: String?
@@ -29,10 +32,10 @@ class User: NSObject {
     
     
     // To write
-    init(userUID: String, firstName: String, userImage: String, pushID: String?, belongsToTeam: Bool?, belonging: String?) {
+    init(userUID: String, firstName: String, userImageURL: String, pushID: String?, belongsToTeam: Bool?, belonging: String?) {
         self.userUID = userUID
         self.firstName = firstName
-        self.userImage = userImage
+        self.userImageURL = userImageURL
         self.pushID = pushID
         self.belongsToTeam = belongsToTeam
         self.belonging = belonging
@@ -43,12 +46,12 @@ class User: NSObject {
     init?(document: DocumentSnapshot) {
         guard let dict = document.data() as? [String : Any],
             let firstName = dict["firstName"] as? String,
-            let userImage = dict["userImage"] as? String
+            let userImageURL = dict["userImage"] as? String
             else { return nil }
         
         self.userUID = document.documentID
         self.firstName = firstName
-        self.userImage = userImage
+        self.userImageURL = userImageURL
         
         if let pushID = dict["pushID"] as? String {
             self.pushID = pushID
@@ -68,17 +71,23 @@ class User: NSObject {
         }
         
         super.init()
+        
+        Alamofire.request(userImageURL).responseImage { [weak self] (response) in
+            if let image = response.result.value {
+                self?.userImage = image
+            }
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         guard let userUID = aDecoder.decodeObject(forKey: Constants.UserDefaults.userUID) as? String,
             let firstName = aDecoder.decodeObject(forKey: Constants.UserDefaults.firstName) as? String,
-            let userImage = aDecoder.decodeObject(forKey: Constants.UserDefaults.userImage) as? String
+            let userImageURL = aDecoder.decodeObject(forKey: Constants.UserDefaults.userImage) as? String
             else { return nil }
         
         self.userUID = userUID
         self.firstName = firstName
-        self.userImage = userImage
+        self.userImageURL = userImageURL
         
         /*
         if let pushID = aDecoder.decodeObject(forKey: Constants.UserDefaults.pushID) as? String {
@@ -91,6 +100,12 @@ class User: NSObject {
         */
         
         super.init()
+        
+        Alamofire.request(userImageURL).responseImage { [weak self] (response) in
+            if let image = response.result.value {
+                self?.userImage = image
+            }
+        }
     }
     
     private static var _current: User?
@@ -115,7 +130,7 @@ class User: NSObject {
         return [
             "userUID":userUID,
             "firstName":firstName,
-            "userImage":userImage
+            "userImage":userImageURL
         ]
     }
 }
@@ -124,7 +139,7 @@ extension User: NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(userUID, forKey: Constants.UserDefaults.userUID)
         aCoder.encode(firstName, forKey: Constants.UserDefaults.firstName)
-        aCoder.encode(userImage, forKey: Constants.UserDefaults.userImage)
-        //aCoder.encode(userImage, forKey: Constants.UserDefaults.belonging)
+        aCoder.encode(userImageURL, forKey: Constants.UserDefaults.userImage)
+        //aCoder.encode(belonging, forKey: Constants.UserDefaults.belonging)
     }
 }

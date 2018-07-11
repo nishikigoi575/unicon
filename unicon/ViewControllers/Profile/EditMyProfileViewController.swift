@@ -35,11 +35,16 @@ class EditMyProfileViewController: UIViewController, UITextViewDelegate, UITextF
         introTextView.textContainerInset = UIEdgeInsetsMake(20, 30, 20, 30)
         introTextView.sizeToFit()
         
-        if let url = URL(string: user.userImage) {
-            profileImageView.af_setImage(
-                withURL: url,
-                imageTransition: .crossDissolve(0.5))
+        if let userImage = user.userImage {
+            profileImageView.image = userImage
+        } else {
+            if let url = URL(string: user.userImageURL) {
+                profileImageView.af_setImage(
+                    withURL: url,
+                    imageTransition: .crossDissolve(0.5))
+            }
         }
+
         
         
     }

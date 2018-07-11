@@ -19,6 +19,7 @@ class SingleChatViewController: MessagesViewController {
         return formatter
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,25 +55,14 @@ class SingleChatViewController: MessagesViewController {
     
     func getMessages() -> [MockMessage] {
         return [
-            createMessage(text: "あ"),
-            createMessage(text: "い"),
-            createMessage(text: "う"),
-            createMessage(text: "え"),
-            createMessage(text: "お"),
-            createMessage(text: "か"),
-            createMessage(text: "き"),
-            createMessage(text: "く"),
-            createMessage(text: "け"),
-            createMessage(text: "こ"),
-            createMessage(text: "さ"),
-            createMessage(text: "し"),
-            createMessage(text: "すせそたちつてとなにぬね\nのはひふへほまみむめもやゆよらりるれろわをん"),
+            createMessage(user: User.current!, text: "あ"),
+            createMessage(user: User.current!, text: "すせそたちつてとなにぬね\nのはひふへほまみむめもやゆよらりるれろわをん"),
         ]
     }
     
-    func createMessage(text: String) -> MockMessage {
+    func createMessage(user: User, text: String) -> MockMessage {
         let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont(name: "Hiragino Sans", size: 18)!, .foregroundColor: UIColor.black])
-        return MockMessage(attributedText: attributedText, sender: otherSender(), messageId: UUID().uuidString, date: Date())
+        return MockMessage(attributedText: attributedText, sender: otherSender(user: user), messageId: UUID().uuidString, date: Date())
     }
 }
 
@@ -83,11 +73,11 @@ extension SingleChatViewController: MessagesDataSource {
     
     
     func currentSender() -> Sender {
-        return Sender(id: "123", displayName: "自分")
+        return Sender(id: User.current!.userUID, displayName: User.current!.firstName)
     }
     
-    func otherSender() -> Sender {
-        return Sender(id: "456", displayName: "サンプル")
+    func otherSender(user: User) -> Sender {
+        return Sender(id: user.userUID, displayName: user.firstName)
     }
     
     func numberOfSections(in messagesCollectionView: MessagesCollectionView) -> Int {
@@ -148,7 +138,7 @@ extension SingleChatViewController: MessagesDisplayDelegate {
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         // message.sender.displayNameとかで送信者の名前を取得できるので
         // そこからイニシャルを生成するとよい
-        let avatar = Avatar(initials: "人")
+        let avatar = Avatar(image: User.current?.userImage, initials: "")
         avatarView.set(avatar: avatar)
     }
 }

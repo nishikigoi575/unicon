@@ -181,11 +181,15 @@ extension EditTeamProfileViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberTableCell", for: indexPath) as! MemberTableViewCell
         
         let member = members[indexPath.row]
-        if let url = URL(string: member.userImage) {
-            cell.userImageView.af_setImage(
-                withURL: url,
-                imageTransition: .crossDissolve(0.5)
-            )
+        if let userImage = member.userImage {
+            cell.userImageView.image = userImage
+        } else {
+            if let url = URL(string: member.userImageURL) {
+                cell.userImageView.af_setImage(
+                    withURL: url,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
         }
         
         cell.userNameLabel.text = member.firstName

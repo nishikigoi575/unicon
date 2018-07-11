@@ -95,6 +95,8 @@
 		206D37B520F4C70600DFE1EE /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B320F4C70600DFE1EE /* ChatRoom.swift */; };
 		206D37B720F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */; };
 		206D37B820F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */; };
+		206D37BA20F5253600DFE1EE /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B920F5253600DFE1EE /* ChatService.swift */; };
+		206D37BB20F5253600DFE1EE /* ChatService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206D37B920F5253600DFE1EE /* ChatService.swift */; };
 		43222CEF20D6207600B3DB50 /* FacebookCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CEE20D6207600B3DB50 /* FacebookCore.framework */; };
 		43222CF120D6207600B3DB50 /* FacebookLogin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF020D6207600B3DB50 /* FacebookLogin.framework */; };
 		43222CF320D6207600B3DB50 /* FacebookShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43222CF220D6207600B3DB50 /* FacebookShare.framework */; };
@@ -209,6 +211,7 @@
 		20522F1C20F1E98D0072CF1D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		206D37B320F4C70600DFE1EE /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomCellView.swift; sourceTree = "<group>"; };
+		206D37B920F5253600DFE1EE /* ChatService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatService.swift; sourceTree = "<group>"; };
 		3E52A37223596E89EEAB8C73 /* Pods-uniconUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.release.xcconfig"; sourceTree = "<group>"; };
 		43222CEE20D6207600B3DB50 /* FacebookCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43222CF020D6207600B3DB50 /* FacebookLogin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FacebookLogin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -483,6 +486,7 @@
 				204FA13C20F3AF23004C49B5 /* LikeService.swift */,
 				204FA13F20F3B4AE004C49B5 /* MatchService.swift */,
 				204FA14220F3BD74004C49B5 /* ChatRoomService.swift */,
+				206D37B920F5253600DFE1EE /* ChatService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -1034,6 +1038,7 @@
 				20522EEB20F1E8F20072CF1D /* StorageReference+Image.swift in Sources */,
 				20522EEC20F1E8F20072CF1D /* NewTeamViewController.swift in Sources */,
 				20522EED20F1E8F20072CF1D /* InviteMemberViewController.swift in Sources */,
+				206D37BB20F5253600DFE1EE /* ChatService.swift in Sources */,
 				20522EEE20F1E8F20072CF1D /* UserService.swift in Sources */,
 				20522EEF20F1E8F20072CF1D /* SingleTeamViewController.swift in Sources */,
 				20522EF020F1E8F20072CF1D /* MemberTableViewCell.swift in Sources */,
@@ -1091,6 +1096,7 @@
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
 				43222D1220D7684E00B3DB50 /* NewTeamViewController.swift in Sources */,
 				4325E51520D7BBF6001C7289 /* InviteMemberViewController.swift in Sources */,
+				206D37BA20F5253600DFE1EE /* ChatService.swift in Sources */,
 				4360356E20DB78AD0092361A /* UserService.swift in Sources */,
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
 				43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */,
