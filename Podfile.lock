@@ -114,6 +114,7 @@ PODS:
   - pop (1.0.10)
   - Protobuf (3.6.0)
   - SwiftGifOrigin (1.6.1)
+  - TapticEngine (1.1.0)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
@@ -131,6 +132,7 @@ DEPENDENCIES:
   - Koloda (~> 4.3.1)
   - MessageKit (>= 1.0.0)
   - SwiftGifOrigin (~> 1.6.1)
+  - TapticEngine
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -167,6 +169,7 @@ SPEC REPOS:
     - pop
     - Protobuf
     - SwiftGifOrigin
+    - TapticEngine
 
 EXTERNAL SOURCES:
   Firestore:
@@ -207,7 +210,8 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  TapticEngine: b78b5513432b3c01af2ebbe018c0995778306757
 
-PODFILE CHECKSUM: dbdd9bce42a3b6ad060c50c344e32a28ab70bd22
+PODFILE CHECKSUM: 73ce7e39f70471199a55d25fe1728ab4965b855b
 
 COCOAPODS: 1.5.3

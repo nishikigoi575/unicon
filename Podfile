@@ -26,6 +26,7 @@ target 'unicon' do
    pod 'EZSwipeController'
    pod 'CropViewController'
    pod 'MessageKit', '>= 1.0.0'
+   pod 'TapticEngine'
    
    # UIDesigns
    pod 'BubbleTransition'
