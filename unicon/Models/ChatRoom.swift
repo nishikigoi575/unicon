@@ -42,10 +42,10 @@ class ChatRoom: NSObject{
         self.opponentTeamImageURL = opponentTeamImageURL
         self.numOfMembers = numOfMembers
         self.lastActiveDate = Date()
-        
+
         super.init()
     }
-    
+
     init?(document: DocumentSnapshot) {
         guard let dict = document.data() as? [String : Any],
             let uid = dict["uid"] as? String,
@@ -60,7 +60,7 @@ class ChatRoom: NSObject{
             let numOfMembers = dict["numOfMembers"] as? Int,
             let lastActiveDate = dict["lastActiveDate"] as? Date
             else { return nil }
-        
+
         guard let currentUserUID = User.current?.userUID else { return nil }
         let isTeamA = membersA.contains(currentUserUID)
         if isTeamA {
@@ -82,7 +82,7 @@ class ChatRoom: NSObject{
             self.opponentTeamName = teamAName
             self.opponentTeamImageURL = teamAImageURL
         }
-        
+
         self.uid = uid
         self.lastActiveDate = lastActiveDate
         self.numOfMembers = numOfMembers

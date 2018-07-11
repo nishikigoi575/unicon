@@ -26,10 +26,12 @@ target 'unicon' do
    pod 'EZSwipeController'
    pod 'CropViewController'
    pod 'MessageKit', '>= 1.0.0'
+   pod 'TapticEngine'
    
    # UIDesigns
    pod 'BubbleTransition'
    pod 'SwiftGifOrigin', '~> 1.6.1'
+   pod 'FSPagerView'
    
   target 'uniconTests' do
     inherit! :search_paths

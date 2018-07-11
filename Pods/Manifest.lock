@@ -69,6 +69,7 @@ PODS:
     - gRPC-ProtoRPC (~> 1.0)
     - leveldb-library (~> 1.18)
     - Protobuf (~> 3.1)
+  - FSPagerView (0.7.1)
   - GoogleToolboxForMac/DebugUtils (2.1.4):
     - GoogleToolboxForMac/Defines (= 2.1.4)
   - GoogleToolboxForMac/Defines (2.1.4)
@@ -114,6 +115,7 @@ PODS:
   - pop (1.0.10)
   - Protobuf (3.6.0)
   - SwiftGifOrigin (1.6.1)
+  - TapticEngine (1.1.0)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.3)
@@ -127,10 +129,12 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Storage
   - Firestore (from `https://storage.googleapis.com/firebase-preview-drop/ios/firestore/0.7.0/Firestore.podspec.json`)
+  - FSPagerView
   - IQKeyboardManagerSwift
   - Koloda (~> 4.3.1)
   - MessageKit (>= 1.0.0)
   - SwiftGifOrigin (~> 1.6.1)
+  - TapticEngine
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -153,6 +157,7 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseStorage
+    - FSPagerView
     - GoogleToolboxForMac
     - gRPC
     - gRPC-Core
@@ -167,6 +172,7 @@ SPEC REPOS:
     - pop
     - Protobuf
     - SwiftGifOrigin
+    - TapticEngine
 
 EXTERNAL SOURCES:
   Firestore:
@@ -193,6 +199,7 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   FirebaseStorage: 0c223481c8f89ed300cf1239ddd2d9833622c65f
   Firestore: 5a33dcb27d8d33d4e82e032ee31ecd2904a72167
+  FSPagerView: 958aba39684e1573755ddcfcc29f7eebb8413cee
   GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
   gRPC: 81b990caa01d7c32605d300c2ffd1b5ba0ef9e49
   gRPC-Core: a56b086a8ef5ced6f6ba5be5bc0a63fca185015a
@@ -207,7 +214,8 @@ SPEC CHECKSUMS:
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  TapticEngine: b78b5513432b3c01af2ebbe018c0995778306757
 
-PODFILE CHECKSUM: dbdd9bce42a3b6ad060c50c344e32a28ab70bd22
+PODFILE CHECKSUM: 786b03d62e30ab02c238398d8b35aeb8d987d55f
 
 COCOAPODS: 1.5.3
