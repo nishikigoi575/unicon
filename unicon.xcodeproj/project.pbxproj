@@ -122,6 +122,7 @@
 		4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */; };
 		4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */; };
 		4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827920E7777E0057B55E /* CropImageViewController.swift */; };
+		4345779F20F5C8E60055D87C /* TapticEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4345779E20F5C8E60055D87C /* TapticEngine.framework */; };
 		434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434BE14920E1CB620015A828 /* Profile.storyboard */; };
 		435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435727D620E47C9700720C41 /* MyProfileViewController.swift */; };
 		435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435727D820E48A4900720C41 /* BubbleTransition.framework */; };
@@ -238,6 +239,7 @@
 		4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollCollectionViewCell.swift; sourceTree = "<group>"; };
 		4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraRollCollectionViewCell.xib; sourceTree = "<group>"; };
 		4338827920E7777E0057B55E /* CropImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropImageViewController.swift; sourceTree = "<group>"; };
+		4345779E20F5C8E60055D87C /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		434BE14920E1CB620015A828 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		435727D620E47C9700720C41 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		435727D820E48A4900720C41 /* BubbleTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BubbleTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4345779F20F5C8E60055D87C /* TapticEngine.framework in Frameworks */,
 				439A164720F340B00028490A /* MessageKit.framework in Frameworks */,
 				43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */,
 				435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */,
@@ -646,6 +649,7 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4345779E20F5C8E60055D87C /* TapticEngine.framework */,
 				439A164620F340B00028490A /* MessageKit.framework */,
 				43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */,
 				43E5C02820E7BEB900948D1A /* CropViewController.framework */,
@@ -929,6 +933,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -960,6 +965,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",

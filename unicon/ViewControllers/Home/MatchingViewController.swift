@@ -11,6 +11,7 @@ import UIKit
 import Koloda
 import Alamofire
 import AlamofireImage
+import TapticEngine
 
 class MatchingViewController: UIViewController {
     
@@ -279,5 +280,12 @@ extension MatchingViewController: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return nil
+    }
+    
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        TapticEngine.notification.feedback(.success)
+        
+        
+        
     }
 }
