@@ -122,6 +122,10 @@
 		4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */; };
 		4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */; };
 		4338827A20E7777E0057B55E /* CropImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4338827920E7777E0057B55E /* CropImageViewController.swift */; };
+		4345779F20F5C8E60055D87C /* TapticEngine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4345779E20F5C8E60055D87C /* TapticEngine.framework */; };
+		434577A120F5D9BB0055D87C /* FSPagerView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 434577A020F5D9BB0055D87C /* FSPagerView.framework */; };
+		434577A320F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434577A220F5D9FA0055D87C /* TeamProfileViewController.swift */; };
+		434577A420F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434577A220F5D9FA0055D87C /* TeamProfileViewController.swift */; };
 		434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434BE14920E1CB620015A828 /* Profile.storyboard */; };
 		435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435727D620E47C9700720C41 /* MyProfileViewController.swift */; };
 		435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435727D820E48A4900720C41 /* BubbleTransition.framework */; };
@@ -238,6 +242,9 @@
 		4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraRollCollectionViewCell.swift; sourceTree = "<group>"; };
 		4338827620E756F60057B55E /* CameraRollCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CameraRollCollectionViewCell.xib; sourceTree = "<group>"; };
 		4338827920E7777E0057B55E /* CropImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropImageViewController.swift; sourceTree = "<group>"; };
+		4345779E20F5C8E60055D87C /* TapticEngine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = TapticEngine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		434577A020F5D9BB0055D87C /* FSPagerView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FSPagerView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		434577A220F5D9FA0055D87C /* TeamProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamProfileViewController.swift; sourceTree = "<group>"; };
 		434BE14920E1CB620015A828 /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		435727D620E47C9700720C41 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		435727D820E48A4900720C41 /* BubbleTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = BubbleTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -317,6 +324,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				434577A120F5D9BB0055D87C /* FSPagerView.framework in Frameworks */,
+				4345779F20F5C8E60055D87C /* TapticEngine.framework in Frameworks */,
 				439A164720F340B00028490A /* MessageKit.framework in Frameworks */,
 				43E5C02920E7BEB900948D1A /* CropViewController.framework in Frameworks */,
 				435727D920E48A4900720C41 /* BubbleTransition.framework in Frameworks */,
@@ -521,6 +530,7 @@
 				43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */,
 				43C6C70120EF4DBA0053FCD2 /* EditTeamProfileViewController.swift */,
 				43C6C71720EF86350053FCD2 /* SelectGenderModalViewController.swift */,
+				434577A220F5D9FA0055D87C /* TeamProfileViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -646,6 +656,8 @@
 		9A576D1701394A596FFF52B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				434577A020F5D9BB0055D87C /* FSPagerView.framework */,
+				4345779E20F5C8E60055D87C /* TapticEngine.framework */,
 				439A164620F340B00028490A /* MessageKit.framework */,
 				43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */,
 				43E5C02820E7BEB900948D1A /* CropViewController.framework */,
@@ -929,6 +941,7 @@
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FSPagerView/FSPagerView.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookCore/FacebookCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookLogin/FacebookLogin.framework",
 				"${BUILT_PRODUCTS_DIR}/FacebookShare/FacebookShare.framework",
@@ -960,6 +973,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FSPagerView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookLogin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FacebookShare.framework",
@@ -1006,6 +1020,7 @@
 				204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
 				204FA13B20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164420F340330028490A /* SingleChatViewController.swift in Sources */,
+				434577A420F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
 				20522ED920F1E8F20072CF1D /* LoginViewController.swift in Sources */,
 				20522EDA20F1E8F20072CF1D /* SelectGenderViewController.swift in Sources */,
 				20522EDB20F1E8F20072CF1D /* UCPaginationHelper.swift in Sources */,
@@ -1062,6 +1077,7 @@
 				204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
 				204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164320F340330028490A /* SingleChatViewController.swift in Sources */,
+				434577A320F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
 				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,

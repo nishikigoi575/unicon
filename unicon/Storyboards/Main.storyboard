@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ysq-cr-Rur">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Matching View Controller-->
+        <!--team name-->
         <scene sceneID="4Rc-rw-scx">
             <objects>
                 <viewController storyboardIdentifier="MatchingVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HcR-hg-Ncv" customClass="MatchingViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dVZ-Yb-YqD">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-CH-f9M" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="10" y="124" width="355" height="393"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8B-Ih-ipa">
-                                <rect key="frame" x="0.0" y="517" width="375" height="150"/>
+                                <rect key="frame" x="0.0" y="566" width="375" height="211.33333333333337"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="kNT-4R-rYk">
-                                        <rect key="frame" x="62" y="25" width="250" height="100"/>
+                                        <rect key="frame" x="62" y="56.333333333333371" width="250" height="100"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-nI-jDx">
                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
@@ -56,8 +53,14 @@
                                 <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="kNT-4R-rYk" firstAttribute="centerX" secondItem="V8B-Ih-ipa" secondAttribute="centerX" id="Iwl-H4-cvf"/>
-                                    <constraint firstAttribute="height" constant="150" id="J7q-Wq-XHi"/>
                                     <constraint firstItem="kNT-4R-rYk" firstAttribute="centerY" secondItem="V8B-Ih-ipa" secondAttribute="centerY" id="eEj-Gm-vvl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-CH-f9M" customClass="KolodaView" customModule="Koloda">
+                                <rect key="frame" x="10" y="118.00000000000003" width="355" height="448.66666666666674"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sdC-CH-f9M" secondAttribute="height" multiplier="19:24" id="u49-Ix-MOM"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -65,16 +68,16 @@
                         <constraints>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" id="8jQ-jc-PDA"/>
                             <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="sdC-CH-f9M" secondAttribute="trailing" constant="10" id="Dix-jN-Wdv"/>
-                            <constraint firstItem="V8B-Ih-ipa" firstAttribute="top" secondItem="sdC-CH-f9M" secondAttribute="bottom" id="Eg4-f8-vsh"/>
-                            <constraint firstItem="sdC-CH-f9M" firstAttribute="top" secondItem="gfs-0w-pet" secondAttribute="top" constant="60" id="O48-ux-e49"/>
+                            <constraint firstItem="sdC-CH-f9M" firstAttribute="top" secondItem="gfs-0w-pet" secondAttribute="top" constant="30" id="QlC-ab-bXh"/>
                             <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="V8B-Ih-ipa" secondAttribute="trailing" id="Yy9-Xr-LcM"/>
+                            <constraint firstItem="V8B-Ih-ipa" firstAttribute="top" secondItem="sdC-CH-f9M" secondAttribute="bottom" id="edX-TG-zCF"/>
                             <constraint firstItem="sdC-CH-f9M" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" constant="10" id="fdo-hb-5EX"/>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="bottom" secondItem="gfs-0w-pet" secondAttribute="bottom" id="r3Q-F5-8Zl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gfs-0w-pet"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xnd-bf-uFm">
-                        <barButtonItem key="leftBarButtonItem" image="unicorn" id="Rlp-ix-JSw">
+                    <navigationItem key="navigationItem" title="team name" id="xnd-bf-uFm">
+                        <barButtonItem key="leftBarButtonItem" image="team" id="Rlp-ix-JSw">
                             <color key="tintColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="goProfile:" destination="HcR-hg-Ncv" id="9kr-qA-obp"/>
@@ -101,7 +104,7 @@
                 <navigationController storyboardIdentifier="NaviVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ysq-cr-Rur" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l0i-H5-NVw">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -115,9 +118,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="chat" width="32" height="32"/>
+        <image name="chat" width="21" height="21"/>
         <image name="crossIcon" width="64" height="64"/>
         <image name="heartIcon" width="64" height="64"/>
-        <image name="unicorn" width="64" height="64"/>
+        <image name="team" width="42" height="42"/>
     </resources>
 </document>

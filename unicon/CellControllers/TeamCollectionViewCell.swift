@@ -12,9 +12,13 @@ class TeamCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var memberImageView: UIImageView!
     
+    @IBOutlet weak var label: UILabel!
+    
+    @IBOutlet weak var button: UIButton!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
     }
 
 }

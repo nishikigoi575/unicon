@@ -11,6 +11,7 @@ import UIKit
 import Koloda
 import Alamofire
 import AlamofireImage
+import TapticEngine
 
 class MatchingViewController: UIViewController {
     
@@ -47,7 +48,7 @@ class MatchingViewController: UIViewController {
         
         print(currentTeam.teamID)
         
-        kolodaView.layer.cornerRadius = 20.0
+        kolodaView.layer.cornerRadius = 10.0
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
@@ -279,5 +280,20 @@ extension MatchingViewController: KolodaViewDataSource {
     
     func koloda(_ koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
         return nil
+    }
+    
+    func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
+        TapticEngine.notification.feedback(.success)
+        
+        let selectedTeam = teams[index]
+        
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "TeamProfileVC") as! TeamProfileViewController
+        vc.teamImage = selectedTeam.teamImageURL
+        vc.teamName = selectedTeam.teamName
+        vc.teamIntro = selectedTeam.intro
+        vc.teamUID = selectedTeam.teamID
+        self.present(vc, animated: true, completion: nil)
+        
     }
 }

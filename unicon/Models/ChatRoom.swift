@@ -12,7 +12,7 @@ import Firestore.FIRDocumentSnapshot
 import Alamofire
 import AlamofireImage
 
-class ChatRoom {
+class ChatRoom: NSObject{
     var uid: String
     var myTeamUID: String
     var opponentTeamUID: String
@@ -26,7 +26,6 @@ class ChatRoom {
     var numOfMembers: Int?
     var lastMessage: String?
     
-    // To write
     init(uid: String, myTeamUID: String, opponentTeamUID: String, myMembers: [String], opponentMembers: [String], myTeamName: String, myTeamImageURL: String, opponentTeamName: String, opponentTeamImageURL: String) {
         self.uid = uid
         self.myTeamUID = myTeamUID
@@ -38,10 +37,10 @@ class ChatRoom {
         self.opponentTeamName = opponentTeamName
         self.opponentTeamImageURL = opponentTeamImageURL
         self.lastActiveDate = Date()
-        
+
         super.init()
     }
-    
+
     init?(document: DocumentSnapshot) {
         guard let dict = document.data() as? [String : Any],
             let uid = dict["uid"] as? String,
@@ -55,7 +54,7 @@ class ChatRoom {
             let teamBImageURL = dict["teamBImageURL"] as? String,
             let lastActiveDate = dict["lastActiveDate"] as? Date
             else { return nil }
-        
+
         guard let currentUserUID = User.current?.userUID else { return nil }
         if membersA.contains(currentUserUID) {
             self.myTeamUID = teamAUID
@@ -76,11 +75,11 @@ class ChatRoom {
             self.opponentTeamName = teamAName
             self.opponentTeamImageURL = teamAImageURL
         }
-        
+
         self.uid = uid
         self.lastActiveDate = lastActiveDate
-        
-        if let numOfMembers = dict["numOfMembers"] {
+
+        if let numOfMembers = dict["numOfMembers"] as? Int {
             self.numOfMembers = numOfMembers
         } else {
             let num = membersA.count + membersB.count
@@ -88,6 +87,8 @@ class ChatRoom {
             ChatRoomService.addNumOfMembers(chatRoomUID: uid, num: num)
         }
         
+        super.init()
+
         ChatRoomService.getLastMessage(chatRoomUID: uid) { msg in
             if let lastMsg = msg {
                 self.lastMessage = lastMsg
@@ -95,7 +96,5 @@ class ChatRoom {
                 self.lastMessage = nil
             }
         }
-        
-        super.init()
     }
 }

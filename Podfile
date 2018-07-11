@@ -31,6 +31,7 @@ target 'unicon' do
    # UIDesigns
    pod 'BubbleTransition'
    pod 'SwiftGifOrigin', '~> 1.6.1'
+   pod 'FSPagerView'
    
   target 'uniconTests' do
     inherit! :search_paths
