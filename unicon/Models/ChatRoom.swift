@@ -23,10 +23,14 @@ class ChatRoom: NSObject{
     var opponentTeamName: String
     var opponentTeamImageURL: String
     var lastActiveDate: Date
-    var numOfMembers: Int?
+    var lastDate: TimeInterval?
+    var numOfMembers: Int
     var lastMessage: String?
+    var myTeamImage: UIImage?
+    var opponentTeamImage: UIImage?
     
-    init(uid: String, myTeamUID: String, opponentTeamUID: String, myMembers: [String], opponentMembers: [String], myTeamName: String, myTeamImageURL: String, opponentTeamName: String, opponentTeamImageURL: String) {
+    // To write
+    init(uid: String, myTeamUID: String, opponentTeamUID: String, myMembers: [String], opponentMembers: [String], myTeamName: String, myTeamImageURL: String, opponentTeamName: String, opponentTeamImageURL: String, numOfMembers: Int) {
         self.uid = uid
         self.myTeamUID = myTeamUID
         self.myMembers = myMembers
@@ -36,6 +40,7 @@ class ChatRoom: NSObject{
         self.opponentMembers = opponentMembers
         self.opponentTeamName = opponentTeamName
         self.opponentTeamImageURL = opponentTeamImageURL
+        self.numOfMembers = numOfMembers
         self.lastActiveDate = Date()
 
         super.init()
@@ -52,11 +57,13 @@ class ChatRoom: NSObject{
             let teamBName = dict["teamBName"] as? String,
             let teamAImageURL = dict["teamAImageURL"] as? String,
             let teamBImageURL = dict["teamBImageURL"] as? String,
+            let numOfMembers = dict["numOfMembers"] as? Int,
             let lastActiveDate = dict["lastActiveDate"] as? Date
             else { return nil }
 
         guard let currentUserUID = User.current?.userUID else { return nil }
-        if membersA.contains(currentUserUID) {
+        let isTeamA = membersA.contains(currentUserUID)
+        if isTeamA {
             self.myTeamUID = teamAUID
             self.myMembers = membersA
             self.myTeamName = teamAName
@@ -78,23 +85,58 @@ class ChatRoom: NSObject{
 
         self.uid = uid
         self.lastActiveDate = lastActiveDate
-
-        if let numOfMembers = dict["numOfMembers"] as? Int {
-            self.numOfMembers = numOfMembers
-        } else {
-            let num = membersA.count + membersB.count
-            self.numOfMembers = num
-            ChatRoomService.addNumOfMembers(chatRoomUID: uid, num: num)
-        }
+        self.numOfMembers = numOfMembers
+        self.lastDate = lastActiveDate.timeIntervalSince1970
         
         super.init()
-
-        ChatRoomService.getLastMessage(chatRoomUID: uid) { msg in
+        
+        ChatRoomService.getLastMessage(chatRoomUID: uid) { [weak self] msg in
             if let lastMsg = msg {
-                self.lastMessage = lastMsg
+                self?.lastMessage = lastMsg
             } else {
-                self.lastMessage = nil
+                self?.lastMessage = nil
             }
         }
+        
+        if isTeamA {
+            Alamofire.request(teamAImageURL).responseImage { [weak self] (response) in
+                if let image = response.result.value {
+                    self?.myTeamImage = image
+                }
+            }
+            Alamofire.request(teamBImageURL).responseImage { [weak self] (response) in
+                if let image = response.result.value {
+                    self?.opponentTeamImage = image
+                }
+            }
+        } else {
+            Alamofire.request(teamBImageURL).responseImage { [weak self] (response) in
+                if let image = response.result.value {
+                    self?.myTeamImage = image
+                }
+            }
+            Alamofire.request(teamAImageURL).responseImage { [weak self] (response) in
+                if let image = response.result.value {
+                    self?.opponentTeamImage = image
+                }
+            }
+        }
+        
+    }
+    
+    var dictValue: [String : Any] {
+        return [
+            "uid": uid,
+            "teamAUID": myTeamUID,
+            "teamBUID": opponentTeamUID,
+            "membersA": myMembers,
+            "membersB": opponentMembers,
+            "teamAName": myTeamName,
+            "teamBName": opponentTeamName,
+            "teamAImageURL": myTeamImageURL,
+            "teamBImageURL": opponentTeamImageURL,
+            "numOfMembers": numOfMembers,
+            "lastActiveDate": lastActiveDate
+        ]
     }
 }

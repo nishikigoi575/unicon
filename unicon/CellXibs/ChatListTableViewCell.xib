@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,7 +20,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="0D7-9k-Wof">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0D7-9k-Wof">
                         <rect key="frame" x="16" y="4" width="90" height="90"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="90" id="07h-Qa-xix"/>
@@ -60,10 +60,7 @@
                 <outlet property="teamImageView" destination="0D7-9k-Wof" id="dv5-3R-PVs"/>
                 <outlet property="teamNameLabel" destination="QJK-uB-f7a" id="BCw-mT-e56"/>
             </connections>
-            <point key="canvasLocation" x="61.5" y="154"/>
+            <point key="canvasLocation" x="-13" y="102"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="facebook-icon" width="240" height="240"/>
-    </resources>
 </document>

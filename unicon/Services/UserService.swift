@@ -84,7 +84,7 @@ struct UserService {
             if let doc = doc {
                 if let user = User(document: doc), let facebookID = user.facebookID {
                     let userDict = [
-                        "firstName": user.firstName, "userImage": user.userImage, "userUID": userUID, "facebookID": facebookID, "age": 20, "area": "Tokyo", "gender": "male"] as [String : Any
+                        "firstName": user.firstName, "userImage": user.userImageURL, "userUID": userUID, "facebookID": facebookID, "age": 20, "area": "Tokyo", "gender": "male"] as [String : Any
                     ]
                     
                     batch.setData(userDict, forDocument: teamRef, options: SetOptions.merge())

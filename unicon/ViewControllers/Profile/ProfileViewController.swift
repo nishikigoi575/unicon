@@ -122,11 +122,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath as IndexPath) as! TeamCollectionViewCell
         let member = members[indexPath.row]
-        if let imageUrl = URL(string: member.userImage) {
-            cell.memberImageView.af_setImage(
-                withURL: imageUrl,
-                imageTransition: .crossDissolve(0.5)
-            )
+        if let userImage = member.userImage {
+            cell.memberImageView.image = userImage
+        } else {
+            if let imageUrl = URL(string: member.userImageURL) {
+                cell.memberImageView.af_setImage(
+                    withURL: imageUrl,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
         }
         
         return cell
