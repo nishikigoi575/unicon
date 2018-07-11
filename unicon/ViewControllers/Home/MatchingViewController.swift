@@ -285,7 +285,15 @@ extension MatchingViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, didSelectCardAt index: Int) {
         TapticEngine.notification.feedback(.success)
         
+        let selectedTeam = teams[index]
         
+        let sb = UIStoryboard(name: "Profile", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "TeamProfileVC") as! TeamProfileViewController
+        vc.teamImage = selectedTeam.teamImageURL
+        vc.teamName = selectedTeam.teamName
+        vc.teamIntro = selectedTeam.intro
+        vc.teamUID = selectedTeam.teamID
+        self.present(vc, animated: true, completion: nil)
         
     }
 }
