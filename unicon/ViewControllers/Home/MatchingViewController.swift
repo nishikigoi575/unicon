@@ -47,7 +47,7 @@ class MatchingViewController: UIViewController {
         
         print(currentTeam.teamID)
         
-        kolodaView.layer.cornerRadius = 20.0
+        kolodaView.layer.cornerRadius = 10.0
         kolodaView.dataSource = self
         kolodaView.delegate = self
         
