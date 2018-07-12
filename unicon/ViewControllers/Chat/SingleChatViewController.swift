@@ -11,7 +11,7 @@ import MessageKit
 
 class SingleChatViewController: MessagesViewController {
 
-    var messageList: [MockMessage] = []
+    var messageList: [ChatMessage] = []
     
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -53,16 +53,16 @@ class SingleChatViewController: MessagesViewController {
         
     }
     
-    func getMessages() -> [MockMessage] {
+    func getMessages() -> [ChatMessage] {
         return [
             createMessage(user: User.current!, text: "あ"),
             createMessage(user: User.current!, text: "すせそたちつてとなにぬね\nのはひふへほまみむめもやゆよらりるれろわをん"),
         ]
     }
     
-    func createMessage(user: User, text: String) -> MockMessage {
+    func createMessage(user: User, text: String) -> ChatMessage {
         let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont(name: "Hiragino Sans", size: 18)!, .foregroundColor: UIColor.black])
-        return MockMessage(attributedText: attributedText, sender: otherSender(user: user), messageId: UUID().uuidString, date: Date())
+        return ChatMessage(attributedText: attributedText, sender: otherSender(user: user), messageId: UUID().uuidString, date: Date())
     }
 }
 
@@ -178,14 +178,14 @@ extension SingleChatViewController: MessageInputBarDelegate {
         for component in inputBar.inputTextView.components {
             if let image = component as? UIImage {
                 
-                let imageMessage = MockMessage(image: image, sender: currentSender(), messageId: UUID().uuidString, date: Date())
+                let imageMessage = ChatMessage(image: image, sender: currentSender(), messageId: UUID().uuidString, date: Date())
                 messageList.append(imageMessage)
                 messagesCollectionView.insertSections([messageList.count - 1])
                 
             } else if let text = component as? String {
                 
                 let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont(name: "Hiragino Sans", size: 18)!, .foregroundColor: UIColor.white])
-                let message = MockMessage(attributedText: attributedText, sender: currentSender(), messageId: UUID().uuidString, date: Date())
+                let message = ChatMessage(attributedText: attributedText, sender: currentSender(), messageId: UUID().uuidString, date: Date())
                 messageList.append(message)
                 messagesCollectionView.insertSections([messageList.count - 1])
             }

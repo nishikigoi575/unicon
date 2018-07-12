@@ -148,8 +148,8 @@
 		439A164320F340330028490A /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164220F340330028490A /* SingleChatViewController.swift */; };
 		439A164420F340330028490A /* SingleChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164220F340330028490A /* SingleChatViewController.swift */; };
 		439A164720F340B00028490A /* MessageKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439A164620F340B00028490A /* MessageKit.framework */; };
-		439A164C20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
-		439A164D20F344E80028490A /* MockMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* MockMessage.swift */; };
+		439A164C20F344E80028490A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* ChatMessage.swift */; };
+		439A164D20F344E80028490A /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439A164B20F344E80028490A /* ChatMessage.swift */; };
 		439A164E20F350760028490A /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4328832020F2FEFB009DE24D /* Chat.storyboard */; };
 		43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */; };
 		43A5D40620D4EF6B004612D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43A5D40520D4EF6B004612D4 /* Assets.xcassets */; };
@@ -269,7 +269,7 @@
 		438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeamCollectionViewCell.xib; sourceTree = "<group>"; };
 		439A164220F340330028490A /* SingleChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChatViewController.swift; sourceTree = "<group>"; };
 		439A164620F340B00028490A /* MessageKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = MessageKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		439A164B20F344E80028490A /* MockMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMessage.swift; sourceTree = "<group>"; };
+		439A164B20F344E80028490A /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		43A5D3FB20D4EF69004612D4 /* unicon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = unicon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A5D3FE20D4EF69004612D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43A5D40520D4EF6B004612D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -514,7 +514,7 @@
 			children = (
 				4360356620DB41D80092361A /* User.swift */,
 				4360356F20DB8D700092361A /* Team.swift */,
-				439A164B20F344E80028490A /* MockMessage.swift */,
+				439A164B20F344E80028490A /* ChatMessage.swift */,
 				206D37B320F4C70600DFE1EE /* ChatRoom.swift */,
 			);
 			path = Models;
@@ -1040,7 +1040,7 @@
 				20522EDF20F1E8F20072CF1D /* SelectGenderModalViewController.swift in Sources */,
 				20522EE020F1E8F20072CF1D /* ChatViewController.swift in Sources */,
 				20522EE120F1E8F20072CF1D /* UIExtention.swift in Sources */,
-				439A164D20F344E80028490A /* MockMessage.swift in Sources */,
+				439A164D20F344E80028490A /* ChatMessage.swift in Sources */,
 				20522EE220F1E8F20072CF1D /* Team.swift in Sources */,
 				43E3552920F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				20522EE320F1E8F20072CF1D /* UserHelper.swift in Sources */,
@@ -1099,7 +1099,7 @@
 				43C6C71820EF86350053FCD2 /* SelectGenderModalViewController.swift in Sources */,
 				202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */,
 				436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */,
-				439A164C20F344E80028490A /* MockMessage.swift in Sources */,
+				439A164C20F344E80028490A /* ChatMessage.swift in Sources */,
 				4360357020DB8D700092361A /* Team.swift in Sources */,
 				43E3552820F33B1C00722369 /* ChatListTableViewCell.swift in Sources */,
 				43C6C70820EF5B9D0053FCD2 /* UserHelper.swift in Sources */,
