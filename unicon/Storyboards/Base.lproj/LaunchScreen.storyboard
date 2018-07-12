@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -30,10 +30,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="mdf-Gg-04c" secondAttribute="bottom" id="0uC-hl-Eie"/>
                             <constraint firstItem="sdi-jm-WUV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="1zA-fk-1at"/>
                             <constraint firstItem="mdf-Gg-04c" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="NmK-br-mNV"/>
                             <constraint firstItem="sdi-jm-WUV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="XwM-xH-Y4C"/>
-                            <constraint firstItem="mdf-Gg-04c" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="eHA-Cr-jWG"/>
                             <constraint firstItem="mdf-Gg-04c" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="jOo-zc-aFj"/>
                             <constraint firstItem="mdf-Gg-04c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nmP-xs-4he"/>
                         </constraints>

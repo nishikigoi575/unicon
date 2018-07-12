@@ -8,11 +8,13 @@
 
 import UIKit
 import MessageKit
+import Firestore
 
 class SingleChatViewController: MessagesViewController {
 
     var messageList: [ChatMessage] = []
     var roomUID: String?
+    var lisner: FIRListenerRegistration?
     
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -26,6 +28,27 @@ class SingleChatViewController: MessagesViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.hex(hex: "FF5E62", alpha: 1.0)
         
+        guard let roomId = roomUID else { return }
+        lisner = Firestore.firestore().collection("chat").document(roomId).collection("messages").addSnapshotListener { querySnapshot, error in
+                guard let snapshot = querySnapshot else {
+                    print("Error fetching snapshots: \(error!)")
+                    return
+                }
+                snapshot.documentChanges.forEach { diff in
+                    if (diff.type == .added) {
+                        guard let message = ChatMessage(document: diff.document) else { return }
+                        self.messageList.append(message)
+                        self.messagesCollectionView.insertSections([self.messageList.count - 1])
+                        self.messagesCollectionView.scrollToBottom()
+                    }
+                    if (diff.type == .modified) {
+                        print("Modified city: \(diff.document.data())")
+                    }
+                    if (diff.type == .removed) {
+                        print("Removed city: \(diff.document.data())")
+                    }
+                }
+        }
         
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -44,6 +67,11 @@ class SingleChatViewController: MessagesViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         reload()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        lisner?.remove()
     }
 
     override func didReceiveMemoryWarning() {
