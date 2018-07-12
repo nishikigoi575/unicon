@@ -73,6 +73,18 @@ struct ChatRoomService {
         }
     }
     
+    static func update(roomUID: String, key: String, value: Any, success: @escaping (Bool) -> Void) {
+        let ref = Firestore.firestore().collection("chat").document(roomUID)
+        ref.updateData([key: value]) { error in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return success(false)
+            } else {
+                return success(true)
+            }
+        }
+    }
+    
     static func getChatRooms(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([ChatRoom]) -> Void) {
         guard let currenUserUID = User.current?.userUID else { return completion([]) }
         let ref = Firestore.firestore().collection("users").document(currenUserUID).collection("chatRooms")

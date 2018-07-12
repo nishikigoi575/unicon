@@ -1,5 +1,5 @@
 //
-//  MockMessage.swift
+//  ChatMessage.swift
 //  unicon
 //
 //  Created by Imajin Kawabe on 2018/07/09.
@@ -9,6 +9,7 @@
 import Foundation
 import CoreLocation
 import MessageKit
+import Firestore.FIRDocumentSnapshot
 
 private struct MockLocationItem: LocationItem {
     
@@ -37,12 +38,13 @@ private struct MockMediaItem: MediaItem {
     
 }
 
-internal struct MockMessage: MessageType {
+internal struct ChatMessage: MessageType {
     
     var messageId: String
     var sender: Sender
     var sentDate: Date
     var kind: MessageKind
+    var creationDate: TimeInterval?
     
     private init(kind: MessageKind, sender: Sender, messageId: String, date: Date) {
         self.kind = kind
@@ -76,6 +78,37 @@ internal struct MockMessage: MessageType {
     
     init(emoji: String, sender: Sender, messageId: String, date: Date) {
         self.init(kind: .emoji(emoji), sender: sender, messageId: messageId, date: date)
+    }
+    
+    init?(document: DocumentSnapshot) {
+        guard let dict = document.data() as? [String : Any],
+            let messageId = dict["messageId"] as? String,
+            let senderArray = dict["sender"] as? [String],
+            let date = dict["sentDate"] as? Date,
+            let message = dict["message"] as? String
+            else { return nil }
+        
+        guard senderArray.count == 2 else { return nil }
+        
+        let sender = Sender(id: senderArray[0], displayName: senderArray[1])
+        self.init(kind: .text(message), sender: sender, messageId: messageId, date: date)
+        self.creationDate = date.timeIntervalSince1970
+    }
+    
+    var dictValue: [String : Any] {
+        switch kind {
+        case .text:
+            return [
+                "messageId": messageId,
+                "sender": [sender.id, sender.displayName],
+                "sentDate": sentDate,
+                "message": kind
+            ]
+        default:
+            return [
+                "err": "not text uploaded"
+            ]
+        }
     }
     
 }

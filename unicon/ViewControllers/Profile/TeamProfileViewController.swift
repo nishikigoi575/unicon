@@ -95,7 +95,7 @@ extension TeamProfileViewController: FSPagerViewDelegate, FSPagerViewDataSource 
         }
         else {
             let member = members[index - 1]
-            if let image = URL(string: member.userImage) {
+            if let image = URL(string: member.userImageURL) {
                 cell.imageView?.af_setImage(withURL: image)
             }
             
