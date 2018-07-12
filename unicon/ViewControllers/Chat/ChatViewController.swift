@@ -13,6 +13,7 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     
     var chatRooms = [ChatRoom]()
     let paginationHelper = UCPaginationHelper<ChatRoom>(keyUID: nil, serviceMethod: ChatRoomService.getChatRooms)
+    var selectedRoomUID: String = ""
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -92,7 +93,17 @@ extension ChatViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let room = chatRooms[indexPath.row]
+        selectedRoomUID = room.uid
+            
         performSegue(withIdentifier: "ToSingleChat", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToSingleChat"){
+            let singleChatVC = segue.destination as! SingleChatViewController
+            singleChatVC.roomUID = selectedRoomUID
+        }
     }
     
 }
