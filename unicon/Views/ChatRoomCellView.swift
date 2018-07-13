@@ -30,5 +30,7 @@ class ChatRoomCellView {
                 imageTransition: .crossDissolve(0.5)
             )
         }
+        
+        cell.userUIDArray = room.myMembers + room.opponentMembers
     }
 }

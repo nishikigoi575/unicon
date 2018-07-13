@@ -20,7 +20,7 @@ struct ChatRoomService {
         }
     }
     
-    static func create(for team: Team) {
+    static func create(for team: Team, success: @escaping (Bool) -> Void) {
         guard let currentUser = User.current else { return }
         guard let currentTeam = Team.current else { return }
         let currentTeamUID = currentTeam.teamID
@@ -39,7 +39,9 @@ struct ChatRoomService {
                     ref.setData(["lastActiveDate": Date()]) { error in
                         if let error = error {
                             assertionFailure(error.localizedDescription)
-                            return
+                            return success(false)
+                        } else {
+                            print("membersA done")
                         }
                         
                     }
@@ -52,7 +54,9 @@ struct ChatRoomService {
                             ref.setData(["lastActiveDate": Date()]) { error in
                                 if let error = error {
                                     assertionFailure(error.localizedDescription)
-                                    return
+                                    return success(false)
+                                } else {
+                                    print("membersB done")
                                 }
                             }
                         }
@@ -64,11 +68,20 @@ struct ChatRoomService {
                         chatRef.setData(chatRoom.dictValue, options: SetOptions.merge()) { err in
                             if let err = err {
                                 print(err.localizedDescription)
-                                return
+                                return success(false)
+                            } else {
+                                print("success chat room")
+                                return success(true)
                             }
                         }
+                    } else {
+                        print("no memberB")
+                        return success(false)
                     }
                 }
+            } else {
+                print("no memberA")
+                return success(false)
             }
         }
     }

@@ -24,16 +24,19 @@ struct ChatService {
         }
      }
     
-    static func create(chatRoomUID: String, sender: Sender, message: String, completion: @escaping (ChatMessage?) -> Void) {
-        let chatRef = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages").document()
-        let msg = ChatMessage(text: message, sender: sender, messageId: chatRef.documentID, date: Date())
+    static func create(chatRoomUID: String, msg: ChatMessage, success: @escaping (Bool) -> Void) {
+        let chatRef = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages").document(msg.messageId)
         chatRef.setData(msg.dictValue)  { error in
             if let error = error {
                 assertionFailure(error.localizedDescription)
-                return completion(nil)
+                return success(false)
             } else {
-                ChatRoomService.update(roomUID: chatRoomUID, key: "lastActiveDate", value: Date()) { success in
-                    return completion(msg)
+                ChatRoomService.update(roomUID: chatRoomUID, key: "lastActiveDate", value: Date()) { suc in
+                    if suc {
+                        return success(true)
+                    } else {
+                        return success(false)
+                    }
                 }
             }
         }
@@ -59,7 +62,7 @@ struct ChatService {
                     }
                 }
                 dispatchGroup.notify(queue: .main, execute: {
-                    messages.sort(by: {$0.creationDate! > $1.creationDate!})
+                    messages.sort(by: {$0.creationDate! < $1.creationDate!})
                     return completion(messages)
                 })
             }

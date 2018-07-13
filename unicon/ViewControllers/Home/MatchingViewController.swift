@@ -222,14 +222,22 @@ extension MatchingViewController: KolodaViewDelegate {
             print("Swiped to right!")
             if let isLiking = team.isLiking {
                 if isLiking {
-                    print("MATCHMATCHMATCHMATCHMATCHMATCH!!!")
+                    print("MATCHMATCHMATCHMATCHMATCHMATCH!!!: \(team.teamID)")
                     MatchService.create(for: team) { success in
                         if success {
                             LikeService.delete(for: team) { success in
                                 if success {
-                                    ChatRoomService.create(for: team)
+                                    ChatRoomService.create(for: team) { success in
+                                        if !success {
+                                            print("fail chatRoomService")
+                                        }
+                                    }
+                                } else {
+                                    print("fail likeService")
                                 }
                             }
+                        } else {
+                            print("fail matchService")
                         }
                     }
                 } else {

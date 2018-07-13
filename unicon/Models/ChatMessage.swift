@@ -96,17 +96,16 @@ internal struct ChatMessage: MessageType {
     }
     
     var dictValue: [String : Any] {
-        switch kind {
-        case .text:
+        if case let MessageKind.text(code) = kind {
             return [
                 "messageId": messageId,
                 "sender": [sender.id, sender.displayName],
                 "sentDate": sentDate,
-                "message": kind
+                "message": code
             ]
-        default:
+        } else {
             return [
-                "err": "not text uploaded"
+                "err": "it's not text"
             ]
         }
     }

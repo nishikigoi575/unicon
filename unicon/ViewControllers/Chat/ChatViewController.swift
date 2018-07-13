@@ -13,6 +13,8 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     
     var chatRooms = [ChatRoom]()
     let paginationHelper = UCPaginationHelper<ChatRoom>(keyUID: nil, serviceMethod: ChatRoomService.getChatRooms)
+    var selectedRoomUID: String = ""
+    var selectedRoomMembers = [String: User]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -85,14 +87,27 @@ extension ChatViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
         let room = chatRooms[indexPath.row]
-        
+        cell.isUserInteractionEnabled = false
         ChatRoomCellView.configureCell(cell, with: room)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let cell = tableView.cellForRow(at: indexPath) as? ChatListTableViewCell else { return }
+        let room = chatRooms[indexPath.row]
+        selectedRoomUID = room.uid
+        selectedRoomMembers = cell.userDict
+        
         performSegue(withIdentifier: "ToSingleChat", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "ToSingleChat"){
+            let singleChatVC = segue.destination as! SingleChatViewController
+            singleChatVC.roomUID = selectedRoomUID
+            singleChatVC.memberDict = selectedRoomMembers
+        }
     }
     
 }

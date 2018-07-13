@@ -13,6 +13,20 @@ class ChatListTableViewCell: UITableViewCell {
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
     
+    var userUIDArray: [String] = [String]() {
+        didSet {
+            for userUID in userUIDArray {
+                UserService.show(forUserUID: userUID) { user in
+                    if let user = user {
+                        self.userDict.updateValue(user, forKey: userUID)
+                        self.isUserInteractionEnabled = true
+                    }
+                }
+            }
+        }
+    }
+    var userDict = [String: User]()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
