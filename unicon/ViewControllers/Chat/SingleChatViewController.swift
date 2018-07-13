@@ -15,6 +15,8 @@ class SingleChatViewController: MessagesViewController {
     var messageList: [ChatMessage] = []
     var roomUID: String?
     var lisner: FIRListenerRegistration?
+    var firstLoadDone: Bool = false
+    var memberDict: [String: User]?
     
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,13 +32,16 @@ class SingleChatViewController: MessagesViewController {
         
         guard let roomId = roomUID else { return }
         lisner = Firestore.firestore().collection("chat").document(roomId).collection("messages").addSnapshotListener { querySnapshot, error in
-                guard let snapshot = querySnapshot else {
-                    print("Error fetching snapshots: \(error!)")
-                    return
-                }
+            guard let snapshot = querySnapshot else {
+                print("Error fetching snapshots: \(error!)")
+                return
+            }
+            
+            if self.firstLoadDone {
                 snapshot.documentChanges.forEach { diff in
                     if (diff.type == .added) {
-                        guard let message = ChatMessage(document: diff.document) else { return }
+                        guard let message = ChatMessage(document: diff.document), let currentUser = User.current else { return }
+                        guard message.sender.id != currentUser.userUID else { return }
                         self.messageList.append(message)
                         self.messagesCollectionView.insertSections([self.messageList.count - 1])
                         self.messagesCollectionView.scrollToBottom()
@@ -48,7 +53,10 @@ class SingleChatViewController: MessagesViewController {
                         print("Removed city: \(diff.document.data())")
                     }
                 }
+            }
         }
+        
+        reload()
         
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
@@ -64,14 +72,10 @@ class SingleChatViewController: MessagesViewController {
         messagesCollectionView.backgroundColor = UIColor.hex(hex: "FFFCF2", alpha: 1.0)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reload()
-    }
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         lisner?.remove()
+        firstLoadDone = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,6 +96,7 @@ class SingleChatViewController: MessagesViewController {
                 self?.messagesCollectionView.reloadData()
                 // 一番下までスクロールする
                 self?.messagesCollectionView.scrollToBottom()
+                self?.firstLoadDone = true
             }
         }
     }
@@ -181,7 +186,8 @@ extension SingleChatViewController: MessagesDisplayDelegate {
     func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
         // message.sender.displayNameとかで送信者の名前を取得できるので
         // そこからイニシャルを生成するとよい
-        let avatar = Avatar(image: User.current?.userImage, initials: "")
+        guard let dict = memberDict, let user = dict[message.sender.id] else { return }
+        let avatar = Avatar(image: user.userImage, initials: "")
         avatarView.set(avatar: avatar)
     }
 }
