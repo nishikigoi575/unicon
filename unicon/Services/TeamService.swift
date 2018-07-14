@@ -37,6 +37,8 @@ class TeamService {
             create(createdBy: userUID, urlStr: urlStr, teamName: teamName, teamGender: teamGender, targetGender: targetGender, intro: intro) { (team) in
                 if let team = team {
                     Team.setCurrent(team, writeToUserDefaults: true)
+                    MatchingViewController.myTeamList.append(team.teamID)
+                    UCUserDefaultsHelper.setMyTeams()
                     return completion(team)
                 } else {
                     return completion(nil)
@@ -89,10 +91,7 @@ class TeamService {
     
     static func myTeams(keyUID: String?, completion: @escaping ([Team]?) -> Void) {
         
-        guard let userUID = keyUID  else {
-            print("あれれ")
-            return completion([])
-        }
+        guard let userUID = keyUID  else { return completion([]) }
         
         let teamRef = Firestore.firestore().collection("users").document(userUID).collection("teams")
         
@@ -133,33 +132,34 @@ class TeamService {
         }
     }
     
-    static func getFive(completion: @escaping ([Team]?) -> Void) {
-        let ref = Firestore.firestore().collection("teams").limit(to: 5)
-        ref.getDocuments{ (snapshot, error) in
-            guard let snapshot = snapshot else {
-                print("Error retreving posts: \(error.debugDescription)")
-                return completion([])
+    static func syncMatchedTeams() {
+        guard let currentTeam = Team.current else { return }
+        let ref = Firestore.firestore().collection("teams").document(currentTeam.teamID).collection("matchedTeams")
+        ref.getDocuments() { (snapshots, err) in
+            guard let documents = snapshots?.documents else { return }
+            let dispathchGroup = DispatchGroup()
+            var teamUIDs = [String]()
+            for document in documents {
+                dispathchGroup.enter()
+                teamUIDs.append(document.documentID)
+                dispathchGroup.leave()
             }
-            let dispatchGroup = DispatchGroup()
-            
-            var teams = [Team]()
-            for teamSnap in snapshot.documents {
-                guard let teamDict = teamSnap.data() as? [String: Any]
-                    else { continue }
-                
-                dispatchGroup.enter()
-                TeamService.show(forTeamID: teamSnap.documentID) { (team) in
-                    if let team = team {
-                        teams.append(team)
-                        dispatchGroup.leave()
-                    }
-                }
-            }
-            dispatchGroup.notify(queue: .main, execute: {
-                completion(teams)
+            dispathchGroup.notify(queue: .main, execute: {
+                MatchingViewController.matchedTeamList = teamUIDs
+                UCUserDefaultsHelper.setMatchedTeams()
+                print("syncMatchedTeams")
             })
         }
-        
+    }
+    
+    static func syncMyteams() {
+        guard let currentUser = User.current else { return }
+        TeamService.myTeams(keyUID: currentUser.userUID) { teams in
+            guard let teams = teams else { return }
+            MatchingViewController.myTeamList = teams.map { $0.teamID }
+            UCUserDefaultsHelper.setMyTeams()
+            print("syncMyTeams")
+        }
     }
     
     static func getTeamMembers(teamUID: String, completion: @escaping ([User]?) -> Void) {
@@ -261,6 +261,78 @@ class TeamService {
                 })
             }
         }
+    }
+    
+    static func getTeamList(index: Int, size: Int, completion: @escaping ([String]) -> Void) {
+        let ref = Firestore.firestore().collection("teamList")
+        if index <= 0 {
+            ref.order(by: "lastLoginDate", descending: true).limit(to: size).getDocuments{ (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving posts: \(error.debugDescription)")
+                    return completion([])
+                }
+                let dispatchGroup = DispatchGroup()
+                
+                var teamList = [String]()
+                for document in snapshot.documents {
+                    dispatchGroup.enter()
+                    teamList.append(document.documentID)
+                    dispatchGroup.leave()
+                }
+                dispatchGroup.notify(queue: .main, execute: {
+                    completion(teamList)
+                })
+            }
+        } else {
+            let first = ref.order(by: "lastLoginDate", descending: false).limit(to: index)
+            first.getDocuments {(snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving price: \(error.debugDescription)")
+                    return completion([])
+                }
+                
+                guard let lastSnapshot = snapshot.documents.last else {
+                    return completion([])
+                }
+                
+                let next = ref.order(by: "lastLoginDate", descending: false).start(afterDocument: lastSnapshot).limit(to: size)
+                next.getDocuments { (nextSnapshot, error) in
+                    guard let nextSnapshot = nextSnapshot else {
+                        print("Error : \(error.debugDescription)")
+                        return completion([])
+                    }
+                    let dispatchGroup = DispatchGroup()
+                    
+                    var teamList = [String]()
+                    for document in nextSnapshot.documents {
+                        dispatchGroup.enter()
+                        teamList.append(document.documentID)
+                        dispatchGroup.leave()
+                    }
+                    dispatchGroup.notify(queue: .main, execute: {
+                        completion(teamList)
+                    })
+                }
+            }
+        }
+    }
+    
+    static func getTeams(teamList: [String], completion: @escaping ([Team]) -> Void) {
+        guard teamList.count > 0 else { return completion([]) }
+        var teams = [Team]()
+        let dispatchGroup = DispatchGroup()
+        for teamUID in teamList {
+            dispatchGroup.enter()
+            TeamService.show(forTeamID: teamUID) { (team) in
+                if let team = team {
+                    teams.append(team)
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        dispatchGroup.notify(queue: .main, execute: {
+            completion(teams)
+        })
     }
     
 }

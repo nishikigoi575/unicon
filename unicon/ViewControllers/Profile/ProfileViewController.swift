@@ -12,7 +12,7 @@ import FacebookLogin
 import AlamofireImage
 import BubbleTransition
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIViewControllerTransitioningDelegate, UITextViewDelegate {
     var window: UIWindow?
     
     @IBOutlet weak var teamNameLabel: UILabel!
@@ -29,7 +29,10 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        teamIntroTextView.delegate = self
+        teamIntroTextView.textContainerInset = UIEdgeInsetsMake(20, 30, 20, 30)
+        teamIntroTextView.sizeToFit()
         
         self.navigationItem.hidesBackButton = true
         teamImageView.layer.cornerRadius = 80
@@ -119,11 +122,15 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "TeamCell", for: indexPath as IndexPath) as! TeamCollectionViewCell
         let member = members[indexPath.row]
-        if let imageUrl = URL(string: member.userImage) {
-            cell.memberImageView.af_setImage(
-                withURL: imageUrl,
-                imageTransition: .crossDissolve(0.5)
-            )
+        if let userImage = member.userImage {
+            cell.memberImageView.image = userImage
+        } else {
+            if let imageUrl = URL(string: member.userImageURL) {
+                cell.memberImageView.af_setImage(
+                    withURL: imageUrl,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
         }
         
         return cell

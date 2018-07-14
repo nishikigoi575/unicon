@@ -29,7 +29,7 @@ class CardView: UIView {
     
     // 初期化後に呼びされる。
     func afterInit() {
-        self.layer.cornerRadius = 20.0
+        self.layer.cornerRadius = 10.0
         self.layer.masksToBounds = true
     }
     

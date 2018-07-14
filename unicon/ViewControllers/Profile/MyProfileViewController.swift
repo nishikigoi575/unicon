@@ -40,11 +40,15 @@ class MyProfileViewController: UIViewController {
     }
     
     func reloadProfile() {
-        if let imageUrl = URL(string: (User.current?.userImage)!) {
-            profImageView.af_setImage(
-                withURL: imageUrl,
-                imageTransition: .crossDissolve(0.5)
-            )
+        if let userImage = User.current?.userImage {
+            profImageView.image = userImage
+        } else {
+            if let imageUrl = URL(string: (User.current?.userImageURL)!) {
+                profImageView.af_setImage(
+                    withURL: imageUrl,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
         }
         
         if let firstName = User.current?.firstName {

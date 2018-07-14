@@ -22,6 +22,7 @@ class Team: NSObject {
     var teamID: String
     var createdBy: String
     var teamImage: UIImage?
+    var isLiking: Bool?
     
     init(teamName: String, teamGender: String, targetGender: String, numOfMembers: Int, teamImageURL: String, intro: String, teamID: String, createdBy: String) {
         
@@ -59,6 +60,13 @@ class Team: NSObject {
         self.intro = intro
         
         super.init()
+        
+        Alamofire.request(teamImageURL).responseImage { [weak self] (response) in
+            if let image = response.result.value {
+                //print("GOT IMAGE")
+                self?.teamImage = image
+            }
+        }
         
     }
     

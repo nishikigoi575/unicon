@@ -17,6 +17,10 @@ import IQKeyboardManagerSwift
 class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
     
     var window: UIWindow?
+    
+    // For ActivityIndicator
+    var actIdc = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+    var container: UIView?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         
         IQKeyboardManager.shared.enable = true
         
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: UIBarMetrics.default)
+        UINavigationBar.appearance().barTintColor = UIColor.hex(hex: "FFFCF2", alpha: 1.0)
         UINavigationBar.appearance().shadowImage = UIImage()
         
         return true
@@ -90,6 +94,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if let _ = Team.current?.teamID {
+            UCUserDefaultsHelper.setSwipedTeams()
+        }
     }
     
     
@@ -114,6 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
             // set current team if any
             if let teamData = defaults.object(forKey: Constants.UserDefaults.currentTeam) as? Data, let team = NSKeyedUnarchiver.unarchiveObject(with: teamData) as? Team {
                 Team.setCurrent(team)
+//                TeamService.syncMatchedTeams()
+//                TeamService.syncMyteams()
             }
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {
@@ -126,5 +135,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    // Activity Indicator
+    class func instance() -> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
+    func showActivityIndicator() {
+        if let window = window {
+            container = UIView()
+            container?.frame = window.frame
+            container?.center = window.center
+            container?.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            
+            actIdc.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            actIdc.hidesWhenStopped = true
+            actIdc.center = CGPoint(x: (container?.frame.size.width)! / 2, y: (container?.frame.size.height)! / 2)
+            
+            container?.addSubview(actIdc)
+            window.addSubview(container!)
+            
+            actIdc.startAnimating()
+        }
+    }
+    
+    func dismissActivityIndicator() {
+        if let _ = window, let container = container {
+            container.removeFromSuperview()
+        }
+    }
 }
 

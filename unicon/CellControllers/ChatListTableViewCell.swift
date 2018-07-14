@@ -10,17 +10,28 @@ import UIKit
 
 class ChatListTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var teamImageView: UIImageView!
-    
     @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var wrapperView: UIView!
+    @IBOutlet weak var lastMessageLabel: UILabel!
     
+    
+    var userUIDArray: [String] = [String]() {
+        didSet {
+            for userUID in userUIDArray {
+                UserService.show(forUserUID: userUID) { user in
+                    if let user = user {
+                        self.userDict.updateValue(user, forKey: userUID)
+                        self.isUserInteractionEnabled = true
+                    }
+                }
+            }
+        }
+    }
+    var userDict = [String: User]()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        teamImageView.layer.cornerRadius = 45
-        teamImageView.layer.masksToBounds = true
         
     }
 
