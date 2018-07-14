@@ -24,14 +24,15 @@ struct ChatService {
         }
      }
     
-    static func create(chatRoomUID: String, msg: ChatMessage, success: @escaping (Bool) -> Void) {
-        let chatRef = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages").document(msg.messageId)
+    static func create(chatRoom: ChatRoom, msg: ChatMessage, success: @escaping (Bool) -> Void) {
+        let chatRef = Firestore.firestore().collection("chat").document(chatRoom.uid).collection("messages").document(msg.messageId)
         chatRef.setData(msg.dictValue)  { error in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return success(false)
             } else {
-                ChatRoomService.update(roomUID: chatRoomUID, key: "lastActiveDate", value: Date()) { suc in
+                let dict = ["lastMessage": msg.content, "lastActiveDate": Date()] as [String : Any]
+                ChatRoomService.update(room: chatRoom, dict: dict) { suc in
                     if suc {
                         return success(true)
                     } else {
@@ -42,28 +43,62 @@ struct ChatService {
         }
     }
     
-    static func getAllChats(chatRoomUID: String, completion: @escaping ([ChatMessage]) -> Void) {
-        let ref = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages")
-        ref.getDocuments() { (documents, err) in
-            if let err = err {
-                print(err.localizedDescription)
-                return completion([])
-            } else {
-                guard let documents = documents else { return completion([]) }
-                let dispatchGroup = DispatchGroup()
-                var messages = [ChatMessage]()
-                for document in documents.documents {
-                    dispatchGroup.enter()
-                    ChatService.show(chatRoomUID: chatRoomUID, chatUID: document.documentID) { msg in
-                        if let msg = msg {
-                            messages.append(msg)
-                        }
+    static func getChats(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([ChatMessage]) -> Void) {
+        guard let chatRoomUID = keyUID else { return completion([]) }
+        let ref = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages").order(by: "sentDate", descending: true)
+        if numOfObjects > 0 {
+            print("message pagination next: \(numOfObjects)")
+            let first = ref.limit(to: numOfObjects)
+            first.getDocuments {(snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving price: \(error.debugDescription)")
+                    return completion([])
+                }
+                
+                guard let lastSnapshot = snapshot.documents.last else {
+                    return completion([])
+                }
+                
+                let next = ref.start(afterDocument: lastSnapshot).limit(to: Int(pageSize))
+                next.getDocuments { (nextSnapshot, error) in
+                    guard let nextSnapshot = nextSnapshot else {
+                        print("Error : \(error.debugDescription)")
+                        return completion([])
+                    }
+                    let dispatchGroup = DispatchGroup()
+                    var messages = [ChatMessage]()
+                    for msgSnap in nextSnapshot.documents {
+                        guard let message = ChatMessage(document: msgSnap) else { continue }
+                        dispatchGroup.enter()
+                        messages.append(message)
                         dispatchGroup.leave()
                     }
+                    dispatchGroup.notify(queue: .main, execute: {
+                        messages.sort(by: {$0.creationDate! < $1.creationDate!})
+                        completion(messages)
+                    })
+                }
+            }
+        } else {
+            print("pagination initial")
+            let query = ref.limit(to: Int(pageSize))
+            query.getDocuments{ (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    print("Error retreving posts: \(error.debugDescription)")
+                    return completion([])
+                }
+                let dispatchGroup = DispatchGroup()
+                
+                var messages = [ChatMessage]()
+                for msgSnap in snapshot.documents {
+                    guard let message = ChatMessage(document: msgSnap) else { continue }
+                    dispatchGroup.enter()
+                    messages.append(message)
+                    dispatchGroup.leave()
                 }
                 dispatchGroup.notify(queue: .main, execute: {
                     messages.sort(by: {$0.creationDate! < $1.creationDate!})
-                    return completion(messages)
+                    completion(messages)
                 })
             }
         }

@@ -56,12 +56,14 @@ class MatchingViewController: UIViewController {
         UCUserDefaultsHelper.getMatchedTeams()
         UCUserDefaultsHelper.getMyTeams()
         
-//        print("myTeamList: \(MatchingViewController.myTeamList)")
-//        print("swipedTeamList: \(MatchingViewController.swipedTeamList)")
-//        print("matchedTeamList: \(MatchingViewController.matchedTeamList)")
+        print("myTeamList: \(MatchingViewController.myTeamList)")
+        print("swipedTeamList: \(MatchingViewController.swipedTeamList)")
+        print("matchedTeamList: \(MatchingViewController.matchedTeamList)")
         
         initialLoad()
         
+        // load chat room in advance
+        ChatDataController.reloadChatRooms()
     }
     
     override func didReceiveMemoryWarning() {

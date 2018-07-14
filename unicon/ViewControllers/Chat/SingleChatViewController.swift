@@ -13,10 +13,12 @@ import Firestore
 class SingleChatViewController: MessagesViewController {
 
     var messageList: [ChatMessage] = []
-    var roomUID: String?
+    var room: ChatRoom?
     var lisner: FIRListenerRegistration?
     var firstLoadDone: Bool = false
     var memberDict: [String: User]?
+    
+    var paginationHelper: UCPaginationHelper<ChatMessage>!
     
     lazy var formatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -30,13 +32,13 @@ class SingleChatViewController: MessagesViewController {
         
         self.navigationController?.navigationBar.tintColor = UIColor.hex(hex: "FF5E62", alpha: 1.0)
         
-        guard let roomId = roomUID else { return }
+        guard let roomId = room?.uid else { return }
         lisner = Firestore.firestore().collection("chat").document(roomId).collection("messages").addSnapshotListener { querySnapshot, error in
             guard let snapshot = querySnapshot else {
                 print("Error fetching snapshots: \(error!)")
                 return
             }
-            
+
             if self.firstLoadDone {
                 snapshot.documentChanges.forEach { diff in
                     if (diff.type == .added) {
@@ -56,6 +58,8 @@ class SingleChatViewController: MessagesViewController {
             }
         }
         
+        paginationHelper = UCPaginationHelper<ChatMessage>(keyUID: roomId, serviceMethod: ChatService.getChats)
+        paginationHelper.pageSize = 10
         reload()
         
         messagesCollectionView.messagesDataSource = self
@@ -88,8 +92,7 @@ class SingleChatViewController: MessagesViewController {
     }
     
     @objc func reload() {
-        guard let roomUID = self.roomUID else { return }
-        ChatService.getAllChats(chatRoomUID: roomUID) { [weak self] (messages) in
+        paginationHelper.reloadData(completion: { [weak self] (messages) in
             self?.messageList = messages
             DispatchQueue.main.async {
                 // messagesCollectionViewをリロードして
@@ -98,6 +101,20 @@ class SingleChatViewController: MessagesViewController {
                 self?.messagesCollectionView.scrollToBottom()
                 self?.firstLoadDone = true
             }
+        })
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let currentOffsetY = scrollView.contentOffset.y
+//        print("currentOffsetY: \(currentOffsetY)")
+        
+        if currentOffsetY < 0 {
+            paginationHelper.paginate(completion: { [weak self] (messages) in
+                self?.messageList.insert(contentsOf: messages, at: 0)
+                DispatchQueue.main.async {
+                    self?.messagesCollectionView.reloadData()
+                }
+            })
         }
     }
     
@@ -232,14 +249,17 @@ extension SingleChatViewController: MessageInputBarDelegate {
                 messagesCollectionView.insertSections([messageList.count - 1])
                 
             } else if let text = component as? String {
-                if let roomUID = self.roomUID {
+                if let room = self.room {
                     let msg = ChatMessage(text: text, sender: currentSender(), messageId: UUID().uuidString, date: Date())
                     self.messageList.append(msg)
                     self.messagesCollectionView.insertSections([self.messageList.count - 1])
-                    ChatService.create(chatRoomUID: roomUID, msg: msg) { success in
+                    ChatService.create(chatRoom: room, msg: msg) { success in
                         if !success {
                             print("failed send")
                         }
+                    }
+                    if !room.isActive {
+                        room.isActive = true
                     }
                 }
                 //let attributedText = NSAttributedString(string: text, attributes: [.font: UIFont(name: "Hiragino Sans", size: 18)!, .foregroundColor: UIColor.white])

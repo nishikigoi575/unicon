@@ -91,10 +91,7 @@ class TeamService {
     
     static func myTeams(keyUID: String?, completion: @escaping ([Team]?) -> Void) {
         
-        guard let userUID = keyUID  else {
-            print("あれれ")
-            return completion([])
-        }
+        guard let userUID = keyUID  else { return completion([]) }
         
         let teamRef = Firestore.firestore().collection("users").document(userUID).collection("teams")
         
@@ -132,6 +129,40 @@ class TeamService {
         let teamRef = Firestore.firestore().collection("teams")
         UCPaginationTeamHelper.paginationTeam(pageSize: pageSize, numOfObjects: numOfObjects, ref: teamRef) { (teams) in
             completion(teams)
+        }
+    }
+    
+    static func syncMatchedTeams() {
+        print("1")
+        guard let currentTeam = Team.current else { return }
+        print("2")
+        let ref = Firestore.firestore().collection("teams").document(currentTeam.teamID).collection("matchedTeams")
+        ref.getDocuments() { (snapshots, err) in
+            print("3")
+            guard let documents = snapshots?.documents else { return }
+            print("4")
+            let dispathchGroup = DispatchGroup()
+            var teamUIDs = [String]()
+            for document in documents {
+                dispathchGroup.enter()
+                teamUIDs.append(document.documentID)
+                dispathchGroup.leave()
+            }
+            dispathchGroup.notify(queue: .main, execute: {
+                MatchingViewController.matchedTeamList = teamUIDs
+                UCUserDefaultsHelper.setMatchedTeams()
+                print("syncMatchedTeams")
+            })
+        }
+    }
+    
+    static func syncMyteams() {
+        guard let currentUser = User.current else { return }
+        TeamService.myTeams(keyUID: currentUser.userUID) { teams in
+            guard let teams = teams else { return }
+            MatchingViewController.myTeamList = teams.map { $0.teamID }
+            UCUserDefaultsHelper.setMyTeams()
+            print("syncMyTeams")
         }
     }
     

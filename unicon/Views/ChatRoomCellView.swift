@@ -18,8 +18,10 @@ class ChatRoomCellView {
         
         cell.teamNameLabel.text = room.opponentTeamName
         
-        cell.teamImageView.layer.cornerRadius = 45
+        cell.teamImageView.layer.cornerRadius = cell.teamImageView.frame.width/2
         cell.teamImageView.layer.masksToBounds = true
+        
+        //cell.wrapperView.border(positions: [.Bottom], borderWidth: 0.5, borderColor: UIColor.gray)
         
         if let image = room.opponentTeamImage {
             cell.teamImageView.image = image

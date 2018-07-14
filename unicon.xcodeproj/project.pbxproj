@@ -13,6 +13,10 @@
 		202F29F920DF82E7001C8210 /* CardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 202F29F820DF82E7001C8210 /* CardView.xib */; };
 		202F29FB20DF8523001C8210 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F29FA20DF8522001C8210 /* ChatViewController.swift */; };
 		2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2037633420D8F8D200A86A75 /* MatchingViewController.swift */; };
+		20441CA120F9AADE0030FB53 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA020F9AADE0030FB53 /* ChatDataController.swift */; };
+		20441CA220F9AADE0030FB53 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA020F9AADE0030FB53 /* ChatDataController.swift */; };
+		20441CA420F9BA490030FB53 /* TJViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA320F9BA490030FB53 /* TJViewExtensions.swift */; };
+		20441CA520F9BA490030FB53 /* TJViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA320F9BA490030FB53 /* TJViewExtensions.swift */; };
 		204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */; };
@@ -204,6 +208,8 @@
 		202F29F820DF82E7001C8210 /* CardView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardView.xib; sourceTree = "<group>"; };
 		202F29FA20DF8522001C8210 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
+		20441CA020F9AADE0030FB53 /* ChatDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataController.swift; sourceTree = "<group>"; };
+		20441CA320F9BA490030FB53 /* TJViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJViewExtensions.swift; sourceTree = "<group>"; };
 		204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCTeamHandler.swift; sourceTree = "<group>"; };
 		204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUserDefaultsHelper.swift; sourceTree = "<group>"; };
 		204FA13C20F3AF23004C49B5 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
@@ -465,6 +471,7 @@
 		43222D0120D6270B00B3DB50 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				20441CA320F9BA490030FB53 /* TJViewExtensions.swift */,
 				43222CFF20D6270300B3DB50 /* Storyboard+Utility.siwft.swift */,
 				43222D0620D6518900B3DB50 /* UserExtention.swift */,
 				432FA1D920D8F4B20058A744 /* StorageReference+Image.swift */,
@@ -572,6 +579,7 @@
 			children = (
 				202F29FA20DF8522001C8210 /* ChatViewController.swift */,
 				439A164220F340330028490A /* SingleChatViewController.swift */,
+				20441CA020F9AADE0030FB53 /* ChatDataController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -1017,6 +1025,7 @@
 				20522ECF20F1E8F20072CF1D /* Constants.swift in Sources */,
 				20522ED020F1E8F20072CF1D /* SelectTeamViewController.swift in Sources */,
 				20522ED120F1E8F20072CF1D /* MyProfileViewController.swift in Sources */,
+				20441CA520F9BA490030FB53 /* TJViewExtensions.swift in Sources */,
 				20522ED220F1E8F20072CF1D /* SetTeamNameViewController.swift in Sources */,
 				20522ED320F1E8F20072CF1D /* TeamListTableViewCell.swift in Sources */,
 				20522ED420F1E8F20072CF1D /* MatchingViewController.swift in Sources */,
@@ -1024,6 +1033,7 @@
 				206D37B520F4C70600DFE1EE /* ChatRoom.swift in Sources */,
 				20522ED620F1E8F20072CF1D /* Storyboard+Utility.siwft.swift in Sources */,
 				20522ED720F1E8F20072CF1D /* SetTeamIntroViewController.swift in Sources */,
+				20441CA220F9AADE0030FB53 /* ChatDataController.swift in Sources */,
 				20522ED820F1E8F20072CF1D /* TeamService.swift in Sources */,
 				204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
 				204FA13B20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
@@ -1076,6 +1086,7 @@
 				43C6C70F20EF5C4A0053FCD2 /* Constants.swift in Sources */,
 				43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */,
 				435727D720E47C9700720C41 /* MyProfileViewController.swift in Sources */,
+				20441CA420F9BA490030FB53 /* TJViewExtensions.swift in Sources */,
 				43222D0F20D67D2600B3DB50 /* SetTeamNameViewController.swift in Sources */,
 				43E5C02C20E885B300948D1A /* TeamListTableViewCell.swift in Sources */,
 				2037633520D8F8D200A86A75 /* MatchingViewController.swift in Sources */,
@@ -1083,6 +1094,7 @@
 				206D37B420F4C70600DFE1EE /* ChatRoom.swift in Sources */,
 				43222D0020D6270300B3DB50 /* Storyboard+Utility.siwft.swift in Sources */,
 				43222D1820D7B9C700B3DB50 /* SetTeamIntroViewController.swift in Sources */,
+				20441CA120F9AADE0030FB53 /* ChatDataController.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
 				204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
 				204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,

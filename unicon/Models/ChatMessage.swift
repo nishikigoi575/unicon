@@ -110,4 +110,12 @@ internal struct ChatMessage: MessageType {
         }
     }
     
+    var content: String {
+        if case let MessageKind.text(code) = kind {
+            return code
+        } else {
+            return "it's not text"
+        }
+    }
+    
 }
