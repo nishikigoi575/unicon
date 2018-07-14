@@ -73,6 +73,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="lastMessageLabel" destination="OeO-j7-ikW" id="CKe-cg-hSK"/>
                 <outlet property="teamImageView" destination="0D7-9k-Wof" id="dv5-3R-PVs"/>
                 <outlet property="teamNameLabel" destination="QJK-uB-f7a" id="BCw-mT-e56"/>
                 <outlet property="wrapperView" destination="ewK-Fp-Doz" id="DPJ-7s-yuj"/>
