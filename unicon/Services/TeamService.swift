@@ -133,14 +133,10 @@ class TeamService {
     }
     
     static func syncMatchedTeams() {
-        print("1")
         guard let currentTeam = Team.current else { return }
-        print("2")
         let ref = Firestore.firestore().collection("teams").document(currentTeam.teamID).collection("matchedTeams")
         ref.getDocuments() { (snapshots, err) in
-            print("3")
             guard let documents = snapshots?.documents else { return }
-            print("4")
             let dispathchGroup = DispatchGroup()
             var teamUIDs = [String]()
             for document in documents {

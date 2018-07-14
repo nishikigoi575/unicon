@@ -167,7 +167,7 @@ struct ChatRoomService {
                 }
             }
         } else {
-            print("pagination initial")
+            print("room pagination initial")
             let query = ref.limit(to: Int(pageSize))
             query.getDocuments{ (snapshot, error) in
                 guard let snapshot = snapshot else {
@@ -175,7 +175,6 @@ struct ChatRoomService {
                     return completion([])
                 }
                 let dispatchGroup = DispatchGroup()
-                print("HOGEJPEGOJPEHGPJE`J`JE")
                 var rooms = [ChatRoom]()
                 for roomSnap in snapshot.documents {
                     guard let roomDict = roomSnap.data() as? [String: Any]
@@ -184,7 +183,6 @@ struct ChatRoomService {
                     dispatchGroup.enter()
                     ChatRoomService.show(roomUID: roomSnap.documentID) { (room) in
                         if let room = room {
-                            print(room.uid)
                             rooms.append(room)
                             dispatchGroup.leave()
                         }

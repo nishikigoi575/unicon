@@ -1,20 +1,18 @@
 //
-//  ChatListTableViewCell.swift
-//  unicon
+//  MyKukaiCollectionViewCellController.swift
+//  wada.
 //
-//  Created by Imajin Kawabe on 2018/07/09.
-//  Copyright © 2018年 Imajin Kawabe. All rights reserved.
+//  Created by yo hanashima on 2018/07/08.
+//  Copyright © 2018 tokyo.imagine. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class ChatListTableViewCell: UITableViewCell {
+class NewMatchedTeamCollectionViewCellController: UICollectionViewCell {
     
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
-    @IBOutlet weak var wrapperView: UIView!
-    @IBOutlet weak var lastMessageLabel: UILabel!
-    
     
     var userUIDArray: [String] = [String]() {
         didSet {
@@ -32,11 +30,11 @@ class ChatListTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        // Initialization code
+        teamImageView.layer.cornerRadius = teamImageView.frame.height/2
+        teamImageView.layer.masksToBounds = true
+        //teamImageView.layer.borderColor = UIColor.white.cgColor
+        //teamImageView.layer.borderWidth = 1.0
     }
     
 }

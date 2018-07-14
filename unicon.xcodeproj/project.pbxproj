@@ -17,6 +17,16 @@
 		20441CA220F9AADE0030FB53 /* ChatDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA020F9AADE0030FB53 /* ChatDataController.swift */; };
 		20441CA420F9BA490030FB53 /* TJViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA320F9BA490030FB53 /* TJViewExtensions.swift */; };
 		20441CA520F9BA490030FB53 /* TJViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CA320F9BA490030FB53 /* TJViewExtensions.swift */; };
+		20441CA720FA06070030FB53 /* NewMatchedTeamsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20441CA620FA06060030FB53 /* NewMatchedTeamsTableViewCell.xib */; };
+		20441CA820FA06070030FB53 /* NewMatchedTeamsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20441CA620FA06060030FB53 /* NewMatchedTeamsTableViewCell.xib */; };
+		20441CAA20FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20441CA920FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib */; };
+		20441CAB20FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20441CA920FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib */; };
+		20441CAD20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CAC20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift */; };
+		20441CAE20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CAC20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift */; };
+		20441CB020FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */; };
+		20441CB120FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */; };
+		20441CB320FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */; };
+		20441CB420FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */; };
 		204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */; };
@@ -210,6 +220,11 @@
 		2037633420D8F8D200A86A75 /* MatchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingViewController.swift; sourceTree = "<group>"; };
 		20441CA020F9AADE0030FB53 /* ChatDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatDataController.swift; sourceTree = "<group>"; };
 		20441CA320F9BA490030FB53 /* TJViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TJViewExtensions.swift; sourceTree = "<group>"; };
+		20441CA620FA06060030FB53 /* NewMatchedTeamsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMatchedTeamsTableViewCell.xib; sourceTree = "<group>"; };
+		20441CA920FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewMatchedTeamCollectionViewCell.xib; sourceTree = "<group>"; };
+		20441CAC20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchedTeamCollectionViewCellController.swift; sourceTree = "<group>"; };
+		20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchedTeamsTableViewCellController.swift; sourceTree = "<group>"; };
+		20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomLabelTableviewCellController.swift; sourceTree = "<group>"; };
 		204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCTeamHandler.swift; sourceTree = "<group>"; };
 		204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUserDefaultsHelper.swift; sourceTree = "<group>"; };
 		204FA13C20F3AF23004C49B5 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
@@ -558,6 +573,9 @@
 				43E5C02A20E885B300948D1A /* TeamListTableViewCell.swift */,
 				438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */,
 				4338827520E756F60057B55E /* CameraRollCollectionViewCell.swift */,
+				20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */,
+				20441CAC20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift */,
+				20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */,
 			);
 			path = CellControllers;
 			sourceTree = "<group>";
@@ -570,6 +588,8 @@
 				43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */,
 				43C6C71420EF5E830053FCD2 /* MemberTableViewCell.xib */,
 				43E3552720F33B1C00722369 /* ChatListTableViewCell.xib */,
+				20441CA620FA06060030FB53 /* NewMatchedTeamsTableViewCell.xib */,
+				20441CA920FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib */,
 			);
 			path = CellXibs;
 			sourceTree = "<group>";
@@ -826,10 +846,12 @@
 				439A164E20F350760028490A /* Chat.storyboard in Resources */,
 				20522F1B20F1E9730072CF1D /* unicon-dev-Info.plist in Resources */,
 				20522F0320F1E8F20072CF1D /* LaunchScreen.storyboard in Resources */,
+				20441CAB20FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib in Resources */,
 				20522F0420F1E8F20072CF1D /* Profile.storyboard in Resources */,
 				43E3552B20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */,
 				20522F0520F1E8F20072CF1D /* JoinTeam.storyboard in Resources */,
 				20522F0620F1E8F20072CF1D /* MemberTableViewCell.xib in Resources */,
+				20441CA820FA06070030FB53 /* NewMatchedTeamsTableViewCell.xib in Resources */,
 				20522F0720F1E8F20072CF1D /* CardView.xib in Resources */,
 				20522F0820F1E8F20072CF1D /* ImagePicker.storyboard in Resources */,
 				20522F0920F1E8F20072CF1D /* CameraRollCollectionViewCell.xib in Resources */,
@@ -851,10 +873,12 @@
 				43A5D40920D4EF6B004612D4 /* LaunchScreen.storyboard in Resources */,
 				434BE14A20E1CB620015A828 /* Profile.storyboard in Resources */,
 				4360357220DC9B610092361A /* JoinTeam.storyboard in Resources */,
+				20441CAA20FA06FB0030FB53 /* NewMatchedTeamCollectionViewCell.xib in Resources */,
 				43C6C71620EF5E830053FCD2 /* MemberTableViewCell.xib in Resources */,
 				202F29F920DF82E7001C8210 /* CardView.xib in Resources */,
 				43E3552A20F33B1C00722369 /* ChatListTableViewCell.xib in Resources */,
 				4338826F20E754AC0057B55E /* ImagePicker.storyboard in Resources */,
+				20441CA720FA06070030FB53 /* NewMatchedTeamsTableViewCell.xib in Resources */,
 				4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
 				43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */,
@@ -1044,6 +1068,7 @@
 				20522EDB20F1E8F20072CF1D /* UCPaginationHelper.swift in Sources */,
 				204FA13E20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				20522EDC20F1E8F20072CF1D /* User.swift in Sources */,
+				20441CAE20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift in Sources */,
 				204FA14420F3BD74004C49B5 /* ChatRoomService.swift in Sources */,
 				20522EDD20F1E8F20072CF1D /* CardViewHelper.swift in Sources */,
 				20522EDE20F1E8F20072CF1D /* TeamCollectionViewCell.swift in Sources */,
@@ -1060,6 +1085,7 @@
 				20522EE620F1E8F20072CF1D /* EditTeamProfileViewController.swift in Sources */,
 				20522EE720F1E8F20072CF1D /* CreateOrJoinViewController.swift in Sources */,
 				20522EE820F1E8F20072CF1D /* AppDelegate.swift in Sources */,
+				20441CB120FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift in Sources */,
 				20522EE920F1E8F20072CF1D /* JoinTeamViewController.swift in Sources */,
 				20522EEA20F1E8F20072CF1D /* UserExtention.swift in Sources */,
 				20522EEB20F1E8F20072CF1D /* StorageReference+Image.swift in Sources */,
@@ -1073,6 +1099,7 @@
 				20522EF220F1E8F20072CF1D /* ProfileViewController.swift in Sources */,
 				204FA14120F3B4AE004C49B5 /* MatchService.swift in Sources */,
 				206D37B820F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */,
+				20441CB420FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */,
 				20522EF320F1E8F20072CF1D /* StorageService.swift in Sources */,
 				20522EF420F1E8F20072CF1D /* CameraRollCollectionViewCell.swift in Sources */,
 			);
@@ -1105,6 +1132,7 @@
 				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,
 				204FA13D20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,
+				20441CAD20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift in Sources */,
 				204FA14320F3BD74004C49B5 /* ChatRoomService.swift in Sources */,
 				43C6C70720EF5B9D0053FCD2 /* CardViewHelper.swift in Sources */,
 				438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */,
@@ -1121,6 +1149,7 @@
 				43C6C70220EF4DBA0053FCD2 /* EditTeamProfileViewController.swift in Sources */,
 				43222D0920D6555A00B3DB50 /* CreateOrJoinViewController.swift in Sources */,
 				43A5D3FF20D4EF69004612D4 /* AppDelegate.swift in Sources */,
+				20441CB020FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift in Sources */,
 				4360357420DC9C950092361A /* JoinTeamViewController.swift in Sources */,
 				43222D0720D6518900B3DB50 /* UserExtention.swift in Sources */,
 				432FA1DA20D8F4B20058A744 /* StorageReference+Image.swift in Sources */,
@@ -1134,6 +1163,7 @@
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				204FA14020F3B4AE004C49B5 /* MatchService.swift in Sources */,
 				206D37B720F4E25400DFE1EE /* ChatRoomCellView.swift in Sources */,
+				20441CB320FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,
 				4338827720E756F60057B55E /* CameraRollCollectionViewCell.swift in Sources */,
 			);

@@ -17,11 +17,10 @@ class ChatRoomCellView {
     static func configureCell(_ cell: ChatListTableViewCell, with room: ChatRoom){
         
         cell.teamNameLabel.text = room.opponentTeamName
+        cell.lastMessageLabel.text = room.lastMessage
         
         cell.teamImageView.layer.cornerRadius = cell.teamImageView.frame.width/2
         cell.teamImageView.layer.masksToBounds = true
-        
-        //cell.wrapperView.border(positions: [.Bottom], borderWidth: 0.5, borderColor: UIColor.gray)
         
         if let image = room.opponentTeamImage {
             cell.teamImageView.image = image
