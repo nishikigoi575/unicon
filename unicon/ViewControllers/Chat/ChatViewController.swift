@@ -11,9 +11,9 @@ import UIKit
 
 class ChatViewController: UIViewController, UITableViewDelegate {
     
-    var chatRooms = [ChatRoom]()
-    let paginationHelper = UCPaginationHelper<ChatRoom>(keyUID: nil, serviceMethod: ChatRoomService.getChatRooms)
-    var selectedRoomUID: String = ""
+    //var chatRooms = [ChatRoom]()
+    //let paginationHelper = UCPaginationHelper<ChatRoom>(keyUID: nil, serviceMethod: ChatRoomService.getChatRooms)
+    var selectedRoom: ChatRoom?
     var selectedRoomMembers = [String: User]()
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,8 +29,13 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         
         let nib = UINib(nibName: "ChatListTableViewCell", bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: "ChatListCell")
+        tableView.estimatedRowHeight = 100
         
-        reload()
+        if ChatDataController.chatRooms.count > 0 {
+            tableView.reloadData()
+        } else {
+            reload()
+        }
     }
     
     
@@ -45,8 +50,8 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     }
     
     @objc func reload() {
-        self.paginationHelper.reloadData(completion: { [weak self] (rooms) in
-            self?.chatRooms = rooms
+        ChatDataController.chatRoomPaginationHelper.reloadData(completion: { [weak self] (rooms) in
+            ChatDataController.chatRooms = rooms
             self?.tableView.reloadData()
         })
     }
@@ -62,8 +67,8 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         
         if distanceToBottom < 1500 && distanceToBottom > 0 {
             
-            paginationHelper.paginate(completion: { [weak self] (rooms) in
-                self?.chatRooms.append(contentsOf: rooms)
+            ChatDataController.chatRoomPaginationHelper.paginate(completion: { [weak self] (rooms) in
+                ChatDataController.chatRooms.append(contentsOf: rooms)
                 
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
@@ -76,27 +81,42 @@ class ChatViewController: UIViewController, UITableViewDelegate {
 
 extension ChatViewController: UITableViewDataSource {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 44
+        } else {
+            return 100
+        }
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return chatRooms.count
+        return ChatDataController.chatRooms.count + 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
-        let room = chatRooms[indexPath.row]
-        cell.isUserInteractionEnabled = false
-        ChatRoomCellView.configureCell(cell, with: room)
-        
-        return cell
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell") as! UITableViewCell
+            cell.isUserInteractionEnabled = false
+            cell.separatorInset = UIEdgeInsets(top: 0, left: cell.frame.width, bottom: 0, right: 0)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatListCell") as! ChatListTableViewCell
+            let room = ChatDataController.chatRooms[indexPath.row-1]
+            cell.isUserInteractionEnabled = false
+            ChatRoomCellView.configureCell(cell, with: room)
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let cell = tableView.cellForRow(at: indexPath) as? ChatListTableViewCell else { return }
-        let room = chatRooms[indexPath.row]
-        selectedRoomUID = room.uid
+        let room = ChatDataController.chatRooms[indexPath.row-1]
+        selectedRoom = room
         selectedRoomMembers = cell.userDict
         
         performSegue(withIdentifier: "ToSingleChat", sender: nil)
@@ -105,7 +125,7 @@ extension ChatViewController: UITableViewDataSource {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "ToSingleChat"){
             let singleChatVC = segue.destination as! SingleChatViewController
-            singleChatVC.roomUID = selectedRoomUID
+            singleChatVC.room = selectedRoom
             singleChatVC.memberDict = selectedRoomMembers
         }
     }

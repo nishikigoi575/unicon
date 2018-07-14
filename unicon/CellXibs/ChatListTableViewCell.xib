@@ -6,7 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,45 +20,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0D7-9k-Wof">
-                        <rect key="frame" x="16" y="4" width="90" height="90"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0D7-9k-Wof">
+                        <rect key="frame" x="15" y="10" width="79" height="79"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="90" id="07h-Qa-xix"/>
-                            <constraint firstAttribute="height" constant="90" id="0wn-8S-0lm"/>
+                            <constraint firstAttribute="width" secondItem="0D7-9k-Wof" secondAttribute="height" multiplier="1:1" id="r5G-HH-UpS"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="u4G-V1-Pzm">
-                        <rect key="frame" x="114" y="11" width="237" height="70"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ewK-Fp-Doz">
+                        <rect key="frame" x="109" y="0.0" width="266" height="99.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJK-uB-f7a">
-                                <rect key="frame" x="0.0" y="0.0" width="237" height="52"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="20"/>
-                                <color key="textColor" red="0.10980392160000001" green="0.15686274510000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="team name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-j7-ikW">
-                                <rect key="frame" x="0.0" y="52" width="237" height="18"/>
-                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="18"/>
-                                <color key="textColor" red="0.10980392160000001" green="0.15686274510000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Q6m-dC-Vhj">
+                                <rect key="frame" x="0.0" y="20" width="266" height="60"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="team nameg" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QJK-uB-f7a">
+                                        <rect key="frame" x="0.0" y="0.0" width="266" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Xqb-mQ-a34"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="21"/>
+                                        <color key="textColor" red="0.10980392160000001" green="0.15686274510000001" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="last message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OeO-j7-ikW">
+                                        <rect key="frame" x="0.0" y="30" width="266" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="scK-PG-HOn"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="17"/>
+                                        <color key="textColor" white="0.42721896704722223" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                    </stackView>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Q6m-dC-Vhj" firstAttribute="centerY" secondItem="ewK-Fp-Doz" secondAttribute="centerY" id="3nW-TN-l1S"/>
+                            <constraint firstAttribute="trailing" secondItem="Q6m-dC-Vhj" secondAttribute="trailing" id="XGH-ES-jdg"/>
+                            <constraint firstItem="Q6m-dC-Vhj" firstAttribute="leading" secondItem="ewK-Fp-Doz" secondAttribute="leading" id="mrb-0z-nke"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="u4G-V1-Pzm" secondAttribute="trailing" constant="8" id="CQr-QD-JAz"/>
-                    <constraint firstItem="u4G-V1-Pzm" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Efn-et-49W"/>
-                    <constraint firstItem="0D7-9k-Wof" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="I5N-GV-lbs"/>
-                    <constraint firstItem="u4G-V1-Pzm" firstAttribute="leading" secondItem="0D7-9k-Wof" secondAttribute="trailing" constant="8" id="Izj-aR-LgE"/>
-                    <constraint firstItem="0D7-9k-Wof" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Sf2-rd-xn7"/>
-                    <constraint firstItem="0D7-9k-Wof" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="vPx-Z6-Nif"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="u4G-V1-Pzm" secondAttribute="bottom" constant="8" id="xnL-Pl-o1e"/>
+                    <constraint firstAttribute="bottom" secondItem="0D7-9k-Wof" secondAttribute="bottom" constant="10" id="8c4-RL-gQK"/>
+                    <constraint firstItem="ewK-Fp-Doz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9Dr-P2-85Q"/>
+                    <constraint firstItem="0D7-9k-Wof" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="Lra-uf-2SF"/>
+                    <constraint firstItem="0D7-9k-Wof" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="Sf2-rd-xn7"/>
+                    <constraint firstAttribute="bottom" secondItem="ewK-Fp-Doz" secondAttribute="bottom" id="Ssa-0b-4gI"/>
+                    <constraint firstItem="ewK-Fp-Doz" firstAttribute="leading" secondItem="0D7-9k-Wof" secondAttribute="trailing" constant="15" id="dIQ-7R-fcM"/>
+                    <constraint firstAttribute="trailing" secondItem="ewK-Fp-Doz" secondAttribute="trailing" id="m1G-Tq-nh4"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="teamImageView" destination="0D7-9k-Wof" id="dv5-3R-PVs"/>
                 <outlet property="teamNameLabel" destination="QJK-uB-f7a" id="BCw-mT-e56"/>
+                <outlet property="wrapperView" destination="ewK-Fp-Doz" id="DPJ-7s-yuj"/>
             </connections>
             <point key="canvasLocation" x="-13" y="102"/>
         </tableViewCell>

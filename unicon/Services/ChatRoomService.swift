@@ -36,7 +36,7 @@ struct ChatRoomService {
             if let membersA = member {
                 for user in membersA {
                     let ref = rootRef.document(user.userUID).collection("chatRooms").document(chatRoomUID)
-                    ref.setData(["lastActiveDate": Date()]) { error in
+                    ref.setData(["lastActiveDate": Date(), "isActive": false]) { error in
                         if let error = error {
                             assertionFailure(error.localizedDescription)
                             return success(false)
@@ -51,7 +51,7 @@ struct ChatRoomService {
                     if let membersB = member {
                         for user in membersB {
                             let ref = rootRef.document(user.userUID).collection("chatRooms").document(chatRoomUID)
-                            ref.setData(["lastActiveDate": Date()]) { error in
+                            ref.setData(["lastActiveDate": Date(), "isActive": false]) { error in
                                 if let error = error {
                                     assertionFailure(error.localizedDescription)
                                     return success(false)
@@ -86,24 +86,48 @@ struct ChatRoomService {
         }
     }
     
-    static func update(roomUID: String, key: String, value: Any, success: @escaping (Bool) -> Void) {
-        let ref = Firestore.firestore().collection("chat").document(roomUID)
-        ref.updateData([key: value]) { error in
+    static func update(room: ChatRoom, dict: [String: Any], success: @escaping (Bool) -> Void) {
+        let ref = Firestore.firestore().collection("chat").document(room.uid)
+        ref.updateData(dict) { error in
             if let error = error {
                 assertionFailure(error.localizedDescription)
                 return success(false)
             } else {
-                return success(true)
+                let dic = ["lastActiveDate": Date()]
+                ChatRoomService.updateMembersRooms(room: room, dict: dic) { suc in
+                    return success(suc)
+                }
             }
         }
     }
     
+    static func updateMembersRooms(room: ChatRoom, dict: [String: Any], success: @escaping (Bool) -> Void) {
+        let rootRef = Firestore.firestore().collection("users")
+        let memberUIDs = room.myMembers + room.opponentMembers
+        let dispatchGroup = DispatchGroup()
+        for memberUID in memberUIDs {
+            dispatchGroup.enter()
+            let ref = rootRef.document(memberUID).collection("chatRooms").document(room.uid)
+            ref.updateData(dict) { error in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    return success(false)
+                } else {
+                    dispatchGroup.leave()
+                }
+            }
+        }
+        dispatchGroup.notify(queue: .main, execute: {
+            return success(true)
+        })
+    }
+    
     static func getChatRooms(pageSize: UInt, numOfObjects: Int = 0, keyUID: String?, completion: @escaping ([ChatRoom]) -> Void) {
         guard let currenUserUID = User.current?.userUID else { return completion([]) }
-        let ref = Firestore.firestore().collection("users").document(currenUserUID).collection("chatRooms")
+        let ref = Firestore.firestore().collection("users").document(currenUserUID).collection("chatRooms").whereField("isActive", isEqualTo: true).order(by: "lastActiveDate", descending: true)
         if numOfObjects > 0 {
             print("room pagination next")
-            let first = ref.order(by: "lastActiveDate", descending: true).limit(to: numOfObjects)
+            let first = ref.limit(to: numOfObjects)
             first.getDocuments {(snapshot, error) in
                 guard let snapshot = snapshot else {
                     print("Error retreving price: \(error.debugDescription)")
@@ -144,14 +168,14 @@ struct ChatRoomService {
             }
         } else {
             print("pagination initial")
-            let query = ref.order(by: "lastActiveDate", descending: true).limit(to: Int(pageSize))
+            let query = ref.limit(to: Int(pageSize))
             query.getDocuments{ (snapshot, error) in
                 guard let snapshot = snapshot else {
                     print("Error retreving posts: \(error.debugDescription)")
                     return completion([])
                 }
                 let dispatchGroup = DispatchGroup()
-                
+                print("HOGEJPEGOJPEHGPJE`J`JE")
                 var rooms = [ChatRoom]()
                 for roomSnap in snapshot.documents {
                     guard let roomDict = roomSnap.data() as? [String: Any]
@@ -160,6 +184,7 @@ struct ChatRoomService {
                     dispatchGroup.enter()
                     ChatRoomService.show(roomUID: roomSnap.documentID) { (room) in
                         if let room = room {
+                            print(room.uid)
                             rooms.append(room)
                             dispatchGroup.leave()
                         }
@@ -169,26 +194,6 @@ struct ChatRoomService {
                     rooms.sort(by: {$0.lastDate! > $1.lastDate!})
                     completion(rooms)
                 })
-            }
-        }
-    }
-    
-    static func getLastMessage(chatRoomUID: String, completion: @escaping (String?) -> Void) {
-        let ref = Firestore.firestore().collection("chat").document(chatRoomUID).collection("messages")
-        ref.order(by: "date", descending: true).limit(to: 1).getDocuments() { (snapshot, error) in
-            guard let snapshot = snapshot else {
-                print("Error retreving posts: \(error.debugDescription)")
-                return completion(nil)
-            }
-            if snapshot.count > 0 {
-                let dict = snapshot.documents[0].data()
-                if let msg = dict["message"] as? String {
-                    return completion(msg)
-                } else {
-                    return completion(nil)
-                }
-            } else {
-                return completion(nil)
             }
         }
     }

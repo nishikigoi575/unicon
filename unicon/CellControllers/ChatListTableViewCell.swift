@@ -12,6 +12,7 @@ class ChatListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var teamImageView: UIImageView!
     @IBOutlet weak var teamNameLabel: UILabel!
+    @IBOutlet weak var wrapperView: UIView!
     
     var userUIDArray: [String] = [String]() {
         didSet {

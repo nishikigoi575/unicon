@@ -96,7 +96,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         if let _ = Team.current?.teamID {
             UCUserDefaultsHelper.setSwipedTeams()
-            UCUserDefaultsHelper.setMatchedTeams()
         }
     }
     
@@ -122,6 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, LoginButtonDelegate {
             // set current team if any
             if let teamData = defaults.object(forKey: Constants.UserDefaults.currentTeam) as? Data, let team = NSKeyedUnarchiver.unarchiveObject(with: teamData) as? Team {
                 Team.setCurrent(team)
+                TeamService.syncMatchedTeams()
+                TeamService.syncMyteams()
             }
             initialViewController = UIStoryboard.initialViewController(for: .main)
         } else {

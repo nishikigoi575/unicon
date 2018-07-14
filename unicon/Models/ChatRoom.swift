@@ -25,6 +25,17 @@ class ChatRoom: NSObject{
     var lastActiveDate: Date
     var lastDate: TimeInterval?
     var numOfMembers: Int
+    var isActive: Bool = true {
+        didSet {
+            if !oldValue && isActive {
+                ChatRoomService.updateMembersRooms(room: self, dict: ["isActive": true]) { success in
+                    if success {
+                        print("succees update room is active")
+                    }
+                }
+            }
+        }
+    }
     var lastMessage: String?
     var myTeamImage: UIImage?
     var opponentTeamImage: UIImage?
@@ -58,7 +69,8 @@ class ChatRoom: NSObject{
             let teamAImageURL = dict["teamAImageURL"] as? String,
             let teamBImageURL = dict["teamBImageURL"] as? String,
             let numOfMembers = dict["numOfMembers"] as? Int,
-            let lastActiveDate = dict["lastActiveDate"] as? Date
+            let lastActiveDate = dict["lastActiveDate"] as? Date,
+            let isActive = dict["isActive"] as? Bool
             else { return nil }
 
         guard let currentUserUID = User.current?.userUID else { return nil }
@@ -87,15 +99,12 @@ class ChatRoom: NSObject{
         self.lastActiveDate = lastActiveDate
         self.numOfMembers = numOfMembers
         self.lastDate = lastActiveDate.timeIntervalSince1970
+        self.isActive = isActive
         
         super.init()
         
-        ChatRoomService.getLastMessage(chatRoomUID: uid) { [weak self] msg in
-            if let lastMsg = msg {
-                self?.lastMessage = lastMsg
-            } else {
-                self?.lastMessage = nil
-            }
+        if let lastMsg = dict["lastMessage"] as? String {
+            self.lastMessage = lastMsg
         }
         
         if isTeamA {
@@ -136,7 +145,8 @@ class ChatRoom: NSObject{
             "teamAImageURL": myTeamImageURL,
             "teamBImageURL": opponentTeamImageURL,
             "numOfMembers": numOfMembers,
-            "lastActiveDate": lastActiveDate
+            "lastActiveDate": lastActiveDate,
+            "isActive": false
         ]
     }
 }
