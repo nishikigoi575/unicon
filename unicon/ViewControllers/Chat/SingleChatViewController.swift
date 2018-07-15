@@ -31,6 +31,7 @@ class SingleChatViewController: MessagesViewController {
         super.viewDidLoad()
         
         self.navigationController?.navigationBar.tintColor = UIColor.hex(hex: "FF5E62", alpha: 1.0)
+        self.navigationItem.title = room?.opponentTeam?.teamName
         
         guard let roomId = room?.uid else { return }
         lisner = Firestore.firestore().collection("chat").document(roomId).collection("messages").addSnapshotListener { querySnapshot, error in

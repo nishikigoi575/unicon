@@ -15,23 +15,69 @@ class ChatRoomCellView {
     private static let defaultImage = UIImage(named: "default")
     
     static func configureCell(_ cell: ChatListTableViewCell, with room: ChatRoom){
-        
-        cell.teamNameLabel.text = room.opponentTeamName
-        cell.lastMessageLabel.text = room.lastMessage
-        
         cell.teamImageView.layer.cornerRadius = cell.teamImageView.frame.width/2
         cell.teamImageView.layer.masksToBounds = true
+        cell.myTeamImageView.layer.cornerRadius = cell.myTeamImageView.frame.width/2
+        cell.myTeamImageView.layer.masksToBounds = true
+        cell.userUIDArray = room.myMembers + room.opponentMembers
+        cell.lastMessageLabel.text = room.lastMessage
         
-        if let image = room.opponentTeamImage {
-            cell.teamImageView.image = image
+        if let opponentTeam = room.opponentTeam {
+            cell.teamNameLabel.text = opponentTeam.teamName
+            
+            if let image = opponentTeam.teamImage {
+                cell.teamImageView.image = image
+            } else {
+                cell.teamImageView.af_setImage(
+                    withURL: URL(string: opponentTeam.teamImageURL)!,
+                    placeholderImage: defaultImage,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
         } else {
-            cell.teamImageView.af_setImage(
-                withURL: URL(string: room.opponentTeamImageURL)!,
-                placeholderImage: defaultImage,
-                imageTransition: .crossDissolve(0.5)
-            )
+            TeamService.show(forTeamID: room.opponentTeamUID) { team in
+                guard let opponentTeam = team else { return }
+                cell.teamNameLabel.text = opponentTeam.teamName
+                
+                if let image = opponentTeam.teamImage {
+                    cell.teamImageView.image = image
+                } else {
+                    cell.teamImageView.af_setImage(
+                        withURL: URL(string: opponentTeam.teamImageURL)!,
+                        placeholderImage: defaultImage,
+                        imageTransition: .crossDissolve(0.5)
+                    )
+                }
+            }
         }
         
-        cell.userUIDArray = room.myMembers + room.opponentMembers
+        if let myTeam = room.myTeam {
+            cell.myTeamNameLabel.text = myTeam.teamName
+            
+            if let image = myTeam.teamImage {
+                cell.myTeamImageView.image = image
+            } else {
+                cell.myTeamImageView.af_setImage(
+                    withURL: URL(string: myTeam.teamImageURL)!,
+                    placeholderImage: defaultImage,
+                    imageTransition: .crossDissolve(0.5)
+                )
+            }
+        } else {
+            TeamService.show(forTeamID: room.myTeamUID) { team in
+                guard let myTeam = team else { return }
+                cell.myTeamNameLabel.text = myTeam.teamName
+                
+                if let image = myTeam.teamImage {
+                    cell.myTeamImageView.image = image
+                } else {
+                    cell.myTeamImageView.af_setImage(
+                        withURL: URL(string: myTeam.teamImageURL)!,
+                        placeholderImage: defaultImage,
+                        imageTransition: .crossDissolve(0.5)
+                    )
+                }
+            }
+        }
     }
 }

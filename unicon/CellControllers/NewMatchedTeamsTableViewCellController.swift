@@ -14,13 +14,14 @@ class NewMatchedTeamsTableViewCellController: UITableViewCell {
     var delegate: UIViewController?
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var noNewMatchesView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
         let nib: UINib = UINib(nibName: "NewMatchedTeamCollectionViewCell", bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: "NewMatchedTeam")
-        //noKukaiView.isHidden = true
+        noNewMatchesView.isHidden = true
         
     }
     
@@ -44,14 +45,12 @@ class NewMatchedTeamsTableViewCellController: UITableViewCell {
         collectionView.reloadData()
     }
     
-    func showNokukaiView() {
-        print("show")
-        //noKukaiView.isHidden = false
+    func showNoMatchesView() {
+        noNewMatchesView.isHidden = false
     }
     
-    func hideNokukaiView() {
-        print("hide")
-        //noKukaiView.isHidden = true
+    func hideNoMatchesView() {
+        noNewMatchesView.isHidden = true
     }
 }
 

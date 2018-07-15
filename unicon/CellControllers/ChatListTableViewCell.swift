@@ -14,6 +14,8 @@ class ChatListTableViewCell: UITableViewCell {
     @IBOutlet weak var teamNameLabel: UILabel!
     @IBOutlet weak var wrapperView: UIView!
     @IBOutlet weak var lastMessageLabel: UILabel!
+    @IBOutlet weak var myTeamImageView: UIImageView!
+    @IBOutlet weak var myTeamNameLabel: UILabel!
     
     
     var userUIDArray: [String] = [String]() {

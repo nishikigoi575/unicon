@@ -28,9 +28,29 @@
                             <inset key="sectionInset" minX="5" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                     </collectionView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBO-Uv-BY2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No New Matches" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eFu-er-WXd">
+                                <rect key="frame" x="83" y="45.5" width="209" height="23"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="23"/>
+                                <color key="textColor" red="0.85098039219999999" green="0.20000000000000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eFu-er-WXd" firstAttribute="centerY" secondItem="XBO-Uv-BY2" secondAttribute="centerY" id="4kN-Jh-jaQ"/>
+                            <constraint firstItem="eFu-er-WXd" firstAttribute="centerX" secondItem="XBO-Uv-BY2" secondAttribute="centerX" id="xPs-EJ-fXH"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XBO-Uv-BY2" secondAttribute="trailing" id="EVX-jo-Uf9"/>
                     <constraint firstAttribute="trailing" secondItem="i4q-xk-l4V" secondAttribute="trailing" id="MT1-kV-0Tc"/>
+                    <constraint firstAttribute="bottom" secondItem="XBO-Uv-BY2" secondAttribute="bottom" id="NV5-ZU-Lf9"/>
+                    <constraint firstItem="XBO-Uv-BY2" firstAttribute="leading" secondItem="hiN-ci-9b6" secondAttribute="leading" id="Oup-15-zHN"/>
+                    <constraint firstItem="XBO-Uv-BY2" firstAttribute="top" secondItem="hiN-ci-9b6" secondAttribute="top" id="QWj-zD-et6"/>
                     <constraint firstItem="i4q-xk-l4V" firstAttribute="leading" secondItem="hiN-ci-9b6" secondAttribute="leading" id="Qgk-o4-Hhh"/>
                     <constraint firstItem="i4q-xk-l4V" firstAttribute="top" secondItem="hiN-ci-9b6" secondAttribute="top" id="boq-yu-nlz"/>
                     <constraint firstAttribute="bottom" secondItem="i4q-xk-l4V" secondAttribute="bottom" id="dvb-s0-RGZ"/>
@@ -38,6 +58,7 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="collectionView" destination="i4q-xk-l4V" id="VHA-w5-jD3"/>
+                <outlet property="noNewMatchesView" destination="XBO-Uv-BY2" id="Uy5-is-Fob"/>
             </connections>
             <point key="canvasLocation" x="23" y="-45"/>
         </tableViewCell>

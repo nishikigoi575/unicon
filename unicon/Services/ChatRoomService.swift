@@ -64,7 +64,7 @@ struct ChatRoomService {
                         let userAUIDs = membersA.map { $0.userUID }
                         let userBUIDs = membersB.map { $0.userUID }
                         
-                        let chatRoom = ChatRoom(uid: chatRoomUID, myTeamUID: currentTeamUID, opponentTeamUID: team.teamID, myMembers: userAUIDs, opponentMembers: userBUIDs, myTeamName: currentTeam.teamName, myTeamImageURL: currentTeam.teamImageURL, opponentTeamName: team.teamName, opponentTeamImageURL: team.teamImageURL, numOfMembers: userAUIDs.count+userBUIDs.count)
+                        let chatRoom = ChatRoom(uid: chatRoomUID, myTeamUID: currentTeamUID, opponentTeamUID: team.teamID, myMembers: userAUIDs, opponentMembers: userBUIDs, numOfMembers: userAUIDs.count+userBUIDs.count)
                         chatRef.setData(chatRoom.dictValue, options: SetOptions.merge()) { err in
                             if let err = err {
                                 print(err.localizedDescription)

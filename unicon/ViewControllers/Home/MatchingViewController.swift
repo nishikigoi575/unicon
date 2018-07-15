@@ -37,7 +37,7 @@ class MatchingViewController: UIViewController {
         super.viewDidLoad()
         
         //RefactorDB.setUDMyTeam()
-        //RefactorDB.setTeamList()
+        RefactorDB.setTeamList()
         
         guard let currentTeam = Team.current else {
             let storyboard: UIStoryboard = UIStoryboard(name: "Onboard", bundle: nil)
