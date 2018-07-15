@@ -17,6 +17,7 @@ class ChatViewController: UIViewController, UITableViewDelegate {
     var storedOffsets = [Int: CGFloat]()
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noChatRoomsView: UIView!
     
     let refreshControl = UIRefreshControl()
     
@@ -33,12 +34,18 @@ class ChatViewController: UIViewController, UITableViewDelegate {
         tableView.register(nib, forCellReuseIdentifier: "ChatListCell")
         tableView.register(UINib(nibName: "NewMatchedTeamsTableViewCell", bundle: nil), forCellReuseIdentifier: "NewMatchedList")
         tableView.estimatedRowHeight = 100
+        tableView.tableFooterView = UIView(frame: .zero)
         
         refreshControl.tintColor = UIColor(red: 0.85, green: 0.20, blue: 0.25, alpha: 1.0)
         refreshControl.addTarget(self, action:#selector(reloadAll), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
-        tableView.reloadData()
+        if ChatDataController.chatRooms.count > 0 {
+            tableView.reloadData()
+            noChatRoomsView.isHidden = true
+        } else {
+            noChatRoomsView.isHidden = false
+        }
     }
     
     
@@ -65,7 +72,12 @@ class ChatViewController: UIViewController, UITableViewDelegate {
                 }
             }
             ChatDataController.chatRooms = rooms
-            self?.tableView.reloadData()
+            if rooms.count > 0 {
+                self?.tableView.reloadData()
+                self?.noChatRoomsView.isHidden = true
+            } else {
+                self?.noChatRoomsView.isHidden = false
+            }
         })
     }
     
@@ -76,8 +88,13 @@ class ChatViewController: UIViewController, UITableViewDelegate {
                     refreshControl.endRefreshing()
                 }
             }
-            ChatDataController.newMatchedTeams = rooms
-            self?.delegateForCollectionView?.loadData()
+            if rooms.count > 0 {
+                ChatDataController.newMatchedTeams = rooms
+                self?.delegateForCollectionView?.loadData()
+                self?.delegateForCollectionView?.hideNoMatchesView()
+            } else {
+                self?.delegateForCollectionView?.showNoMatchesView()
+            }
         })
     }
     
@@ -105,10 +122,6 @@ class ChatViewController: UIViewController, UITableViewDelegate {
 }
 
 extension ChatViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .leastNormalMagnitude
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row == 0 {
@@ -141,7 +154,11 @@ extension ChatViewController: UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "NewMatchedList") as! NewMatchedTeamsTableViewCellController
             cell.delegate = self
             self.delegateForCollectionView = cell
-            delegateForCollectionView?.loadData()
+            if ChatDataController.newMatchedTeams.count > 0 {
+                delegateForCollectionView?.loadData()
+            } else {
+                delegateForCollectionView?.showNoMatchesView()
+            }
             cell.separatorInset = UIEdgeInsets(top: 0, left: cell.frame.width, bottom: 0, right: 0)
             return cell
         } else if indexPath.row == 2 {
@@ -197,19 +214,7 @@ extension ChatViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "NewMatchedTeam", for: indexPath) as! NewMatchedTeamCollectionViewCellController
         if ChatDataController.newMatchedTeams.count > 0 {
             let chatRoom = ChatDataController.newMatchedTeams[indexPath.row]
-            cell.teamNameLabel.text = chatRoom.opponentTeamName
-            if let image = chatRoom.opponentTeamImage {
-                cell.teamImageView.image = image
-            } else {
-                if let url = URL(string: chatRoom.opponentTeamImageURL){
-                    cell.teamImageView.af_setImage(
-                        withURL: url,
-                        imageTransition: .crossDissolve(0.5)
-                    )
-                }
-            }
-            cell.isUserInteractionEnabled = false
-            cell.userUIDArray = chatRoom.myMembers + chatRoom.opponentMembers
+            NewMatchesCellView.configureCell(cell, with: chatRoom)
             
             if ChatDataController.newMatchedTeams.count - indexPath.row > 0 && ChatDataController.newMatchedTeams.count - indexPath.row < 2 {
                 ChatDataController.newMatchesPaginationHelper.paginate(completion: { [weak self] (rooms) in

@@ -18,14 +18,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="cp1-zZ-Wiv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cp1-zZ-Wiv">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="110" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LabelCell" rowHeight="44" id="EvF-qM-jsT" customClass="ChatRoomLabelTableviewCellController" customModule="unicon" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333333333333343" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EvF-qM-jsT" id="dqf-8a-cHi">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -52,12 +52,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="07X-d5-Jpu">
+                                <rect key="frame" x="0.0" y="267" width="414" height="469"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Teams to Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7F7-QI-mXT">
+                                        <rect key="frame" x="77" y="221" width="260" height="27"/>
+                                        <fontDescription key="fontDescription" name="HiraginoSans-W6" family="Hiragino Sans" pointSize="27"/>
+                                        <color key="textColor" red="0.85098039219999999" green="0.20000000000000001" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="7F7-QI-mXT" firstAttribute="centerX" secondItem="07X-d5-Jpu" secondAttribute="centerX" id="VYR-PD-nRq"/>
+                                    <constraint firstItem="7F7-QI-mXT" firstAttribute="centerY" secondItem="07X-d5-Jpu" secondAttribute="centerY" id="ylj-fu-QsM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="cp1-zZ-Wiv" firstAttribute="trailing" secondItem="Ic4-cy-VRE" secondAttribute="trailing" id="2nR-rz-Efp"/>
+                            <constraint firstItem="07X-d5-Jpu" firstAttribute="leading" secondItem="Ic4-cy-VRE" secondAttribute="leading" id="Bvu-f4-jVC"/>
                             <constraint firstItem="cp1-zZ-Wiv" firstAttribute="bottom" secondItem="Ic4-cy-VRE" secondAttribute="bottom" id="Ebf-0H-vCD"/>
                             <constraint firstItem="cp1-zZ-Wiv" firstAttribute="top" secondItem="Ic4-cy-VRE" secondAttribute="top" id="Ozn-Ux-MUa"/>
+                            <constraint firstItem="Ic4-cy-VRE" firstAttribute="bottom" secondItem="07X-d5-Jpu" secondAttribute="bottom" id="cLJ-7I-6am"/>
+                            <constraint firstItem="07X-d5-Jpu" firstAttribute="trailing" secondItem="Ic4-cy-VRE" secondAttribute="trailing" id="hvY-Rd-hTS"/>
+                            <constraint firstItem="07X-d5-Jpu" firstAttribute="top" secondItem="Ic4-cy-VRE" secondAttribute="top" constant="203" id="mbN-Mj-vWC"/>
                             <constraint firstItem="cp1-zZ-Wiv" firstAttribute="leading" secondItem="Ic4-cy-VRE" secondAttribute="leading" id="vzc-0E-qnK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ic4-cy-VRE"/>
@@ -70,6 +90,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="noChatRoomsView" destination="07X-d5-Jpu" id="bRi-lu-tHJ"/>
                         <outlet property="tableView" destination="cp1-zZ-Wiv" id="S7Z-S1-Rk1"/>
                         <segue destination="tzK-f6-E7V" kind="show" identifier="ToSingleChat" id="4ce-1P-EqE"/>
                     </connections>
@@ -91,6 +112,9 @@
                     <navigationItem key="navigationItem" title="相手チーム名" id="Efi-49-DEa">
                         <barButtonItem key="backBarButtonItem" title="戻る" id="1I8-bw-ZSW"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="navigationItem" destination="Efi-49-DEa" id="m0O-B5-Rci"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cts-IH-ykB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

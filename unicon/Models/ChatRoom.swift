@@ -16,15 +16,13 @@ class ChatRoom: NSObject{
     var uid: String
     var myTeamUID: String
     var opponentTeamUID: String
+    var numOfMembers: Int
     var myMembers: [String]
     var opponentMembers: [String]
-    var myTeamName: String
-    var myTeamImageURL: String
-    var opponentTeamName: String
-    var opponentTeamImageURL: String
+    var myTeam: Team?
+    var opponentTeam: Team?
     var lastActiveDate: Date
     var lastDate: TimeInterval?
-    var numOfMembers: Int
     var isActive: Bool = true {
         didSet {
             if !oldValue && isActive {
@@ -37,20 +35,14 @@ class ChatRoom: NSObject{
         }
     }
     var lastMessage: String?
-    var myTeamImage: UIImage?
-    var opponentTeamImage: UIImage?
     
     // To write
-    init(uid: String, myTeamUID: String, opponentTeamUID: String, myMembers: [String], opponentMembers: [String], myTeamName: String, myTeamImageURL: String, opponentTeamName: String, opponentTeamImageURL: String, numOfMembers: Int) {
+    init(uid: String, myTeamUID: String, opponentTeamUID: String, myMembers: [String], opponentMembers: [String], numOfMembers: Int) {
         self.uid = uid
         self.myTeamUID = myTeamUID
         self.myMembers = myMembers
-        self.myTeamName = myTeamName
-        self.myTeamImageURL = myTeamImageURL
         self.opponentTeamUID = opponentTeamUID
         self.opponentMembers = opponentMembers
-        self.opponentTeamName = opponentTeamName
-        self.opponentTeamImageURL = opponentTeamImageURL
         self.numOfMembers = numOfMembers
         self.lastActiveDate = Date()
 
@@ -64,10 +56,6 @@ class ChatRoom: NSObject{
             let teamBUID = dict["teamBUID"] as? String,
             let membersA = dict["membersA"] as? [String],
             let membersB = dict["membersB"] as? [String],
-            let teamAName = dict["teamAName"] as? String,
-            let teamBName = dict["teamBName"] as? String,
-            let teamAImageURL = dict["teamAImageURL"] as? String,
-            let teamBImageURL = dict["teamBImageURL"] as? String,
             let numOfMembers = dict["numOfMembers"] as? Int,
             let lastActiveDate = dict["lastActiveDate"] as? Date,
             let isActive = dict["isActive"] as? Bool
@@ -78,21 +66,13 @@ class ChatRoom: NSObject{
         if isTeamA {
             self.myTeamUID = teamAUID
             self.myMembers = membersA
-            self.myTeamName = teamAName
-            self.myTeamImageURL = teamAImageURL
             self.opponentTeamUID = teamBUID
             self.opponentMembers = membersB
-            self.opponentTeamName = teamBName
-            self.opponentTeamImageURL = teamBImageURL
         } else {
             self.myTeamUID = teamBUID
             self.myMembers = membersB
-            self.myTeamName = teamBName
-            self.myTeamImageURL = teamBImageURL
             self.opponentTeamUID = teamAUID
             self.opponentMembers = membersA
-            self.opponentTeamName = teamAName
-            self.opponentTeamImageURL = teamAImageURL
         }
 
         self.uid = uid
@@ -108,26 +88,18 @@ class ChatRoom: NSObject{
         }
         
         if isTeamA {
-            Alamofire.request(teamAImageURL).responseImage { [weak self] (response) in
-                if let image = response.result.value {
-                    self?.myTeamImage = image
-                }
+            TeamService.show(forTeamID: teamAUID) { team in
+                self.myTeam = team
             }
-            Alamofire.request(teamBImageURL).responseImage { [weak self] (response) in
-                if let image = response.result.value {
-                    self?.opponentTeamImage = image
-                }
+            TeamService.show(forTeamID: teamBUID) { team in
+                self.opponentTeam = team
             }
         } else {
-            Alamofire.request(teamBImageURL).responseImage { [weak self] (response) in
-                if let image = response.result.value {
-                    self?.myTeamImage = image
-                }
+            TeamService.show(forTeamID: teamBUID) { team in
+                self.myTeam = team
             }
-            Alamofire.request(teamAImageURL).responseImage { [weak self] (response) in
-                if let image = response.result.value {
-                    self?.opponentTeamImage = image
-                }
+            TeamService.show(forTeamID: teamAUID) { team in
+                self.opponentTeam = team
             }
         }
         
@@ -140,10 +112,6 @@ class ChatRoom: NSObject{
             "teamBUID": opponentTeamUID,
             "membersA": myMembers,
             "membersB": opponentMembers,
-            "teamAName": myTeamName,
-            "teamBName": opponentTeamName,
-            "teamAImageURL": myTeamImageURL,
-            "teamBImageURL": opponentTeamImageURL,
             "numOfMembers": numOfMembers,
             "lastActiveDate": lastActiveDate,
             "isActive": false

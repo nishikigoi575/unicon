@@ -27,6 +27,8 @@
 		20441CB120FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */; };
 		20441CB320FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */; };
 		20441CB420FA0D8E0030FB53 /* ChatRoomLabelTableviewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */; };
+		20441CB620FA74890030FB53 /* NewMatchesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB520FA74890030FB53 /* NewMatchesCellView.swift */; };
+		20441CB720FA748A0030FB53 /* NewMatchesCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20441CB520FA74890030FB53 /* NewMatchesCellView.swift */; };
 		204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */; };
 		204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */; };
@@ -225,6 +227,7 @@
 		20441CAC20FA08B40030FB53 /* NewMatchedTeamCollectionViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchedTeamCollectionViewCellController.swift; sourceTree = "<group>"; };
 		20441CAF20FA08BE0030FB53 /* NewMatchedTeamsTableViewCellController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMatchedTeamsTableViewCellController.swift; sourceTree = "<group>"; };
 		20441CB220FA0D8D0030FB53 /* ChatRoomLabelTableviewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomLabelTableviewCellController.swift; sourceTree = "<group>"; };
+		20441CB520FA74890030FB53 /* NewMatchesCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchesCellView.swift; sourceTree = "<group>"; };
 		204FA13620F3AD01004C49B5 /* UCTeamHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCTeamHandler.swift; sourceTree = "<group>"; };
 		204FA13920F3AD2F004C49B5 /* UCUserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UCUserDefaultsHelper.swift; sourceTree = "<group>"; };
 		204FA13C20F3AF23004C49B5 /* LikeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeService.swift; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 			children = (
 				202F29F620DF7F9A001C8210 /* CardView.swift */,
 				206D37B620F4E25400DFE1EE /* ChatRoomCellView.swift */,
+				20441CB520FA74890030FB53 /* NewMatchesCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1060,6 +1064,7 @@
 				20441CA220F9AADE0030FB53 /* ChatDataController.swift in Sources */,
 				20522ED820F1E8F20072CF1D /* TeamService.swift in Sources */,
 				204FA13820F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
+				20441CB720FA748A0030FB53 /* NewMatchesCellView.swift in Sources */,
 				204FA13B20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164420F340330028490A /* SingleChatViewController.swift in Sources */,
 				434577A420F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
@@ -1124,6 +1129,7 @@
 				20441CA120F9AADE0030FB53 /* ChatDataController.swift in Sources */,
 				432FA1D520D8F24A0058A744 /* TeamService.swift in Sources */,
 				204FA13720F3AD01004C49B5 /* UCTeamHandler.swift in Sources */,
+				20441CB620FA74890030FB53 /* NewMatchesCellView.swift in Sources */,
 				204FA13A20F3AD2F004C49B5 /* UCUserDefaultsHelper.swift in Sources */,
 				439A164320F340330028490A /* SingleChatViewController.swift in Sources */,
 				434577A320F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
