@@ -138,6 +138,10 @@
 		436739DE20D6137900ABDD32 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */; };
 		436739E020D6137900ABDD32 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */; };
 		436739E220D6137900ABDD32 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 436739E120D6137900ABDD32 /* FirebaseCore.framework */; };
+		436AA75620F6F30400141A39 /* MatchedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436AA75520F6F30400141A39 /* MatchedView.xib */; };
+		436AA75720F6F30400141A39 /* MatchedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 436AA75520F6F30400141A39 /* MatchedView.xib */; };
+		436AA75920F6F38600141A39 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AA75820F6F38600141A39 /* MatchedView.swift */; };
+		436AA75A20F6F38600141A39 /* MatchedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436AA75820F6F38600141A39 /* MatchedView.swift */; };
 		436C5D5B20DCE6B10002B3AA /* UIExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436C5D5A20DCE6B10002B3AA /* UIExtention.swift */; };
 		438045F720E1FCA200FF6BF4 /* TeamCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */; };
 		438045F820E1FCA200FF6BF4 /* TeamCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438045F620E1FCA200FF6BF4 /* TeamCollectionViewCell.xib */; };
@@ -257,6 +261,8 @@
 		436739DD20D6137900ABDD32 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739DF20D6137900ABDD32 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		436739E120D6137900ABDD32 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		436AA75520F6F30400141A39 /* MatchedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MatchedView.xib; sourceTree = "<group>"; };
+		436AA75820F6F38600141A39 /* MatchedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "\U0010\U0010MatchedView.swift"; sourceTree = "<group>"; };
 		436C5D5A20DCE6B10002B3AA /* UIExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtention.swift; sourceTree = "<group>"; };
 		438045F120E1F20F00FF6BF4 /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPCarouselFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		438045F520E1FCA200FF6BF4 /* TeamCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -374,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				202F29F620DF7F9A001C8210 /* CardView.swift */,
+				436AA75820F6F38600141A39 /* MatchedView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -381,6 +388,7 @@
 		202F29F520DF7F54001C8210 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				436AA75520F6F30400141A39 /* MatchedView.xib */,
 				202F29F820DF82E7001C8210 /* CardView.xib */,
 			);
 			path = CustomViews;
@@ -817,6 +825,7 @@
 				20522F0720F1E8F20072CF1D /* CardView.xib in Resources */,
 				20522F0820F1E8F20072CF1D /* ImagePicker.storyboard in Resources */,
 				20522F0920F1E8F20072CF1D /* CameraRollCollectionViewCell.xib in Resources */,
+				436AA75720F6F30400141A39 /* MatchedView.xib in Resources */,
 				20522F0C20F1E8F20072CF1D /* CreateTeam.storyboard in Resources */,
 				20522F0D20F1E8F20072CF1D /* Main.storyboard in Resources */,
 				20522F0E20F1E8F20072CF1D /* TeamCollectionViewCell.xib in Resources */,
@@ -842,6 +851,7 @@
 				4328832120F2FEFB009DE24D /* Chat.storyboard in Resources */,
 				4338827820E756F60057B55E /* CameraRollCollectionViewCell.xib in Resources */,
 				43C6C71020EF5C4A0053FCD2 /* GoogleService-Info.plist in Resources */,
+				436AA75620F6F30400141A39 /* MatchedView.xib in Resources */,
 				43C6C71120EF5C4A0053FCD2 /* Info.plist in Resources */,
 				43222D0D20D67C7800B3DB50 /* CreateTeam.storyboard in Resources */,
 				43222CFC20D625AF00B3DB50 /* Main.storyboard in Resources */,
@@ -1023,6 +1033,7 @@
 				434577A420F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
 				20522ED920F1E8F20072CF1D /* LoginViewController.swift in Sources */,
 				20522EDA20F1E8F20072CF1D /* SelectGenderViewController.swift in Sources */,
+				436AA75A20F6F38600141A39 /* MatchedView.swift in Sources */,
 				20522EDB20F1E8F20072CF1D /* UCPaginationHelper.swift in Sources */,
 				204FA13E20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				20522EDC20F1E8F20072CF1D /* User.swift in Sources */,
@@ -1080,6 +1091,7 @@
 				434577A320F5D9FA0055D87C /* TeamProfileViewController.swift in Sources */,
 				43222CF820D623EA00B3DB50 /* LoginViewController.swift in Sources */,
 				43222D1420D7B8E400B3DB50 /* SelectGenderViewController.swift in Sources */,
+				436AA75920F6F38600141A39 /* MatchedView.swift in Sources */,
 				43C6C70920EF5B9D0053FCD2 /* UCPaginationHelper.swift in Sources */,
 				204FA13D20F3AF24004C49B5 /* LikeService.swift in Sources */,
 				4360356720DB41D80092361A /* User.swift in Sources */,

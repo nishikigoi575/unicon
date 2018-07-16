@@ -49,8 +49,6 @@ class TeamProfileViewController: UIViewController {
         teamNameLabel.text = teamName
         teamIntroTextView.text = teamIntro
         
-        
-        
         getMembers()
     }
 
