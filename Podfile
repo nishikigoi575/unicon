@@ -27,6 +27,7 @@ target 'unicon' do
    pod 'CropViewController'
    pod 'MessageKit', '>= 1.0.0'
    pod 'TapticEngine'
+   pod 'RealmSwift'
    
    # UIDesigns
    pod 'BubbleTransition'

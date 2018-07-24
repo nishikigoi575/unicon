@@ -114,6 +114,11 @@ PODS:
   - nanopb/encode (0.3.8)
   - pop (1.0.10)
   - Protobuf (3.6.0)
+  - Realm (3.7.5):
+    - Realm/Headers (= 3.7.5)
+  - Realm/Headers (3.7.5)
+  - RealmSwift (3.7.5):
+    - Realm (= 3.7.5)
   - SwiftGifOrigin (1.6.1)
   - TapticEngine (1.1.0)
 
@@ -133,6 +138,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Koloda (~> 4.3.1)
   - MessageKit (>= 1.0.0)
+  - RealmSwift
   - SwiftGifOrigin (~> 1.6.1)
   - TapticEngine
 
@@ -171,6 +177,8 @@ SPEC REPOS:
     - nanopb
     - pop
     - Protobuf
+    - Realm
+    - RealmSwift
     - SwiftGifOrigin
     - TapticEngine
 
@@ -213,9 +221,11 @@ SPEC CHECKSUMS:
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
+  Realm: c286caf4dbf346ce24aad49ca76c7ce622d4a082
+  RealmSwift: 2a9281e37d6de55f66f76254d49d28aeb1b729e4
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   TapticEngine: b78b5513432b3c01af2ebbe018c0995778306757
 
-PODFILE CHECKSUM: 786b03d62e30ab02c238398d8b35aeb8d987d55f
+PODFILE CHECKSUM: 718037b8f64d1df9c06bf77a7277ffd0fd0f8af7
 
 COCOAPODS: 1.5.3
