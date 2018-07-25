@@ -62,10 +62,6 @@ class MatchingViewController: UIViewController {
         
         initialLoad()
         
-        let popupView:MatchedView = UINib(nibName: "MatchedView", bundle: nil).instantiate(withOwner: self,options: nil)[0] as! MatchedView
-        
-        self.view.addSubview(popupView)
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -233,19 +229,12 @@ extension MatchingViewController: KolodaViewDelegate {
                             LikeService.delete(for: team) { success in
                                 if success {
                                     ChatRoomService.create(for: team)
+                                    self.performSegue(withIdentifier: "ToMatched", sender: nil)
                                 }
                             }
                         }
                     }
                 } else {
-                    
-                    let popupView:MatchedView = UINib(nibName: "MatchedView", bundle: nil).instantiate(withOwner: self,options: nil)[0] as! MatchedView
-                    if let url = URL(string: team.teamImageURL), let myUrl = URL(string: (Team.current?.teamImageURL)!) {
-                        popupView.teamImageView.af_setImage(withURL: url)
-                        popupView.myTeamImage.af_setImage(withURL: myUrl)
-                    }
-                    popupView.descriptionLabel.text = team.teamName + "とマッチしました。"
-                    self.view.addSubview(popupView)
                     
                     LikeService.create(for: team) { success in
                         if !success {

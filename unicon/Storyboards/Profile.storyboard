@@ -808,7 +808,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QQS-N5-DSh">
-                                        <rect key="frame" x="0.0" y="565" width="375" height="213"/>
+                                        <rect key="frame" x="0.0" y="493.66666666666674" width="375" height="213"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="おかしくない" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIR-Xs-8D2">
                                                 <rect key="frame" x="0.0" y="39.999999999999943" width="375" height="40"/>
@@ -849,7 +849,7 @@
                                             <constraint firstItem="oDK-Mw-kcU" firstAttribute="top" secondItem="WIR-Xs-8D2" secondAttribute="bottom" constant="18" id="ymH-Eg-jMW"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhe-x0-pAp" customClass="FSPageControl" customModule="FSPagerView">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zhe-x0-pAp" customClass="FSPageControl" customModule="FSPagerView">
                                         <rect key="frame" x="0.0" y="481" width="367" height="76"/>
                                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>

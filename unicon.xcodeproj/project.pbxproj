@@ -176,6 +176,7 @@
 		43E5C02D20E885B300948D1A /* TeamListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43E5C02B20E885B300948D1A /* TeamListTableViewCell.xib */; };
 		43E5C02F20E887E800948D1A /* SelectTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */; };
 		43E5C03120ECB34200948D1A /* EditMyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */; };
+		43FC38322106F589006D6AD8 /* MatchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FC38312106F589006D6AD8 /* MatchedViewController.swift */; };
 		75B634D3422B6156D445F3B1 /* Pods_unicon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13D5178DA3733E4B0CC2E104 /* Pods_unicon.framework */; };
 		8B224869A6AF6C464EB2EAA0 /* Pods_uniconTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */; };
 /* End PBXBuildFile section */
@@ -299,6 +300,7 @@
 		43E5C02E20E887E800948D1A /* SelectTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTeamViewController.swift; sourceTree = "<group>"; };
 		43E5C03020ECB34200948D1A /* EditMyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditMyProfileViewController.swift; sourceTree = "<group>"; };
 		43E5C03220EDB28000948D1A /* UPCarouselFlowLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UPCarouselFlowLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FC38312106F589006D6AD8 /* MatchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedViewController.swift; sourceTree = "<group>"; };
 		4C6DCD3199F2051B3F94E199 /* Pods-uniconUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uniconUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uniconUITests/Pods-uniconUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4D7D381A8C0C5B8CA065E2B6 /* Pods_uniconUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		624430D82291BC6D38F40ACB /* Pods_uniconTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uniconTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -372,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				2037633420D8F8D200A86A75 /* MatchingViewController.swift */,
+				43FC38312106F589006D6AD8 /* MatchedViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -1120,6 +1123,7 @@
 				4360357720DCC8A80092361A /* SingleTeamViewController.swift in Sources */,
 				43C6C71520EF5E830053FCD2 /* MemberTableViewCell.swift in Sources */,
 				4338827120E755570057B55E /* CamerarollViewController.swift in Sources */,
+				43FC38322106F589006D6AD8 /* MatchedViewController.swift in Sources */,
 				43222CFE20D625D500B3DB50 /* ProfileViewController.swift in Sources */,
 				204FA14020F3B4AE004C49B5 /* MatchService.swift in Sources */,
 				432FA1D820D8F43D0058A744 /* StorageService.swift in Sources */,

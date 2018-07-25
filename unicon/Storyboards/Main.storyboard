@@ -50,7 +50,7 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="kNT-4R-rYk" firstAttribute="centerX" secondItem="V8B-Ih-ipa" secondAttribute="centerX" id="Iwl-H4-cvf"/>
                                     <constraint firstItem="kNT-4R-rYk" firstAttribute="centerY" secondItem="V8B-Ih-ipa" secondAttribute="centerY" id="eEj-Gm-vvl"/>
@@ -58,13 +58,13 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdC-CH-f9M" customClass="KolodaView" customModule="Koloda">
                                 <rect key="frame" x="10" y="118.00000000000003" width="355" height="448.66666666666674"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="sdC-CH-f9M" secondAttribute="height" multiplier="19:24" id="u49-Ix-MOM"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="V8B-Ih-ipa" firstAttribute="leading" secondItem="gfs-0w-pet" secondAttribute="leading" id="8jQ-jc-PDA"/>
                             <constraint firstItem="gfs-0w-pet" firstAttribute="trailing" secondItem="sdC-CH-f9M" secondAttribute="trailing" constant="10" id="Dix-jN-Wdv"/>
@@ -78,13 +78,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="team name" id="xnd-bf-uFm">
                         <barButtonItem key="leftBarButtonItem" image="team" id="Rlp-ix-JSw">
-                            <color key="tintColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.2901960784" green="0.0" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="goProfile:" destination="HcR-hg-Ncv" id="9kr-qA-obp"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="chat" id="eZk-8r-BLK">
-                            <color key="tintColor" red="1" green="0.36862745099999999" blue="0.38431372549999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.2901960784" green="0.0" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="goChat:" destination="HcR-hg-Ncv" id="n7z-1c-PxG"/>
                             </connections>
@@ -92,11 +92,115 @@
                     </navigationItem>
                     <connections>
                         <outlet property="kolodaView" destination="sdC-CH-f9M" id="nOX-AA-xbz"/>
+                        <segue destination="Nn2-wr-z0U" kind="presentation" identifier="ToMatched" modalTransitionStyle="crossDissolve" id="LJF-0b-MFg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C5i-sL-8VG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5873" y="246"/>
+        </scene>
+        <!--Matched View Controller-->
+        <scene sceneID="181-wJ-q9E">
+            <objects>
+                <viewController id="Nn2-wr-z0U" customClass="MatchedViewController" customModule="unicon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gPO-dJ-1vu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3co-fD-Oqb">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="412"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="-25" translatesAutoresizingMaskIntoConstraints="NO" id="VZx-hJ-zFv">
+                                        <rect key="frame" x="15" y="113.33333333333331" width="345" height="185"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="HJP-d3-HAf">
+                                                <rect key="frame" x="0.0" y="0.0" width="185" height="185"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="HJP-d3-HAf" secondAttribute="height" multiplier="1:1" id="HU0-Qp-ZwG"/>
+                                                </constraints>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-icon" translatesAutoresizingMaskIntoConstraints="NO" id="vrL-Bq-AJW">
+                                                <rect key="frame" x="160" y="0.0" width="185" height="185"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vrL-Bq-AJW" secondAttribute="height" multiplier="1:1" id="y3I-8D-Bvs"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="VZx-hJ-zFv" firstAttribute="centerX" secondItem="3co-fD-Oqb" secondAttribute="centerX" id="KFv-q8-S3d"/>
+                                    <constraint firstAttribute="trailing" secondItem="VZx-hJ-zFv" secondAttribute="trailing" constant="15" id="Kiu-WK-iic"/>
+                                    <constraint firstItem="VZx-hJ-zFv" firstAttribute="leading" secondItem="3co-fD-Oqb" secondAttribute="leading" constant="15" id="Teh-xo-QwI"/>
+                                    <constraint firstItem="VZx-hJ-zFv" firstAttribute="centerY" secondItem="3co-fD-Oqb" secondAttribute="centerY" id="qeq-RL-hdw"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jd7-aj-Wms">
+                                <rect key="frame" x="0.0" y="412" width="375" height="400"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" editable="NO" text="あなたは〇〇の一員として〇〇とマッチしました。グループチャットを楽しみましょう！" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a88-vf-WeR">
+                                        <rect key="frame" x="8" y="104" width="359" height="74"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eYL-al-64l">
+                                        <rect key="frame" x="8" y="186" width="359" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.5568627451" green="0.1764705882" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="グループチャットへ">
+                                            <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HdT-vN-yQp">
+                                        <rect key="frame" x="8" y="254" width="359" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="HiraMaruProN-W4" family="Hiragino Maru Gothic ProN" pointSize="22"/>
+                                        <state key="normal" title="スワイプを続ける">
+                                            <color key="titleColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="continue:" destination="Nn2-wr-z0U" eventType="touchUpInside" id="AUi-jr-JFJ"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Matched!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u0-Gi-lgh">
+                                        <rect key="frame" x="89" y="8" width="197" height="64"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="45"/>
+                                        <color key="textColor" red="0.99215686270000003" green="1" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="400" id="2lh-S6-7pY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Jd7-aj-Wms" firstAttribute="leading" secondItem="hBl-8I-haO" secondAttribute="leading" id="GGs-4Q-oOi"/>
+                            <constraint firstItem="Jd7-aj-Wms" firstAttribute="trailing" secondItem="hBl-8I-haO" secondAttribute="trailing" id="GsR-Gy-JcS"/>
+                            <constraint firstItem="3co-fD-Oqb" firstAttribute="leading" secondItem="hBl-8I-haO" secondAttribute="leading" id="Lsm-VE-bYt"/>
+                            <constraint firstItem="3co-fD-Oqb" firstAttribute="trailing" secondItem="hBl-8I-haO" secondAttribute="trailing" id="M0F-VB-z3a"/>
+                            <constraint firstItem="Jd7-aj-Wms" firstAttribute="top" secondItem="3co-fD-Oqb" secondAttribute="bottom" id="aad-Bg-R7G"/>
+                            <constraint firstAttribute="bottom" secondItem="Jd7-aj-Wms" secondAttribute="bottom" id="bfH-qu-KI9"/>
+                            <constraint firstItem="3co-fD-Oqb" firstAttribute="top" secondItem="gPO-dJ-1vu" secondAttribute="top" id="mer-De-N1P"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="hBl-8I-haO"/>
+                    </view>
+                    <connections>
+                        <outlet property="myImageView" destination="HJP-d3-HAf" id="wPA-q1-Wde"/>
+                        <outlet property="yourImageView" destination="vrL-Bq-AJW" id="tKP-h4-9j4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7x-Bq-wx6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5872.8000000000002" y="1011.576354679803"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="peH-98-hKe">
@@ -120,6 +224,7 @@
     <resources>
         <image name="chat" width="21" height="21"/>
         <image name="crossIcon" width="64" height="64"/>
+        <image name="facebook-icon" width="240" height="240"/>
         <image name="heartIcon" width="64" height="64"/>
         <image name="team" width="42" height="42"/>
     </resources>
